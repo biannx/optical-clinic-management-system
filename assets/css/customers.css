@@ -1,0 +1,57 @@
+.addBtn{
+    background-color: var(--addBtn);
+    opacity: 0.9;
+}
+.addBtn:hover{
+    opacity: 1;
+}
+
+.btn:focus{
+    box-shadow: none;
+}
+
+/*Announcement Table*/
+
+.table-wrapper{
+    border: 0.1px solid rgb(221, 220, 220);
+    /* box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.25); */
+    background: white;
+}
+.table-title{
+    background:var(--addBtn);
+}
+.table-body thead {
+    text-align: center;
+}
+
+.table-body tr {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+.table-body td {
+    max-width: 200px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+} 
+
+.table-body tbody .action-buttons li {
+    list-style-type: none;
+    display: inline-block;
+}
+.data {
+    font-size: 0.7rem;
+    padding: 0.2rem 0.7rem;
+    text-transform: uppercase;
+}
+.view_data{
+    background: var(--lightblue);
+}
+.update_data{
+    background: var(--lightgreen);
+}
+
+.archive_data{
+    background: var(--lightred);
+}
