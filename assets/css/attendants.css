@@ -19,21 +19,38 @@ html, body{
     color: white;
     border-radius: 0.3rem;
 }
+#archives-tab{
+    display: none;
+}
+a.title-page{
+    text-decoration: none;
+    font-size: 1.6rem;
+    color: #4a4a4a;
+    font-weight: 600;
+}
+i.to-back-link{
+  opacity: 0.7;
+}
 
-/*Customers Table*/
+i.to-back-link:hover, .archiveBtn{
+    opacity: 1;
+}
 
+/*common Table*/
 .table-wrapper{
     border: 0.1px solid rgb(221, 220, 220);
     /* box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.25); */
     background: white;
-    border-radius: 0.5rem;
+    border-radius: 0.8rem;
 }
 .table-title{
     /* background:var(--addBtn); */
-    color: 4a4a4a;
+    color: #4a4a4a;
 }
 .table-body thead {
     text-align: center;
+    background-color: #f4f4f4;
+    line-height: 2rem;
 }
 
 .table-body tr {
@@ -72,28 +89,27 @@ html, body{
     font-weight: 700;
     color: black;
 }
-.view_data{
+.view-data{
     background: var(--lightblue);
     opacity: 0.8;
 }
-.update_data{
+.update-data{
     background: var(--lightgreen);
     opacity: 0.8;
 }
-.archive_data{
-    background: var(--lightpink);
-    opacity: 0.8;
+.archive-data{
+    background: var(--lightred);
+    opacity: 0.9;
 }
 
-.view_data:hover, .update_data:hover, .archive_data:hover, .archive-all-data:hover{
+.view-data:hover, .update-data:hover, .archive-data:hover, .archive-all-data:hover{
     opacity: 1;
 }
 
 .archive-all-data{
-    background: var(--lightpink);
+    background: var(--lightred);
     font-size: 1rem;
     opacity: 0.9;
-    color: black;
 }
 
 /* modal */
@@ -167,7 +183,7 @@ input.form-control{
     border: 1px solid grey;
 }
 
-#photo, #photoUpdate{
+#photo, #photoUpdate, #photoView{
     height: 100%;
     width: 100%;
 }

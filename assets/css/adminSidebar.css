@@ -19,13 +19,13 @@
 
 }
 html,body{
-  background: white;
+  background: #fafafa;
 }
 .sidebar{
   position: fixed;
   height: 100%;
   width: 280px;
-  background: white;
+  background: #fafafa;
   border: 1px solid #D3D3D3;
   transition: all 0.5s ease;
   -moz-transition: all 0.5s ease;
@@ -154,31 +154,40 @@ nav .sidebar-button i{
   background: #F5F6FA;
   border: 2px solid #EFEEF1;
   border-radius: 6px;
-  height: 50px;
-  min-width: 190px;
-  padding: 0 15px 0 2px;
+  height: 46px;
+  min-width: 150px;
+}
+.home-section nav a.view-shop{
+  display: flex;
+  align-items: center;
+  color: var(--addBtn);
+  text-decoration: none;
+  font-size: 1rem;
+  font-weight: 500;
+}
+.home-section nav .view-shop-text:hover{
+  text-decoration: underline;
+  cursor: pointer;
 }
 nav .profile-details img{
-  height: 40px;
-  width: 40px;
+  height: 2.3rem;
+  width: 2.3rem;
   border-radius: 6px;
   object-fit: cover;
 }
 nav .profile-details .admin_name{
   font-size: 15px;
-  font-weight: 500;
+  font-weight: 600;
   color: #333;
-  margin: 0 10px;
   white-space: nowrap;
 }
-nav .profile-details i{
-  font-size: 25px;
-  color: #333;
-}
+
 .home-section .home-content{
   position: relative;
-  padding-top: 5.5rem;
+  padding-top: 6.3rem;
 }
+
+/* Dashboard Page */
 .home-content .overview-boxes{
   display: flex;
   align-items: center;
@@ -348,6 +357,8 @@ nav .profile-details i{
   font-weight: 400;
   color: #333;
 }
+
+
 /* Responsive Media Query */
 @media (max-width: 1240px) {
   .sidebar{
