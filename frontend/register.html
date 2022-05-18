@@ -1,0 +1,71 @@
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <style>
+        h1{
+            font-family: 'Montserrat';
+            font-weight: 500;
+            font-size: 24px;
+        }
+        p,label{
+            font-family: 'Open sans';
+            font-size: 16px;
+        }
+        .textbox{
+            width: 250px;
+            height: 30px;
+            border: 0px;
+            background: #FFFFFF;
+            box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.25);
+            border-radius: 2px;
+            position: relative;
+        }
+        .small{
+            font-family: 'Open sans';
+            font-size: 12px;
+        }
+        button{
+            width: 80px; 
+            height: 30px;
+            background: #55A8BA; 
+            box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.25); 
+            border: 0px; 
+            border-radius: 2px;
+            font-family: 'Open sans'; 
+            font-size: 16px; 
+            color: #FFFFFF;
+            text-align: center;
+        }
+        .date{
+            height: 30px;
+            border: 0px;
+            background: #FFFFFF;
+            box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.25);
+            border-radius: 2px;
+            font-family: 'Open sans';
+            font-size: 16px;
+        }
+    </style>
+    <body>
+        <form style="position:absolute; left: 25%;">
+            <h1>Register:</h1>
+            <p><label>First Name:</label><input type="text" class="textbox" style="left:52px">
+            <label style="position:relative;left:52px">Middle Name(optional):<input type="text" class="textbox" style="left:52px"></label>
+            <p><label>Last Name:<input type="text" class="textbox" style="left:52px"></label>
+            <label style="position:relative;left:52px">Suffix(optional):<input type="text" class="textbox" style="left:52px"></label></p>
+            <p>Sex:<input type="radio" id="male" name="sex" value="male"></p>
+                   <label for="male">Male</label>
+                   <input type="radio" id="female" name="sex" value="female">
+                   <label for="female">Female</label></p>
+            <p>Date of Birth:<input type="date" class="date"></p>
+            <p>Address:<input type="text" class="textbox" style="left:52px"></p>
+            <p>Contact No.:<input type="text" class="textbox" style="left:52px"></p>
+            <p>Email Address:<input type="text" class="textbox" style="left:52px"></p>
+            <p>Password:<input type="text" class="textbox" style="left:52px"></p>
+            <p>Confirm Password:<input type="text" class="textbox" style="left:52px"></p>
+            <input type="checkbox"><label class="small">I agree with the terms and agreement.</label>
+            <button>Submit</button>
+            </form>
+    </body>
+</html>
