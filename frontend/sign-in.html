@@ -19,7 +19,6 @@
             background: #FFFFFF;
             box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.25);
             border-radius: 2px;
-            position: relative;
         }
         .small{
             font-family: 'Open sans';
@@ -37,22 +36,22 @@
             font-size: 16px; 
             color: #FFFFFF;
             text-align: center;
-            ul{
-              list-style-type: none;
-              margin: 0;
-              padding: 3;
-              overflow: hidden;
-              background-color: #FFFFFF;
-              box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.25);
-              font-family: 'Open sans';
-              font-size: 16px;
-            }
+        }
+        ul{
+            list-style-type: none;
+            margin: 0;
+            padding: 3;
+            overflow: hidden;
+            box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.25);
+            font-family: 'Open sans';
+            font-size: 16px;
+        }
 
-            li {
-              float: left;
-            }
+        li {
+            float: left;
+        }
 
-            li a {
+        li a {
               display: block;
               color: #000000;
               text-align: center;
@@ -60,35 +59,42 @@
               text-decoration: none;
             }
 
-            li a:hover:not(.active):not(.logo) {
-              background-color: #D3D3D3;
-            }
-            .logo
-            {
+        li a:hover:not(.active):not(.logo) {
+            background-color: #D3D3D3;
+        }
+        .logo {
                 background-color: #FFFFFF;
                 color: #5EC0D6;
-            }
+        }
+        .nav {
+            position: sticky; 
+            top:0;
+            background-color: #FFFFFF;
         }
     </style>
-    <nav style="position: sticky">
+
+    <body>
+        <div class="nav">
         <ul>
           <li><a href="#home" class="logo">optical</a></li>
           <li><a href="#home">Home</a></li>
-          <li><a href="#news">Products</a></li>
-          <li><a href="#contact">Set Appointment</a></li>
-          <li><a href="#home">Profile</a></li>
-          <li style="float:right"><a href="#register">Register</a></li>
-          <li style="float:right"><a href="#sign-in">Sign In</a></li>
+          <li><a href="#products">Products</a></li>
+          <li><a href="#appointment">Set Appointment</a></li>
+          <li><a href="#profile">Profile</a></li>
+          <li style="float:right"><a href="register.html">Register</a></li>
+          <li style="float:right"><a href="sign-in.html">Sign In</a></li>
         </ul>
-    </nav>
-        <form style="position:absolute; left: 40%; top: 30%;">
-            <h1>Sign in</h1>
-            <p>Email address: <input type="text" style=" left:20px" ></p>
-            <p>Password: <input type="text" style="left:52px"></p>
-            <button type="button">Sign In</button>
+        </div>
+        <div style="padding-left: 40%; padding-top: 10%;">
+            <h1>Sign In</h1>
+            <p>Email Address:</p>
+            <input type="text" id="email" name="email"><br>
+            <p>Password:</p>
+            <input type="password" id="pass" name="pass"><p></p>
+            <button type="submit" value="sign-in">Sign In</button>
             <p class="small">Forgot Password</p>
-            <p class="small">Don't have an account?</p>
-        </form>
+            <p class="small"><a href="register.html" style="text-decoration: none;">Don't have an account?</a></p>
+        </div>
         
     </body>
 </html>
