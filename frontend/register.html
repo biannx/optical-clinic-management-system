@@ -1,8 +1,7 @@
 <html>
     <head>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    </head>
-    <style>
+        <style>
         h1{
             font-family: 'Montserrat';
             font-weight: 500;
@@ -19,7 +18,6 @@
             background: #FFFFFF;
             box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.25);
             border-radius: 2px;
-            position: relative;
         }
         .small{
             font-family: 'Open sans';
@@ -46,26 +44,88 @@
             font-family: 'Open sans';
             font-size: 16px;
         }
+        ul{
+            list-style-type: none;
+            margin: 0;
+            padding: 3;
+            overflow: hidden;
+            background-color: #FFFFFF;
+            box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.25);
+            font-family: 'Open sans';
+            font-size: 16px;
+        }
+
+        li {
+            float: left;
+        }
+
+        li a {
+              display: block;
+              color: #000000;
+              text-align: center;
+              padding: 14px 16px;
+              text-decoration: none;
+            }
+
+        li a:hover:not(.active):not(.logo) {
+            background-color: #D3D3D3;
+        }
+        .logo {
+                background-color: #FFFFFF;
+                color: #5EC0D6;
+        }
+        .nav {
+            position: sticky; 
+            top:0;
+            background-color: #FFFFFF;
+        }
     </style>
+    </head>
+    
+    
     <body>
-        <form style="position:absolute; left: 25%;">
+        <div class="nav">
+        <ul>
+          <li><a href="#home" class="logo">optical</a></li>
+          <li><a href="#home">Home</a></li>
+          <li><a href="#products">Products</a></li>
+          <li><a href="#appointment">Set Appointment</a></li>
+          <li><a href="#profile">Profile</a></li>
+          <li style="float:right"><a href="register.html">Register</a></li>
+          <li style="float:right"><a href="sign-in.html">Sign In</a></li>
+        </ul>
+    </div>
+        <div style="padding-left: 35%;padding-top: 5%; padding-bottom: 5%;">
             <h1>Register:</h1>
-            <p><label>First Name:</label><input type="text" class="textbox" style="left:52px">
-            <label style="position:relative;left:52px">Middle Name(optional):<input type="text" class="textbox" style="left:52px"></label>
-            <p><label>Last Name:<input type="text" class="textbox" style="left:52px"></label>
-            <label style="position:relative;left:52px">Suffix(optional):<input type="text" class="textbox" style="left:52px"></label></p>
-            <p>Sex:<input type="radio" id="male" name="sex" value="male"></p>
-                   <label for="male">Male</label>
-                   <input type="radio" id="female" name="sex" value="female">
-                   <label for="female">Female</label></p>
-            <p>Date of Birth:<input type="date" class="date"></p>
-            <p>Address:<input type="text" class="textbox" style="left:52px"></p>
-            <p>Contact No.:<input type="text" class="textbox" style="left:52px"></p>
-            <p>Email Address:<input type="text" class="textbox" style="left:52px"></p>
-            <p>Password:<input type="text" class="textbox" style="left:52px"></p>
-            <p>Confirm Password:<input type="text" class="textbox" style="left:52px"></p>
+            <p><label>First Name:</label>
+                <label style="padding: 21%">Middle Name(optional):</label></p>
+                <input type="text" class="textbox" id="fname" name="fname">
+                <input type="text" class="textbox" id="mname" name="mname" style="margin-left: 4%;">
+            <p><label>Last Name:</label>
+            <label style="padding: 21%">Suffix(optional):</label></p>
+            <input type="text" class="textbox" id="lname" name="lname">
+            <input type="text" class="textbox" id="suffix" name="suffix" style="margin-left: 4%;">
+            <p><label>Sex:</label>
+            <label style="padding: 26.5%">Date of Birth:</label></p>
+            <input type="radio" id="male" name="sex" value="male">
+                <label for="male">Male</label>
+                <input type="radio" id="female" name="sex" value="female">
+                <label for="female">Female</label>
+                <input type="date" class="date" style="margin-left: 14.7%">
+            <p>Address:</p>
+                <input type="text" class="textbox" id="address" name="address" style="width: 540px">
+            <p>Contact No.:</p>
+                <input type="text" class="textbox" id="contact" name="contact">
+            <p>Email Address:</p>
+                <input type="text" class="textbox" id="email" name="email">
+            <p>Password:</p>
+                <input type="text" class="textbox" id="pass" name="pass">
+            <p>Confirm Password:</p>
+                <input type="text" class="textbox" id="confirm" name="confirm">
+            <p></p>
             <input type="checkbox"><label class="small">I agree with the terms and agreement.</label>
-            <button>Submit</button>
-            </form>
+            <p></p>
+            <button type="submit" value="submit">Submit</button>
+        </div>
     </body>
 </html>
