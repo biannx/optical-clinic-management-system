@@ -1,0 +1,7 @@
+img#customer-img{
+    width: 165px;
+    height: 165px;
+    border: 1px solid lightgrey;
+    border-radius: 50%;
+    padding: 0.2rem;
+}

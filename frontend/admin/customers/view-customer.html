@@ -4,8 +4,8 @@
     <meta charset="UTF-8" />
     <link href="/assets/css/bootstrap.min.css" rel="stylesheet" />
     <link rel="stylesheet" href="/assets/css/adminSidebar.css" />
+    <link rel="stylesheet" href="/assets/css/customers.css" />
     <link rel="stylesheet" href="/assets/css/common.css" />
-    <link rel="stylesheet" href="/assets/css/products.css" />
     <link
       rel="stylesheet"
       href="https://use.fontawesome.com/releases/v5.5.0/css/all.css"
@@ -16,7 +16,7 @@
       type="text/css"
     />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Admin | Products</title>
+    <title>Admin | Customer</title>
   </head>
 
   <body>
@@ -33,19 +33,19 @@
           </a>
         </li>
         <li>
-          <a href="#">
+          <a href="customers.html">
             <i class="fa fa-users"></i>
             <span class="links_name">Customers</span>
           </a>
         </li>
         <li>
-          <a href="/frontend/admin/attendants/attendants.html">
+          <a href="/frontend/admin/attendants.html" class="active">
             <i class="fa fa-user-md"></i>
             <span class="links_name">Attendants</span>
           </a>
         </li>
         <li>
-          <a href="products.html" class="active">
+          <a href="/frontend/admin/products/products.html">
             <i class="fas fa-shopping-bag"></i>
             <span class="links_name">Products</span>
           </a>
@@ -88,7 +88,7 @@
         <div class="container-fluid d-flex">
           <div class="sidebar-button me-auto">
             <i class="fas fa-bars sidebarBtn"></i>
-            <span class="dashboard">Products</span>
+            <span class="dashboard">Customers</span>
           </div>
 
           <a href="#" class="view-shop px-3">
@@ -102,44 +102,60 @@
         </div>
       </nav>
 
-      <div class="home-content">
-        <div class="container-fluid">
-          <div class="d-flex justify-content-end mx-2">
-            <!-- Archives Button -->
-            <a
-              href="/frontend/admin/products/archives.html"
-              class="btn archiveBtn text-white fw-bold px-4"
-              id="archive-list-button"
-              title="View Archive List"
-            >
-              Archives
+      <div class="home-content pb-3">
+        <div class="container-fluid px-4">
+          <div class="d-flex mb-4 px-1">
+            <a href="customers.html" class="back-page">
+              <i
+                class="fa fa-arrow-left to-back-link"
+                aria-hidden="true"
+                title="Go back"
+              ></i>
             </a>
-
-            <!-- Create New Product -->
-            <a
-              href="/frontend/admin/products/add-product.html"
-              class="btn addBtn text-white fw-bold px-3 mx-3"
-              id="create-new-button"
-              title="Create New Attendant"
-            >
-              <i class="fa fa-plus px-1" aria-hidden="true"></i>
-              Create New
-            </a>
+            <span class="page-title px-3">Customer Details</span>
           </div>
+          <div class="row">
+            <div class="col-lg-3 col-md-3 text-center">
+              <img
+                src="/assets/images/plain-avatar.png"
+                alt="avatar"
+                id="customer-img"
+              />
+            </div>
+            <div class="col-lg-8 col-md-8 mt-2">
+              <div class="table-responsive">
+                <table class="mx-3">
+                  <tr class="d-flex align-items-start">
+                    <td class="py-3">
+                      <p>Customer ID:</p>
+                      <p>Name:</p>
+                      <p>Email:</p>
+                      <p>Contact No:</p>
+                    </td>
+                    <td class="py-3 px-5">
+                      <p><strong>Client-1</strong></p>
+                      <p class="text-capitalize">
+                        <strong>juan dela cruz</strong>
+                      </p>
+                      <p><strong>juandelacruz@gmail.com</strong></p>
+                      <p><strong>09123456789</strong></p>
+                    </td>
+                  </tr>
+                </table>
+              </div>
+            </div>
 
-          <!-- Product List Table -->
-          <div class="container-fluid p-4">
-            <div class="table-wrapper px-4">
+            <div class="table-wrapper p-4">
               <div class="table-title">
                 <!--Table Header-->
-                <h4 class="px-1 pt-4 fw-bold">List of Products</h4>
+                <h4 class="px-3 pt-2 fw-bold">Archived Attendants</h4>
               </div>
-              <hr class="my-4" />
-              <div class="container-fluid table-responsive pt-2">
+              <hr class="my-4 mx-3" />
+              <div class="container-fluid table-responsive px-4">
                 <table
-                  class="table table-hover align-middle align-items-center table-body py-2"
-                  aria-label="Customers' List"
-                  id="products-table-data"
+                  class="table table-hover align-middle align-items-center table-body"
+                  aria-label="Attendants Archive List"
+                  id="attendantArchiveList"
                 >
                   <!--Table Body-->
                   <thead>
@@ -150,20 +166,19 @@
                             class="form-check-input check-all"
                             type="checkbox"
                             value=""
-                            id="check-all-customer"
+                            id="check-all-attendant-archive"
                           />
                           <label
                             class="form-check-label"
-                            for="check-all-customer"
+                            for="check-all-attendant-archive"
                           >
                             All
                           </label>
                         </div>
                       </th>
                       <th scope="col">ID</th>
-                      <th scope="col">Item</th>
-                      <th scope="col">Product Name</th>
-                      <th scope="col">Stock</th>
+                      <th scope="col">Name</th>
+                      <th scope="col">Contact No.</th>
                       <th scope="col">Action</th>
                     </tr>
                   </thead>
@@ -175,70 +190,94 @@
                             class="form-check-input check-list"
                             type="checkbox"
                             value=""
-                            id="check-one-customer"
+                            id="check-one-attendant-archive"
                           />
                         </div>
                       </td>
-                      <td>Prod-1</td>
+                      <td>Attendant-1</td>
                       <td>
                         <img
-                          src="/assets/images/product-img.png"
-                          class="prodimg-table-list mx-2"
-                        />
+                          src="/assets/images/avatar.png"
+                          class="img-table-list mx-2"
+                        />juan dela cruz
                       </td>
-                      <td>Original Spring Glass</td>
-                      <td>In Stock</td>
+                      <td>09123456789</td>
                       <td>
-                        <div class="action-buttons mt-3">
-                          <ul>
-                            <li>
-                              <a
-                                href="/frontend/admin/products/view-product.html"
-                                id="view"
-                                class="btn view-data data"
-                                title="View Details"
-                              >
-                                <i class="fas fa-eye" aria-hidden="true"></i>
-                                View
-                              </a>
-                            </li>
-                            <li>
-                              <a
-                                href="/frontend/admin/products/update-products.html"
-                                id="edit"
-                                class="btn update-data data"
-                                title="Update Details"
-                              >
-                                <i class="fas fa-pen" aria-hidden="true"></i>
-                                Update
-                              </a>
-                            </li>
-                            <li></li>
-                            <li>
-                              <button
-                                type="button"
-                                class="btn archive-data data"
-                                title="Archive Data"
-                                aria-hidden="true"
-                              >
-                                Archive
-                              </button>
-                            </li>
-                          </ul>
-                        </div>
+                        <button
+                          type="button"
+                          class="btn update-data data"
+                          title="Restore Data"
+                        >
+                          Restore
+                        </button>
                       </td>
                     </tr>
                   </tbody>
                 </table>
-                <br /><br />
+                <br />
 
-                <!-- Batch Archive Button -->
-                <div class="d-flex justify-content-end mb-4">
+                <!--Batch Button -->
+                <div class="d-flex justify-content-end my-3 pb-3">
                   <button
                     type="button"
-                    class="btn archive-all-data text-white text-uppercase mb-3"
+                    class="btn btn-danger px-3 py-1 mx-3 text-uppercase fw-bold"
+                    data-bs-toggle="modal"
+                    data-bs-target="#permanentlyDeleteAttendant"
+                    title="Permanenetly Delete Data"
                   >
-                    Archive Products (6)
+                    <i class="fa fa-trash px-2" aria-hidden="true"></i
+                    >Permanently Delete
+                  </button>
+                  <button
+                    type="button"
+                    class="btn btn-default text-uppercase"
+                    title="Restore Attendant Data"
+                  >
+                    Restore Attendant (6)
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Permanently Delete Attendant Pop up Dialog-->
+          <div
+            class="modal fade"
+            id="permanentlyDeleteAttendant"
+            data-bs-backdrop="static"
+            data-bs-keyboard="false"
+            tabindex="-1"
+            aria-modal="true"
+            aria-labelledby="cancelApplicationLabel"
+            aria-hidden="true"
+          >
+            <div class="modal-dialog">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h6 class="modal-title text-white">Permanently Delete</h6>
+                  <button
+                    type="button"
+                    class="btn-close btn-close-white"
+                    data-bs-dismiss="modal"
+                    aria-label="Close"
+                  ></button>
+                </div>
+                <div class="modal-body">
+                  <h6>
+                    Once you permanently delete the attendant data, it can't be
+                    undone.
+                  </h6>
+                </div>
+                <div class="modal-footer">
+                  <button type="submit" class="btn btn-default px-3">
+                    Delete
+                  </button>
+                  <button
+                    type="button"
+                    class="btn btn-secondary"
+                    data-bs-dismiss="modal"
+                  >
+                    Cancel
                   </button>
                 </div>
               </div>
@@ -261,16 +300,24 @@
         } else sidebarBtn.classList.replace("bx-menu-alt-right", "bx-menu");
       };
       $(document).ready(function () {
-        $("#products-table-data").DataTable({
+        $("#attendantTableList").DataTable({
           lengthMenu: [
             [20, 25, 50, -1],
             [20, 25, 50, "All"],
           ],
         });
+        $("#attendantArchiveList").DataTable({
+          lengthMenu: [
+            [20, 25, 50, -1],
+            [20, 25, 50, "All"],
+          ],
+        });
+
         jQuery(".dataTable").wrap('<div class="dataTables_scroll" />');
       });
     </script>
 
+    <script src="/assets/js/date.js"></script>
     <script src="/assets/js/bootstrap.bundle.min.js"></script>
   </body>
 </html>

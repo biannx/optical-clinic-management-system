@@ -16,7 +16,7 @@
       type="text/css"
     />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Admin | Attendants</title>
+    <title>Admin | Customers</title>
   </head>
 
   <body>
@@ -33,7 +33,7 @@
           </a>
         </li>
         <li>
-          <a href="#">
+          <a href="customers.html">
             <i class="fa fa-users"></i>
             <span class="links_name">Customers</span>
           </a>
@@ -88,7 +88,7 @@
         <div class="container-fluid d-flex">
           <div class="sidebar-button me-auto">
             <i class="fas fa-bars sidebarBtn"></i>
-            <span class="dashboard">Attendants</span>
+            <span class="dashboard">Customers</span>
           </div>
 
           <a href="#" class="view-shop px-3">
@@ -120,8 +120,8 @@
               class="btn addBtn text-white fw-bold px-3 mx-3"
               id="create-new-button"
               data-bs-toggle="modal"
-              data-bs-target="#newAttendant"
-              title="Create New Attendant"
+              data-bs-target="#newCustomer"
+              title="Create New Customer"
             >
               <i class="fa fa-plus" aria-hidden="true"></i>
               Create New
@@ -129,37 +129,45 @@
           </div>
 
           <!-- Create New Attendant Modal -->
-          <div
-            class="modal fade"
-            id="newAttendant"
-            data-bs-backdrop="static"
-            data-bs-keyboard="false"
-            tabindex="-1"
-            aria-labelledby="newAttendantLabel"
-            aria-modal="true"
-            aria-hidden="true"
-          >
+          <form action="">
             <div
-              class="modal-dialog modal-lg modal-dialog-centered modal-dialog-scrollable"
+              class="modal fade"
+              id="newCustomer"
+              data-bs-backdrop="static"
+              data-bs-keyboard="false"
+              tabindex="-1"
+              aria-labelledby="newCustomerLabel"
+              aria-modal="true"
+              aria-hidden="true"
             >
-              <div class="modal-content">
-                <div class="modal-header">
-                  <h5 class="modal-title fw-bold text-uppercase px-2">
-                    New Attendant
-                  </h5>
-                  <button
-                    type="button"
-                    class="btn-close btn-close-white px-2"
-                    data-bs-dismiss="modal"
-                    aria-label="Close"
-                  ></button>
-                </div>
-                <div class="modal-body">
-                  <form action="">
-                    <div class="container-fluid">
+              <div
+                class="modal-dialog modal-lg modal-dialog-centered modal-dialog-scrollable"
+              >
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h5 class="modal-title fw-bold text-uppercase px-2">
+                      New Customer
+                    </h5>
+                    <button
+                      type="button"
+                      class="btn-close btn-close-white px-2"
+                      data-bs-dismiss="modal"
+                      aria-label="Close"
+                    ></button>
+                  </div>
+                  <div class="modal-body">
+                    <div class="container">
+                      <h6 class="text-muted py-2">
+                        <i
+                          >Note: Please add new
+                          <strong>walk-in</strong> customers only.</i
+                        >
+                      </h6>
+                    </div>
+                    <div class="container-fluid py-2">
                       <div class="profile-pic-div">
                         <img
-                          src="/assets/images/avatar.png"
+                          src="/assets/images/plain-avatar.png"
                           alt="avatar"
                           id="photo"
                         />
@@ -188,54 +196,67 @@
                             readonly
                           />
                         </div>
+                        <div class="col-lg-6 mt-1">
+                          <label class="form-label asterisk" for="type-walkin"
+                            >Type:
+                          </label>
+                          <select
+                            class="form-select"
+                            aria-label="Walk in or Registered"
+                            id="type-walkin"
+                            title="Disabled"
+                            disabled
+                          >
+                            <option selected readonly disabled>Walk In</option>
+                            <option>Registered</option>
+                          </select>
+                        </div>
                       </div>
 
                       <!-- Name -->
                       <div class="row mb-2 py-1">
                         <div class="col-lg-3 col-md-6 py-2">
-                          <label
-                            class="form-label asterisk"
-                            for="fnameAttendant"
+                          <label class="form-label asterisk" for="fnameCustomer"
                             >First Name:
                           </label>
                           <input
                             type="text"
                             name="fname"
                             class="form-control"
-                            id="fnameAttendant"
+                            id="fnameCustomer"
                             placeholder="First Name"
                             required
                           />
                         </div>
                         <div class="col-lg-3 col-md-6 py-2">
-                          <label class="form-label" for="midnNameAttendant"
+                          <label class="form-label" for="midnNameCustomer"
                             >Middle Name:
                           </label>
                           <input
                             type="text"
                             name="midname"
                             class="form-control"
-                            id="midnNameAttendant"
+                            id="midnNameCustomer"
                             placeholder="Middle Name"
                           />
                         </div>
                         <div class="col-lg-3 col-md-6 py-2">
                           <label
                             class="form-label asterisk"
-                            for="surnameAttendant"
+                            for="surnameCustomer"
                             >Last Name:
                           </label>
                           <input
                             type="text"
                             name="surname"
                             class="form-control"
-                            id="surnameAttendant"
+                            id="surnameCustomer"
                             placeholder="Last Name"
                             required
                           />
                         </div>
                         <div class="col-lg-3 col-md-6 py-2">
-                          <label class="form-label" for="suffixAttendant"
+                          <label class="form-label" for="suffixCustomer"
                             >Suffix:
                           </label>
                           <input
@@ -247,41 +268,29 @@
                           />
                         </div>
                       </div>
-                      <div class="row">
-                        <div class="col-lg-6 col-md-6 py-2">
-                          <label class="form-label" for="title">Title: </label>
-                          <input
-                            type="text"
-                            name="title"
-                            class="form-control"
-                            id="title"
-                            placeholder="Title"
-                          />
-                        </div>
-                      </div>
 
                       <!-- Birthday -->
                       <div class="row">
                         <div class="col-lg-6 py-2">
-                          <label class="form-label asterisk" for="bdayAttendant"
+                          <label class="form-label asterisk" for="bdayCustomer"
                             >Birthday:
                           </label>
                           <input
                             type="date"
                             name="bday"
                             class="form-control"
-                            id="bdayAttendant"
+                            id="bdayCustomer"
                             placeholder="Birthday"
                             required
                           />
                         </div>
 
-                        <!-- Gender -->
+                        <!-- Sex -->
                         <div class="col-lg-6 col-md-6 py-2">
                           <label
                             class="form-label asterisk"
-                            for="midnNameAttendant"
-                            >Gender:
+                            for="midnNameCustomer"
+                            >Sex:
                           </label>
                           <div class="row">
                             <div class="col-lg-6 col-md-12 pt-1">
@@ -320,14 +329,14 @@
                       <!-- Address -->
                       <label
                         class="form-label pt-2 asterisk"
-                        for="addressAttendant"
+                        for="addressCustomer"
                         >Address:
                       </label>
                       <input
                         type="text"
                         name="address"
                         class="form-control"
-                        id="addressAttendant"
+                        id="addressCustomer"
                         placeholder="Address"
                         required
                       />
@@ -335,16 +344,14 @@
                       <!-- Email Address & Contact No. -->
                       <div class="row pt-2">
                         <div class="col-lg-6 py-2">
-                          <label
-                            class="form-label asterisk"
-                            for="emailAttendant"
+                          <label class="form-label asterisk" for="emailCustomer"
                             >Email Address:
                           </label>
                           <input
                             type="email"
                             name="email"
                             class="form-control"
-                            id="emailAttendant"
+                            id="emailCustomer"
                             placeholder="Email Address"
                             required
                           />
@@ -352,13 +359,13 @@
                         <div class="col-lg-6 py-2 asterisk">
                           <label
                             class="form-label asterisk"
-                            for="contactAttendant"
+                            for="contactCustomer"
                             >Contact No:
                           </label>
                           <input
                             type="tel"
                             name="contactnum"
-                            id="contactAttendant"
+                            id="contactCustomer"
                             minlength="11"
                             maxlength="11"
                             class="form-control"
@@ -371,30 +378,29 @@
                         </div>
                       </div>
                     </div>
-                  </form>
-                </div>
-                <div class="modal-footer mx-3">
-                  <button type="button" class="btn btn-default px-3 mx-2">
-                    Save
-                  </button>
-                  <button
-                    type="button"
-                    class="btn btn-secondary py-2 px-3"
-                    data-bs-dismiss="modal"
-                  >
-                    Close
-                  </button>
+                  </div>
+                  <div class="modal-footer mx-3">
+                    <button type="submit" class="btn btn-default px-3 mx-2">
+                      Save
+                    </button>
+                    <button
+                      type="button"
+                      class="btn btn-secondary py-2 px-3"
+                      data-bs-dismiss="modal"
+                    >
+                      Close
+                    </button>
+                  </div>
                 </div>
               </div>
             </div>
-          </div>
+          </form>
 
-          <!-- Attendants Table -->
-          <div class="container-fluid p-4" id="attendants-table-data">
+          <!-- Customers Table -->
+          <div class="container-fluid p-4">
             <div class="table-wrapper px-4">
               <div class="table-title">
-                <!--Table Header-->
-                <h4 class="px-1 pt-4 fw-bold">List of Attendants</h4>
+                <h4 class="px-1 pt-4 fw-bold">List of Customers</h4>
               </div>
               <hr class="my-4" />
               <div class="container-fluid table-responsive pt-2">
@@ -425,6 +431,7 @@
                       <th scope="col">ID</th>
                       <th scope="col">Name</th>
                       <th scope="col">Contact No.</th>
+                      <th scope="col">Type</th>
                       <th scope="col">Action</th>
                     </tr>
                   </thead>
@@ -440,7 +447,7 @@
                           />
                         </div>
                       </td>
-                      <td>Attendant-1</td>
+                      <td>Client-1</td>
                       <td>
                         <img
                           src="/assets/images/avatar.png"
@@ -448,29 +455,27 @@
                         />juan dela cruz
                       </td>
                       <td>09123456789</td>
+                      <td class="text-uppercase">Walk-In</td>
                       <td>
                         <div class="action-buttons" id="actions">
                           <ul>
                             <li>
-                              <button
-                                type="button"
-                                id="view"
+                              <a
+                                href="view-customer.html"
                                 class="btn view-data data"
-                                data-bs-toggle="modal"
-                                data-bs-target="#viewAttendant"
                                 title="View Details"
+                                aria-label="View more about customer's details"
                               >
                                 <i class="fas fa-eye" aria-hidden="true"></i>
                                 View
-                              </button>
+                              </a>
                             </li>
                             <li>
                               <button
                                 type="button"
-                                id="edit"
                                 class="btn update-data data"
                                 data-bs-toggle="modal"
-                                data-bs-target="#updateAttendant"
+                                data-bs-target="#updateCustomer"
                                 title="Update Details"
                               >
                                 <i class="fas fa-pen" aria-hidden="true"></i>
@@ -495,7 +500,6 @@
                   </tbody>
                 </table>
                 <br />
-
                 <!-- Batch Archive Button -->
                 <div class="d-flex justify-content-end my-3">
                   <button
@@ -510,410 +514,171 @@
           </div>
         </div>
 
-        <!-- View Attendant Details Modal -->
-        <div
-          class="modal fade"
-          id="viewAttendant"
-          data-bs-backdrop="static"
-          data-bs-keyboard="false"
-          tabindex="-1"
-          aria-labelledby="viewAttendantLabel"
-          aria-modal="true"
-          aria-hidden="true"
-        >
+        <!-- Update Customer Details Modal -->
+        <form action="" method="#">
           <div
-            class="modal-dialog modal-lg modal-dialog-centered modal-dialog-scrollable"
+            class="modal fade"
+            id="updateCustomer"
+            data-bs-backdrop="static"
+            data-bs-keyboard="false"
+            tabindex="-1"
+            aria-labelledby="updateCustomerLabel"
+            aria-modal="true"
+            aria-hidden="true"
           >
-            <div class="modal-content">
-              <div class="modal-header">
-                <h5 class="modal-title fw-bold text-uppercase px-2">
-                  View Attendant Details
-                </h5>
-                <button
-                  type="button"
-                  class="btn-close btn-close-white px-2"
-                  data-bs-dismiss="modal"
-                  aria-label="Close"
-                ></button>
-              </div>
-              <div class="modal-body">
-                <div class="container-fluid">
-                  <div class="profile-pic-div">
-                    <img
-                      src="/assets/images/avatar.png"
-                      alt="avatar"
-                      id="photoView"
-                    />
-                  </div>
-                  <!-- Date Added -->
-                  <div class="row">
-                    <div class="col-lg-6 py-2">
-                      <label class="form-label" for="dateAttendantView"
-                        >Date Added:
-                      </label>
-                      <input
-                        type="date"
-                        name="date"
-                        id="dateAttendantView"
-                        minlength="11"
-                        maxlength="11"
-                        class="form-control"
-                        aria-label="Date Added"
-                        readonly
-                      />
-                    </div>
-                  </div>
-
-                  <!-- View Name -->
-                  <div class="row mb-2 py-1">
-                    <div class="col-lg-3 col-md-6 py-2">
-                      <label
-                        class="form-label asterisk"
-                        for="fnameAttendantView"
-                        >First Name:
-                      </label>
-                      <input
-                        type="text"
-                        name="fname"
-                        class="form-control"
-                        id="fnameAttendantView"
-                        readonly
-                      />
-                    </div>
-                    <div class="col-lg-3 col-md-6 py-2">
-                      <label class="form-label" for="midnNameAttendantView"
-                        >Middle Name:
-                      </label>
-                      <input
-                        type="text"
-                        name="midname"
-                        class="form-control"
-                        id="midnNameAttendantView"
-                        readonly
-                      />
-                    </div>
-                    <div class="col-lg-3 col-md-6 py-2">
-                      <label
-                        class="form-label asterisk"
-                        for="surnameAttendantView"
-                        >Last Name:
-                      </label>
-                      <input
-                        type="text"
-                        name="surname"
-                        class="form-control"
-                        id="surnameAttendantView"
-                        readonly
-                      />
-                    </div>
-                    <div class="col-lg-3 col-md-6 py-2">
-                      <label class="form-label" for="suffixAttendantView"
-                        >Suffix:
-                      </label>
-                      <input
-                        type="text"
-                        name="suffix"
-                        class="form-control"
-                        id="suffixAttendantView"
-                        readonly
-                      />
-                    </div>
-                  </div>
-
-                  <!-- View Title -->
-                  <div class="row">
-                    <div class="col-lg-6 col-md-6 py-2">
-                      <label class="form-label" for="titleView">Title: </label>
-                      <input
-                        type="text"
-                        name="title"
-                        class="form-control"
-                        id="titleView"
-                        readonly
-                      />
-                    </div>
-                  </div>
-
-                  <!--View Birthday & Gender -->
-                  <div class="row">
-                    <div class="col-lg-6 py-2">
-                      <label class="form-label asterisk" for="bdayAttendantView"
-                        >Birthday:
-                      </label>
-                      <input
-                        type="date"
-                        name="bday"
-                        class="form-control"
-                        id="bdayAttendantView"
-                        readonly
-                      />
-                    </div>
-                    <div class="col-lg-6 col-md-6 py-2">
-                      <label
-                        class="form-label asterisk"
-                        for="midnNameAttendantView"
-                        >Gender:
-                      </label>
-                      <div class="row">
-                        <div class="col-lg-6 col-md-12 pt-1">
-                          <div class="form-check-inline">
-                            <input
-                              class="form-check-input"
-                              type="radio"
-                              name="gender"
-                              value="Male"
-                              id="maleView"
-                              readonly
-                            />
-                            <label class="form-check-label" for="gender">
-                              Male
-                            </label>
-                            <div></div>
-                          </div>
-                          <div class="form-check-inline mb-3">
-                            <input
-                              class="form-check-input"
-                              type="radio"
-                              name="gender"
-                              value="Female"
-                              id="femaleView"
-                              readonly
-                            />
-                            <label class="form-check-label" for="gender">
-                              Female
-                            </label>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-
-                  <!-- View Address -->
-                  <label
-                    class="form-label pt-2 asterisk"
-                    for="addressAttendantView"
-                    >Address:
-                  </label>
-                  <input
-                    type="text"
-                    name="address"
-                    class="form-control"
-                    id="addressAttendantView"
-                    readonly
-                  />
-
-                  <!-- View Email Address & Contact No. -->
-                  <div class="row pt-2">
-                    <div class="col-lg-6 py-2">
-                      <label
-                        class="form-label asterisk"
-                        for="emailAttendantView"
-                        >Email Address:
-                      </label>
-                      <input
-                        type="email"
-                        name="email"
-                        class="form-control"
-                        id="emailAttendantView"
-                        readonly
-                      />
-                    </div>
-                    <div class="col-lg-6 py-2 asterisk">
-                      <label
-                        class="form-label asterisk"
-                        for="contactAttendantView"
-                        >Contact No:
-                      </label>
-                      <input
-                        type="tel"
-                        name="contactnum"
-                        id="contactAttendantView"
-                        minlength="11"
-                        maxlength="11"
-                        class="form-control"
-                        aria-label="Contact Number"
-                        oninput="this.value = this.value.replace(/[^0-9.]/g, '')"
-                        title="Numbers only"
-                        readonly
-                      />
-                    </div>
-                  </div>
+            <div
+              class="modal-dialog modal-lg modal-dialog-centered modal-dialog-scrollable"
+            >
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title fw-bold text-uppercase px-2">
+                    Update Customer Details
+                  </h5>
+                  <button
+                    type="button"
+                    class="btn-close btn-close-white px-2"
+                    data-bs-dismiss="modal"
+                    aria-label="Close"
+                  ></button>
                 </div>
-              </div>
-              <div class="modal-footer mx-2">
-                <button
-                  type="button"
-                  class="btn btn-secondary"
-                  data-bs-dismiss="modal"
-                >
-                  Close
-                </button>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- Update Attendant Details Modal -->
-        <div
-          class="modal fade"
-          id="updateAttendant"
-          data-bs-backdrop="static"
-          data-bs-keyboard="false"
-          tabindex="-1"
-          aria-labelledby="updateAttendantLabel"
-          aria-modal="true"
-          aria-hidden="true"
-        >
-          <div
-            class="modal-dialog modal-lg modal-dialog-centered modal-dialog-scrollable"
-          >
-            <div class="modal-content">
-              <div class="modal-header">
-                <h5
-                  class="modal-title fw-bold text-uppercase px-2"
-                  id="updateAttendantLabel"
-                >
-                  Update Attendant Details
-                </h5>
-                <button
-                  type="button"
-                  class="btn-close btn-close-white px-2"
-                  data-bs-dismiss="modal"
-                  aria-label="Close"
-                ></button>
-              </div>
-              <div class="modal-body">
-                <div class="container-fluid">
-                  <form action="">
-                    <!-- Update Photo -->
-                    <div class="profile-pic-div">
-                      <img
-                        src="/assets/images/avatar.png"
-                        alt="avatar"
-                        id="photoUpdate"
-                      />
-                      <input type="file" id="fileUpdate" />
-                      <label class="form-label" for="file" id="uploadBtnUpdate"
-                        >Choose Photo</label
+                <div class="modal-body">
+                  <div class="container">
+                    <h6 class="text-muted py-2">
+                      <i
+                        >Note: Please add new <strong>walk-in</strong> customers
+                        only.</i
                       >
+                    </h6>
+                  </div>
+                  <div class="container-fluid py-2">
+                    <div class="row">
+                      <div class="col-lg-3 py-1">
+                        <label class="form-label" for="update-customer-photo"
+                          >Customer Photo:
+                        </label>
+                      </div>
+                      <div class="col-lg-9 mt-1">
+                        <input
+                          type="file"
+                          name="customerPhoto"
+                          id="update-customer-photo"
+                          class="form-control"
+                          aria-label="Customer Photo"
+                          required
+                        />
+                      </div>
                     </div>
 
                     <!-- Date Added auto input -->
                     <div class="row">
                       <div class="col-lg-6 py-2">
-                        <label class="form-label" for="dateAttendantUpdate"
-                          >Date Added:
+                        <label class="form-label asterisk">
+                            Date Added:
                         </label>
                         <input
                           type="date"
                           name="date"
-                          id="dateAttendantUpdate"
                           minlength="11"
                           maxlength="11"
                           class="form-control"
                           aria-label="Date Added"
+                          placeholder="Date Added"
                           required
                           readonly
                         />
                       </div>
+                      <div class="col-lg-6 mt-1">
+                        <label class="form-label asterisk" for="update-type-walkin"
+                          >Type:
+                        </label>
+                        <select
+                          class="form-select"
+                          aria-label="Walk in or Registered"
+                          id="update-type-walkin"
+                          title="Disabled"
+                          disabled
+                        >
+                          <option selected readonly disabled>Walk In</option>
+                          <option>Registered</option>
+                        </select>
+                      </div>
                     </div>
 
-                    <!-- Update Name -->
+                    <!-- Name -->
                     <div class="row mb-2 py-1">
                       <div class="col-lg-3 col-md-6 py-2">
-                        <label
-                          class="form-label asterisk"
-                          for="fnameAttendantUpdate"
+                        <label class="form-label asterisk" for="update-fnameCustomer"
                           >First Name:
                         </label>
                         <input
                           type="text"
                           name="fname"
                           class="form-control"
-                          id="fnameAttendantUpdate"
-                          value="Juan "
+                          id="update-fnameCustomer"
+                          placeholder="First Name"
                           required
                         />
                       </div>
                       <div class="col-lg-3 col-md-6 py-2">
-                        <label class="form-label" for="midnNameAttendantUpdate"
+                        <label class="form-label" for="update-midnNameCustomer"
                           >Middle Name:
                         </label>
                         <input
                           type="text"
                           name="midname"
                           class="form-control"
-                          id="midnNameAttendantUpdate"
-                          value="Francisco"
+                          id="update-midnNameCustomer"
+                          placeholder="Middle Name"
                         />
                       </div>
                       <div class="col-lg-3 col-md-6 py-2">
-                        <label
-                          class="form-label asterisk"
-                          for="surnameAttendantUpdate"
+                        <label class="form-label asterisk" for="update-surnameCustomer"
                           >Last Name:
                         </label>
                         <input
                           type="text"
                           name="surname"
                           class="form-control"
-                          id="surnameAttendantUpdate"
-                          value="Dela Cruz"
+                          id="update-surnameCustomer"
+                          placeholder="Last Name"
                           required
                         />
                       </div>
                       <div class="col-lg-3 col-md-6 py-2">
-                        <label class="form-label" for="suffixAttendantUpdate"
+                        <label class="form-label" for="update-suffixCustomer"
                           >Suffix:
                         </label>
                         <input
                           type="text"
                           name="suffix"
                           class="form-control"
-                          id="suffixAttendantUpdate"
-                          value=""
-                        />
-                      </div>
-                    </div>
-                    <div class="row">
-                      <div class="col-lg-6 col-md-6 py-2">
-                        <label class="form-label" for="titleUpdate"
-                          >Title:
-                        </label>
-                        <input
-                          type="text"
-                          name="title"
-                          class="form-control"
-                          id="titleUpdate"
-                          value=""
+                          id="update-suffixAttendant"
+                          placeholder="Suffix"
                         />
                       </div>
                     </div>
 
-                    <!-- Update Birthday -->
+                    <!-- Birthday -->
                     <div class="row">
                       <div class="col-lg-6 py-2">
-                        <label
-                          class="form-label asterisk"
-                          for="bdayAttendantUpdate"
+                        <label class="form-label asterisk" for="update-bdayCustomer"
                           >Birthday:
                         </label>
                         <input
                           type="date"
                           name="bday"
                           class="form-control"
-                          id="bdayAttendantUpdate"
-                          value=""
+                          id="update-bdayCustomer"
+                          placeholder="Birthday"
                           required
                         />
                       </div>
 
-                      <!-- Update Gender -->
+                      <!-- Sex -->
                       <div class="col-lg-6 col-md-6 py-2">
                         <label
                           class="form-label asterisk"
-                          for="midnNameAttendantUpdate"
-                          >Gender:
+                          >Sex:
                         </label>
                         <div class="row">
                           <div class="col-lg-6 col-md-12 pt-1">
@@ -923,7 +688,7 @@
                                 type="radio"
                                 name="gender"
                                 value="Male"
-                                id="maleUpdate"
+                                id="update-male"
                                 required
                               />
                               <label class="form-check-label" for="gender">
@@ -937,7 +702,7 @@
                                 type="radio"
                                 name="gender"
                                 value="Female"
-                                id="femaleUpdate"
+                                id="update-female"
                                 required
                               />
                               <label class="form-check-label" for="gender">
@@ -949,77 +714,73 @@
                       </div>
                     </div>
 
-                    <!-- Update Address -->
+                    <!-- Address -->
                     <label
-                      class="form-label pt-2 asterisk"
-                      for="addressAttendantUpdate"
+                      class="form-label pt-3 asterisk"
+                      for="addressCustomer"
                       >Address:
                     </label>
                     <input
                       type="text"
                       name="address"
                       class="form-control"
-                      id="addressAttendantUpdate"
-                      value="Lorem Ipsum lorem ipsum"
+                      id="addressCustomer"
+                      placeholder="Address"
                       required
                     />
 
-                    <!-- Update Email Address & Contact No. -->
+                    <!-- Email Address & Contact No. -->
                     <div class="row pt-2">
                       <div class="col-lg-6 py-2">
-                        <label
-                          class="form-label asterisk"
-                          for="emailAttendantUpdate"
+                        <label class="form-label asterisk" for="update-emailCustomer"
                           >Email Address:
                         </label>
                         <input
                           type="email"
                           name="email"
                           class="form-control"
-                          id="emailAttendantUpdate"
-                          value="sample@gmail.com"
+                          id="update-emailCustomer"
+                          placeholder="Email Address"
                           required
                         />
                       </div>
                       <div class="col-lg-6 py-2 asterisk">
-                        <label
-                          class="form-label asterisk"
-                          for="contactAttendantUpdate"
+                        <label class="form-label asterisk" for="update-contactCustomer"
                           >Contact No:
                         </label>
                         <input
                           type="tel"
                           name="contactnum"
-                          id="contactAttendantUpdate"
+                          id="update-contactCustomer"
                           minlength="11"
                           maxlength="11"
                           class="form-control"
                           aria-label="Contact Number"
                           oninput="this.value = this.value.replace(/[^0-9.]/g, '')"
-                          value="0912456789"
+                          placeholder="Contact Number"
                           title="Numbers only"
                           required
                         />
                       </div>
                     </div>
-                  </form>
+                  </div>
+                  <div class="modal-footer mb-0">
+                    <button type="submit" class="btn btn-default px-3 mx-2">
+                      Save
+                    </button>
+                    <button
+                      type="button"
+                      class="btn btn-secondary py-2 px-3"
+                      data-bs-dismiss="modal"
+                    >
+                      Close
+                    </button>
+                  </div>
                 </div>
-              </div>
-              <div class="modal-footer mx-2">
-                <button type="button" class="btn btn-default">
-                  Save Changes
-                </button>
-                <button
-                  type="button"
-                  class="btn btn-secondary"
-                  data-bs-dismiss="modal"
-                >
-                  Close
-                </button>
               </div>
             </div>
           </div>
-        </div>
+        </form>
       </div>
     </section>
     <!-- jQuery DataTables JS CDN -->
