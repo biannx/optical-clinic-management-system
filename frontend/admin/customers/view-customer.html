@@ -4,8 +4,8 @@
     <meta charset="UTF-8" />
     <link href="/assets/css/bootstrap.min.css" rel="stylesheet" />
     <link rel="stylesheet" href="/assets/css/adminSidebar.css" />
-    <link rel="stylesheet" href="/assets/css/customers.css" />
     <link rel="stylesheet" href="/assets/css/common.css" />
+    <link rel="stylesheet" href="/assets/css/customers.css" />
     <link
       rel="stylesheet"
       href="https://use.fontawesome.com/releases/v5.5.0/css/all.css"
@@ -105,7 +105,11 @@
       <div class="home-content pb-3">
         <div class="container-fluid px-4">
           <div class="d-flex mb-4 px-1">
-            <a href="customers.html" class="back-page">
+            <a
+              href="customers.html"
+              class="back-page"
+              aria-label="Go Back to Customer's page"
+            >
               <i
                 class="fa fa-arrow-left to-back-link"
                 aria-hidden="true"
@@ -124,7 +128,7 @@
             </div>
             <div class="col-lg-8 col-md-8 mt-2">
               <div class="table-responsive">
-                <table class="mx-3">
+                <table class="mx-2">
                   <tr class="d-flex align-items-start">
                     <td class="py-3">
                       <p>Customer ID:</p>
@@ -145,116 +149,426 @@
               </div>
             </div>
 
-            <div class="table-wrapper p-4">
-              <div class="table-title">
-                <!--Table Header-->
-                <h4 class="px-3 pt-2 fw-bold">Archived Attendants</h4>
-              </div>
-              <hr class="my-4 mx-3" />
-              <div class="container-fluid table-responsive px-4">
-                <table
-                  class="table table-hover align-middle align-items-center table-body"
-                  aria-label="Attendants Archive List"
-                  id="attendantArchiveList"
-                >
-                  <!--Table Body-->
-                  <thead>
-                    <tr>
-                      <th scope="col">
-                        <div class="form-check">
-                          <input
-                            class="form-check-input check-all"
-                            type="checkbox"
-                            value=""
-                            id="check-all-attendant-archive"
-                          />
-                          <label
-                            class="form-check-label"
-                            for="check-all-attendant-archive"
-                          >
-                            All
-                          </label>
-                        </div>
-                      </th>
-                      <th scope="col">ID</th>
-                      <th scope="col">Name</th>
-                      <th scope="col">Contact No.</th>
-                      <th scope="col">Action</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    <tr>
-                      <td>
-                        <div class="form-check">
-                          <input
-                            class="form-check-input check-list"
-                            type="checkbox"
-                            value=""
-                            id="check-one-attendant-archive"
-                          />
-                        </div>
-                      </td>
-                      <td>Attendant-1</td>
-                      <td>
-                        <img
-                          src="/assets/images/avatar.png"
-                          class="img-table-list mx-2"
-                        />juan dela cruz
-                      </td>
-                      <td>09123456789</td>
-                      <td>
-                        <button
-                          type="button"
-                          class="btn update-data data"
-                          title="Restore Data"
-                        >
-                          Restore
-                        </button>
-                      </td>
-                    </tr>
-                  </tbody>
-                </table>
-                <br />
+            <div class="container-fluid align-self-center my-3">
+              <ul class="nav nav-tabs nav-fill" id="myTab" role="tablist">
+                <li class="nav-item" role="presentation">
+                  <button
+                    class="nav-link active"
+                    id="profile-tab"
+                    data-bs-toggle="tab"
+                    data-bs-target="#profile"
+                    type="button"
+                    role="tab"
+                    aria-controls="profile"
+                    aria-selected="true"
+                  >
+                    Profile
+                  </button>
+                </li>
+                <li class="nav-item" role="presentation">
+                  <button
+                    class="nav-link"
+                    id="purchase-tab"
+                    data-bs-toggle="tab"
+                    data-bs-target="#purchase"
+                    type="button"
+                    role="tab"
+                    aria-controls="purchase"
+                    aria-selected="false"
+                  >
+                    Purchase History
+                  </button>
+                </li>
+                <li class="nav-item" role="presentation">
+                  <button
+                    class="nav-link"
+                    id="eye-history-tab"
+                    data-bs-toggle="tab"
+                    data-bs-target="#eye"
+                    type="button"
+                    role="tab"
+                    aria-controls="contact"
+                    aria-selected="false"
+                  >
+                    Eye History
+                  </button>
+                </li>
+              </ul>
 
-                <!--Batch Button -->
-                <div class="d-flex justify-content-end my-3 pb-3">
-                  <button
-                    type="button"
-                    class="btn btn-danger px-3 py-1 mx-3 text-uppercase fw-bold"
-                    data-bs-toggle="modal"
-                    data-bs-target="#permanentlyDeleteAttendant"
-                    title="Permanenetly Delete Data"
-                  >
-                    <i class="fa fa-trash px-2" aria-hidden="true"></i
-                    >Permanently Delete
-                  </button>
-                  <button
-                    type="button"
-                    class="btn btn-default text-uppercase"
-                    title="Restore Attendant Data"
-                  >
-                    Restore Attendant (6)
-                  </button>
+              <!-- Profile Tab -->
+              <div class="tab-content" id="viewCustomerContent">
+                <div
+                  class="tab-pane fade show active"
+                  id="profile"
+                  role="tabpanel"
+                  aria-labelledby="profile-tab"
+                >
+                  <div class="wrapper container-fluid my-2 px-5 py-5">
+                    <p class="tab-header">Profile Information</p>
+                    <!-- Date Added auto input -->
+                    <div class="row">
+                      <div class="col-lg-6 py-2">
+                        <label class="form-label asterisk"> Date Added: </label>
+                        <input
+                          type="date"
+                          name="date"
+                          class="form-control"
+                          aria-label="Date Added"
+                          placeholder="Date Added"
+                          value=""
+                          readonly
+                        />
+                      </div>
+                      <div class="col-lg-6 mt-1">
+                        <label
+                          class="form-label asterisk"
+                          for="view-type-walkin"
+                          >Type:
+                        </label>
+                        <input
+                          class="form-control"
+                          aria-label="Walk in or Registered"
+                          id="view-type-walkin"
+                          value="Walk-In"
+                          readonly
+                        />
+                      </div>
+                    </div>
+
+                    <!-- Name -->
+                    <div class="row mb-2 py-1">
+                      <div class="col-lg-3 col-md-6 py-2">
+                        <label
+                          class="form-label asterisk"
+                          for="view-fnameCustomer"
+                          >First Name:
+                        </label>
+                        <input
+                          type="text"
+                          name="fname"
+                          class="form-control"
+                          id="view-fnameCustomer"
+                          placeholder="First Name"
+                          readonly
+                        />
+                      </div>
+                      <div class="col-lg-3 col-md-6 py-2">
+                        <label class="form-label" for="view-midnNameCustomer"
+                          >Middle Name:
+                        </label>
+                        <input
+                          type="text"
+                          name="midname"
+                          class="form-control"
+                          id="view-midnNameCustomer"
+                          placeholder="Middle Name"
+                          readonly
+                        />
+                      </div>
+                      <div class="col-lg-3 col-md-6 py-2">
+                        <label
+                          class="form-label asterisk"
+                          for="view-surnameCustomer"
+                          >Last Name:
+                        </label>
+                        <input
+                          type="text"
+                          name="surname"
+                          class="form-control"
+                          id="view-surnameCustomer"
+                          placeholder="Last Name"
+                          readonly
+                        />
+                      </div>
+                      <div class="col-lg-3 col-md-6 py-2">
+                        <label class="form-label" for="view-suffixCustomer"
+                          >Suffix:
+                        </label>
+                        <input
+                          type="text"
+                          name="suffix"
+                          class="form-control"
+                          id="view-suffixAttendant"
+                          placeholder="Suffix"
+                          readonly
+                        />
+                      </div>
+                    </div>
+
+                    <!-- Birthday -->
+                    <div class="row">
+                      <div class="col-lg-6 py-2">
+                        <label
+                          class="form-label asterisk"
+                          for="view-bdayCustomer"
+                          >Birthday:
+                        </label>
+                        <input
+                          type="date"
+                          name="bday"
+                          class="form-control"
+                          id="view-bdayCustomer"
+                          placeholder="Birthday"
+                          readonly
+                        />
+                      </div>
+
+                      <!-- Sex -->
+                      <div class="col-lg-6 col-md-6 py-2">
+                        <label class="form-label asterisk">Sex: </label>
+                        <div class="row">
+                          <div class="col-lg-6 col-md-12 pt-1">
+                            <div class="form-check-inline">
+                              <input
+                                class="form-check-input"
+                                type="radio"
+                                name="gender"
+                                value="Male"
+                                id="view-male"
+                                disabled
+                              />
+                              <label class="form-check-label" for="gender">
+                                Male
+                              </label>
+                              <div></div>
+                            </div>
+                            <div class="form-check-inline mb-3">
+                              <input
+                                class="form-check-input"
+                                type="radio"
+                                name="gender"
+                                value="Female"
+                                id="view-female"
+                                disabled
+                              />
+                              <label class="form-check-label" for="gender">
+                                Female
+                              </label>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+                    <!-- Address -->
+                    <label
+                      class="form-label pt-3 asterisk"
+                      for="view-addressCustomer"
+                      >Address:
+                    </label>
+                    <input
+                      type="text"
+                      name="address"
+                      class="form-control"
+                      id="view-addressCustomer"
+                      placeholder="Address"
+                      readonly
+                    />
+
+                    <!-- Email Address & Contact No. -->
+                    <div class="row pt-2">
+                      <div class="col-lg-6 py-2">
+                        <label
+                          class="form-label asterisk"
+                          for="view-emailCustomer"
+                          >Email Address:
+                        </label>
+                        <input
+                          type="email"
+                          name="email"
+                          class="form-control"
+                          id="view-emailCustomer"
+                          placeholder="Email Address"
+                          readonly
+                        />
+                      </div>
+                      <div class="col-lg-6 py-2 asterisk">
+                        <label
+                          class="form-label asterisk"
+                          for="view-contactCustomer"
+                          >Contact No:
+                        </label>
+                        <input
+                          type="tel"
+                          name="contactnum"
+                          id="view-contactCustomer"
+                          minlength="11"
+                          maxlength="11"
+                          class="form-control"
+                          aria-label="Contact Number"
+                          oninput="this.value = this.value.replace(/[^0-9.]/g, '')"
+                          placeholder="Contact Number"
+                          title="Numbers only"
+                          readonly
+                        />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <!--Purchase History Tab-->
+                <div
+                  class="tab-pane fade"
+                  id="purchase"
+                  role="tabpanel"
+                  aria-labelledby="purchase-tab"
+                >
+                  <div class="table-wrapper container-fluid my-2 p-5">
+                    <p class="tab-header pb-4">Purchase History</p>
+                    <div class="container-fluid table-responsive">
+                      <table
+                        class="table table-hover align-middle align-items-center table-body"
+                        aria-label="Purchase History"
+                        id="purchase-history"
+                      >
+                        <!--Table Body-->
+                        <thead>
+                          <tr>
+                            <th scope="col">#</th>
+                            <th scope="col">Date</th>
+                            <th scope="col">Item</th>
+                            <th scope="col">Product Name</th>
+                            <th scope="col">Payment</th>
+                            <th scope="col">Status</th>
+                            <th scope="col">Action</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr>
+                            <td>1</td>
+                            <td>09-30-22</td>
+                            <td>
+                              <img
+                                src="/assets/images/product-img.png"
+                                class="purchase-img-table-list mx-2"
+                                alt="Product Image"
+                              />
+                            </td>
+                            <td>
+                              <span class="text-capitalize text-break"
+                                >Lorem ipsum dolor sit amet consectetur,
+                                adipisicing elit. Impedit error rerum.</span
+                              >
+                            </td>
+                            <td>Cash on Hand</td>
+                            <td>
+                              <button
+                                class="btn status data"
+                                title="Completed Transaction"
+                              >
+                                Completed
+                              </button>
+                              <!-- <button
+                                  type="button"
+                                  class="btn archive-data data"
+                                  title="Restore Data"
+                                >
+                                  Cancelled
+                                </button> -->
+                            </td>
+                            <td>
+                              <button
+                                type="button"
+                                class="btn btn-warning data"
+                                title="View Purchase Details"
+                              >
+                                View Details
+                              </button>
+                            </td>
+                          </tr>
+                        </tbody>
+                      </table>
+                      <br />
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Eye History Tab -->
+                <div
+                  class="tab-pane fade"
+                  id="eye"
+                  role="tabpanel"
+                  aria-labelledby="eye-history-tab"
+                >
+                  <div class="table-wrapper container-fluid my-2 p-5">
+                    <div class="d-flex justify-content-between">
+                      <p class="tab-header">Eye History</p>
+                      <button
+                        type="button"
+                        class="btn new-record-button btn-sm text-white fw-bold px-3 mx-3"
+                        id="create-new-button"
+                        data-bs-toggle="modal"
+                        data-bs-target="#newRecord"
+                        title="Create New Record"
+                      >
+                        <i class="fa fa-plus" aria-hidden="true"></i>
+                        <span class="px-1"> New Record</span>
+                      </button>
+                    </div>
+                    <div class="container-fluid table-responsive mt-4">
+                      <table
+                        class="table table-hover align-middle align-items-center table-body"
+                        aria-label="Purchase History"
+                        id="eye-history"
+                      >
+                        <!--Table Body-->
+                        <thead>
+                          <tr>
+                            <th scope="col">#</th>
+                            <th scope="col">Date</th>
+                            <th scope="col">Previous Grade</th>
+                            <th scope="col">Current Grade</th>
+                            <th scope="col">Attendant</th>
+                            <th scope="col">Action</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr>
+                            <td>1</td>
+                            <td>09-30-22</td>
+                            <td>20/40</td>
+                            <td>50/30</td>
+                            <td>Dr. Lida Cruz</td>
+                            <td>
+                              <button
+                                type="button"
+                                class="btn btn-warning data"
+                                data-bs-toggle="modal" data-bs-target="#updateEyeRecord"
+                                title="Update Eye Details"
+                              >
+                                Update
+                              </button>
+                            </td>
+                          </tr>
+                        </tbody>
+                      </table>
+                      <br />
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
           </div>
 
-          <!-- Permanently Delete Attendant Pop up Dialog-->
+          <!-- New Eye Record -->
           <div
             class="modal fade"
-            id="permanentlyDeleteAttendant"
+            id="newRecord"
             data-bs-backdrop="static"
             data-bs-keyboard="false"
             tabindex="-1"
-            aria-modal="true"
-            aria-labelledby="cancelApplicationLabel"
+            aria-labelledby="newRecordLabel"
             aria-hidden="true"
+            aria-modal="true"
           >
-            <div class="modal-dialog">
+            <div
+              class="modal-dialog modal-dialog-centered modal-dialog-scrollable"
+            >
               <div class="modal-content">
                 <div class="modal-header">
-                  <h6 class="modal-title text-white">Permanently Delete</h6>
+                  <h5 class="modal-title" id="newRecordLabel">
+                    Add New Record
+                  </h5>
                   <button
                     type="button"
                     class="btn-close btn-close-white"
@@ -263,23 +577,307 @@
                   ></button>
                 </div>
                 <div class="modal-body">
-                  <h6>
-                    Once you permanently delete the attendant data, it can't be
-                    undone.
-                  </h6>
+
+                  <!-- Date -->
+                  <label class="form-label" for="date">Date Added: </label>
+                  <input
+                    type="date"
+                    name="date"
+                    id="date-eye-record"
+                    class="form-control"
+                    aria-label="Date Added"
+                    placeholder="Date Added"
+                    required
+                  />
+
+                  <!-- Previous Grade -->
+                  <label class="form-label asterisk mt-2" for="prevGrade"
+                    >Previous Grade:
+                  </label>
+                  <input
+                    type="text"
+                    name="previousGrade"
+                    class="form-control"
+                    id="prevGrade"
+                    placeholder="Input previous grade"
+                    required
+                  />
+
+                  <!-- Current Grade -->
+                  <label class="form-label asterisk mt-2" for="currGrade"
+                    >Current Grade:
+                  </label>
+                  <input
+                    type="text"
+                    name="currentGrade"
+                    class="form-control"
+                    id="currGrade"
+                    placeholder="Input current grade"
+                    required
+                  />
+
+                  <!-- Select Attendant -->
+                  <label class="form-label asterisk mt-2" for="attendant"
+                    >Attendant:
+                  </label>
+                  <select
+                    class="form-select"
+                    aria-label="Walk in or Registered"
+                    id="attendant"
+                    name="select-attendant"
+                    required
+                  >
+                    <option selected disabled>Please select attendant</option>
+                    <option>Registered</option>
+                  </select>
                 </div>
                 <div class="modal-footer">
-                  <button type="submit" class="btn btn-default px-3">
-                    Delete
+                  <button type="submit" class="btn btn-default px-4 mx-2">
+                    Save
                   </button>
                   <button
                     type="button"
-                    class="btn btn-secondary"
+                    class="btn btn-secondary py-2 px-3"
                     data-bs-dismiss="modal"
                   >
                     Cancel
                   </button>
                 </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Update Eye Record -->
+          <div
+            class="modal fade"
+            id="updateEyeRecord"
+            data-bs-backdrop="static"
+            data-bs-keyboard="false"
+            tabindex="-1"
+            aria-labelledby="updateEyeRecorddLabel"
+            aria-hidden="true"
+            aria-modal="true"
+          >
+            <div
+              class="modal-dialog modal-dialog-centered modal-dialog-scrollable"
+            >
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="updateEyeRecordLabel">
+                    Update Record
+                  </h5>
+                  <button
+                    type="button"
+                    class="btn-close btn-close-white"
+                    data-bs-dismiss="modal"
+                    aria-label="Close"
+                  ></button>
+                </div>
+                <div class="modal-body">
+
+                  <!-- Date -->
+                  <label class="form-label" for="date">Date Added: </label>
+                  <input
+                    type="date"
+                    name="date"
+                    value=""
+                    id="date-eye-record"
+                    class="form-control"
+                    aria-label="Date Added"
+                    required
+                  />
+
+                  <!-- Previous Grade -->
+                  <label class="form-label asterisk mt-2" for="prevGradeUpdate"
+                    >Previous Grade:
+                  </label>
+                  <input
+                    type="text"
+                    name="previousGrade"
+                    value=""
+                    class="form-control"
+                    id="prevGradeUpdate"
+                    required
+                  />
+
+                  <!-- Current Grade -->
+                  <label class="form-label asterisk mt-2" for="currGradeUpdate"
+                    >Current Grade:
+                  </label>
+                  <input
+                    type="text"
+                    name="currentGradeUpdate"
+                    value=""
+                    class="form-control"
+                    id="currGrade"
+                    required
+                  />
+
+                  <!-- Select Attendant -->
+                  <label class="form-label asterisk mt-2" for="attendant"
+                    >Attendant:
+                  </label>
+                  <select
+                    class="form-select"
+                    aria-label="Walk in or Registered"
+                    id="attendant"
+                    name="select-attendant"
+                    required
+                  >
+                    <option selected>.</option>
+                    <option>...</option>
+                  </select>
+                </div>
+                <div class="modal-footer">
+                  <button type="submit" class="btn btn-default px-4 mx-2">
+                    Save
+                  </button>
+                  <button
+                    type="button"
+                    class="btn btn-secondary py-2 px-3"
+                    data-bs-dismiss="modal"
+                  >
+                    Cancel
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="table-wrapper p-4">
+            <div class="table-title">
+              <!--Table Header-->
+              <h4 class="px-3 pt-2 fw-bold">Archived Attendants</h4>
+            </div>
+            <hr class="my-4 mx-3" />
+            <div class="container-fluid table-responsive px-4">
+              <table
+                class="table table-hover align-middle align-items-center table-body"
+                aria-label="Attendants Archive List"
+                id="attendantArchiveList"
+              >
+                <!--Table Body-->
+                <thead>
+                  <tr>
+                    <th scope="col">
+                      <div class="form-check">
+                        <input
+                          class="form-check-input check-all"
+                          type="checkbox"
+                          value=""
+                          id="check-all-attendant-archive"
+                        />
+                        <label
+                          class="form-check-label"
+                          for="check-all-attendant-archive"
+                        >
+                          All
+                        </label>
+                      </div>
+                    </th>
+                    <th scope="col">ID</th>
+                    <th scope="col">Name</th>
+                    <th scope="col">Contact No.</th>
+                    <th scope="col">Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>
+                      <div class="form-check">
+                        <input
+                          class="form-check-input check-list"
+                          type="checkbox"
+                          value=""
+                          id="check-one-attendant-archive"
+                        />
+                      </div>
+                    </td>
+                    <td>Attendant-1</td>
+                    <td>
+                      <img
+                        src="/assets/images/avatar.png"
+                        class="purchase-img-table-list mx-2"
+                      />juan dela cruz
+                    </td>
+                    <td>09123456789</td>
+                    <td>
+                      <button
+                        type="button"
+                        class="btn update-data data"
+                        title="Restore Data"
+                      >
+                        Restore
+                      </button>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+              <br />
+
+              <!--Batch Button -->
+              <div class="d-flex justify-content-end my-3 pb-3">
+                <button
+                  type="button"
+                  class="btn btn-danger px-3 py-1 mx-3 text-uppercase fw-bold"
+                  data-bs-toggle="modal"
+                  data-bs-target="#permanentlyDeleteAttendant"
+                  title="Permanenetly Delete Data"
+                >
+                  <i class="fa fa-trash px-2" aria-hidden="true"></i>Permanently
+                  Delete
+                </button>
+                <button
+                  type="button"
+                  class="btn btn-default text-uppercase"
+                  title="Restore Attendant Data"
+                >
+                  Restore Attendant (6)
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Permanently Delete Attendant Pop up Dialog-->
+        <div
+          class="modal fade"
+          id="permanentlyDeleteAttendant"
+          data-bs-backdrop="static"
+          data-bs-keyboard="false"
+          tabindex="-1"
+          aria-modal="true"
+          aria-labelledby="cancelApplicationLabel"
+          aria-hidden="true"
+        >
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h6 class="modal-title text-white">Permanently Delete</h6>
+                <button
+                  type="button"
+                  class="btn-close btn-close-white"
+                  data-bs-dismiss="modal"
+                  aria-label="Close"
+                ></button>
+              </div>
+              <div class="modal-body">
+                <h6>
+                  Once you permanently delete the attendant data, it can't be
+                  undone.
+                </h6>
+              </div>
+              <div class="modal-footer">
+                <button type="submit" class="btn btn-default px-3">
+                  Delete
+                </button>
+                <button
+                  type="button"
+                  class="btn btn-secondary"
+                  data-bs-dismiss="modal"
+                >
+                  Cancel
+                </button>
               </div>
             </div>
           </div>
@@ -300,16 +898,16 @@
         } else sidebarBtn.classList.replace("bx-menu-alt-right", "bx-menu");
       };
       $(document).ready(function () {
-        $("#attendantTableList").DataTable({
+        $("#purchase-history").DataTable({
           lengthMenu: [
-            [20, 25, 50, -1],
-            [20, 25, 50, "All"],
+            [5, 10, 20, -1],
+            [5, 10, 20, "All"],
           ],
         });
-        $("#attendantArchiveList").DataTable({
+        $("#eye-history").DataTable({
           lengthMenu: [
-            [20, 25, 50, -1],
-            [20, 25, 50, "All"],
+            [5, 10, 20, -1],
+            [5, 10, 20, "All"],
           ],
         });
 
