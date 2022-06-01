@@ -181,9 +181,7 @@
                       <!-- Date Added auto input -->
                       <div class="row">
                         <div class="col-lg-6 py-2">
-                          <label class="form-label"
-                            >Date Added:
-                          </label>
+                          <label class="form-label">Date Added: </label>
                           <input
                             type="date"
                             name="date"
@@ -468,7 +466,7 @@
                                 View
                               </a>
                             </li>
-                            <li>
+                            <!-- <li>
                               <button
                                 type="button"
                                 class="btn update-data data"
@@ -479,8 +477,7 @@
                                 <i class="fas fa-pen" aria-hidden="true"></i>
                                 Update
                               </button>
-                            </li>
-                            <li></li>
+                            </li>-->
                             <li>
                               <button
                                 type="button"
@@ -513,7 +510,8 @@
         </div>
 
         <!-- Update Customer Details Modal -->
-        <form action="" method="#">
+        <!-- nilagay ko na lang sa view-customer yung edit -->
+        <!-- <form action="" method="#">
           <div
             class="modal fade"
             id="updateCustomer"
@@ -567,12 +565,10 @@
                       </div>
                     </div>
 
-                    <!-- Date Added auto input -->
+
                     <div class="row">
                       <div class="col-lg-6 py-2">
-                        <label class="form-label asterisk">
-                            Date Added:
-                        </label>
+                        <label class="form-label asterisk"> Date Added: </label>
                         <input
                           type="date"
                           name="date"
@@ -583,7 +579,9 @@
                         />
                       </div>
                       <div class="col-lg-6 mt-1">
-                        <label class="form-label asterisk" for="update-type-walkin"
+                        <label
+                          class="form-label asterisk"
+                          for="update-type-walkin"
                           >Type:
                         </label>
                         <select
@@ -599,10 +597,12 @@
                       </div>
                     </div>
 
-                    <!-- Name -->
+             
                     <div class="row mb-2 py-1">
                       <div class="col-lg-3 col-md-6 py-2">
-                        <label class="form-label asterisk" for="update-fnameCustomer"
+                        <label
+                          class="form-label asterisk"
+                          for="update-fnameCustomer"
                           >First Name:
                         </label>
                         <input
@@ -627,7 +627,9 @@
                         />
                       </div>
                       <div class="col-lg-3 col-md-6 py-2">
-                        <label class="form-label asterisk" for="update-surnameCustomer"
+                        <label
+                          class="form-label asterisk"
+                          for="update-surnameCustomer"
                           >Last Name:
                         </label>
                         <input
@@ -653,10 +655,12 @@
                       </div>
                     </div>
 
-                    <!-- Birthday -->
+                  
                     <div class="row">
                       <div class="col-lg-6 py-2">
-                        <label class="form-label asterisk" for="update-bdayCustomer"
+                        <label
+                          class="form-label asterisk"
+                          for="update-bdayCustomer"
                           >Birthday:
                         </label>
                         <input
@@ -669,12 +673,9 @@
                         />
                       </div>
 
-                      <!-- Sex -->
+        
                       <div class="col-lg-6 col-md-6 py-2">
-                        <label
-                          class="form-label asterisk"
-                          >Sex:
-                        </label>
+                        <label class="form-label asterisk">Sex: </label>
                         <div class="row">
                           <div class="col-lg-6 col-md-12 pt-1">
                             <div class="form-check-inline">
@@ -709,7 +710,7 @@
                       </div>
                     </div>
 
-                    <!-- Address -->
+           
                     <label
                       class="form-label pt-3 asterisk"
                       for="addressCustomer"
@@ -724,10 +725,12 @@
                       required
                     />
 
-                    <!-- Email Address & Contact No. -->
+                  
                     <div class="row pt-2">
                       <div class="col-lg-6 py-2">
-                        <label class="form-label asterisk" for="update-emailCustomer"
+                        <label
+                          class="form-label asterisk"
+                          for="update-emailCustomer"
                           >Email Address:
                         </label>
                         <input
@@ -740,7 +743,9 @@
                         />
                       </div>
                       <div class="col-lg-6 py-2 asterisk">
-                        <label class="form-label asterisk" for="update-contactCustomer"
+                        <label
+                          class="form-label asterisk"
+                          for="update-contactCustomer"
                           >Contact No:
                         </label>
                         <input
@@ -775,7 +780,7 @@
               </div>
             </div>
           </div>
-        </form>
+        </form> -->
       </div>
     </section>
     <!-- jQuery DataTables JS CDN -->
@@ -793,7 +798,7 @@
       };
       $(document).ready(function () {
         $("#customersTableList").DataTable({
-            columnDefs: [{ className: "dt-center", targets: "_all" }],
+          columnDefs: [{ className: "dt-center", targets: "_all" }],
           lengthMenu: [
             [20, 25, 50, -1],
             [20, 25, 50, "All"],

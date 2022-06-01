@@ -226,6 +226,11 @@ input.form-control {
   color: red;
   font-size: 1rem;
 }
+.form-label.asterisk:after {
+  content: " *";
+  color: red;
+  font-size: 1rem;
+}
 
 h4 {
   color: var(--addBtn);
