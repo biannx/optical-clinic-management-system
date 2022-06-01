@@ -195,7 +195,6 @@
                 </li>
               </ul>
 
-              <!-- Profile Tab -->
               <div class="tab-content" id="viewCustomerContent">
                 <div
                   class="tab-pane fade show active"
@@ -203,7 +202,8 @@
                   role="tabpanel"
                   aria-labelledby="profile-tab"
                 >
-                  <div class="wrapper container-fluid my-2 px-5 py-5">
+                  <!-- Profile Tab -->
+                  <div class="wrapper container-fluid my-2 px-5 pt-5 pb-4">
                     <p class="tab-header">Profile Information</p>
                     <!-- Date Added auto input -->
                     <div class="row">
@@ -248,8 +248,7 @@
                           name="fname"
                           class="form-control"
                           id="view-fnameCustomer"
-                          placeholder="First Name"
-                          readonly
+                          disabled="true"
                         />
                       </div>
                       <div class="col-lg-3 col-md-6 py-2">
@@ -261,8 +260,7 @@
                           name="midname"
                           class="form-control"
                           id="view-midnNameCustomer"
-                          placeholder="Middle Name"
-                          readonly
+                          disabled="true"
                         />
                       </div>
                       <div class="col-lg-3 col-md-6 py-2">
@@ -276,8 +274,7 @@
                           name="surname"
                           class="form-control"
                           id="view-surnameCustomer"
-                          placeholder="Last Name"
-                          readonly
+                          disabled="true"
                         />
                       </div>
                       <div class="col-lg-3 col-md-6 py-2">
@@ -288,9 +285,8 @@
                           type="text"
                           name="suffix"
                           class="form-control"
-                          id="view-suffixAttendant"
-                          placeholder="Suffix"
-                          readonly
+                          id="view-suffixCustomer"
+                          disabled="true"
                         />
                       </div>
                     </div>
@@ -308,8 +304,7 @@
                           name="bday"
                           class="form-control"
                           id="view-bdayCustomer"
-                          placeholder="Birthday"
-                          readonly
+                          disabled="true"
                         />
                       </div>
 
@@ -325,7 +320,7 @@
                                 name="gender"
                                 value="Male"
                                 id="view-male"
-                                disabled
+                                disabled="true"
                               />
                               <label class="form-check-label" for="gender">
                                 Male
@@ -339,7 +334,7 @@
                                 name="gender"
                                 value="Female"
                                 id="view-female"
-                                disabled
+                                disabled="true"
                               />
                               <label class="form-check-label" for="gender">
                                 Female
@@ -361,8 +356,7 @@
                       name="address"
                       class="form-control"
                       id="view-addressCustomer"
-                      placeholder="Address"
-                      readonly
+                      disabled="true"
                     />
 
                     <!-- Email Address & Contact No. -->
@@ -378,8 +372,7 @@
                           name="email"
                           class="form-control"
                           id="view-emailCustomer"
-                          placeholder="Email Address"
-                          readonly
+                          disabled="true"
                         />
                       </div>
                       <div class="col-lg-6 py-2 asterisk">
@@ -397,11 +390,39 @@
                           class="form-control"
                           aria-label="Contact Number"
                           oninput="this.value = this.value.replace(/[^0-9.]/g, '')"
-                          placeholder="Contact Number"
                           title="Numbers only"
-                          readonly
+                          disabled="true"
                         />
                       </div>
+                    </div>
+                    <div class="d-flex justify-content-end mt-4">
+                      <button
+                      type="button"
+                      class="btn btn-default data"
+                      title="Update Customer Details"
+                      id="update-button"
+                    >
+                      Update
+                    </button>
+
+                    <!-- after masubmit redirect dito sa page -->
+                      <button
+                      type="submit"
+                      class="btn btn-default data mx-3"
+                      title="Update Customer Details"
+                      id="save-update-button"
+                    >
+                      Save
+
+                    </button>
+                      <a
+                      href="view-customer.html"
+                      class="btn btn-danger data"
+                      title="Update Customer Details"
+                      id="cancel-update-button"
+                    >
+                      Cancel
+                    </a>
                     </div>
                   </div>
                 </div>
@@ -471,6 +492,48 @@
                                 type="button"
                                 class="btn btn-warning data"
                                 title="View Purchase Details"
+                                data-bs-toggle="offcanvas"
+                                data-bs-target="#purchaseDetails"
+                                aria-controls="purchaseDetails"
+                              >
+                                View Details
+                              </button>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td>1</td>
+                            <td>09-30-22</td>
+                            <td>
+                              <img
+                                src="/assets/images/product-img.png"
+                                class="purchase-img-table-list mx-2"
+                                alt="Product Image"
+                              />
+                            </td>
+                            <td>
+                              <span class="text-capitalize text-break"
+                                >Lorem ipsum dolor sit amet consectetur,
+                                adipisicing elit. Impedit error rerum.</span
+                              >
+                            </td>
+                            <td>Cash on Hand</td>
+                            <td>
+                              <button
+                                  type="button"
+                                  class="btn archive-data data"
+                                  title="Restore Data"
+                                >
+                                  Cancelled
+                                </button>
+                            </td>
+                            <td>
+                              <button
+                                type="button"
+                                class="btn btn-warning data"
+                                title="View Purchase Details"
+                                data-bs-toggle="offcanvas"
+                                data-bs-target="#purchaseDetails"
+                                aria-controls="purchaseDetails"
                               >
                                 View Details
                               </button>
@@ -479,6 +542,122 @@
                         </tbody>
                       </table>
                       <br />
+                    </div>
+                  </div>
+                </div>
+
+                <!-- View Purchase Details Offcanvas -->
+                <div
+                  class="offcanvas offcanvas-end"
+                  tabindex="-1"
+                  id="purchaseDetails"
+                  aria-labelledby="purchaseDetailsLabel"
+                >
+                  <div class="offcanvas-header">
+                    <h5 id="purchaseDetailsLabel">View Purchase Details</h5>
+                    <button
+                      type="button"
+                      class="btn-close text-reset"
+                      data-bs-dismiss="offcanvas"
+                      aria-label="Close"
+                    ></button>
+                  </div>
+                  <div class="offcanvas-body">
+                    <p class="tab-header">Recipient</p>
+
+                    <!-- Name -->
+                    <div class="row">
+                      <div class="col-lg-4">name:</div>
+                      <div class="col-lg-8 fw-bold">juan dela cruz</div>
+                    </div>
+
+                    <!-- Contact No. -->
+                    <div class="row">
+                      <div class="col-lg-4">contact No:</div>
+                      <div class="col-lg-8 fw-bold">091234566789</div>
+                    </div>
+
+                    <!-- Address -->
+                    <div class="row">
+                      <div class="col-lg-4">adress:</div>
+                      <div class="col-lg-8 fw-bold">
+                        <address>
+                          Lorem ipsum, dolor sit amet consectetur adipisicing
+                          elit. Velit neque veniam deleniti quod natus iure quo
+                          dicta dolorum id incidunt!
+                        </address>
+                      </div>
+                    </div>
+
+                    <p class="tab-header">Purchased item</p>
+                    <!-- Purchased Date -->
+                    <div class="row">
+                      <div class="col-lg-4">date:</div>
+                      <div class="col-lg-8 fw-bold">09/22/22</div>
+                    </div>
+
+                    <!-- Purchase ID -->
+                    <div class="row">
+                      <div class="col-lg-4">ID:</div>
+                      <div class="col-lg-8 fw-bold">purchase-1</div>
+                    </div>
+
+                    <!-- Purchase Photo -->
+                    <div class="row">
+                      <div class="col-lg-4">Product Photo:</div>
+                      <div
+                        class="col-lg-8 text-center py-3"
+                        id="purchase-img-history"
+                      >
+                        <img
+                          src="/assets/images/product-img.png"
+                          alt="Product Image"
+                        />
+                      </div>
+                    </div>
+
+                    <!-- Purchased Product Name -->
+                    <div class="row mt-2">
+                      <div class="col-lg-4">Product Name:</div>
+                      <div class="col-lg-8 fw-bold">juan dela cruz</div>
+                    </div>
+
+                    <!-- Purchased Category -->
+                    <div class="row">
+                      <div class="col-lg-4">category:</div>
+                      <div class="col-lg-8 fw-bold">
+                        uv lens, medium, acetate, matte
+                      </div>
+                    </div>
+
+                    <!-- Purchased Number of Items -->
+                    <div class="row">
+                      <div class="col-lg-4">no. of item:</div>
+                      <div class="col-lg-8 fw-bold">1</div>
+                    </div>
+
+                    <!-- Purchased Total  -->
+                    <div class="row">
+                      <div class="col-lg-4">total:</div>
+                      <div class="col-lg-8 fw-bold">Php 3566,22</div>
+                    </div>
+
+                    <!-- Purchased Payment  -->
+                    <div class="row">
+                      <div class="col-lg-4">Payment:</div>
+                      <div class="col-lg-8 fw-bold">Paypal</div>
+                    </div>
+
+                    <!-- Purchased Reference  -->
+                    <div class="row">
+                      <div class="col-lg-4">Reference:</div>
+                      <div class="col-lg-8 fw-bold">24234324242</div>
+                    </div>
+
+                    <!-- Purchased Status  -->
+                    <div class="row py-2 mb-2">
+                      <div class="col-lg-4">Status:</div>
+                      <div class="col-lg-8 fw-bold">success</div>
                     </div>
                   </div>
                 </div>
@@ -533,7 +712,8 @@
                               <button
                                 type="button"
                                 class="btn btn-warning data"
-                                data-bs-toggle="modal" data-bs-target="#updateEyeRecord"
+                                data-bs-toggle="modal"
+                                data-bs-target="#updateEyeRecord"
                                 title="Update Eye Details"
                               >
                                 Update
@@ -548,336 +728,200 @@
                 </div>
               </div>
             </div>
-          </div>
 
-          <!-- New Eye Record -->
-          <div
-            class="modal fade"
-            id="newRecord"
-            data-bs-backdrop="static"
-            data-bs-keyboard="false"
-            tabindex="-1"
-            aria-labelledby="newRecordLabel"
-            aria-hidden="true"
-            aria-modal="true"
-          >
+            <!-- New Eye Record -->
             <div
-              class="modal-dialog modal-dialog-centered modal-dialog-scrollable"
+              class="modal fade"
+              id="newRecord"
+              data-bs-backdrop="static"
+              data-bs-keyboard="false"
+              tabindex="-1"
+              aria-labelledby="newRecordLabel"
+              aria-hidden="true"
+              aria-modal="true"
             >
-              <div class="modal-content">
-                <div class="modal-header">
-                  <h5 class="modal-title" id="newRecordLabel">
-                    Add New Record
-                  </h5>
-                  <button
-                    type="button"
-                    class="btn-close btn-close-white"
-                    data-bs-dismiss="modal"
-                    aria-label="Close"
-                  ></button>
-                </div>
-                <div class="modal-body">
-
-                  <!-- Date -->
-                  <label class="form-label" for="date">Date Added: </label>
-                  <input
-                    type="date"
-                    name="date"
-                    id="date-eye-record"
-                    class="form-control"
-                    aria-label="Date Added"
-                    placeholder="Date Added"
-                    required
-                  />
-
-                  <!-- Previous Grade -->
-                  <label class="form-label asterisk mt-2" for="prevGrade"
-                    >Previous Grade:
-                  </label>
-                  <input
-                    type="text"
-                    name="previousGrade"
-                    class="form-control"
-                    id="prevGrade"
-                    placeholder="Input previous grade"
-                    required
-                  />
-
-                  <!-- Current Grade -->
-                  <label class="form-label asterisk mt-2" for="currGrade"
-                    >Current Grade:
-                  </label>
-                  <input
-                    type="text"
-                    name="currentGrade"
-                    class="form-control"
-                    id="currGrade"
-                    placeholder="Input current grade"
-                    required
-                  />
-
-                  <!-- Select Attendant -->
-                  <label class="form-label asterisk mt-2" for="attendant"
-                    >Attendant:
-                  </label>
-                  <select
-                    class="form-select"
-                    aria-label="Walk in or Registered"
-                    id="attendant"
-                    name="select-attendant"
-                    required
-                  >
-                    <option selected disabled>Please select attendant</option>
-                    <option>Registered</option>
-                  </select>
-                </div>
-                <div class="modal-footer">
-                  <button type="submit" class="btn btn-default px-4 mx-2">
-                    Save
-                  </button>
-                  <button
-                    type="button"
-                    class="btn btn-secondary py-2 px-3"
-                    data-bs-dismiss="modal"
-                  >
-                    Cancel
-                  </button>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <!-- Update Eye Record -->
-          <div
-            class="modal fade"
-            id="updateEyeRecord"
-            data-bs-backdrop="static"
-            data-bs-keyboard="false"
-            tabindex="-1"
-            aria-labelledby="updateEyeRecorddLabel"
-            aria-hidden="true"
-            aria-modal="true"
-          >
-            <div
-              class="modal-dialog modal-dialog-centered modal-dialog-scrollable"
-            >
-              <div class="modal-content">
-                <div class="modal-header">
-                  <h5 class="modal-title" id="updateEyeRecordLabel">
-                    Update Record
-                  </h5>
-                  <button
-                    type="button"
-                    class="btn-close btn-close-white"
-                    data-bs-dismiss="modal"
-                    aria-label="Close"
-                  ></button>
-                </div>
-                <div class="modal-body">
-
-                  <!-- Date -->
-                  <label class="form-label" for="date">Date Added: </label>
-                  <input
-                    type="date"
-                    name="date"
-                    value=""
-                    id="date-eye-record"
-                    class="form-control"
-                    aria-label="Date Added"
-                    required
-                  />
-
-                  <!-- Previous Grade -->
-                  <label class="form-label asterisk mt-2" for="prevGradeUpdate"
-                    >Previous Grade:
-                  </label>
-                  <input
-                    type="text"
-                    name="previousGrade"
-                    value=""
-                    class="form-control"
-                    id="prevGradeUpdate"
-                    required
-                  />
-
-                  <!-- Current Grade -->
-                  <label class="form-label asterisk mt-2" for="currGradeUpdate"
-                    >Current Grade:
-                  </label>
-                  <input
-                    type="text"
-                    name="currentGradeUpdate"
-                    value=""
-                    class="form-control"
-                    id="currGrade"
-                    required
-                  />
-
-                  <!-- Select Attendant -->
-                  <label class="form-label asterisk mt-2" for="attendant"
-                    >Attendant:
-                  </label>
-                  <select
-                    class="form-select"
-                    aria-label="Walk in or Registered"
-                    id="attendant"
-                    name="select-attendant"
-                    required
-                  >
-                    <option selected>.</option>
-                    <option>...</option>
-                  </select>
-                </div>
-                <div class="modal-footer">
-                  <button type="submit" class="btn btn-default px-4 mx-2">
-                    Save
-                  </button>
-                  <button
-                    type="button"
-                    class="btn btn-secondary py-2 px-3"
-                    data-bs-dismiss="modal"
-                  >
-                    Cancel
-                  </button>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="table-wrapper p-4">
-            <div class="table-title">
-              <!--Table Header-->
-              <h4 class="px-3 pt-2 fw-bold">Archived Attendants</h4>
-            </div>
-            <hr class="my-4 mx-3" />
-            <div class="container-fluid table-responsive px-4">
-              <table
-                class="table table-hover align-middle align-items-center table-body"
-                aria-label="Attendants Archive List"
-                id="attendantArchiveList"
+              <div
+                class="modal-dialog modal-dialog-centered modal-dialog-scrollable"
               >
-                <!--Table Body-->
-                <thead>
-                  <tr>
-                    <th scope="col">
-                      <div class="form-check">
-                        <input
-                          class="form-check-input check-all"
-                          type="checkbox"
-                          value=""
-                          id="check-all-attendant-archive"
-                        />
-                        <label
-                          class="form-check-label"
-                          for="check-all-attendant-archive"
-                        >
-                          All
-                        </label>
-                      </div>
-                    </th>
-                    <th scope="col">ID</th>
-                    <th scope="col">Name</th>
-                    <th scope="col">Contact No.</th>
-                    <th scope="col">Action</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <td>
-                      <div class="form-check">
-                        <input
-                          class="form-check-input check-list"
-                          type="checkbox"
-                          value=""
-                          id="check-one-attendant-archive"
-                        />
-                      </div>
-                    </td>
-                    <td>Attendant-1</td>
-                    <td>
-                      <img
-                        src="/assets/images/avatar.png"
-                        class="purchase-img-table-list mx-2"
-                      />juan dela cruz
-                    </td>
-                    <td>09123456789</td>
-                    <td>
-                      <button
-                        type="button"
-                        class="btn update-data data"
-                        title="Restore Data"
-                      >
-                        Restore
-                      </button>
-                    </td>
-                  </tr>
-                </tbody>
-              </table>
-              <br />
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h5 class="modal-title" id="newRecordLabel">
+                      Add New Record
+                    </h5>
+                    <button
+                      type="button"
+                      class="btn-close btn-close-white"
+                      data-bs-dismiss="modal"
+                      aria-label="Close"
+                    ></button>
+                  </div>
+                  <div class="modal-body">
+                    <!-- Date -->
+                    <label class="form-label" for="date">Date Added: </label>
+                    <input
+                      type="date"
+                      name="date"
+                      id="date-eye-record"
+                      class="form-control"
+                      aria-label="Date Added"
+                      placeholder="Date Added"
+                      required
+                    />
 
-              <!--Batch Button -->
-              <div class="d-flex justify-content-end my-3 pb-3">
-                <button
-                  type="button"
-                  class="btn btn-danger px-3 py-1 mx-3 text-uppercase fw-bold"
-                  data-bs-toggle="modal"
-                  data-bs-target="#permanentlyDeleteAttendant"
-                  title="Permanenetly Delete Data"
-                >
-                  <i class="fa fa-trash px-2" aria-hidden="true"></i>Permanently
-                  Delete
-                </button>
-                <button
-                  type="button"
-                  class="btn btn-default text-uppercase"
-                  title="Restore Attendant Data"
-                >
-                  Restore Attendant (6)
-                </button>
+                    <!-- Previous Grade -->
+                    <label class="form-label asterisk mt-2" for="prevGrade"
+                      >Previous Grade:
+                    </label>
+                    <input
+                      type="text"
+                      name="previousGrade"
+                      class="form-control"
+                      id="prevGrade"
+                      placeholder="Input previous grade"
+                      required
+                    />
+
+                    <!-- Current Grade -->
+                    <label class="form-label asterisk mt-2" for="currGrade"
+                      >Current Grade:
+                    </label>
+                    <input
+                      type="text"
+                      name="currentGrade"
+                      class="form-control"
+                      id="currGrade"
+                      placeholder="Input current grade"
+                      required
+                    />
+
+                    <!-- Select Attendant -->
+                    <label class="form-label asterisk mt-2" for="attendant"
+                      >Attendant:
+                    </label>
+                    <select
+                      class="form-select"
+                      aria-label="Walk in or Registered"
+                      id="attendant"
+                      name="select-attendant"
+                      required
+                    >
+                      <option selected disabled>Please select attendant</option>
+                      <option>Registered</option>
+                    </select>
+                  </div>
+                  <div class="modal-footer">
+                    <button type="submit" class="btn btn-default px-4 mx-2">
+                      Save
+                    </button>
+                    <button
+                      type="button"
+                      class="btn btn-secondary py-2 px-3"
+                      data-bs-dismiss="modal"
+                    >
+                      Cancel
+                    </button>
+                  </div>
+                </div>
               </div>
             </div>
-          </div>
-        </div>
 
-        <!-- Permanently Delete Attendant Pop up Dialog-->
-        <div
-          class="modal fade"
-          id="permanentlyDeleteAttendant"
-          data-bs-backdrop="static"
-          data-bs-keyboard="false"
-          tabindex="-1"
-          aria-modal="true"
-          aria-labelledby="cancelApplicationLabel"
-          aria-hidden="true"
-        >
-          <div class="modal-dialog">
-            <div class="modal-content">
-              <div class="modal-header">
-                <h6 class="modal-title text-white">Permanently Delete</h6>
-                <button
-                  type="button"
-                  class="btn-close btn-close-white"
-                  data-bs-dismiss="modal"
-                  aria-label="Close"
-                ></button>
-              </div>
-              <div class="modal-body">
-                <h6>
-                  Once you permanently delete the attendant data, it can't be
-                  undone.
-                </h6>
-              </div>
-              <div class="modal-footer">
-                <button type="submit" class="btn btn-default px-3">
-                  Delete
-                </button>
-                <button
-                  type="button"
-                  class="btn btn-secondary"
-                  data-bs-dismiss="modal"
-                >
-                  Cancel
-                </button>
+            <!-- Update Eye Record -->
+            <div
+              class="modal fade"
+              id="updateEyeRecord"
+              data-bs-backdrop="static"
+              data-bs-keyboard="false"
+              tabindex="-1"
+              aria-labelledby="updateEyeRecorddLabel"
+              aria-hidden="true"
+              aria-modal="true"
+            >
+              <div
+                class="modal-dialog modal-dialog-centered modal-dialog-scrollable"
+              >
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h5 class="modal-title" id="updateEyeRecordLabel">
+                      Update Record
+                    </h5>
+                    <button
+                      type="button"
+                      class="btn-close btn-close-white"
+                      data-bs-dismiss="modal"
+                      aria-label="Close"
+                    ></button>
+                  </div>
+                  <div class="modal-body">
+                    <!-- Date -->
+                    <label class="form-label" for="date">Date Added: </label>
+                    <input
+                      type="date"
+                      name="date"
+                      value=""
+                      id="date-eye-record"
+                      class="form-control"
+                      aria-label="Date Added"
+                      required
+                    />
+
+                    <!-- Previous Grade -->
+                    <label
+                      class="form-label asterisk mt-2"
+                      for="prevGradeUpdate"
+                      >Previous Grade:
+                    </label>
+                    <input
+                      type="text"
+                      name="previousGrade"
+                      value=""
+                      class="form-control"
+                      id="prevGradeUpdate"
+                      required
+                    />
+
+                    <!-- Current Grade -->
+                    <label
+                      class="form-label asterisk mt-2"
+                      for="currGradeUpdate"
+                      >Current Grade:
+                    </label>
+                    <input
+                      type="text"
+                      name="currentGradeUpdate"
+                      value=""
+                      class="form-control"
+                      id="currGrade"
+                      required
+                    />
+
+                    <!-- Select Attendant -->
+                    <label class="form-label asterisk mt-2" for="attendant"
+                      >Attendant:
+                    </label>
+                    <select
+                      class="form-select"
+                      aria-label="Walk in or Registered"
+                      id="attendant"
+                      name="select-attendant"
+                      required
+                    >
+                      <option selected>.</option>
+                      <option>...</option>
+                    </select>
+                  </div>
+                  <div class="modal-footer">
+                    <button type="submit" class="btn btn-default px-4 mx-2">
+                      Save
+                    </button>
+                    <button
+                      type="button"
+                      class="btn btn-secondary py-2 px-3"
+                      data-bs-dismiss="modal"
+                    >
+                      Cancel
+                    </button>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
@@ -899,12 +943,14 @@
       };
       $(document).ready(function () {
         $("#purchase-history").DataTable({
+          columnDefs: [{ className: "dt-center", targets: "_all" }],
           lengthMenu: [
             [5, 10, 20, -1],
             [5, 10, 20, "All"],
           ],
         });
         $("#eye-history").DataTable({
+          columnDefs: [{ className: "dt-center", targets: "_all" }],
           lengthMenu: [
             [5, 10, 20, -1],
             [5, 10, 20, "All"],
@@ -915,7 +961,7 @@
       });
     </script>
 
-    <script src="/assets/js/date.js"></script>
+    <script src="/assets/js/customers.js"></script>
     <script src="/assets/js/bootstrap.bundle.min.js"></script>
   </body>
 </html>

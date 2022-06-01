@@ -178,7 +178,6 @@
                           <input
                             type="date"
                             name="date"
-                            id="dateAttendant"
                             minlength="11"
                             maxlength="11"
                             class="form-control"
@@ -401,7 +400,7 @@
                 <table
                   class="table table-hover align-middle align-items-center table-body"
                   aria-label="Customers' List"
-                  id="customersTableList"
+                  id="attendantsTableList"
                 >
                   <!--Table Body-->
                   <thead>
@@ -1036,24 +1035,17 @@
         } else sidebarBtn.classList.replace("bx-menu-alt-right", "bx-menu");
       };
       $(document).ready(function () {
-        $("#customersTableList").DataTable({
+        $("#attendantsTableList").DataTable({
+          columnDefs: [{ className: "dt-center", targets: "_all" }],
           lengthMenu: [
             [20, 25, 50, -1],
             [20, 25, 50, "All"],
           ],
         });
-        $("#attendantArchiveList").DataTable({
-          lengthMenu: [
-            [20, 25, 50, -1],
-            [20, 25, 50, "All"],
-          ],
-        });
-
         jQuery(".dataTable").wrap('<div class="dataTables_scroll" />');
       });
     </script>
 
-    <script src="/assets/js/date.js"></script>
     <script src="/assets/js/attendants.js"></script>
     <script src="/assets/js/bootstrap.bundle.min.js"></script>
   </body>

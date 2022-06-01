@@ -5,6 +5,7 @@
     <link href="/assets/css/bootstrap.min.css" rel="stylesheet" />
     <link rel="stylesheet" href="/assets/css/adminSidebar.css" />
     <link rel="stylesheet" href="/assets/css/attendants.css" />
+    <link rel="stylesheet" href="/assets/css/customers.css" />
     <link rel="stylesheet" href="/assets/css/common.css" />
     <link
       rel="stylesheet"
@@ -107,7 +108,7 @@
           <div class="d-flex justify-content-end mx-2">
             <!-- Archives Button -->
             <a
-              href="/frontend/admin/attendants/archives.html"
+              href="/frontend/admin/customers/archives.html"
               class="btn archiveBtn text-white fw-bold px-4"
               id="archive-list-button"
               title="View Archive List"
@@ -180,15 +181,12 @@
                       <!-- Date Added auto input -->
                       <div class="row">
                         <div class="col-lg-6 py-2">
-                          <label class="form-label" for="date"
+                          <label class="form-label"
                             >Date Added:
                           </label>
                           <input
                             type="date"
                             name="date"
-                            id="dateAttendant"
-                            minlength="11"
-                            maxlength="11"
                             class="form-control"
                             aria-label="Date Added"
                             placeholder="Date Added"
@@ -578,11 +576,8 @@
                         <input
                           type="date"
                           name="date"
-                          minlength="11"
-                          maxlength="11"
                           class="form-control"
                           aria-label="Date Added"
-                          placeholder="Date Added"
                           required
                           readonly
                         />
@@ -798,23 +793,16 @@
       };
       $(document).ready(function () {
         $("#customersTableList").DataTable({
+            columnDefs: [{ className: "dt-center", targets: "_all" }],
           lengthMenu: [
             [20, 25, 50, -1],
             [20, 25, 50, "All"],
           ],
         });
-        $("#attendantArchiveList").DataTable({
-          lengthMenu: [
-            [20, 25, 50, -1],
-            [20, 25, 50, "All"],
-          ],
-        });
-
         jQuery(".dataTable").wrap('<div class="dataTables_scroll" />');
       });
     </script>
 
-    <script src="/assets/js/date.js"></script>
     <script src="/assets/js/attendants.js"></script>
     <script src="/assets/js/bootstrap.bundle.min.js"></script>
   </body>

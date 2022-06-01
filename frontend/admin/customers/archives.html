@@ -4,8 +4,8 @@
     <meta charset="UTF-8" />
     <link href="/assets/css/bootstrap.min.css" rel="stylesheet" />
     <link rel="stylesheet" href="/assets/css/adminSidebar.css" />
-    <link rel="stylesheet" href="/assets/css/attendants.css" />
     <link rel="stylesheet" href="/assets/css/common.css" />
+    <link rel="stylesheet" href="/assets/css/customers.css" />
     <link
       rel="stylesheet"
       href="https://use.fontawesome.com/releases/v5.5.0/css/all.css"
@@ -16,7 +16,7 @@
       type="text/css"
     />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Admin | Attendants</title>
+    <title>Admin | Products</title>
   </head>
 
   <body>
@@ -39,13 +39,13 @@
           </a>
         </li>
         <li>
-          <a href="/frontend/admin/attendants.html" class="active">
+          <a href="/frontend/admin/attendants/attendants.html">
             <i class="fa fa-user-md"></i>
             <span class="links_name">Attendants</span>
           </a>
         </li>
         <li>
-          <a href="/frontend/admin/products/products.html">
+          <a href="products.html" class="active">
             <i class="fas fa-shopping-bag"></i>
             <span class="links_name">Products</span>
           </a>
@@ -83,12 +83,12 @@
       </ul>
     </div>
 
-    <section class="home-section">
+    <section class="home-section pb-3 px-3">
       <nav>
         <div class="container-fluid d-flex">
           <div class="sidebar-button me-auto">
             <i class="fas fa-bars sidebarBtn"></i>
-            <span class="dashboard">Attendants</span>
+            <span class="dashboard">Customers</span>
           </div>
 
           <a href="#" class="view-shop px-3">
@@ -103,10 +103,10 @@
       </nav>
 
       <div class="home-content pb-3">
-        <div class="container-fluid px-4">
+        <div class="container-fluid">
           <div class="d-flex mb-4 px-1">
             <!-- Archives Button -->
-            <a href="/frontend/admin/products/products.html" class="back-page">
+            <a href="customers.html" class="back-page">
               <i
                 class="fa fa-arrow-left to-back-link"
                 aria-hidden="true"
@@ -115,18 +115,19 @@
             </a>
             <span class="page-title px-3">Archives</span>
           </div>
-
-          <div class="table-wrapper p-4">
+          <div class="table-wrapper px-4">
             <div class="table-title">
-              <!--Table Header-->
-              <h4 class="px-3 pt-2 fw-bold">Archived Attendants</h4>
+              <h4 class="px-1 pt-4 fw-bold">Arhived Customers</h4>
+              <span class="text-muted px-1">
+                <i>Includes deactivated/blocked accounts</i>
+              </span>
             </div>
-            <hr class="my-4 mx-3" />
-            <div class="container-fluid table-responsive px-4">
+            <hr class="my-4" />
+            <div class="container-fluid table-responsive pt-2">
               <table
-                class="table table-hover align-middle align-items-center table-body"
-                aria-label="Attendants Archive List"
-                id="attendantArchiveList"
+                class="table table-hover align-middle align-items-center table-body compact"
+                aria-label="Customers' List"
+                id="archive-customers"
               >
                 <!--Table Body-->
                 <thead>
@@ -137,11 +138,11 @@
                           class="form-check-input check-all"
                           type="checkbox"
                           value=""
-                          id="check-all-attendant-archive"
+                          id="check-all-customer"
                         />
                         <label
                           class="form-check-label"
-                          for="check-all-attendant-archive"
+                          for="check-all-customer"
                         >
                           All
                         </label>
@@ -150,6 +151,7 @@
                     <th scope="col">ID</th>
                     <th scope="col">Name</th>
                     <th scope="col">Contact No.</th>
+                    <th scope="col">Type</th>
                     <th scope="col">Action</th>
                   </tr>
                 </thead>
@@ -161,11 +163,11 @@
                           class="form-check-input check-list"
                           type="checkbox"
                           value=""
-                          id="check-one-attendant-archive"
+                          id="check-one-customer"
                         />
                       </div>
                     </td>
-                    <td>Attendant-1</td>
+                    <td>Client-1</td>
                     <td>
                       <img
                         src="/assets/images/avatar.png"
@@ -173,6 +175,7 @@
                       />juan dela cruz
                     </td>
                     <td>09123456789</td>
+                    <td class="text-uppercase">Walk-In</td>
                     <td>
                       <button
                         type="button"
@@ -193,7 +196,7 @@
                   type="button"
                   class="btn btn-danger px-3 py-1 mx-3 text-uppercase fw-bold"
                   data-bs-toggle="modal"
-                  data-bs-target="#permanentlyDeleteAttendant"
+                  data-bs-target="#permanentlyDeleteCustomer"
                   title="Permanenetly Delete Data"
                 >
                   <i class="fa fa-trash px-2" aria-hidden="true"></i>Permanently
@@ -214,12 +217,12 @@
         <!-- Permanently Delete Attendant Pop up Dialog-->
         <div
           class="modal fade"
-          id="permanentlyDeleteAttendant"
+          id="permanentlyDeleteCustomer"
           data-bs-backdrop="static"
           data-bs-keyboard="false"
           tabindex="-1"
           aria-modal="true"
-          aria-labelledby="cancelApplicationLabel"
+          aria-labelledby="permanentlyDeleteCustomerLabel"
           aria-hidden="true"
         >
           <div class="modal-dialog">
@@ -235,7 +238,7 @@
               </div>
               <div class="modal-body">
                 <h6>
-                  Once you permanently delete the attendant data, it can't be
+                  Once you permanently delete the customer's data, it can't be
                   undone.
                 </h6>
               </div>
@@ -270,7 +273,7 @@
         } else sidebarBtn.classList.replace("bx-menu-alt-right", "bx-menu");
       };
       $(document).ready(function () {
-        $("#attendantArchiveList").DataTable({
+        $("#archive-customers").DataTable({
           columnDefs: [{ className: "dt-center", targets: "_all" }],
           lengthMenu: [
             [20, 25, 50, -1],

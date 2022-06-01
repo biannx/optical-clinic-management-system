@@ -262,6 +262,7 @@
       };
       $(document).ready(function () {
         $("#products-table-data").DataTable({
+          columnDefs: [{ className: "dt-center", targets: "_all" }],
           lengthMenu: [
             [20, 25, 50, -1],
             [20, 25, 50, "All"],
