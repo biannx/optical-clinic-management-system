@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="UTF-8" />
+    <link href="/assets/css/bootstrap.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="/assets/css/adminSidebar.css" />
+    <link rel="stylesheet" href="/assets/css/common.css" />
+    <link rel="stylesheet" href="/assets/css/products.css" />
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.5.0/css/all.css"
+    />
+    <link
+      href="/assets/css/dataTables.bootstrap5.min.css"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Admin | Add Product</title>
+  </head>
+
+  <body>
+    <div class="sidebar" id="admin-sidebar">
+      <div class="logo-details">
+        <i class="fa fa-user"></i>
+        <span class="logo_name">Vision</span>
+      </div>
+      <ul class="nav-links mt-4">
+        <li>
+          <a href="admin-sidebar.html">
+            <i class="fa fa-th-large"></i>
+            <span class="links_name">Dashboard</span>
+          </a>
+        </li>
+        <li>
+          <a href="#">
+            <i class="fa fa-users"></i>
+            <span class="links_name">Customers</span>
+          </a>
+        </li>
+        <li>
+          <a href="/frontend/admin/attendants/attendants.html">
+            <i class="fa fa-user-md"></i>
+            <span class="links_name">Attendants</span>
+          </a>
+        </li>
+        <li>
+          <a href="products.html" class="active">
+            <i class="fas fa-shopping-bag"></i>
+            <span class="links_name">Products</span>
+          </a>
+        </li>
+        <li>
+          <a href="#">
+            <i class="fa fa-cart-arrow-down"></i>
+            <span class="links_name">Orders</span>
+          </a>
+        </li>
+        <li>
+          <a href="#">
+            <i class="fa fa-calendar"></i>
+            <span class="links_name">Appointment</span>
+          </a>
+        </li>
+        <li>
+          <a href="#">
+            <i class="fas fa-users-cog" aria-hidden="true"></i>
+            <span class="links_name">Admin</span>
+          </a>
+        </li>
+        <li>
+          <a href="#">
+            <i class="fa fa-key"></i>
+            <span class="links_name">Change Password</span>
+          </a>
+        </li>
+        <li>
+          <a href="#">
+            <i class="fas fa-sign-out-alt"></i>
+            <span class="links_name">Signout</span>
+          </a>
+        </li>
+      </ul>
+    </div>
+
+    <section class="home-section pb-3 px-3">
+      <nav>
+        <div class="container-fluid d-flex">
+          <div class="sidebar-button me-auto">
+            <i class="fas fa-bars sidebarBtn"></i>
+            <span class="dashboard">Products</span>
+          </div>
+
+          <a href="#" class="view-shop px-3">
+            <i class="fas fa-paper-plane" aria-hidden="true"></i>
+            <span class="view-shop-text px-2">View your shop</span>
+          </a>
+          <div class="profile-details px-2">
+            <span class="admin_name px-2">Admin Name</span>
+            <img src="/assets/images/avatar.png" alt="" />
+          </div>
+        </div>
+      </nav>
+
+      <div class="home-content pb-3">
+        <div class="container-fluid">
+          <div class="d-flex mb-4 px-1">
+            <!-- Archives Button -->
+            <a href="/frontend/admin/products/products.html" class="back-page">
+              <i
+                class="fa fa-arrow-left to-back-link"
+                aria-hidden="true"
+                title="Go back"
+              ></i>
+            </a>
+            <span class="page-title px-3">Add New Product</span>
+          </div>
+          <form action="" method="#" id="product-div">
+            <div class="container">
+              <div class="row my-3">
+                <div class="col-lg-3 p-0">
+                  <label class="form-label">Date Added: </label>
+                </div>
+                <div class="col-lg-9 fw-bold">
+                  <input
+                    type="date"
+                    name="date"
+                    class="form-control fw-bold"
+                    aria-label="Date Added"
+                    placeholder="Date Added"
+                    required
+                  />
+                </div>
+              </div>
+
+              <!-- Prodduct Image -->
+              <div class="row my-3">
+                <label
+                  class="form-label col-lg-3 align-middle asterisk"
+                  for="file-product"
+                >
+                  Product Image:
+                </label>
+                <div class="col-lg-9 fw-bold">
+                  <input
+                    class="form-control px-3"
+                    type="file"
+                    id="file-product"
+                    required
+                  />
+                </div>
+              </div>
+
+              <div class="product-img-div">
+                <img
+                  src="/assets/images/img-preview.png"
+                  alt="Product Image"
+                  id="product-img"
+                />
+              </div>
+
+              <!-- Product Name -->
+              <label class="form-label pt-2 asterisk" for="product-name">
+                Product Name:
+              </label>
+              <input
+                type="text"
+                name="productName"
+                class="form-control"
+                id="product-name"
+                placeholder="Input Product Name"
+                required
+              />
+
+              <!-- Product Description -->
+              <label class="form-label mt-3 asterisk" for="product-description">
+                Product Description:
+              </label>
+              <textarea
+                class="form-control"
+                name="details"
+                id="product-description"
+                placeholder="Type product description...."
+                rows="5"
+                cols="100"
+                required
+              >
+              </textarea>
+
+              <!-- Filters -->
+              <!-- Lens Type & Width -->
+              <div class="row pt-2">
+                <div class="col-lg-6 py-2">
+                  <label class="form-label asterisk" for="product-lens"
+                    >Lens Type:
+                  </label>
+                  <select
+                    class="form-select"
+                    aria-label="Product Lens Type"
+                    id="product-lens"
+                    required
+                  >
+                    <option selected readonly disabled>
+                      Please select lens
+                    </option>
+                    <option>Normal</option>
+                    <option>UV Lens</option>
+                  </select>
+                </div>
+                <div class="col-lg-6 py-2">
+                  <label class="form-label asterisk" for="product-width"
+                    >Width:
+                  </label>
+                  <select
+                    class="form-select"
+                    aria-label="Product Width"
+                    id="product-width"
+                    required
+                  >
+                    <option selected readonly disabled>
+                      Please select width
+                    </option>
+                    <option>Narrow</option>
+                    <option>Wide</option>
+                    <option>Medium</option>
+                    <option>Extra wide</option>
+                  </select>
+                </div>
+              </div>
+
+              <!-- Material & Hinge -->
+              <div class="row pt-2">
+                <div class="col-lg-6 py-2">
+                  <label class="form-label asterisk" for="product-material"
+                    >Material:
+                  </label>
+                  <select
+                    class="form-select"
+                    aria-label="Product Material"
+                    id="product-material"
+                    required
+                  >
+                    <option selected readonly disabled>
+                      Please select material
+                    </option>
+                    <option>Metal</option>
+                    <option>Mixed</option>
+                    <option>Polycarbonate</option>
+                    <option>Recycled Polyester</option>
+                  </select>
+                </div>
+                <div class="col-lg-6 py-2">
+                  <label class="form-label asterisk" for="product-hinge"
+                    >Hinge:
+                  </label>
+                  <select
+                    class="form-select"
+                    aria-label="Product Width"
+                    id="product-hinge"
+                    required
+                  >
+                    <option selected readonly disabled>
+                      Please select hinge
+                    </option>
+                    <option>Standard</option>
+                    <option>Spring</option>
+                    <option>Hingless</option>
+                  </select>
+                </div>
+              </div>
+
+              <!-- Finish & Product Price -->
+              <div class="row pt-2">
+                <div class="col-lg-6 py-2">
+                  <label class="form-label asterisk" for="product-finish">
+                    Finish:
+                  </label>
+                  <select
+                    class="form-select"
+                    aria-label="Product Material"
+                    id="product-finish"
+                    required
+                  >
+                    <option selected readonly disabled>
+                      Please select material
+                    </option>
+                    <option>Matte</option>
+                    <option>Shiny</option>
+                  </select>
+                </div>
+              </div>
+
+              <!-- Stock -->
+              <div class="row pt-2">
+                <div class="col-lg-6 py-2">
+                  <label class="form-label asterisk" for="product-stock"
+                    >Stock:
+                  </label>
+                  <input
+                    type="number"
+                    class="form-control"
+                    id="product-stock"
+                    placeholder="Input product stock"
+                  />
+                </div>
+              </div>
+
+              <!-- Product Price -->
+              <div class="row pt-2">
+                <div class="col-lg-6 py-2">
+                  <label class="form-label asterisk" for="product-price"
+                    >Product Price:
+                  </label>
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="product-price"
+                    placeholder="Input product price"
+                  />
+                </div>
+              </div>
+
+              <!-- Buttons -->
+              <div class="container">
+                <div class="d-flex justify-content-end pb-2 pt-5">
+                  <button
+                    type="button"
+                    class="btn btn-default mx-3"
+                    title="Save Data"
+                  >
+                    Save
+                  </button>
+                  <button
+                    type="reset"
+                    class="btn btn-danger"
+                    title="Reset Data"
+                  >
+                    Cancel
+                  </button>
+                </div>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </section>
+    <!-- jQuery DataTables JS CDN -->
+    <script src="/assets/js/jquery-3.5.1.js"></script>
+    <script src="/assets/js/jquery.dataTables.min.js"></script>
+    <script src="/assets/js/dataTables.bootstrap5.min.js"></script>
+    <script>
+      let sidebar = document.querySelector(".sidebar");
+      let sidebarBtn = document.querySelector(".sidebarBtn");
+      sidebarBtn.onclick = function () {
+        sidebar.classList.toggle("active");
+        if (sidebar.classList.contains("active")) {
+          sidebarBtn.classList.replace("bx-menu", "bx-menu-alt-right");
+        } else sidebarBtn.classList.replace("bx-menu-alt-right", "bx-menu");
+      };
+    </script>
+
+    <script src="/assets/js/product.js"></script>
+    <script src="/assets/js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>

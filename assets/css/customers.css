@@ -1,0 +1,112 @@
+/* view customers */
+img#customer-img {
+  width: 165px;
+  height: 165px;
+  border: 1px solid lightgrey;
+  border-radius: 50%;
+  padding: 0.2rem;
+}
+
+.wrapper {
+  border: 1px solid lightgrey;
+  background: #fafafa;
+  border-radius: 0.5rem;
+}
+
+.nav-tabs .nav-link {
+  background: lightgrey;
+  color: #222;
+  text-transform: uppercase;
+  font-weight: 600;
+  letter-spacing: 2%;
+  opacity: 0.8;
+  border: 1px solid #fafafa;
+  padding: 0.85rem;
+  font-size: 1rem;
+}
+.nav-tabs .nav-link:hover {
+  opacity: 1;
+}
+.nav-tabs .nav-item.show .nav-link,
+.nav-tabs .nav-link.active {
+  background-color: var(--addBtn);
+  color: white;
+  font-weight: 700;
+  opacity: 1;
+}
+
+p.tab-header {
+  color: var(--addBtn);
+  text-transform: uppercase;
+  font-size: 1.2rem;
+  font-weight: 700;
+}
+
+/* buttons */
+#save-update-button,
+#cancel-update-button,
+#update-customer-photo,
+#update-customer-photo-label {
+  display: none;
+}
+
+/* purchase history */
+.status {
+  background: var(--lightgreen);
+  pointer-events: none;
+}
+
+.archive-data {
+  pointer-events: none;
+}
+table#purchase-history td,
+table#archive-customers td,
+table#eye-history td {
+  line-height: 3rem;
+}
+
+/* product list table */
+img.purchase-img-table-list {
+  width: 5rem;
+  height: 3.5rem;
+  border: 1px solid lightgray;
+  padding: 0 0.5rem;
+  border-radius: 0.3rem;
+  background: white;
+}
+
+/* purchase offcanvas */
+.offcanvas .offcanvas-body .row {
+  text-transform: capitalize;
+  padding: 0.7rem 0.5rem;
+}
+
+.offcanvas .offcanvas-body .row .col-lg-8 {
+  text-transform: uppercase;
+}
+
+@media only screen and (min-width: 1400px) {
+  .offcanvas-end {
+    width: 450px;
+  }
+}
+@media only screen and (max-width: 700px) {
+  .table-wrapper {
+    padding: 1.5rem !important;
+  }
+}
+div #purchase-img-history img {
+  width: 100%;
+  /* height: 90%; */
+  border: 1px solid lightgray;
+  background: white;
+  border-radius: 0.3rem;
+}
+
+/* eye history */
+.new-record-button {
+  background-color: var(--addBtn);
+  opacity: 0.9;
+  padding: 0;
+  line-height: 1rem;
+}

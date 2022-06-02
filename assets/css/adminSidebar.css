@@ -1,6 +1,8 @@
 /* Googlefont Poppins CDN Link */
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Open Sans:wght@200;300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@200;300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;500;600;700&display=swap');
 :root{
   --lightblue: #BFE8E6;
   --lightgreen: #B6F89F;
@@ -8,18 +10,24 @@
   --lightpink:#ff9e9e;
   --black: #000000;
   --addBtn: #2f798a;
+  --save: #B6F89F;
+  --saveHover: #9ceb7f;
+  --cancel: #ec5353;
+  --cancelHover: #ee4747;
+
 }
 
 *{
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family:'Open Sans', sans-serif;
+  font-family:'Inter', sans-serif;
   letter-spacing: 1%;
 
 }
 html,body{
   background: #fafafa;
+  font-size: 92%;
 }
 .sidebar{
   position: fixed;
@@ -27,10 +35,10 @@ html,body{
   width: 280px;
   background: #fafafa;
   border: 1px solid #D3D3D3;
-  transition: all 0.5s ease;
   -moz-transition: all 0.5s ease;
   -o-transition: all 0.5s ease;
   -webkit-transition: all 0.5s ease;
+  transition: all 0.5s ease;
   /* box-shadow: 0px 4px 75px 0px rgba(0, 0, 0, 0.25); */
 }
 .sidebar.active{
@@ -184,7 +192,8 @@ nav .profile-details .admin_name{
 
 .home-section .home-content{
   position: relative;
-  padding-top: 6.3rem;
+  padding-top: 6rem;
+  font-family: "Montserrat", sans-serif;
 }
 
 /* Dashboard Page */
