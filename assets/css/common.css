@@ -1,0 +1,239 @@
+/* common */
+.addBtn {
+  background-color: var(--addBtn);
+  opacity: 0.9;
+}
+.addBtn:hover {
+  opacity: 1;
+}
+
+.btn:focus {
+  box-shadow: none;
+}
+
+.archiveBtn {
+  background: var(--cancel);
+  opacity: 0.9;
+  color: white;
+  border-radius: 0.3rem;
+}
+
+a.back-page,
+a span.page-title {
+  text-decoration: none;
+  font-size: 0.7rem;
+  color: #4a4a4a;
+  font-weight: 600;
+}
+i.to-back-link {
+  opacity: 0.7;
+}
+
+i.to-back-link:hover {
+  opacity: 1;
+}
+
+/* Table*/
+.table-wrapper {
+  border: 0.1px solid rgb(221, 220, 220);
+  /* box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.25); */
+  background: white;
+  border-radius: 0.8rem;
+}
+.table-title {
+  /* background:var(--addBtn); */
+  color: #4a4a4a;
+}
+.table-body thead {
+  text-align: center;
+  background-color: #F3F3F3;
+}
+
+.table-body tr {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.table-body td {
+  max-width: 200px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.img-table-list {
+  width: 2rem;
+}
+
+.page-item.active .page-link {
+  z-index: 3;
+  color: #fff;
+  background-color: var(--addBtn);
+  border-color: var(--lightblue);
+}
+th.dt-center,
+td.dt-center {
+  text-align: center;
+}
+.dataTables_scroll
+{
+    overflow: auto; 
+    text-align: center;
+}
+
+/* action buttons */
+.table-body tbody .action-buttons li {
+  list-style-type: none;
+  display: inline-block;
+}
+.data {
+  margin-top: .5rem;
+  font-size: 0.9rem;
+  padding: 0.3rem 0.7rem;
+  font-weight: 700;
+  color: white ;
+}
+.view-data {
+  background: var(--blue);
+  opacity: 0.8;
+}
+.update-data {
+  background: var(--lightgreen);
+  opacity: 0.8;
+}
+.archive-data {
+  background: var(--cancel);
+  opacity: 0.9;
+}
+
+.view-data:hover,
+.update-data:hover,
+.archive-data:hover {
+  opacity: 1;
+}
+
+.archive-all-data {
+  background: var(--cancel);
+  font-size: 0.9rem;
+  border: 1px solid var(--lightred);
+  padding: 0.5rem 1.5rem;
+}
+.archive-all-data:hover,
+.archiveBtn:hover {
+  background: var(--cancelHover);
+}
+
+/* buttons */
+.btn-default {
+  background: var(--save);
+  border: 1px solid lightgreen;
+  font-size: 0.9rem;
+  padding: 0.5rem 1.9rem;
+  font-weight: 600;
+}
+.btn-default:hover {
+  background: var(--saveHover);
+  border: 1px solid rgb(101, 221, 101);
+}
+.btn-danger,
+.btn-danger:focus {
+  font-size: 0.9rem;
+  padding: 0.5rem 1.5rem;
+  color: #222;
+  background: var(--cancel);
+  opacity: 0.98;
+}
+.btn-danger:hover {
+  background: var(--cancelHover);
+  color: #222;
+  opacity: 1;
+}
+
+/* Archive Page */
+a.back-page,
+span.page-title {
+  text-decoration: none;
+  font-size: 1.6rem;
+  color: #4a4a4a;
+  font-weight: 600;
+}
+
+/* modal */
+.form-check:focus {
+  box-shadow: none;
+  outline: var(--lightblue);
+}
+
+.form-label {
+  font-weight: 600;
+  padding: 0.7rem 0;
+}
+input.form-control {
+  padding: 0.7rem;
+}
+.modal select.form-select {
+  margin: 0.15rem 0;
+  padding: 0.7rem;
+}
+.modal .modal-header {
+  background: var(--addBtn);
+  color: white;
+}
+
+.modal .modal-body,
+.modal .modal-footer {
+  background-color: #fafafa;
+}
+.modal .btn-default {
+  background: var(--lightblue);
+  border: 1px solid var(--addBtn);
+  font-size: 0.9rem;
+}
+
+.modal .btn-default:hover {
+  background: var(--addBtn);
+  border: 1px solid var(--lightblue);
+  color: white;
+}
+.modal .btn-secondary {
+  font-size: 0.9rem;
+  background-color: #8f8d8d;
+}
+.modal .btn-secondary:hover {
+  opacity: 1;
+  background: none;
+  border: 1px solid #7b7b7b;
+  color: black;
+}
+
+.modal .btn-secondary:focus,
+.modal .btn-default:focus {
+  outline: none;
+  box-shadow: none;
+  border: 1px solid lightgray;
+}
+
+.modal .form-control:focus {
+  box-shadow: none;
+  outline: var(--lightblue);
+  border: 1px solid steelblue;
+}
+
+.modal .form-label.asterisk:after {
+  content: " *";
+  color: red;
+  font-size: 1rem;
+}
+.form-label.asterisk:after {
+  content: " *";
+  color: red;
+  font-size: 1rem;
+}
+
+h4 {
+  color: #333333;
+  text-transform: uppercase;
+  font-size: 1.4rem;
+  font-weight: 700;
+  margin-top: 14px !important;
+}

@@ -1,0 +1,46 @@
+
+/* Upload Photo */
+.profile-pic-div{
+    height: 200px;
+    width: 200px;
+    position: relative;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, 0%);
+    border-radius: 50%;
+    overflow: hidden;
+    border: 1px solid grey;
+}
+
+#photo, #photoUpdate, #photoView{
+    height: 100%;
+    width: 100%;
+}
+
+#file, #fileUpdate{
+    display: none;
+}
+
+#uploadBtn, #uploadBtnUpdate{
+    height: 45px;
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+    background: rgba(0, 0, 0, 0.7);
+    color: wheat;
+    line-height: 30px;
+    font-size: 0.9rem;
+    cursor: pointer;
+}
+
+.center_align{
+    text-align: center;
+}
+
+.button_width{
+    width: 7rem;
+}
+

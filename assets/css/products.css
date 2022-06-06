@@ -1,0 +1,43 @@
+#product-div{
+    background-color: white;
+    border-radius: 0.5rem;
+    border: 1px solid rgb(231, 231, 231);
+    padding: 2.3rem 2.8rem;
+}
+
+
+/* Upload Photo */
+.product-img-div{
+    height: 300px;
+    width: 450px;
+    border-radius: 0.5rem;
+    border: 1px solid lightgrey;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+    background-color: white;
+  
+}
+
+#product-img{
+    border-radius: 0.5rem;
+    height: 90%;
+    width: 90%;
+}
+
+.form-label.asterisk:after {
+    content:" *";
+    color:red;
+    font-size: 1rem;
+}
+
+/* product list table */
+.prodimg-table-list{
+    width: 5.5rem;
+    height: 3.5rem;
+    border: 1px solid lightgray;
+    padding: 0 0.5rem;
+    border-radius: 0.3rem;
+    background: white;
+}
