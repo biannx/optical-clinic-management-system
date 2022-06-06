@@ -1,0 +1,746 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="UTF-8" />
+    <link href="assets/css/bootstrap.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="assets/css/adminSidebar.css" />
+    <link rel="stylesheet" href="assets/css/attendants.css" />
+    <link rel="stylesheet" href="assets/css/common.css" />
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.5.0/css/all.css"
+    />
+    <link
+      href="assets/css/dataTables.bootstrap5.min.css"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Admin | Admins</title>
+    <style>
+        td{
+            text-align: center;
+        }
+    </style>
+  </head>
+
+  <body>
+    <div class="sidebar" id="admin-sidebar">
+      <div class="logo-details">
+        <i class="fa fa-user"></i>
+        <span class="logo_name">Vision</span>
+      </div>
+      <ul class="nav-links mt-4">
+        <li>
+          <a href="admin-sidebar.html">
+            <i class="fa fa-th-large"></i>
+            <span class="links_name">Dashboard</span>
+          </a>
+        </li>
+        <li>
+          <a href="#">
+            <i class="fa fa-users"></i>
+            <span class="links_name">Customers</span>
+          </a>
+        </li>
+        <li>
+          <a href="frontend/admin/attendants.html" class="active">
+            <i class="fa fa-user-md"></i>
+            <span class="links_name">Attendants</span>
+          </a>
+        </li>
+        <li>
+          <a href="frontend/admin/products/products.html">
+            <i class="fas fa-shopping-bag"></i>
+            <span class="links_name">Products</span>
+          </a>
+        </li>
+        <li>
+          <a href="#">
+            <i class="fa fa-cart-arrow-down"></i>
+            <span class="links_name">Orders</span>
+          </a>
+        </li>
+        <li>
+          <a href="#">
+            <i class="fa fa-calendar"></i>
+            <span class="links_name">Appointment</span>
+          </a>
+        </li>
+        <li>
+          <a href="admin-admin.html">
+            <i class="fas fa-users-cog" aria-hidden="true"></i>
+            <span class="links_name">Admin</span>
+          </a>
+        </li>
+        <li>
+          <a href="admin-change-password.html">
+            <i class="fa fa-key"></i>
+            <span class="links_name">Change Password</span>
+          </a>
+        </li>
+        <li>
+          <a href="#">
+            <i class="fas fa-sign-out-alt"></i>
+            <span class="links_name">Signout</span>
+          </a>
+        </li>
+      </ul>
+    </div>
+
+    <section class="home-section">
+      <nav>
+        <div class="container-fluid d-flex">
+          <div class="sidebar-button me-auto">
+            <i class="fas fa-bars sidebarBtn"></i>
+            <span class="dashboard">Admins</span>
+          </div>
+
+          <a href="#" class="view-shop px-3">
+            <i class="fas fa-paper-plane" aria-hidden="true"></i>
+            <span class="view-shop-text px-2">View your shop</span>
+          </a>
+          <div class="profile-details px-2">
+            <span class="admin_name px-2">Admin Name</span>
+            <img src="assets/images/avatar.png" alt="" />
+          </div>
+        </div>
+      </nav>
+
+      <div class="home-content">
+        <div class="container-fluid">
+          <div class="d-flex justify-content-end mx-2">
+            <!-- Archives Button -->
+            <a
+              href="frontend/admin/admin/archives.html"
+              class="btn archiveBtn text-white fw-bold px-4"
+              id="archive-list-button"
+              title="View Archive List"
+              >Archives</a
+            >
+
+            <!-- Create New Button trigger modal -->
+            <button
+              type="button"
+              class="btn addBtn text-white fw-bold px-3 mx-3"
+              id="create-new-button"
+              data-bs-toggle="modal"
+              data-bs-target="#newAdmin"
+              title="Create New Admin"
+            >
+              <i class="fa fa-plus" aria-hidden="true"></i>
+              Create New
+            </button>
+          </div>
+
+          <!-- Create New Admin Modal -->
+          <div
+            class="modal fade"
+            id="newAdmin"
+            data-bs-backdrop="static"
+            data-bs-keyboard="false"
+            tabindex="-1"
+            aria-labelledby="newAdminLabel"
+            aria-modal="true"
+            aria-hidden="true"
+          >
+            <div
+              class="modal-dialog modal-lg modal-dialog-centered modal-dialog-scrollable"
+            >
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title fw-bold text-uppercase px-2">
+                    New Admin
+                  </h5>
+                  <button
+                    type="button"
+                    class="btn-close btn-close-white px-2"
+                    data-bs-dismiss="modal"
+                    aria-label="Close"
+                  ></button>
+                </div>
+                <div class="modal-body">
+                  <form action="">
+                    <div class="container-fluid">
+                      <div class="profile-pic-div">
+                        <img
+                          src="assets/images/avatar.png"
+                          alt="avatar"
+                          id="photo"
+                        />
+                        <input type="file" id="file" />
+                        <label class="form-label" for="file" id="uploadBtn"
+                          >Choose Photo</label
+                        >
+                      </div>
+
+                      <!-- Date Added auto input -->
+                      <div class="row">
+                        <div class="col-lg-6 py-2">
+                          <label class="form-label" for="date"
+                            >Date Added:
+                          </label>
+                          <input
+                            type="date"
+                            name="date"
+                            minlength="11"
+                            maxlength="11"
+                            class="form-control"
+                            aria-label="Date Added"
+                            placeholder="Date Added"
+                            required
+                            readonly
+                          />
+                        </div>
+                      </div>
+
+                      <!-- Name -->
+                      <div class="row mb-2 py-1">
+                        <div class="col-lg-3 col-md-6 py-2">
+                          <label
+                            class="form-label asterisk"
+                            for="fnameAdmin"
+                            >First Name:
+                          </label>
+                          <input
+                            type="text"
+                            name="fname"
+                            class="form-control"
+                            id="fnameAdmin"
+                            placeholder="First Name"
+                            required
+                          />
+                        </div>
+                        <div class="col-lg-3 col-md-6 py-2">
+                          <label class="form-label" for="midnameAdmin"
+                            >Middle Name:
+                          </label>
+                          <input
+                            type="text"
+                            name="midname"
+                            class="form-control"
+                            id="midnameAdmin"
+                            placeholder="Middle Name"
+                          />
+                        </div>
+                        <div class="col-lg-3 col-md-6 py-2">
+                          <label
+                            class="form-label asterisk"
+                            for="surnameAdmin"
+                            >Last Name:
+                          </label>
+                          <input
+                            type="text"
+                            name="surname"
+                            class="form-control"
+                            id="surnameAdmin"
+                            placeholder="Last Name"
+                            required
+                          />
+                        </div>
+                        <div class="col-lg-3 col-md-6 py-2">
+                          <label class="form-label" for="suffixAdmin"
+                            >Suffix:
+                          </label>
+                          <input
+                            type="text"
+                            name="suffix"
+                            class="form-control"
+                            id="suffixAdmin"
+                            placeholder="Suffix"
+                          />
+                        </div>
+                      </div>
+
+                      <!-- Email Address -->
+                      <div class="row pt-2">
+                        <div class="col-lg-6 py-2">
+                          <label
+                            class="form-label asterisk"
+                            for="emailAttendant"
+                            >Email Address:
+                          </label>
+                          <input
+                            type="email"
+                            name="email"
+                            class="form-control"
+                            id="emailAttendant"
+                            placeholder="Email Address"
+                            required
+                          />
+                        </div>
+                      </div>
+                    </div>
+                  </form>
+                </div>
+                <div class="modal-footer mx-3">
+                  <button type="button" class="btn btn-default px-3 mx-2">
+                    Save
+                  </button>
+                  <button
+                    type="button"
+                    class="btn btn-secondary py-2 px-3"
+                    data-bs-dismiss="modal"
+                  >
+                    Close
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Admins Table -->
+          <div class="container-fluid p-4" id="admins-table-data">
+            <div class="table-wrapper px-4">
+              <div class="table-title">
+                <!--Table Header-->
+                <h4 class="px-1 pt-4 fw-bold">List of Admins</h4>
+              </div>
+              <hr class="my-4" />
+              <div class="container-fluid table-responsive pt-2">
+                <table
+                  class="table table-hover align-middle align-items-center table-body"
+                  aria-label="Customers' List"
+                  id="adminsTableList"
+                >
+                  <!--Table Body-->
+                  <thead>
+                    <tr>
+                      <th scope="col">
+                        <div class="form-check">
+                          <input
+                            class="form-check-input check-all"
+                            type="checkbox"
+                            value=""
+                            id="check-all-customer"
+                          />
+                          <label
+                            class="form-check-label"
+                            for="check-all-customer"
+                          >
+                            All
+                          </label>
+                        </div>
+                      </th>
+                      <th scope="col">ID</th>
+                      <th scope="col">Admin Number</th>
+                      <th scope="col">Name</th>
+                      <th scope="col">Email</th>
+                      <th scope="col">Action</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>
+                        <div class="form-check">
+                          <input
+                            class="form-check-input check-list"
+                            type="checkbox"
+                            value=""
+                            id="check-one-customer"
+                          />
+                        </div>
+                      </td>
+                      <td>Admin-1</td>
+                      <td>1234</td>
+                      <td>
+                        <img
+                          src="assets/images/avatar.png"
+                          class="img-table-list mx-2"
+                        />juan dela cruz
+                      </td>
+                      <td>juandelacruz@gmail.com</td>
+                      <td>
+                        <div class="action-buttons" id="actions">
+                          <ul>
+                            <li>
+                              <button
+                                type="button"
+                                id="view"
+                                class="btn view-data data"
+                                data-bs-toggle="modal"
+                                data-bs-target="#viewAdmin"
+                                title="View Details"
+                              >
+                                <i class="fas fa-eye" aria-hidden="true"></i>
+                                View
+                              </button>
+                            </li>
+                            <li>
+                              <button
+                                type="button"
+                                id="edit"
+                                class="btn update-data data"
+                                data-bs-toggle="modal"
+                                data-bs-target="#updateAdmin"
+                                title="Update Details"
+                              >
+                                <i class="fas fa-pen" aria-hidden="true"></i>
+                                Update
+                              </button>
+                            </li>
+                            <li></li>
+                            <li>
+                              <button
+                                type="button"
+                                class="btn archive-data data"
+                                title="Archive Data"
+                                aria-hidden="true"
+                              >
+                                Archive
+                              </button>
+                            </li>
+                          </ul>
+                        </div>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+                <br />
+
+                <!-- Batch Archive Button -->
+                <div class="d-flex justify-content-end my-3">
+                  <button
+                    type="button"
+                    class="btn archive-all-data px-4 py-1 fw-bold text-white text-uppercase"
+                  >
+                    Archive Admins (6)
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- View Attendant Details Modal -->
+        <div
+          class="modal fade"
+          id="viewAdmin"
+          data-bs-backdrop="static"
+          data-bs-keyboard="false"
+          tabindex="-1"
+          aria-labelledby="viewAdminLabel"
+          aria-modal="true"
+          aria-hidden="true"
+        >
+          <div
+            class="modal-dialog modal-lg modal-dialog-centered modal-dialog-scrollable"
+          >
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title fw-bold text-uppercase px-2">
+                  View Admin Details
+                </h5>
+                <button
+                  type="button"
+                  class="btn-close btn-close-white px-2"
+                  data-bs-dismiss="modal"
+                  aria-label="Close"
+                ></button>
+              </div>
+              <div class="modal-body">
+                <div class="container-fluid">
+                  <div class="profile-pic-div">
+                    <img
+                      src="assets/images/avatar.png"
+                      alt="avatar"
+                      id="photoView"
+                    />
+                  </div>
+                  <!-- Date Added -->
+                  <div class="row">
+                    <div class="col-lg-6 py-2">
+                      <label class="form-label" for="dateAdminView"
+                        >Date Added:
+                      </label>
+                      <input
+                        type="date"
+                        name="date"
+                        id="dateAdminView"
+                        minlength="11"
+                        maxlength="11"
+                        class="form-control"
+                        aria-label="Date Added"
+                        readonly
+                      />
+                    </div>
+                  </div>
+
+                  <!-- View Name -->
+                  <div class="row mb-2 py-1">
+                    <div class="col-lg-3 col-md-6 py-2">
+                      <label
+                        class="form-label asterisk"
+                        for="fnameAdminView"
+                        >First Name:
+                      </label>
+                      <input
+                        type="text"
+                        name="fname"
+                        class="form-control"
+                        id="fnameAdminView"
+                        readonly
+                      />
+                    </div>
+                    <div class="col-lg-3 col-md-6 py-2">
+                      <label class="form-label" for="midnameAdminView"
+                        >Middle Name:
+                      </label>
+                      <input
+                        type="text"
+                        name="midname"
+                        class="form-control"
+                        id="midnameAdminView"
+                        readonly
+                      />
+                    </div>
+                    <div class="col-lg-3 col-md-6 py-2">
+                      <label
+                        class="form-label asterisk"
+                        for="surnameAttendantView"
+                        >Last Name:
+                      </label>
+                      <input
+                        type="text"
+                        name="surname"
+                        class="form-control"
+                        id="surnameAdminView"
+                        readonly
+                      />
+                    </div>
+                    <div class="col-lg-3 col-md-6 py-2">
+                      <label class="form-label" for="suffixAdminView"
+                        >Suffix:
+                      </label>
+                      <input
+                        type="text"
+                        name="suffix"
+                        class="form-control"
+                        id="suffixAdminView"
+                        readonly
+                      />
+                    </div>
+                  </div>
+
+                  <!-- View Email Address -->
+                  <div class="row pt-2">
+                    <div class="col-lg-6 py-2">
+                      <label
+                        class="form-label asterisk"
+                        for="emailAttendantView"
+                        >Email Address:
+                      </label>
+                      <input
+                        type="email"
+                        name="email"
+                        class="form-control"
+                        id="emailAttendantView"
+                        readonly
+                      />
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="modal-footer mx-2">
+                <button
+                  type="button"
+                  class="btn btn-secondary"
+                  data-bs-dismiss="modal"
+                >
+                  Close
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Update Admin Details Modal -->
+        <div
+          class="modal fade"
+          id="updateAdmin"
+          data-bs-backdrop="static"
+          data-bs-keyboard="false"
+          tabindex="-1"
+          aria-labelledby="updateAdminLabel"
+          aria-modal="true"
+          aria-hidden="true"
+        >
+          <div
+            class="modal-dialog modal-lg modal-dialog-centered modal-dialog-scrollable"
+          >
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5
+                  class="modal-title fw-bold text-uppercase px-2"
+                  id="updateAdminLabel"
+                >
+                  Update Admin Details
+                </h5>
+                <button
+                  type="button"
+                  class="btn-close btn-close-white px-2"
+                  data-bs-dismiss="modal"
+                  aria-label="Close"
+                ></button>
+              </div>
+              <div class="modal-body">
+                <div class="container-fluid">
+                  <form action="">
+                    <!-- Update Photo -->
+                    <div class="profile-pic-div">
+                      <img
+                        src="assets/images/avatar.png"
+                        alt="avatar"
+                        id="photoUpdate"
+                      />
+                      <input type="file" id="fileUpdate" />
+                      <label class="form-label" for="file" id="uploadBtnUpdate"
+                        >Choose Photo</label
+                      >
+                    </div>
+
+                    <!-- Date Added auto input -->
+                    <div class="row">
+                      <div class="col-lg-6 py-2">
+                        <label class="form-label" for="dateAdminUpdate"
+                          >Date Added:
+                        </label>
+                        <input
+                          type="date"
+                          name="date"
+                          id="dateAdminUpdate"
+                          minlength="11"
+                          maxlength="11"
+                          class="form-control"
+                          aria-label="Date Added"
+                          required
+                          readonly
+                        />
+                      </div>
+                    </div>
+
+                    <!-- Update Name -->
+                    <div class="row mb-2 py-1">
+                      <div class="col-lg-3 col-md-6 py-2">
+                        <label
+                          class="form-label asterisk"
+                          for="fnameAdminUpdate"
+                          >First Name:
+                        </label>
+                        <input
+                          type="text"
+                          name="fname"
+                          class="form-control"
+                          id="fnameAdminUpdate"
+                          value="Juan "
+                          required
+                        />
+                      </div>
+                      <div class="col-lg-3 col-md-6 py-2">
+                        <label class="form-label" for="midnameAdminUpdate"
+                          >Middle Name:
+                        </label>
+                        <input
+                          type="text"
+                          name="midname"
+                          class="form-control"
+                          id="midnameAdminUpdate"
+                          value="Francisco"
+                        />
+                      </div>
+                      <div class="col-lg-3 col-md-6 py-2">
+                        <label
+                          class="form-label asterisk"
+                          for="surnameAdminUpdate"
+                          >Last Name:
+                        </label>
+                        <input
+                          type="text"
+                          name="surname"
+                          class="form-control"
+                          id="surnameAdminUpdate"
+                          value="Dela Cruz"
+                          required
+                        />
+                      </div>
+                      <div class="col-lg-3 col-md-6 py-2">
+                        <label class="form-label" for="suffixAdminUpdate"
+                          >Suffix:
+                        </label>
+                        <input
+                          type="text"
+                          name="suffix"
+                          class="form-control"
+                          id="suffixAdminUpdate"
+                          value=""
+                        />
+                      </div>
+                    </div>
+
+                    <!-- Update Email Address -->
+                    <div class="row pt-2">
+                      <div class="col-lg-6 py-2">
+                        <label
+                          class="form-label asterisk"
+                          for="emailAdminUpdate"
+                          >Email Address:
+                        </label>
+                        <input
+                          type="email"
+                          name="email"
+                          class="form-control"
+                          id="emailAdminUpdate"
+                          value="sample@gmail.com"
+                          required
+                        />
+                      </div>
+                    </div>
+                  </form>
+                </div>
+              </div>
+              <div class="modal-footer mx-2">
+                <button type="button" class="btn btn-default">
+                  Save Changes
+                </button>
+                <button
+                  type="button"
+                  class="btn btn-secondary"
+                  data-bs-dismiss="modal"
+                >
+                  Close
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- jQuery DataTables JS CDN -->
+    <script src="assets/js/jquery-3.5.1.js"></script>
+    <script src="assets/js/jquery.dataTables.min.js"></script>
+    <script src="assets/js/dataTables.bootstrap5.min.js"></script>
+    <script>
+      let sidebar = document.querySelector(".sidebar");
+      let sidebarBtn = document.querySelector(".sidebarBtn");
+      sidebarBtn.onclick = function () {
+        sidebar.classList.toggle("active");
+        if (sidebar.classList.contains("active")) {
+          sidebarBtn.classList.replace("bx-menu", "bx-menu-alt-right");
+        } else sidebarBtn.classList.replace("bx-menu-alt-right", "bx-menu");
+      };
+      $(document).ready(function () {
+        $("#attendantsTableList").DataTable({
+          columnDefs: [{ className: "dt-center", targets: "_all" }],
+          lengthMenu: [
+            [20, 25, 50, -1],
+            [20, 25, 50, "All"],
+          ],
+        });
+        jQuery(".dataTable").wrap('<div class="dataTables_scroll" />');
+      });
+    </script>
+
+    <script src="assets/js/attendants.js"></script>
+    <script src="assets/js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>
