@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="UTF-8" />
+    <link href="/assets/css/bootstrap.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="/assets/css/adminSidebar.css" />
+    <link rel="stylesheet" href="/assets/css/common.css" />
+    <link rel="stylesheet" href="/assets/css/products.css" />
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.5.0/css/all.css"
+    />
+    <link
+      href="/assets/css/dataTables.bootstrap5.min.css"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Admin | Products</title>
+  </head>
+
+  <body>
+    <div class="sidebar" id="admin-sidebar">
+      <div class="logo-details">
+        <i class="fa fa-user"></i>
+        <span class="logo_name">Vision</span>
+      </div>
+      <ul class="nav-links mt-4">
+        <li>
+          <a href="admin-sidebar.html">
+            <i class="fa fa-th-large"></i>
+            <span class="links_name">Dashboard</span>
+          </a>
+        </li>
+        <li>
+          <a href="#">
+            <i class="fa fa-users"></i>
+            <span class="links_name">Customers</span>
+          </a>
+        </li>
+        <li>
+          <a href="/frontend/admin/attendants/attendants.html">
+            <i class="fa fa-user-md"></i>
+            <span class="links_name">Attendants</span>
+          </a>
+        </li>
+        <li>
+          <a href="products.html" class="active">
+            <i class="fas fa-shopping-bag"></i>
+            <span class="links_name">Products</span>
+          </a>
+        </li>
+        <li>
+          <a href="#">
+            <i class="fa fa-cart-arrow-down"></i>
+            <span class="links_name">Orders</span>
+          </a>
+        </li>
+        <li>
+          <a href="#">
+            <i class="fa fa-calendar"></i>
+            <span class="links_name">Appointment</span>
+          </a>
+        </li>
+        <li>
+          <a href="#">
+            <i class="fas fa-users-cog" aria-hidden="true"></i>
+            <span class="links_name">Admin</span>
+          </a>
+        </li>
+        <li>
+          <a href="#">
+            <i class="fa fa-key"></i>
+            <span class="links_name">Change Password</span>
+          </a>
+        </li>
+        <li>
+          <a href="#">
+            <i class="fas fa-sign-out-alt"></i>
+            <span class="links_name">Signout</span>
+          </a>
+        </li>
+      </ul>
+    </div>
+
+    <section class="home-section pb-3 px-3">
+      <nav>
+        <div class="container-fluid d-flex">
+          <div class="sidebar-button me-auto">
+            <i class="fas fa-bars sidebarBtn"></i>
+            <span class="dashboard">Products</span>
+          </div>
+
+          <a href="#" class="view-shop px-3">
+            <i class="fas fa-paper-plane" aria-hidden="true"></i>
+            <span class="view-shop-text px-2">View your shop</span>
+          </a>
+          <div class="profile-details px-2">
+            <span class="admin_name px-2">Admin Name</span>
+            <img src="/assets/images/avatar.png" alt="" />
+          </div>
+        </div>
+      </nav>
+
+      <div class="home-content pb-3">
+        <div class="container-fluid">
+          <div class="d-flex mb-4 px-1">
+            <!-- Archives Button -->
+            <a href="/frontend/admin/products/products.html" class="back-page">
+              <i
+                class="fa fa-arrow-left to-back-link"
+                aria-hidden="true"
+                title="Go back"
+              ></i>
+            </a>
+            <span class="page-title px-3">Archives</span>
+          </div>
+
+          <div class="table-wrapper px-4">
+            <div class="table-title">
+              <h4 class="px-1 pt-4 fw-bold">Archived Products</h4>
+            </div>
+            <hr class="my-4" />
+            <div class="container-fluid table-responsive pt-2">
+              <table
+                class="table table-hover align-middle align-items-center table-body"
+                aria-label="Customers' List"
+                id="product-archive-table"
+              >
+                <!--Table Body-->
+                <thead>
+                  <tr>
+                    <th scope="col">
+                      <div class="form-check">
+                        <input
+                          class="form-check-input check-all"
+                          type="checkbox"
+                          value=""
+                          id="check-all-customer"
+                        />
+                        <label
+                          class="form-check-label"
+                          for="check-all-customer"
+                        >
+                          All
+                        </label>
+                      </div>
+                    </th>
+                    <th scope="col">ID</th>
+                    <th scope="col">Item</th>
+                    <th scope="col">Product Name</th>
+                    <th scope="col">Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>
+                      <div class="form-check">
+                        <input
+                          class="form-check-input check-list"
+                          type="checkbox"
+                          value=""
+                          id="check-one-customer"
+                        />
+                      </div>
+                    </td>
+                    <td>Prod-1</td>
+                    <td>
+                      <img
+                        src="/assets/images/product-img.png"
+                        class="prodimg-table-list mx-2"
+                      />
+                    </td>
+                    <td>Original Spring Glass</td>
+                    <td>
+                      <button
+                        type="button"
+                        class="btn update-data data"
+                        title="Restore Data"
+                      >
+                        Restore
+                      </button>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+              <br /><br />
+
+              <!--Batch Button -->
+              <div class="d-flex justify-content-end my-3 pb-4">
+                <button
+                  type="button"
+                  class="btn btn-danger px-3 py-1 mx-3 text-uppercase fw-bold"
+                  data-bs-toggle="modal"
+                  data-bs-target="#permanentlyDeleteProduct"
+                  title="Permanenetly Delete Data"
+                >
+                  <i class="fa fa-trash px-2" aria-hidden="true"></i>Permanently
+                  Delete
+                </button>
+                <button
+                  type="button"
+                  class="btn btn-default text-uppercase"
+                  title="Restore Attendant Data"
+                >
+                  Restore Attendant (6)
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Permanently Delete Attendant Pop up Dialog-->
+        <div
+          class="modal fade"
+          id="permanentlyDeleteProduct"
+          data-bs-backdrop="static"
+          data-bs-keyboard="false"
+          tabindex="-1"
+          aria-modal="true"
+          aria-labelledby="permanentlyDeleteLabel"
+          aria-hidden="true"
+        >
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h6 class="modal-title text-whiter">Permanently Delete</h6>
+                <button
+                  type="button"
+                  class="btn-close btn-close-white"
+                  data-bs-dismiss="modal"
+                  aria-label="Close"
+                ></button>
+              </div>
+              <div class="modal-body">
+                <h6>
+                  Once you permanently delete the product's data, it can't be
+                  undone.
+                </h6>
+              </div>
+              <div class="modal-footer">
+                <button type="submit" class="btn btn-default px-3">
+                  Delete
+                </button>
+                <button
+                  type="button"
+                  class="btn btn-secondary"
+                  data-bs-dismiss="modal"
+                >
+                  Cancel
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- jQuery DataTables JS CDN -->
+    <script src="/assets/js/jquery-3.5.1.js"></script>
+    <script src="/assets/js/jquery.dataTables.min.js"></script>
+    <script src="/assets/js/dataTables.bootstrap5.min.js"></script>
+    <script>
+      let sidebar = document.querySelector(".sidebar");
+      let sidebarBtn = document.querySelector(".sidebarBtn");
+      sidebarBtn.onclick = function () {
+        sidebar.classList.toggle("active");
+        if (sidebar.classList.contains("active")) {
+          sidebarBtn.classList.replace("bx-menu", "bx-menu-alt-right");
+        } else sidebarBtn.classList.replace("bx-menu-alt-right", "bx-menu");
+      };
+      $(document).ready(function () {
+        $("#product-archive-table").DataTable({
+          columnDefs: [{ className: "dt-center", targets: "_all" }],
+          lengthMenu: [
+            [20, 25, 50, -1],
+            [20, 25, 50, "All"],
+          ],
+        });
+
+        jQuery(".dataTable").wrap('<div class="dataTables_scroll" />');
+      });
+    </script>
+
+    <script src="/assets/js/product.js"></script>
+    <script src="/assets/js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>
