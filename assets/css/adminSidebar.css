@@ -4,13 +4,13 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@200;300;400;500;600;700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;500;600;700&display=swap');
 :root{
-  --lightblue: #BFE8E6;
-  --lightgreen: #B6F89F;
+  --blue: #50ABF1;
+  --lightgreen: #52B788;
   --lightred: #F95050;
   --lightpink:#ff9e9e;
-  --black: #000000;
-  --addBtn: #2f798a;
-  --save: #B6F89F;
+  --black: #333333;
+  --addBtn: #50ABF1;
+  --save: #52B788;
   --saveHover: #9ceb7f;
   --cancel: #ec5353;
   --cancelHover: #ee4747;
@@ -34,7 +34,8 @@ html,body{
   height: 100%;
   width: 280px;
   background: #fafafa;
-  border: 1px solid #D3D3D3;
+  border: .5px solid #D3D3D3;
+  border-radius: 20px;
   -moz-transition: all 0.5s ease;
   -o-transition: all 0.5s ease;
   -webkit-transition: all 0.5s ease;
@@ -53,7 +54,7 @@ html,body{
 .sidebar .logo-details i{
   font-size: 1.5rem;
   font-weight: 500;
-  color: #4a4a4a;
+  color: #333333;
   min-width: 60px;
   text-align: center
 }
@@ -159,8 +160,8 @@ nav .sidebar-button i{
 .home-section nav .profile-details{
   display: flex;
   align-items: center;
-  background: #F5F6FA;
-  border: 2px solid #EFEEF1;
+  background: #FAFAFA;
+  /* border: 2px solid #EFEEF1; */
   border-radius: 6px;
   height: 46px;
   min-width: 150px;
@@ -171,7 +172,7 @@ nav .sidebar-button i{
   color: var(--addBtn);
   text-decoration: none;
   font-size: 1rem;
-  font-weight: 500;
+  font-weight: 700;
 }
 .home-section nav .view-shop-text:hover{
   text-decoration: underline;
@@ -185,8 +186,8 @@ nav .profile-details img{
 }
 nav .profile-details .admin_name{
   font-size: 15px;
-  font-weight: 600;
-  color: #333;
+  font-weight: 700;
+  color: #333333;
   white-space: nowrap;
 }
 
