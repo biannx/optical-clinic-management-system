@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+    <head>
+        <meta charset="UTF-8" />
+        <link href="assets/css/bootstrap.min.css" rel="stylesheet" />
+        <link rel="stylesheet" href="assets/css/adminSidebar.css" />
+        <link rel="stylesheet" href="assets/css/attendants.css" />
+        <link rel="stylesheet" href="assets/css/common.css" />
+        <link
+        rel="stylesheet"
+        href="https://use.fontawesome.com/releases/v5.5.0/css/all.css"
+        />
+        <link
+        href="assets/css/dataTables.bootstrap5.min.css"
+        rel="stylesheet"
+        type="text/css"
+        />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Sign In</title>
+        <style>
+            label{
+                font-weight: bold;
+            }
+            .small{
+                font-family: Helvetica;
+                font-size: 12px;
+                color:#55A8BA;
+            }
+            button{
+                padding-bottom: 2%;
+            }
+            .btn, .btn:hover{
+                background-color: #50ABF1; 
+                color: #FFFFFF; 
+            } 
+            .col-12{
+                padding-bottom: 3%;
+            }
+        </style>
+    </head>
+    <body>
+        <div style="padding-top: 10%; padding-left: 40%; padding-right: 40%;">
+                <div class="row mb-3">
+                    <div class="col-12">
+                        <label for="email-username" class="form-label">Email/Username</label>
+                        <input type="text" class="form-control form-control" placeholder="Email/Username" id="email-username">
+                    </div>
+                    <div class="col-12">
+                        <label for="password" class="form-label">Password</label>
+                        <input type="password" class="form-control form-control" placeholder="Password" id="password">
+                    </div>
+                    <p class="small">Forgot Password?</p>
+                    <div class="col-12">
+                        <div style="text-align: center">
+                            <button type="button" class="btn" 
+                            style="width: 100%">Login</button>
+                        </div>
+                    </div>
+                    <div class="col-12">
+                        <div style="text-align: center">
+                            <button type="button" class="btn" 
+                            style="width: 100%">Create Account</button>
+                        </div>
+                    </div>
+                </div>
+        </div>
+    </body>
+</html>
