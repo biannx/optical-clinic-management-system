@@ -28,7 +28,7 @@
 
       <ul class="nav-links mt-4">
         <li>
-          <a href="admin-sidebar.html">
+          <a href="./admin-sidebar.html">
             <i class="fa fa-th-large"></i>
             <span class="links_name">Dashboard</span>
           </a>
@@ -185,7 +185,6 @@
                             aria-label="Date Added"
                             placeholder="Date Added"
                             required
-                            readonly
                           />
                         </div>
                       </div>
@@ -445,22 +444,21 @@
                         <img
                           src="/assets/images/avatar.png"
                           class="img-table-list mx-2"
-                        />juan dela cruz
+                        />Juan Dela Cruz
                       </td>
                       <td>09123456789</td>
-                      <td>
-                        <div class="action-buttons" id="actions">
+                      <td class="action">
+                        <div class="action-buttons">
                           <ul>
                             <li>
                               <button
                                 type="button"
                                 id="view"
-                                class="btn view-data data"
+                                class="btn view-data data button_width"
                                 data-bs-toggle="modal"
                                 data-bs-target="#viewAttendant"
                                 title="View Details"
                               >
-                                <i class="fas fa-eye" aria-hidden="true"></i>
                                 View
                               </button>
                             </li>
@@ -468,12 +466,11 @@
                               <button
                                 type="button"
                                 id="edit"
-                                class="btn update-data data"
+                                class="btn update-data data button_width"
                                 data-bs-toggle="modal"
                                 data-bs-target="#updateAttendant"
                                 title="Update Details"
                               >
-                                <i class="fas fa-pen" aria-hidden="true"></i>
                                 Update
                               </button>
                             </li>
@@ -481,7 +478,7 @@
                             <li>
                               <button
                                 type="button"
-                                class="btn archive-data data"
+                                class="btn archive-data data button_width"
                                 title="Archive Data"
                                 aria-hidden="true"
                               >
@@ -813,7 +810,6 @@
                           class="form-control"
                           aria-label="Date Added"
                           required
-                          readonly
                         />
                       </div>
                     </div>
