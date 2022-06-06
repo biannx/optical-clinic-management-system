@@ -197,12 +197,12 @@ input.form-control {
 }
 .modal .btn-secondary {
   font-size: 0.9rem;
-  background-color: #8f8d8d;
+  background-color: #F37F7F;
 }
 .modal .btn-secondary:hover {
   opacity: 1;
   background: none;
-  border: 1px solid #7b7b7b;
+  border: 1px solid #F37F7F;
   color: black;
 }
 
