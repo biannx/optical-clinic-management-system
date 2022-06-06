@@ -36,3 +36,11 @@
     cursor: pointer;
 }
 
+.center_align{
+    text-align: center;
+}
+
+.button_width{
+    width: 7rem;
+}
+
