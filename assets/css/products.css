@@ -41,3 +41,7 @@
     border-radius: 0.3rem;
     background: white;
 }
+
+.table-body tr {
+    text-transform: capitalize;
+}

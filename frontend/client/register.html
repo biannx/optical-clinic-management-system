@@ -1,101 +1,173 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
-    <head>
-        <meta charset="UTF-8" />
-        <link href="assets/css/bootstrap.min.css" rel="stylesheet" />
-        <link rel="stylesheet" href="assets/css/adminSidebar.css" />
-        <link rel="stylesheet" href="assets/css/attendants.css" />
-        <link rel="stylesheet" href="assets/css/common.css" />
-        <link
-        rel="stylesheet"
-        href="https://use.fontawesome.com/releases/v5.5.0/css/all.css"
-        />
-        <link
-        href="assets/css/dataTables.bootstrap5.min.css"
-        rel="stylesheet"
-        type="text/css"
-        />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Sign In</title>
-        <style>
-            label{
-                font-weight: bold;
-            }
-            .small{
-                font-family: Helvetica;
-                font-size: 12px;
-                color:#55A8BA;
-            }
-            button{
-                padding-bottom: 2%;
-            }
-            .btn, .btn:hover{
-                background-color: #50ABF1; 
-                color: #FFFFFF; 
-            } 
-            .col-4, .col-6{
-                padding-bottom: 3%;
-            }
-        </style>
-    </head>
+  <head>
+    <meta charset="UTF-8" />
+    <link href="../../../assets/css/bootstrap.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="../../../assets/css/common.css" />
+    <link rel="stylesheet" href="../../../assets/css/adminSidebar.css" />
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.5.0/css/all.css"
+    />
+    <link
+      href="/assets/css/dataTables.bootstrap5.min.css"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sign In</title>
+    <style>
+      label {
+        font-weight: bold;
+      }
+      .small {
+        font-family: Helvetica;
+        font-size: 12px;
+        color: #55a8ba;
+      }
+      button {
+        padding-bottom: 2%;
+      }
+      .btn,
+      .btn:hover {
+        background-color: #50abf1;
+        color: #ffffff;
+      }
+      .col-4,
+      .col-6 {
+        padding-bottom: 3%;
+      }
+    </style>
+  </head>
 
-    <body>
-        <div style="padding-left: 20%; padding-right: 20%; padding-top: 5%;">
-            <div class="row mb-3">
-                <div class="col-4">
-                    <label for="givenName" class="form-label">Given Name*</label>
-                    <input type="text" class="form-control form-control" placeholder="Given Name" id="givenName">
-                </div>
-                <div class="col-4">
-                    <label for="middleName" class="form-label">Middle Name</label>
-                    <input type="text" class="form-control form-control" placeholder="Middle Name" id="middleName">
-                </div>
-                <div class="col-4">
-                    <label for="lastName" class="form-label">Last Name*</label>
-                    <input type="text" class="form-control form-control" placeholder="Last Name" id="lastName">
-                </div>
-                <div class="col-4">
-                    <label for="suffix" class="form-label">Suffix</label>
-                    <input type="text" class="form-control form-control" placeholder="Suffix" id="suffix">
-                </div>
-                <div class="col-4">
-                    <label for="birthDate" class="form-label">Birthdate*</label>
-                    <input type="date" class="form-control form-control" placeholder="mm/dd/yy" id="birthDate">
-                </div>
-                <div class="col-4">
-                    <label for="fistVisit" class="form-label">Sex*</label>
-                    <div class="col-12">
-                        <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="radio" name="sex" id="male" value="male">
-                            <label class="form-check-label" for="male" style="font-weight: normal">Yes</label>
-                        </div>
-                        <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="radio" name="sex" id="female" value="female">
-                            <label class="form-check-label" for="female" style="font-weight: normal">No</label>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-6">
-                    <label for="emailAddress" class="form-label">Email*</label>
-                    <input type="email" class="form-control form-control" placeholder="Email Address" id="emailAddress">
-                </div>
-                <div class="col-6">
-                    <label for="confirmEmail" class="form-label">Confirm Email*</label>
-                    <input type="email" class="form-control form-control" placeholder="Confirm Email" id="confirmEmail">
-                </div>
-                <div class="col-6">
-                    <label for="password" class="form-label">Password*</label>
-                    <input type="password" class="form-control form-control" placeholder="Password" id="password">
-                </div>
-                <div class="col-6">
-                    <label for="confirmPassword" class="form-label">Confirm Password*</label>
-                    <input type="password" class="form-control form-control" placeholder="Confirm Password" id="confirmPassword">
-                </div>
-                <div style="text-align: center">
-                    <button type="button" class="btn" 
-                    style="width: 30%">Create Account</button>
-                </div>
-            </div>
+  <body>
+    <div style="padding-left: 20%; padding-right: 20%">
+      <h1 class="py-5">Register</h1>
+      <div class="row mb-3">
+        <div class="col-4">
+          <label for="givenName" class="form-label">Given Name*</label>
+          <input
+            type="text"
+            class="form-control form-control"
+            placeholder="Given Name"
+            id="givenName"
+          />
         </div>
-    </body>
+        <div class="col-4">
+          <label for="middleName" class="form-label">Middle Name</label>
+          <input
+            type="text"
+            class="form-control form-control"
+            placeholder="Middle Name"
+            id="middleName"
+          />
+        </div>
+        <div class="col-4">
+          <label for="lastName" class="form-label">Last Name*</label>
+          <input
+            type="text"
+            class="form-control form-control"
+            placeholder="Last Name"
+            id="lastName"
+          />
+        </div>
+        <div class="col-4">
+          <label for="suffix" class="form-label">Suffix</label>
+          <input
+            type="text"
+            class="form-control form-control"
+            placeholder="Suffix"
+            id="suffix"
+          />
+        </div>
+        <div class="col-4">
+          <label for="birthDate" class="form-label">Birthdate*</label>
+          <input
+            type="date"
+            class="form-control form-control"
+            placeholder="mm/dd/yy"
+            id="birthDate"
+          />
+        </div>
+        <div class="col-4">
+          <label for="fistVisit" class="form-label">Sex*</label>
+          <div class="col-12">
+            <div class="form-check form-check-inline">
+              <input
+                class="form-check-input"
+                type="radio"
+                name="sex"
+                id="male"
+                value="male"
+              />
+              <label
+                class="form-check-label"
+                for="male"
+                style="font-weight: normal"
+                >Yes</label
+              >
+            </div>
+            <div class="form-check form-check-inline">
+              <input
+                class="form-check-input"
+                type="radio"
+                name="sex"
+                id="female"
+                value="female"
+              />
+              <label
+                class="form-check-label"
+                for="female"
+                style="font-weight: normal"
+                >No</label
+              >
+            </div>
+          </div>
+        </div>
+        <div class="col-6">
+          <label for="emailAddress" class="form-label">Email*</label>
+          <input
+            type="email"
+            class="form-control form-control"
+            placeholder="Email Address"
+            id="emailAddress"
+          />
+        </div>
+        <div class="col-6">
+          <label for="confirmEmail" class="form-label">Confirm Email*</label>
+          <input
+            type="email"
+            class="form-control form-control"
+            placeholder="Confirm Email"
+            id="confirmEmail"
+          />
+        </div>
+        <div class="col-6">
+          <label for="password" class="form-label">Password*</label>
+          <input
+            type="password"
+            class="form-control form-control"
+            placeholder="Password"
+            id="password"
+          />
+        </div>
+        <div class="col-6">
+          <label for="confirmPassword" class="form-label"
+            >Confirm Password*</label
+          >
+          <input
+            type="password"
+            class="form-control form-control"
+            placeholder="Confirm Password"
+            id="confirmPassword"
+          />
+        </div>
+        <div style="text-align: center">
+          <button type="button" class="btn" style="width: 30%">
+            Create Account
+          </button>
+        </div>
+      </div>
+    </div>
+  </body>
 </html>

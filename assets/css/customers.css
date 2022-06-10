@@ -62,7 +62,7 @@ p.tab-header {
 table#purchase-history td,
 table#archive-customers td,
 table#eye-history td {
-  line-height: 3rem;
+  line-height: 2rem;
 }
 
 /* product list table */
@@ -109,4 +109,8 @@ div #purchase-img-history img {
   opacity: 0.9;
   padding: 0;
   line-height: 1rem;
+}
+
+.table-body tr {
+  text-transform: capitalize;
 }
