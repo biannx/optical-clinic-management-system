@@ -1,3 +1,36 @@
+
+/* Googlefont Poppins CDN Link */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Open Sans:wght@200;300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@200;300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;500;600;700&display=swap');
+:root{
+  --blue: #50ABF1;
+  --lightgreen: #52B788;
+  --lightred: #F95050;
+  --lightpink:#ff9e9e;
+  --black: #333333;
+  --addBtn: #50ABF1;
+  --save:#9ceb7f;
+  --saveHover: #52B788;
+  --cancel: #ec5353;
+  --cancelHover: #ee4747;
+  --lightgray: #cacaca;
+  --labelNew: #98DAD6;
+
+}
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family:'Inter', sans-serif;
+  letter-spacing: 1%;
+}
+html,body{
+  background: #fafafa;
+  font-size: 92%;
+}
 /* common */
 .addBtn {
   background-color: var(--addBtn);
@@ -58,7 +91,7 @@ i.to-back-link:hover {
   word-wrap: break-word;
 }
 .table-body td.action{
-  max-width: 340px;
+  max-width: 330px;
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
@@ -177,7 +210,7 @@ span.page-title {
 
 .form-label {
   font-weight: 600;
-  padding: 0.7rem 0;
+  padding: 0.2rem 0;
 }
 input.form-control {
   padding: 0.7rem;
@@ -250,4 +283,8 @@ h4 {
   font-size: 1.4rem;
   font-weight: 700;
   margin-top: 14px !important;
+}
+
+.center_align{
+  text-align: center;
 }
