@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="UTF-8" />
+    <link href="/assets/css/bootstrap.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="/assets/css/common.css" />
+    <link rel="stylesheet" href="/assets/css/products.css" />
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.5.0/css/all.css"
+    />
+    <link
+      href="/assets/css/dataTables.bootstrap5.min.css"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+    <title>Product Details</title>
+  </head>
+  <body>
+    <div class="container product-details">
+      <div class="d-flex align-items-center my-5">
+        <a href="./all-products.html" class="back-page">
+          <i
+            class="fa fa-arrow-left to-back-link"
+            aria-hidden="true"
+            title="Go back"
+          ></i>
+        </a>
+        <span class="px-3 page-title">Go Back</span>
+      </div>
+
+      <div class="row">
+        <div class="col-lg-7 col-sm-12 d-flex justify-content-center">
+          <img
+            src="/assets/images/product-img.png"
+            class="img-prod-details"
+            alt="Product Image"
+          />
+        </div>
+        <div class="col-lg-5 col-sm-12">
+          <h2 class="product-name">original blue spring hinge</h2>
+          <p class="lens-type-text">Lens Type</p>
+          <input
+            type="checkbox"
+            class="btn-check"
+            id="btn-check-normal"
+            name="lens"
+            autocomplete="off"
+          />
+          <label class="btn btn-outline" for="btn-check-normal"
+            >Normal</label
+          >
+          <input
+            type="checkbox"
+            class="btn-check"
+            id="btn-check-UV"
+            name="lens"
+            autocomplete="off"
+          />
+          <label class="btn btn-outline mx-2" for="btn-check-UV"
+            >UV Lens</label
+          >
+          <br /><br />
+          <h4>description</h4>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nisi
+            praesentium eius, officia voluptates tempore quas odit deleniti,
+            corporis voluptate odio accusantium maiores quo nobis debitis nihil
+            cumque earum.
+          </p>
+          <div id="table-category">
+            <div class="tr">
+              <div class="td">lens type:</div>
+              <div class="td prod-img-category-text">normal</div>
+            </div>
+            <div class="tr">
+              <div class="td">width:</div>
+              <div class="td prod-img-category-text">medium</div>
+            </div>
+            <div class="tr">
+              <div class="td">material:</div>
+              <div class="td prod-img-category-text">acetate</div>
+            </div>
+            <div class="tr">
+              <div class="td">hinge:</div>
+              <div class="td prod-img-category-text">standard</div>
+            </div>
+            <div class="tr">
+              <div class="td">finish:</div>
+              <div class="td prod-img-category-text">matte</div>
+            </div>
+          </div>
+
+          <!-- <p>Lens Type: <span class="text-uppercase px-3 fw-bold">normal</span></p>
+          <p>Width: <span class="text-uppercase px-3 fw-bold">normal</span></p>
+          <p>Material: <span class="text-uppercase px-3 fw-bold">normal</span></p>
+          <p>Finish: <span class="text-uppercase px-3 fw-bold">normal</span></p> -->
+
+          <div class="d-flex my-3">
+            <button type="button" class="btn add-to-cart flex-fill">
+              add to cart
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <div class="d-flex justify-content-between mt-5 mb-2">
+        <h5 class="text-uppercase fw-bold">Similar products</h5>
+        <h5>
+          <a href="./all-products.html" class="text-uppercase fw-bold"
+            >See all</a
+          >
+        </h5>
+      </div>
+      <!-- Product List -->
+      <div class="wrapper d-flex flex-wrap justify-content-between">
+        <!-- 1 -->
+        <div class="card">
+          <a href="./product-details.html">
+            <img
+              src="/assets/images/product-img.png"
+              class="card-img-top"
+              alt="..."
+            />
+            <div class="label-new">
+              <span>new</span>
+            </div>
+          </a>
+          <div class="card-body">
+            <a href="./product-details.html">
+              <h6 class="card-title">Original Blue Spring Hinge</h6>
+            </a>
+            <p class="card-text">Reading Glass</p>
+            <div class="d-flex justify-content-between">
+              <p class="price">Php 2,280</p>
+            </div>
+            <div class="d-flex add-to-bag py-1 py-2">
+              <a
+                type="button"
+                class="btn btn-secondary flex-fill d-flex justify-content-between mb-2 py-2"
+              >
+                <div>
+                  <i class="fa fa-plus" aria-hidden="true"></i>
+                  <span class="px-2">Add to Cart</span>
+                </div>
+                <i class="fas fa-shopping-bag bag" aria-hidden="true"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+        <!-- 2 -->
+        <div class="card">
+          <a href="./product-details.html">
+            <img
+              src="/assets/images/product-img.png"
+              class="card-img-top"
+              alt="..."
+            />
+            <div class="label-new">
+              <span>new</span>
+            </div>
+          </a>
+          <div class="card-body">
+            <a href="./product-details.html">
+              <h6 class="card-title">Original Blue Spring Hinge</h6>
+            </a>
+            <p class="card-text">Reading Glass</p>
+            <div class="d-flex justify-content-between">
+              <p class="price">Php 2,280</p>
+            </div>
+            <div class="d-flex add-to-bag py-1 py-2">
+              <a
+                type="button"
+                class="btn btn-secondary flex-fill d-flex justify-content-between mb-2 py-2"
+              >
+                <div>
+                  <i class="fa fa-plus" aria-hidden="true"></i>
+                  <span class="px-2">Add to Cart</span>
+                </div>
+                <i class="fas fa-shopping-bag bag" aria-hidden="true"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+        <!-- 3 -->
+        <div class="card">
+          <a href="./product-details.html">
+            <img
+              src="/assets/images/product-img.png"
+              class="card-img-top"
+              alt="..."
+            />
+            <div class="label-new">
+              <span>new</span>
+            </div>
+          </a>
+          <div class="card-body">
+            <a href="./product-details.html">
+              <h6 class="card-title">Original Blue Spring Hinge</h6>
+            </a>
+            <p class="card-text">Reading Glass</p>
+            <div class="d-flex justify-content-between">
+              <p class="price">Php 2,280</p>
+            </div>
+            <div class="d-flex add-to-bag py-1 py-2">
+              <a
+                type="button"
+                class="btn btn-secondary flex-fill d-flex justify-content-between mb-2 py-2"
+              >
+                <div>
+                  <i class="fa fa-plus" aria-hidden="true"></i>
+                  <span class="px-2">Add to Cart</span>
+                </div>
+                <i class="fas fa-shopping-bag bag" aria-hidden="true"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+        <!-- 4 -->
+        <div class="card">
+          <a href="./product-details.html">
+            <img
+              src="/assets/images/product-img.png"
+              class="card-img-top"
+              alt="..."
+            />
+            <div class="label-new">
+              <span>new</span>
+            </div>
+          </a>
+          <div class="card-body">
+            <a href="./product-details.html">
+              <h6 class="card-title">Original Blue Spring Hinge</h6>
+            </a>
+            <p class="card-text">Reading Glass</p>
+            <div class="d-flex justify-content-between">
+              <p class="price">Php 2,280</p>
+            </div>
+            <div class="d-flex add-to-bag py-1 py-2">
+              <a
+                type="button"
+                class="btn btn-secondary flex-fill d-flex justify-content-between mb-2 py-2"
+              >
+                <div>
+                  <i class="fa fa-plus" aria-hidden="true"></i>
+                  <span class="px-2">Add to Cart</span>
+                </div>
+                <i class="fas fa-shopping-bag bag" aria-hidden="true"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+        <!-- 5 -->
+        <div class="card">
+          <a href="./product-details.html">
+            <img
+              src="/assets/images/product-img.png"
+              class="card-img-top"
+              alt="..."
+            />
+            <div class="label-new">
+              <span>new</span>
+            </div>
+          </a>
+          <div class="card-body">
+            <a href="./product-details.html">
+              <h6 class="card-title">Original Blue Spring Hinge</h6>
+            </a>
+            <p class="card-text">Reading Glass</p>
+            <div class="d-flex justify-content-between">
+              <p class="price">Php 2,280</p>
+            </div>
+            <div class="d-flex add-to-bag py-1 py-2">
+              <a
+                type="button"
+                class="btn btn-secondary flex-fill d-flex justify-content-between mb-2 py-2"
+              >
+                <div>
+                  <i class="fa fa-plus" aria-hidden="true"></i>
+                  <span class="px-2">Add to Cart</span>
+                </div>
+                <i class="fas fa-shopping-bag bag" aria-hidden="true"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+        <!-- 6 -->
+        <div class="card">
+          <a href="./product-details.html">
+            <img
+              src="/assets/images/product-img.png"
+              class="card-img-top"
+              alt="..."
+            />
+            <div class="label-new">
+              <span>new</span>
+            </div>
+          </a>
+          <div class="card-body">
+            <a href="./product-details.html">
+              <h6 class="card-title">Original Blue Spring Hinge</h6>
+            </a>
+            <p class="card-text">Reading Glass</p>
+            <div class="d-flex justify-content-between">
+              <p class="price">Php 2,280</p>
+            </div>
+            <div class="d-flex add-to-bag py-1 py-2">
+              <a
+                type="button"
+                class="btn btn-secondary flex-fill d-flex justify-content-between mb-2 py-2"
+              >
+                <div>
+                  <i class="fa fa-plus" aria-hidden="true"></i>
+                  <span class="px-2">Add to Cart</span>
+                </div>
+                <i class="fas fa-shopping-bag bag" aria-hidden="true"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+        <!-- 7 -->
+        <div class="card">
+          <a href="./product-details.html">
+            <img
+              src="/assets/images/product-img.png"
+              class="card-img-top"
+              alt="..."
+            />
+            <div class="label-new">
+              <span>new</span>
+            </div>
+          </a>
+          <div class="card-body">
+            <a href="./product-details.html">
+              <h6 class="card-title">Original Blue Spring Hinge</h6>
+            </a>
+            <p class="card-text">Reading Glass</p>
+            <div class="d-flex justify-content-between">
+              <p class="price">Php 2,280</p>
+            </div>
+            <div class="d-flex add-to-bag py-1 py-2">
+              <a
+                type="button"
+                class="btn btn-secondary flex-fill d-flex justify-content-between mb-2 py-2"
+              >
+                <div>
+                  <i class="fa fa-plus" aria-hidden="true"></i>
+                  <span class="px-2">Add to Cart</span>
+                </div>
+                <i class="fas fa-shopping-bag bag" aria-hidden="true"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+        <!-- 8 -->
+        <div class="card">
+          <a href="./product-details.html">
+            <img
+              src="/assets/images/product-img.png"
+              class="card-img-top"
+              alt="..."
+            />
+            <div class="label-new">
+              <span>new</span>
+            </div>
+          </a>
+          <div class="card-body">
+            <a href="./product-details.html">
+              <h6 class="card-title">Original Blue Spring Hinge</h6>
+            </a>
+            <p class="card-text">Reading Glass</p>
+            <div class="d-flex justify-content-between">
+              <p class="price">Php 2,280</p>
+            </div>
+            <div class="d-flex add-to-bag py-1 py-2">
+              <a
+                type="button"
+                class="btn btn-secondary flex-fill d-flex justify-content-between mb-2 py-2"
+              >
+                <div>
+                  <i class="fa fa-plus" aria-hidden="true"></i>
+                  <span class="px-2">Add to Cart</span>
+                </div>
+                <i class="fas fa-shopping-bag bag" aria-hidden="true"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <nav aria-label="Product Page Pagination">
+        <ul class="pagination justify-content-center">
+          <li class="page-item disabled">
+            <a
+              class="page-link unset"
+              href="#"
+              tabindex="-1"
+              aria-disabled="true"
+              >Previous</a
+            >
+          </li>
+          <li class="page-item"><a class="page-link" href="#">1</a></li>
+          <li class="page-item"><a class="page-link" href="#">2</a></li>
+          <li class="page-item"><a class="page-link" href="#">3</a></li>
+          <li class="page-item">
+            <a class="page-link unset" href="#">Next</a>
+          </li>
+        </ul>
+      </nav>
+      <br /><br />
+    </div>
+
+    <!-- footer -->
+    <div class="container-fluid pt-5 pb-2" style="background-color: #f3f3f3">
+      <footer class="container">
+        <div class="row g-3">
+          <div class="col-6">
+            <h5>LEAVE US YOUR MESSAGE</h5>
+            <br />
+            <input
+              type="text"
+              class="form-control form-control"
+              placeholder="Name"
+              id="footerName"
+            /><br />
+            <input
+              type="email"
+              class="form-control form-control"
+              placeholder="Email Address"
+              id="footerEmail"
+            /><br />
+            <textarea
+              class="form-control"
+              placeholder="Message"
+              id="footerMessage"
+              rows="5"
+            ></textarea
+            ><br />
+            <div style="text-align: center">
+              <button type="button" class="btn" style="width: 100%">
+                SUBMIT
+              </button>
+            </div>
+          </div>
+          <div class="col-2">
+            <h5>HELP</h5>
+          </div>
+          <div class="col-2">
+            <h5>COMPANY</h5>
+          </div>
+          <div class="col-2">
+            <h5>CONTACT</h5>
+          </div>
+        </div>
+        <p style="text-align: center; font-weight: normal; padding-top: 5%">
+          Copyright © 2022 FRFR Technologies.<br />
+          All Rights Reserved.
+        </p>
+      </footer>
+    </div>
+  </body>
+</html>
