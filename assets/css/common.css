@@ -3,7 +3,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Open Sans:wght@200;300;400;500;600;700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@200;300;400;500;600;700&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Helvetica:wght@200;300;400;500;600;700&display=swap');
 :root{
   --blue: #50ABF1;
   --lightgreen: #52B788;
@@ -24,7 +24,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family:'Inter', sans-serif;
+  font-family:'Poppins', sans-serif;
   letter-spacing: 1%;
 }
 html,body{
@@ -276,7 +276,9 @@ input.form-control {
   color: red;
   font-size: 1rem;
 }
-
+select option:selected{
+  color: grey;
+}
 h4 {
   color: #333333;
   text-transform: uppercase;

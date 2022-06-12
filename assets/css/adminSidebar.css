@@ -5,7 +5,7 @@
   width: 280px;
   background: #fafafa;
   border: .5px solid #D3D3D3;
-  border-radius: 20px;
+  border-radius: 0 15px 15px 0;
   -moz-transition: all 0.5s ease;
   -o-transition: all 0.5s ease;
   -webkit-transition: all 0.5s ease;
@@ -164,7 +164,7 @@ nav .profile-details .admin_name{
 .home-section .home-content{
   position: relative;
   padding-top: 6rem;
-  font-family: "Montserrat", sans-serif;
+  font-family: "Helvetica", sans-serif;
 }
 
 /* Dashboard Page */
@@ -179,7 +179,7 @@ nav .profile-details .admin_name{
 .overview-boxes .box{
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: space-evenly;
   width: calc(100% / 4 - 15px);
   background: #fff;
   padding: 15px 14px;
@@ -196,30 +196,9 @@ nav .profile-details .admin_name{
   margin-top: -6px;
   font-weight: 500;
 }
-.home-content .box .indicator{
-  display: flex;
-  align-items: center;
-}
-.home-content .box .indicator i{
-  height: 20px;
-  width: 20px;
-  background: #8FDACB;
-  line-height: 20px;
-  text-align: center;
-  border-radius: 50%;
-  color: #fff;
-  font-size: 20px;
-  margin-right: 5px;
-}
-.box .indicator i.down{
-  background: #e87d88;
-}
-.home-content .box .indicator .text{
-  font-size: 12px;
-}
 .home-content .box .cart{
   display: inline-block;
-  font-size: 32px;
+  font-size: 1.5rem;
   height: 50px;
   width: 50px;
   background: #cce5ff;
@@ -248,12 +227,12 @@ nav .profile-details .admin_name{
 .home-content .sales-boxes{
   display: flex;
   justify-content: space-between;
-  /* padding: 0 20px; */
+  margin-bottom: 2rem;
 }
 
 /* left box */
 .home-content .sales-boxes .recent-sales{
-  width: 65%;
+  width: 60%;
   background: #fff;
   padding: 20px 30px;
   margin: 0 20px;
@@ -265,18 +244,40 @@ nav .profile-details .admin_name{
   align-items: center;
   justify-content: space-between;
 }
+.home-content .sales-boxes .sales-details table th{
+  font-size: 1.2rem;
+}
+.home-content .sales-boxes .sales-details table td {
+  font-size: 1.2rem;
+  line-height: 40px;
+  font-weight: normal;
+  margin: 1.5rem;
+}
+@media (max-width: 1399px) {
+  .home-content .sales-boxes .sales-details table td {
+    font-size: 1.1rem;
+  }
+}
+.home-content .sales-boxes .sales-details table td img{
+  width: 2rem;
+  height: 2rem;
+  border-radius: 50%;
+  margin-right: 1rem;
+}
 .sales-boxes .box .title{
   font-size: 24px;
   font-weight: 500;
-  /* margin-bottom: 10px; */
+  color: var(--addBtn);
 }
 .sales-boxes .sales-details li.topic{
-  font-size: 20px;
-  font-weight: 500;
+  font-size: 1.2rem;
+  font-weight: 600;
+  text-align: center;
 }
 .sales-boxes .sales-details li{
   list-style: none;
   margin: 8px 0;
+  text-align: center;
 }
 .sales-boxes .sales-details li a{
   font-size: 18px;
@@ -284,6 +285,7 @@ nav .profile-details .admin_name{
   font-size: 400;
   text-decoration: none;
 }
+
 .sales-boxes .box .button{
   width: 100%;
   display: flex;
@@ -291,8 +293,9 @@ nav .profile-details .admin_name{
 }
 .sales-boxes .box .button a{
   color: #fff;
-  background: #0A2558;
-  padding: 4px 12px;
+  background: var(--addBtn);
+  /* background: #0A2558; */
+  padding: 6px 20px;
   font-size: 15px;
   font-weight: 400;
   border-radius: 4px;
@@ -305,7 +308,7 @@ nav .profile-details .admin_name{
 
 /* Right box */
 .home-content .sales-boxes .top-sales{
-  width: 35%;
+  width: 40%;
   background: #fff;
   padding: 20px 30px;
   margin: 0 20px 0 0;
@@ -318,9 +321,10 @@ nav .profile-details .admin_name{
   justify-content: space-between;
   margin: 10px 0;
 }
+
 .sales-boxes .top-sales li a img{
-  height: 40px;
-  width: 40px;
+  height: 2rem;
+  width: 4rem;
   object-fit: cover;
   border-radius: 12px;
   margin-right: 10px;
@@ -337,6 +341,7 @@ nav .profile-details .admin_name{
   font-weight: 400;
   color: #333;
 }
+
 
 
 /* Responsive Media Query */
