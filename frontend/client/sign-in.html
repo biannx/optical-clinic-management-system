@@ -2,47 +2,69 @@
 <html lang="en" dir="ltr">
   <head>
     <meta charset="UTF-8" />
-    <link href="../../../assets/css/bootstrap.min.css" rel="stylesheet" />
-    <link rel="stylesheet" href="../../../assets/css/common.css" />
-    <link rel="stylesheet" href="../../../assets/css/adminSidebar.css" />
+    <link href="\assets\css\bootstrap.min.css" rel="stylesheet" />
+    <link href="\assets\css\client.css" rel="stylesheet" />
     <link
       rel="stylesheet"
       href="https://use.fontawesome.com/releases/v5.5.0/css/all.css"
     />
-    <link
-      href="/assets/css/dataTables.bootstrap5.min.css"
-      rel="stylesheet"
-      type="text/css"
-    />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Sign In</title>
-    <style>
-      label {
-        font-weight: bold;
-      }
-      .small {
-        font-family: Helvetica;
-        font-size: 12px;
-        color: #55a8ba;
-      }
-      button {
-        padding-bottom: 2%;
-      }
-      .btn,
-      .btn:hover {
-        background-color: #50abf1;
-        color: #ffffff;
-      }
-      .col-12 {
-        padding-bottom: 3%;
-      }
-    </style>
   </head>
   <body>
-    <div style="padding-top: 10%; padding-left: 35%; padding-right: 35%">
-      <h2 class="text-center py-2">Sign In</h2>
+    <div class="container-fluid">
+      <nav class="navbar sticky-top navbar-expand-lg navbar-light bg-light">
+          <div class="container-fluid">
+              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                  <span class="navbar-toggler-icon"></span>
+                  <!-- <i class="fas fa-bars"></i> -->
+              </button>
+              <a class="navbar-brand" href="#">
+                  <img src="\assets\images\logo.png" alt="" width="50px"class="d-inline-block align-text-center">
+                  New Vision
+              </a>
+              
+              <div class="collapse navbar-collapse justify-content-center" id="navbarSupportedContent">
+                  <ul class="navbar-nav mb-2 mb-lg-0">
+                      <!-- Active
+                      <li class="nav-item">
+                          <a class="nav-link active" aria-current="page" href="#">Home</a>
+                      </li>
+                      -->
+                      <li class="nav-item px-4">
+                          <a class="nav-link" href="#">HOME</a>
+                      </li>
+                      <li class="nav-item px-4">
+                          <a class="nav-link" href="frontend\client\products\all-products.html">PRODUCTS</a>
+                      </li>
+                      <li class="nav-item px-4">
+                          <a class="nav-link" href="frontend\client\appointment.html">SET APPOINTMENT</a>
+                      </li>
+                  </ul>
+              </div>
+              <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                  <li class="nav-item">
+                      <a class="nav-link py-3" href="#"><i class="fas fa-cart-arrow-down"></i></a>
+                  </li> 
+                  <li class="nav-item dropdown">
+                      <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                      <img src="\assets\images\avatar.png" alt="" width="30px" class="d-inline-block">
+                      </a>
+                      <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                          <li><a class="dropdown-item" href="#">Profile</a></li>
+                          <li><a class="dropdown-item" href="#">Settings</a></li>
+                          <li><a class="dropdown-item" href="#">History</a></li>
+                          <li><a class="dropdown-item" href="#">Sign Out</a></li>
+                      </ul>
+                  </li>
+              </ul>
+          </div>
+        </nav>
+      </div>
+    <div class="containter-fluid container w-25 py-5">
+      <h4 class="py-2">Sign In</h4>
       <div class="row mb-3">
-        <div class="col-12">
+        <div class="col-12 py-3">
           <label for="email-username" class="form-label">Email/Username</label>
           <input
             type="text"
@@ -51,7 +73,7 @@
             id="email-username"
           />
         </div>
-        <div class="col-12">
+        <div class="col-12 py-3">
           <label for="password" class="form-label">Password</label>
           <input
             type="password"
@@ -61,14 +83,16 @@
           />
         </div>
         <p class="small">Forgot Password?</p>
-        <div class="col-12">
-          <div style="text-align: center">
-            <button type="button" class="btn" style="width: 100%">Login</button>
+        <div class="col-12 py-3">
+          <div>
+            <button type="button" class="btn btn-default w-100">
+              Login
+            </button>
           </div>
         </div>
         <div class="col-12">
-          <div style="text-align: center">
-            <button type="button" class="btn" style="width: 100%">
+          <div>
+            <button type="button" class="btn btn-default w-100">
               Create Account
             </button>
           </div>
