@@ -26,27 +26,28 @@
         <i class="fa fa-user"></i>
         <span class="logo_name">Vision</span>
       </div>
+
       <ul class="nav-links mt-4">
         <li>
-          <a href="admin-sidebar.html">
+          <a href="../dashboard.html">
             <i class="fa fa-th-large"></i>
             <span class="links_name">Dashboard</span>
           </a>
         </li>
         <li>
-          <a href="customers.html">
+          <a href="../customers/customers.html" class="active">
             <i class="fa fa-users"></i>
             <span class="links_name">Customers</span>
           </a>
         </li>
         <li>
-          <a href="/frontend/admin/attendants.html" class="active">
+          <a href="../attendants/attendants.html">
             <i class="fa fa-user-md"></i>
             <span class="links_name">Attendants</span>
           </a>
         </li>
         <li>
-          <a href="/frontend/admin/products/products.html">
+          <a href="../products/products.html">
             <i class="fas fa-shopping-bag"></i>
             <span class="links_name">Products</span>
           </a>
@@ -58,19 +59,19 @@
           </a>
         </li>
         <li>
-          <a href="#">
+          <a href="../appointment/appointment.html">
             <i class="fa fa-calendar"></i>
             <span class="links_name">Appointment</span>
           </a>
         </li>
         <li>
-          <a href="#">
+          <a href="../admins/admin-accounts.html">
             <i class="fas fa-users-cog" aria-hidden="true"></i>
             <span class="links_name">Admin</span>
           </a>
         </li>
         <li>
-          <a href="#">
+          <a href="../admin-change-password.html">
             <i class="fa fa-key"></i>
             <span class="links_name">Change Password</span>
           </a>
@@ -181,7 +182,7 @@
                       <!-- Date Added auto input -->
                       <div class="row">
                         <div class="col-lg-6 py-2">
-                          <label class="form-label">Date Added: </label>
+                          <label class="form-label asterisk">Date Added: </label>
                           <input
                             type="date"
                             name="date"
@@ -189,7 +190,6 @@
                             aria-label="Date Added"
                             placeholder="Date Added"
                             required
-                            readonly
                           />
                         </div>
                         <div class="col-lg-6 mt-1">
@@ -210,7 +210,7 @@
                       </div>
 
                       <!-- Name -->
-                      <div class="row mb-2 py-1">
+                      <div class="row mt-2 py-2">
                         <div class="col-lg-3 col-md-6 py-2">
                           <label class="form-label asterisk" for="fnameCustomer"
                             >First Name:
@@ -266,7 +266,7 @@
                       </div>
 
                       <!-- Birthday -->
-                      <div class="row">
+                      <div class="row mb-2">
                         <div class="col-lg-6 py-2">
                           <label class="form-label asterisk" for="bdayCustomer"
                             >Birthday:
@@ -324,7 +324,7 @@
 
                       <!-- Address -->
                       <label
-                        class="form-label pt-2 asterisk"
+                        class="form-label pt-2 asterisk mb-2"
                         for="addressCustomer"
                         >Address:
                       </label>
@@ -338,7 +338,7 @@
                       />
 
                       <!-- Email Address & Contact No. -->
-                      <div class="row pt-2">
+                      <div class="row pt-2 mt-2">
                         <div class="col-lg-6 py-2">
                           <label class="form-label asterisk" for="emailCustomer"
                             >Email Address:
@@ -452,36 +452,23 @@
                       </td>
                       <td>09123456789</td>
                       <td class="text-uppercase">Walk-In</td>
-                      <td>
-                        <div class="action-buttons" id="actions">
+                      <td class="action">
+                        <div class="action-buttons">
                           <ul>
                             <li>
                               <a
                                 href="view-customer.html"
-                                class="btn view-data data"
+                                class="btn view-data data button_width"
                                 title="View Details"
                                 aria-label="View more about customer's details"
                               >
-                                <i class="fas fa-eye" aria-hidden="true"></i>
                                 View
                               </a>
                             </li>
-                            <!-- <li>
-                              <button
-                                type="button"
-                                class="btn update-data data"
-                                data-bs-toggle="modal"
-                                data-bs-target="#updateCustomer"
-                                title="Update Details"
-                              >
-                                <i class="fas fa-pen" aria-hidden="true"></i>
-                                Update
-                              </button>
-                            </li>-->
                             <li>
                               <button
                                 type="button"
-                                class="btn archive-data data"
+                                class="btn archive-data data button_width"
                                 title="Archive Data"
                                 aria-hidden="true"
                               >
@@ -499,7 +486,7 @@
                 <div class="d-flex justify-content-end my-3">
                   <button
                     type="button"
-                    class="btn archive-all-data px-4 py-1 fw-bold text-white text-uppercase"
+                    class="btn archive-all-data px-4 py-2 fw-bold text-white text-uppercase"
                   >
                     Archive Attendants (6)
                   </button>
@@ -508,279 +495,6 @@
             </div>
           </div>
         </div>
-
-        <!-- Update Customer Details Modal -->
-        <!-- nilagay ko na lang sa view-customer yung edit -->
-        <!-- <form action="" method="#">
-          <div
-            class="modal fade"
-            id="updateCustomer"
-            data-bs-backdrop="static"
-            data-bs-keyboard="false"
-            tabindex="-1"
-            aria-labelledby="updateCustomerLabel"
-            aria-modal="true"
-            aria-hidden="true"
-          >
-            <div
-              class="modal-dialog modal-lg modal-dialog-centered modal-dialog-scrollable"
-            >
-              <div class="modal-content">
-                <div class="modal-header">
-                  <h5 class="modal-title fw-bold text-uppercase px-2">
-                    Update Customer Details
-                  </h5>
-                  <button
-                    type="button"
-                    class="btn-close btn-close-white px-2"
-                    data-bs-dismiss="modal"
-                    aria-label="Close"
-                  ></button>
-                </div>
-                <div class="modal-body">
-                  <div class="container">
-                    <h6 class="text-muted py-2">
-                      <i
-                        >Note: Please add new <strong>walk-in</strong> customers
-                        only.</i
-                      >
-                    </h6>
-                  </div>
-                  <div class="container-fluid py-2">
-                    <div class="row">
-                      <div class="col-lg-3 py-1">
-                        <label class="form-label" for="update-customer-photo"
-                          >Customer Photo:
-                        </label>
-                      </div>
-                      <div class="col-lg-9 mt-1">
-                        <input
-                          type="file"
-                          name="customerPhoto"
-                          id="update-customer-photo"
-                          class="form-control"
-                          aria-label="Customer Photo"
-                          required
-                        />
-                      </div>
-                    </div>
-
-
-                    <div class="row">
-                      <div class="col-lg-6 py-2">
-                        <label class="form-label asterisk"> Date Added: </label>
-                        <input
-                          type="date"
-                          name="date"
-                          class="form-control"
-                          aria-label="Date Added"
-                          required
-                          readonly
-                        />
-                      </div>
-                      <div class="col-lg-6 mt-1">
-                        <label
-                          class="form-label asterisk"
-                          for="update-type-walkin"
-                          >Type:
-                        </label>
-                        <select
-                          class="form-select"
-                          aria-label="Walk in or Registered"
-                          id="update-type-walkin"
-                          title="Disabled"
-                          disabled
-                        >
-                          <option selected readonly disabled>Walk In</option>
-                          <option>Registered</option>
-                        </select>
-                      </div>
-                    </div>
-
-             
-                    <div class="row mb-2 py-1">
-                      <div class="col-lg-3 col-md-6 py-2">
-                        <label
-                          class="form-label asterisk"
-                          for="update-fnameCustomer"
-                          >First Name:
-                        </label>
-                        <input
-                          type="text"
-                          name="fname"
-                          class="form-control"
-                          id="update-fnameCustomer"
-                          placeholder="First Name"
-                          required
-                        />
-                      </div>
-                      <div class="col-lg-3 col-md-6 py-2">
-                        <label class="form-label" for="update-midnNameCustomer"
-                          >Middle Name:
-                        </label>
-                        <input
-                          type="text"
-                          name="midname"
-                          class="form-control"
-                          id="update-midnNameCustomer"
-                          placeholder="Middle Name"
-                        />
-                      </div>
-                      <div class="col-lg-3 col-md-6 py-2">
-                        <label
-                          class="form-label asterisk"
-                          for="update-surnameCustomer"
-                          >Last Name:
-                        </label>
-                        <input
-                          type="text"
-                          name="surname"
-                          class="form-control"
-                          id="update-surnameCustomer"
-                          placeholder="Last Name"
-                          required
-                        />
-                      </div>
-                      <div class="col-lg-3 col-md-6 py-2">
-                        <label class="form-label" for="update-suffixCustomer"
-                          >Suffix:
-                        </label>
-                        <input
-                          type="text"
-                          name="suffix"
-                          class="form-control"
-                          id="update-suffixAttendant"
-                          placeholder="Suffix"
-                        />
-                      </div>
-                    </div>
-
-                  
-                    <div class="row">
-                      <div class="col-lg-6 py-2">
-                        <label
-                          class="form-label asterisk"
-                          for="update-bdayCustomer"
-                          >Birthday:
-                        </label>
-                        <input
-                          type="date"
-                          name="bday"
-                          class="form-control"
-                          id="update-bdayCustomer"
-                          placeholder="Birthday"
-                          required
-                        />
-                      </div>
-
-        
-                      <div class="col-lg-6 col-md-6 py-2">
-                        <label class="form-label asterisk">Sex: </label>
-                        <div class="row">
-                          <div class="col-lg-6 col-md-12 pt-1">
-                            <div class="form-check-inline">
-                              <input
-                                class="form-check-input"
-                                type="radio"
-                                name="gender"
-                                value="Male"
-                                id="update-male"
-                                required
-                              />
-                              <label class="form-check-label" for="gender">
-                                Male
-                              </label>
-                              <div></div>
-                            </div>
-                            <div class="form-check-inline mb-3">
-                              <input
-                                class="form-check-input"
-                                type="radio"
-                                name="gender"
-                                value="Female"
-                                id="update-female"
-                                required
-                              />
-                              <label class="form-check-label" for="gender">
-                                Female
-                              </label>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-
-           
-                    <label
-                      class="form-label pt-3 asterisk"
-                      for="addressCustomer"
-                      >Address:
-                    </label>
-                    <input
-                      type="text"
-                      name="address"
-                      class="form-control"
-                      id="addressCustomer"
-                      placeholder="Address"
-                      required
-                    />
-
-                  
-                    <div class="row pt-2">
-                      <div class="col-lg-6 py-2">
-                        <label
-                          class="form-label asterisk"
-                          for="update-emailCustomer"
-                          >Email Address:
-                        </label>
-                        <input
-                          type="email"
-                          name="email"
-                          class="form-control"
-                          id="update-emailCustomer"
-                          placeholder="Email Address"
-                          required
-                        />
-                      </div>
-                      <div class="col-lg-6 py-2 asterisk">
-                        <label
-                          class="form-label asterisk"
-                          for="update-contactCustomer"
-                          >Contact No:
-                        </label>
-                        <input
-                          type="tel"
-                          name="contactnum"
-                          id="update-contactCustomer"
-                          minlength="11"
-                          maxlength="11"
-                          class="form-control"
-                          aria-label="Contact Number"
-                          oninput="this.value = this.value.replace(/[^0-9.]/g, '')"
-                          placeholder="Contact Number"
-                          title="Numbers only"
-                          required
-                        />
-                      </div>
-                    </div>
-                  </div>
-                  <div class="modal-footer mb-0">
-                    <button type="submit" class="btn btn-default px-3 mx-2">
-                      Save
-                    </button>
-                    <button
-                      type="button"
-                      class="btn btn-secondary py-2 px-3"
-                      data-bs-dismiss="modal"
-                    >
-                      Close
-                    </button>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </form> -->
       </div>
     </section>
     <!-- jQuery DataTables JS CDN -->

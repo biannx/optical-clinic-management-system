@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="UTF-8" />
+    <!--<title> Responsiive Admin Dashboard | CodingLab </title>-->
+    <link href="/assets/css/bootstrap.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="/assets/css/common.css" type="text/css" />
+    <link
+      rel="stylesheet"
+      href="/assets/css/adminSidebar.css"
+      type="text/css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.5.0/css/all.css"
+    />
+    <link
+      href="assets/css/jquery.dataTables.min.css"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dashboard</title>
+  </head>
+  <body>
+    <div class="sidebar" id="admin-sidebar">
+      <div class="logo-details">
+        <i class="fa fa-user"></i>
+        <span class="logo_name">Vision</span>
+      </div>
+
+      <ul class="nav-links mt-4">
+        <li>
+          <a href="./admin-sidebar.html" class="active">
+            <i class="fa fa-th-large"></i>
+            <span class="links_name">Dashboard</span>
+          </a>
+        </li>
+        <li>
+          <a href="./customers/customers.html">
+            <i class="fa fa-users"></i>
+            <span class="links_name">Customers</span>
+          </a>
+        </li>
+        <li>
+          <a href="./attendants/attendants.html">
+            <i class="fa fa-user-md"></i>
+            <span class="links_name">Attendants</span>
+          </a>
+        </li>
+        <li>
+          <a href="./products/products.html">
+            <i class="fas fa-shopping-bag"></i>
+            <span class="links_name">Products</span>
+          </a>
+        </li>
+        <li>
+          <a href="#">
+            <i class="fa fa-cart-arrow-down"></i>
+            <span class="links_name">Orders</span>
+          </a>
+        </li>
+        <li>
+          <a href="./appointment/appointment.html">
+            <i class="fa fa-calendar"></i>
+            <span class="links_name">Appointment</span>
+          </a>
+        </li>
+        <li>
+          <a href="./admins/admin-admin.html">
+            <i class="fas fa-users-cog" aria-hidden="true"></i>
+            <span class="links_name">Admin</span>
+          </a>
+        </li>
+        <li>
+          <a href="./admin-change-password.html">
+            <i class="fa fa-key"></i>
+            <span class="links_name">Change Password</span>
+          </a>
+        </li>
+        <li>
+          <a href="#">
+            <i class="fas fa-sign-out-alt"></i>
+            <span class="links_name">Signout</span>
+          </a>
+        </li>
+      </ul>
+    </div>
+
+    <section class="home-section">
+      <nav>
+        <div class="container-fluid d-flex">
+          <div class="sidebar-button me-auto">
+            <i class="fas fa-bars sidebarBtn"></i>
+            <span class="dashboard">Dashboard</span>
+          </div>
+
+          <a href="#" class="view-shop px-3">
+            <i class="fas fa-paper-plane" aria-hidden="true"></i>
+            <span class="view-shop-text px-2">View your shop</span>
+          </a>
+          <div class="profile-details px-2">
+            <span class="admin_name px-2">Admin Name</span>
+            <img src="/assets/images/avatar.png" alt="" />
+          </div>
+        </div>
+      </nav>
+
+      <div class="home-content">
+        <div class="overview-boxes">
+          <div class="box">
+            <div class="right-side">
+              <div class="box-topic">Total Order</div>
+              <div class="number">40,876</div>
+            </div>
+            <i class="fas fa-shopping-cart cart" aria-hidden="true" title="Total Orders"></i>
+          </div>
+          <div class="box">
+            <div class="right-side">
+              <div class="box-topic">Total Sales</div>
+              <div class="number">38,876</div>
+            </div>
+            <i class="fas fa-cart-plus cart two" aria-hidden="true" title="Total Sales"></i>
+          </div>
+          <div class="box">
+            <div class="right-side">
+              <div class="box-topic">Total Profit</div>
+              <div class="number">12,876</div>
+            </div>
+            <i class="fas fa-dollar-sign cart three" aria-hidden="true" title="Total Profit"></i>
+          </div>
+          <div class="box">
+            <div class="right-side">
+              <div class="box-topic" id="registered">Total Registered</div>
+              <div class="number">11,086</div>
+            </div>
+            <i class="fas fa-users cart four" aria-hidden="true" title="Total Registered Customers"></i>
+          </div>
+        </div>
+
+        <div class="sales-boxes">
+          <div class="recent-sales box">
+            <div class="title py-2">Recent Sales</div>
+            <div class="sales-details">
+              <table class="table table-hover table-responsive">
+                <thead>
+                  <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Date</th>
+                    <th scope="col">Name</th>
+                    <th scope="col">Total</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>1</td>
+                    <td>02 Jan 2021</td>
+                    <td>
+                      <img
+                        src="/assets/images/plain-avatar.png"
+                        alt="Avatar"
+                      />Alex Doe
+                    </td>
+                    <td>Php 2300.33</td>
+                  </tr>
+                  <tr>
+                    <td>2</td>
+                    <td>02 Jan 2021</td>
+                    <td>
+                      <img
+                        src="/assets/images/plain-avatar.png"
+                        alt="Avatar"
+                      />David Mart
+                    </td>
+                    <td>Php 2300.33</td>
+                  </tr>
+                  <tr>
+                    <td>3</td>
+                    <td>02 Jan 2021</td>
+                    <td>
+                      <img
+                        src="/assets/images/plain-avatar.png"
+                        alt="Avatar"
+                      />Roi Parker
+                    </td>
+                    <td>Php 2300.33</td>
+                  </tr>
+                  <tr>
+                    <td>4</td>
+                    <td>02 Jan 2021</td>
+                    <td>
+                      <img src="/assets/images/plain-avatar.png" alt="Avatar" />
+                      Alex Doe
+                    </td>
+                    <td>Php 2300.33</td>
+                  </tr>
+                  <tr>
+                    <td>5</td>
+                    <td>02 Jan 2021</td>
+                    <td>
+                      <img
+                        src="/assets/images/plain-avatar.png"
+                        alt="Avatar"
+                      />David Mart
+                    </td>
+                    <td>Php 2300.33</td>
+                  </tr>
+                  <tr>
+                    <td>6</td>
+                    <td>02 Jan 2021</td>
+                    <td>
+                      <img
+                        src="/assets/images/plain-avatar.png"
+                        alt="Avatar"
+                      />Roi Parker
+                    </td>
+                    <td>Php 2300.33</td>
+                  </tr>
+                  <tr>
+                    <td>7</td>
+                    <td>02 Jan 2021</td>
+                    <td>
+                      <img
+                        src="/assets/images/plain-avatar.png"
+                        alt="Avatar"
+                      />Alex Doe
+                    </td>
+                    <td>Php 2300.33</td>
+                  </tr>
+                  <tr>
+                    <td>8</td>
+                    <td>02 Jan 2021</td>
+                    <td>
+                      <img
+                        src="/assets/images/plain-avatar.png"
+                        alt="Avatar"
+                      />David Mart
+                    </td>
+                    <td>Php 2300.33</td>
+                  </tr>
+                  <tr>
+                    <td>9</td>
+                    <td>02 Jan 2021</td>
+                    <td>
+                      <img
+                        src="/assets/images/plain-avatar.png"
+                        alt="Avatar"
+                      />Roi Parker
+                    </td>
+                    <td>Php 2300.33</td>
+                  </tr>
+                  <tr>
+                    <td>10</td>
+                    <td>02 Jan 2021</td>
+                    <td>
+                      <img
+                        src="/assets/images/plain-avatar.png"
+                        alt="Avatar"
+                      />Spiderman
+                    </td>
+                    <td>Php 2300.33</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="button">
+              <a href="" title="See All Orders">See All</a>
+            </div>
+          </div>
+          <div class="top-sales box">
+            <div class="title py-2">Top Seling Product</div>
+            <table class="table table-responsive table-hover">
+              <thead>
+                <tr>
+                  <th scope="col">#</th>
+                  <th scope="col">Item</th>
+                  <th scope="col">Product</th>
+                  <th scope="col">Price</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <th scope="row">1</th>
+                  <td>
+                    <img
+                      src="/assets/images/product-img.png"
+                      alt="Top Product"
+                    />
+                  </td>
+                  <td>Original Vuitton Eyeglasses</td>
+                  <td>Php 2400</td>
+                </tr>
+                <tr>
+                  <th scope="row">2</th>
+                  <td>
+                    <img
+                      src="/assets/images/product-img.png"
+                      alt="Top Product"
+                    />
+                  </td>
+                  <td>Original Vuitton</td>
+                  <td>Php 2400</td>
+                </tr>
+                <tr>
+                  <th scope="row">3</th>
+                  <td>
+                    <img
+                      src="/assets/images/product-img.png"
+                      alt="Top Product"
+                    />
+                  </td>
+                  <td>Original Vuitton</td>
+                  <td>Php 2400</td>
+                </tr>
+                <tr>
+                  <th scope="row">4</th>
+                  <td>
+                    <img
+                      src="/assets/images/product-img.png"
+                      alt="Top Product"
+                    />
+                  </td>
+                  <td>Original Vuitton</td>
+                  <td>Php 2400</td>
+                </tr>
+                <tr>
+                  <th scope="row">5</th>
+                  <td>
+                    <img
+                      src="/assets/images/product-img.png"
+                      alt="Top Product"
+                    />
+                  </td>
+                  <td>Original Vuitton</td>
+                  <td>Php 2400</td>
+                </tr>
+                <tr>
+                  <th scope="row">6</th>
+                  <td>
+                    <img
+                      src="/assets/images/product-img.png"
+                      alt="Top Product"
+                    />
+                  </td>
+                  <td>Original Vuitton</td>
+                  <td>Php 2400</td>
+                </tr>
+                <tr>
+                  <th scope="row">7</th>
+                  <td>
+                    <img
+                      src="/assets/images/product-img.png"
+                      alt="Top Product"
+                    />
+                  </td>
+                  <td>Original Vuitton</td>
+                  <td>Php 2400</td>
+                </tr>
+                <tr>
+                  <th scope="row">8</th>
+                  <td>
+                    <img
+                      src="/assets/images/product-img.png"
+                      alt="Top Product"
+                    />
+                  </td>
+                  <td>Original Vuitton</td>
+                  <td>Php 2400</td>
+                </tr>
+                <tr>
+                  <th scope="row">9</th>
+                  <td>
+                    <img
+                      src="/assets/images/product-img.png"
+                      alt="Top Product"
+                    />
+                  </td>
+                  <td>Original Vuitton</td>
+                  <td>Php 2400</td>
+                </tr>
+                <tr>
+                  <th scope="row">10</th>
+                  <td>
+                    <img
+                      src="/assets/images/product-img.png"
+                      alt="Top Product"
+                    />
+                  </td>
+                  <td>Original Vuitton</td>
+                  <td>Php 2400</td>
+                </tr>
+              </tbody>
+            </table>
+            <div class="button">
+              <a href="../admin/products/products.html title="Go to Products Page">Go to Products</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <script>
+      let sidebar = document.querySelector(".sidebar");
+      let sidebarBtn = document.querySelector(".sidebarBtn");
+      sidebarBtn.onclick = function () {
+        sidebar.classList.toggle("active");
+        if (sidebar.classList.contains("active")) {
+          sidebarBtn.classList.replace("bx-menu", "bx-menu-alt-right");
+        } else sidebarBtn.classList.replace("bx-menu-alt-right", "bx-menu");
+      };
+    </script>
+  </body>
+</html>

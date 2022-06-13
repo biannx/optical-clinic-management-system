@@ -1,3 +1,36 @@
+
+/* Googlefont Poppins CDN Link */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Open Sans:wght@200;300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@200;300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Helvetica:wght@200;300;400;500;600;700&display=swap');
+:root{
+  --blue: #50ABF1;
+  --lightgreen: #52B788;
+  --lightred: #F95050;
+  --lightpink:#ff9e9e;
+  --black: #333333;
+  --addBtn: #50ABF1;
+  --save:#9ceb7f;
+  --saveHover: #52B788;
+  --cancel: #ec5353;
+  --cancelHover: #ee4747;
+  --lightgray: #cacaca;
+  --labelNew: #98DAD6;
+
+}
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family:'Poppins', sans-serif;
+  letter-spacing: 1%;
+}
+html,body{
+  background: #fafafa;
+  font-size: 92%;
+}
 /* common */
 .addBtn {
   background-color: var(--addBtn);
@@ -44,23 +77,25 @@ i.to-back-link:hover {
   /* background:var(--addBtn); */
   color: #4a4a4a;
 }
-.table-body thead {
-  text-align: center;
-  background-color: #F3F3F3;
-}
 
 .table-body tr {
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
 }
-.table-body td {
+.table-body td{
   max-width: 200px;
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
+  word-wrap: break-word;
 }
-
+.table-body td.action{
+  max-width: 330px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
 .img-table-list {
   width: 2rem;
 }
@@ -106,6 +141,10 @@ td.dt-center {
   opacity: 0.9;
 }
 
+.button_width{
+  width: 6.8rem;
+}
+
 .view-data:hover,
 .update-data:hover,
 .archive-data:hover {
@@ -125,15 +164,17 @@ td.dt-center {
 
 /* buttons */
 .btn-default {
-  background: var(--save);
+  background: var(--saveHover);
   border: 1px solid lightgreen;
   font-size: 0.9rem;
-  padding: 0.5rem 1.9rem;
+  padding: 0.5rem 1.8rem;
   font-weight: 600;
+  opacity: 0.95;
 }
 .btn-default:hover {
   background: var(--saveHover);
   border: 1px solid rgb(101, 221, 101);
+  opacity: 1;
 }
 .btn-danger,
 .btn-danger:focus {
@@ -147,6 +188,9 @@ td.dt-center {
   background: var(--cancelHover);
   color: #222;
   opacity: 1;
+}
+.btn-warning:focus{
+  color: white;
 }
 
 /* Archive Page */
@@ -166,7 +210,7 @@ span.page-title {
 
 .form-label {
   font-weight: 600;
-  padding: 0.7rem 0;
+  padding: 0.2rem 0;
 }
 input.form-control {
   padding: 0.7rem;
@@ -185,24 +229,27 @@ input.form-control {
   background-color: #fafafa;
 }
 .modal .btn-default {
-  background: var(--lightblue);
+  background: var(--blue);
   border: 1px solid var(--addBtn);
+  padding: 0.5rem 1rem;
   font-size: 0.9rem;
+  opacity: 0.9;
+  color: white;
 }
 
 .modal .btn-default:hover {
   background: var(--addBtn);
-  border: 1px solid var(--lightblue);
-  color: white;
+  color: var(--black);
+  opacity: 1;
 }
 .modal .btn-secondary {
   font-size: 0.9rem;
-  background-color: #8f8d8d;
+  background-color: #F37F7F;
 }
 .modal .btn-secondary:hover {
   opacity: 1;
   background: none;
-  border: 1px solid #7b7b7b;
+  border: 1px solid #F37F7F;
   color: black;
 }
 
@@ -229,11 +276,17 @@ input.form-control {
   color: red;
   font-size: 1rem;
 }
-
+select option:selected{
+  color: grey;
+}
 h4 {
   color: #333333;
   text-transform: uppercase;
   font-size: 1.4rem;
   font-weight: 700;
   margin-top: 14px !important;
+}
+
+.center_align{
+  text-align: center;
 }

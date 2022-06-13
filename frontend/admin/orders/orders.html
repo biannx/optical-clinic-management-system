@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="UTF-8" />
+    <link href="../../../assets/css/bootstrap.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="../../../assets/css/adminSidebar.css" />
+    <link rel="stylesheet" href="../../../assets/css/customers.css" />
+    <link rel="stylesheet" href="../../../assets/css/common.css" />
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.5.0/css/all.css"
+    />
+    <link
+      href="/assets/css/dataTables.bootstrap5.min.css"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Admin | Orders</title>
+  </head>
+
+  <body>
+    <div class="sidebar" id="admin-sidebar">
+      <div class="logo-details">
+        <i class="fa fa-user"></i>
+        <span class="logo_name">Vision</span>
+      </div>
+
+      <ul class="nav-links mt-4">
+        <li>
+          <a href="./admin-sidebar.html">
+            <i class="fa fa-th-large"></i>
+            <span class="links_name">Dashboard</span>
+          </a>
+        </li>
+        <li>
+          <a href="../customers/customers.html">
+            <i class="fa fa-users"></i>
+            <span class="links_name">Customers</span>
+          </a>
+        </li>
+        <li>
+          <a href="../attendants/attendants.html">
+            <i class="fa fa-user-md"></i>
+            <span class="links_name">Attendants</span>
+          </a>
+        </li>
+        <li>
+          <a href="../products/products.html">
+            <i class="fas fa-shopping-bag"></i>
+            <span class="links_name">Products</span>
+          </a>
+        </li>
+        <li>
+          <a href="../orders/orders.html"  class="active">
+            <i class="fa fa-cart-arrow-down"></i>
+            <span class="links_name">Orders</span>
+          </a>
+        </li>
+        <li>
+          <a href="../appointment/appointment.html">
+            <i class="fa fa-calendar"></i>
+            <span class="links_name">Appointment</span>
+          </a>
+        </li>
+        <li>
+          <a href="#">
+            <i class="fas fa-users-cog" aria-hidden="true"></i>
+            <span class="links_name">Admin</span>
+          </a>
+        </li>
+        <li>
+          <a href="#">
+            <i class="fa fa-key"></i>
+            <span class="links_name">Change Password</span>
+          </a>
+        </li>
+        <li>
+          <a href="#">
+            <i class="fas fa-sign-out-alt"></i>
+            <span class="links_name">Signout</span>
+          </a>
+        </li>
+      </ul>
+    </div>
+
+    <section class="home-section">
+      <nav>
+        <div class="container-fluid d-flex">
+          <div class="sidebar-button me-auto">
+            <i class="fas fa-bars sidebarBtn"></i>
+            <span class="dashboard">Orders</span>
+          </div>
+
+          <a href="#" class="view-shop px-3">
+            <i class="fas fa-paper-plane" aria-hidden="true"></i>
+            <span class="view-shop-text px-2">View your shop</span>
+          </a>
+          <div class="profile-details px-2">
+            <span class="admin_name px-2">Admin Name</span>
+            <img src="../../../assets/images/avatar.png" alt="" />
+          </div>
+        </div>
+      </nav>
+
+        <div class="home-content">
+          
+          <!-- Order Table -->
+          <div class="container-fluid p-4" id="order-table-data">
+            <div class="table-wrapper px-4">
+              <div class="table-title">
+                <!--Table Header-->
+                <h4 class="px-1 pt-4 fw-bold">List of Orders</h4>
+              </div>
+              <hr class="my-4" />
+              <div class="container-fluid table-responsive pt-2">
+                <table
+                  class="table table-hover align-middle align-items-center table-body"
+                  aria-label="Order List"
+                  id="orderTableList"
+                >
+                  <!--Table Body-->
+                  <thead>
+                    <tr>
+                      <th scope="col">
+                        <div class="form-check">
+                          <input
+                            class="form-check-input check-all"
+                            type="checkbox"
+                            value=""
+                            id="check-all-customer"
+                          />
+                          <label
+                            class="form-check-label"
+                            for="check-all-customer"
+                          >
+                            All
+                          </label>
+                        </div>
+                      </th>
+                      <th scope="col" class="center_align">ID</th>
+                      <th scope="col" class="center_align">Reference</th>
+                      <th scope="col" class="center_align">Price</th>
+                      <th scope="col" class="center_align">Payment</th>
+                      <th scope="col"class="center_align">Status</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>
+                        <div class="form-check">
+                          <input
+                            class="form-check-input check-list"
+                            type="checkbox"
+                            value=""
+                            id="check-one-customer"
+                          />
+                        </div>
+                      </td>
+                      <td class="center_align">Order-1</td>
+                      <td class="center_align">TSH-SMA-POL</td>
+                      <td class="center_align">Php 5,123.10</td>
+                      <td class="center_align">Paypal</td>
+                      <td class="center_align">
+                        <button
+                        type="button"
+                        class="btn update-data data button_width"
+                        data-bs-toggle="modal"
+                        data-bs-target="#orderStatus"
+                        aria-controls="orderStatus"
+                        title="Order Status"
+                        >
+                        Paid
+                        </button>
+                      </td>                        
+                    </tr>
+
+                  </tbody>
+                </table>
+                <br />
+              </div>
+            </div>
+          </div>
+        </div>       
+
+        <!-- Modal here -->
+        <!-- Order Status Modal -->
+        <div
+            class="modal fade"
+            id="orderStatus"
+            data-bs-backdrop="static"
+            data-bs-keyboard="false"
+            tabindex="-1"
+            aria-labelledby="orderStatusLabel"
+            aria-modal="true"
+            aria-hidden="true"
+        >
+            <div
+                class="modal-dialog modal-lg modal-dialog-centered modal-dialog-scrollable"
+            >
+                <div class="modal-content">
+                    <!-- Header -->
+                    <div class="modal-header">
+                        <h5 class="modal-title fw-bold text-uppercase px-2">
+                        View Order Status
+                        </h5>
+                        <button
+                        type="button"
+                        class="btn-close btn-close-white px-2"
+                        data-bs-dismiss="modal"
+                        aria-label="Close"
+                        ></button>
+                    </div>
+
+                    <!-- Body -->
+                    <div class="modal-body">
+                        <div class="container-fluid">
+                          <p class="tab-header">Recipient</p>
+                          
+                          <!-- Name -->
+                          <div class="row">
+                            <div class="col-lg-4">Name:</div>
+                            <div class="col-lg-8 fw-bold">JUAN DELA CRUZ</div>
+                          </div>
+
+                          <!-- Contact Number -->
+                          <div class="row">
+                            <div class="col-lg-4">Contact Number:</div>
+                            <div class="col-lg-8 fw-bold">09123456789</div>
+                          </div>
+
+                          <!-- Address -->
+                          <div class="row">
+                            <div class="col-lg-4">Address:</div>
+                            <div class="col-lg-8 fw-bold">
+                                <address>
+                                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo, ratione? Nihil, perferendis debitis beatae tenetur expedita officiis at sapiente esse nobis sed quo adipisci consequatur dignissimos maiores assumenda non aliquam!
+                                </address> 
+                            </div>
+                          </div>
+
+                          <p class="tab-header">Orders</p>
+
+                          <!-- ID -->
+                          <div class="row">
+                            <div class="col-lg-4">Order ID</div>
+                            <div class="col-lg-8 fw-bold">ORDER12342</div>
+                          </div>
+
+                          <!-- Item -->
+                          <div class="row">
+                            <div class="col-lg-4">Item</div>
+                            <div class="col-lg-8 fw-bold">SAMPLE ITEM NAMEE</div>
+                          </div>
+
+                          <!-- Number of Item -->
+                          <div class="row">
+                            <div class="col-lg-4">No. of Item</div>
+                            <div class="col-lg-8 fw-bold">13</div>
+                          </div>
+
+                          <!-- Total -->
+                          <div class="row">
+                            <div class="col-lg-4">Total Amount</div>
+                            <div class="col-lg-8 fw-bold">PHP 4,582.20</div>
+                          </div>
+
+                          <!-- Payment -->
+                          <div class="row">
+                            <div class="col-lg-4">Payment</div>
+                            <div class="col-lg-8 fw-bold">Paypal</div>
+                          </div>
+
+                          <!-- Order Reference -->
+                          <div class="row">
+                            <div class="col-lg-4">Reference</div>
+                            <div class="col-lg-8 fw-bold">TSH-SMA-POL</div>
+                          </div>
+
+                          <!-- Order Status -->
+                          <div class="row">
+                            <div class="col-lg-4">Status</div>
+                            <div class="col-lg-8 fw-bold">PAID</div>
+                          </div>
+
+
+
+                        </div>
+                </div>
+            </div>
+        </div>
+
+        
+      </div>
+    </section>
+
+
+    <!-- jQuery DataTables JS CDN -->
+    <script src="/assets/js/jquery-3.5.1.js"></script>
+    <script src="/assets/js/jquery.dataTables.min.js"></script>
+    <script src="/assets/js/dataTables.bootstrap5.min.js"></script>
+    <script>
+      let sidebar = document.querySelector(".sidebar");
+      let sidebarBtn = document.querySelector(".sidebarBtn");
+      sidebarBtn.onclick = function () {
+        sidebar.classList.toggle("active");
+        if (sidebar.classList.contains("active")) {
+          sidebarBtn.classList.replace("bx-menu", "bx-menu-alt-right");
+        } else sidebarBtn.classList.replace("bx-menu-alt-right", "bx-menu");
+      };
+      $(document).ready(function () {
+        $("#orderTableList").DataTable({
+          columnDefs: [{ className: "dt-center", targets: "_all" }],
+          lengthMenu: [
+            [20, 25, 50, -1],
+            [20, 25, 50, "All"],
+          ],
+        });
+        jQuery(".dataTable").wrap('<div class="dataTables_scroll" />');
+      });
+    </script>
+
+    <script src="/assets/js/attendants.js"></script>
+    <script src="/assets/js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>

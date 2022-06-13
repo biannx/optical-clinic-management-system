@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+    <head>
+        <meta charset="UTF-8">
+        <link href="\assets\css\bootstrap.min.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css">
+        <link href="\assets\css\bootstrap.min.css" rel="stylesheet" type="text/css">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Set Appointment</title>
+        <style>
+            label, h3, h4{
+                font-family: Helvetica;
+                font-weight: bold;
+            }
+            
+            .btn-default {
+                background: #FFFFFF;
+                border: 1px solid #50ABF1;
+                color: #50ABF1;
+            }
+            .btn-default:hover{
+                background: #50ABF1;
+                color: #FFFFFF;
+            }
+        </style>
+        <!-- footer -->
+        <style>
+            p, h5{
+                color: #6B6B6B;
+                font-family: Helvetica;
+                font-weight: bold;
+            }
+            .btn, .btn:hover{
+                background-color: #50ABF1; 
+                color: #FFFFFF; 
+            } 
+        </style>
+    </head>
+    <body>
+        <nav class="navbar sticky-top navbar-expand-lg navbar-light bg-light">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="#">
+                    <img src="\assets\images\plain-avatar.png" alt="" width="50px" height="50px" class="d-inline-block align-text-center">
+                    New Vision
+                  </a>
+                  <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                    <!-- <i class="fas fa-bars"></i> -->
+                    </button>
+              <div class="collapse navbar-collapse justify-content-center" id="navbarSupportedContent">
+                <ul class="navbar-nav mb-2 mb-lg-0">
+                    <!-- Active
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#">Home</a>
+                    </li>
+                    -->
+                  <li class="nav-item">
+                    <a class="nav-link" href="#">HOME</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="#">PRODUCTS</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="#">SET APPOINTMENT</a>
+                  </li>
+                </ul>
+              </div>
+              <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                <li class="nav-item">
+                    <a class="nav-link" href="#"><i class="fas fa-cart-arrow-down"></i></a>
+                </li> 
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                      <img src="\assets\images\plain-avatar.png" alt="" width="30px" height="30px" class="d-inline-block">
+                    </a>
+                    <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                      <li><a class="dropdown-item" href="#">Profile</a></li>
+                      <li><a class="dropdown-item" href="#">Settings</a></li>
+                      <li><a class="dropdown-item" href="#">History</a></li>
+                      <li><a class="dropdown-item" href="#">Sign Out</a></li>
+                    </ul>
+                </li>
+                    
+                    
+            </ul>
+            </div>
+          </nav>
+          <header style="text-align: center; padding: 2%; background-color: #FCFCFC">
+            <h3>IN-STORE APPOINTMENT FORM</h3>
+        </header>
+        <div class="container-fluid" style="padding-top: 3%; padding-bottom: 3%; padding-left: 25%; padding-right: 25%;">
+            <h4>Appointment Information</h4>
+            <div class="row" style="padding-left: 2%; padding-right: 2%;">
+                <label for="appointmentDate" class="form-label">Appointment</label>
+                <div class="col">
+                    <input type="date" class="form-control form-control" id="appointmentDate">
+                </div>
+                <div class="col">
+                    <label for="appointmentTime" class="form-label" style="font-weight: normal;">Appointment Time</label>
+                    <div class="row" style="padding-bottom: 3%;">
+                        <div class="col">
+                            <button type="button" class="btn btn-default" style="width: 100%">09:00</button>
+                        </div>
+                        <div class="col">
+                            <button type="button" class="btn btn-default" style="width: 100%">10:00</button>
+                        </div>
+                    </div>
+                    <div class="row" style="padding-bottom: 3%;">
+                        <div class="col">
+                            <button type="button" class="btn btn-default" style="width: 100%">11:00</button>
+                        </div>
+                        <div class="col">
+                            <button type="button" class="btn btn-default" style="width: 100%">12:00</button>
+                        </div>
+                    </div>
+                    <div class="row" style="padding-bottom: 3%;">
+                        <div class="col">
+                            <button type="button" class="btn btn-default" style="width: 100%">13:00</button>
+                        </div>
+                        <div class="col">
+                            <button type="button" class="btn btn-default" style="width: 100%">14:00</button>
+                        </div>
+                    </div>
+                    <div class="row" style="padding-bottom: 3%;">
+                        <div class="col">
+                            <button type="button" class="btn btn-default" style="width: 100%">15:00</button>
+                        </div>
+                        <div class="col">
+                            <button type="button" class="btn btn-default" style="width: 100%">16:00</button>
+                        </div>
+                    </div>
+                </div>
+                
+                
+            </div>
+        </div>
+        <div class="container-fluid" style="padding-top: 3%; padding-bottom: 3%; padding-left: 25%; padding-right: 25%; background-color: #F3F3F3;">
+            <h4>Personal Information</h4>
+            <div class="row g-3" style="padding-left: 2%; padding-right: 2%;">
+                <div class="col-3">
+                    <label for="firstname" class="form-label">First Name</label>
+                    <input type="text" class="form-control form-control" placeholder="First name" id="firstname">
+                </div>
+                <div class="col-3">
+                    <label for="middlename" class="form-label">Middle Name</label>
+                    <input type="text" class="form-control form-control" placeholder="Middle name" id="middlename">
+                </div>
+                <div class="col-3">
+                    <label for="lastname" class="form-label">Last Name</label>
+                    <input type="text" class="form-control form-control" placeholder="Last name" id="lastname">
+                </div>
+                <div class="col-3">
+                    <label for="suffix" class="form-label">Suffix</label>
+                    <input type="text" class="form-control form-control" placeholder="Suffix" id="suffix">
+                </div>
+                <div class="col-12">
+                    <label for="address" class="form-label">Complete Address</label>
+                    <input type="text" class="form-control form-control" id="address">
+                </div>
+                <div class="col-6">
+                    <label for="birthDate" class="form-label">Birthdate</label>
+                    <input type="date" class="form-control form-control" placeholder="mm/dd/yy" id="birthDate">
+                </div>
+                <div class="col-6">
+                    <label for="emailAddress" class="form-label">Email</label>
+                    <input type="email" class="form-control form-control" placeholder="Email Address" id="emailAddress">
+                </div>
+                <div class="col-6">
+                    <label for="contactNumber" class="form-label">Contact Number</label>
+                    <div class="input-group input-group mb-3">
+                        <span class="input-group-text" style="font-weight: bold;">+63</span>
+                        <input type="tel" class="form-control" placeholder="9123456789" id="contactNumber">
+                    </div>  
+                </div>
+                <div class="col-12">
+                    <label for="fistVisit" class="form-label">Is this your first visit in our clinic?</label>
+                    <div class="col-12">
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="fisrtVisit" id="fisrtVisitYes" value="yes">
+                            <label class="form-check-label" for="fisrtVisitYes" style="font-weight: normal">Yes</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="fisrtVisit" id="fisrtVisitNo" value="no">
+                            <label class="form-check-label" for="fisrtVisitNo" style="font-weight: normal">No</label>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-6">
+                    <label for="birthDate" class="form-label">Date of Last Eye Exam</label>
+                    <input type="date" class="form-control form-control" id="birthDate">
+                </div>
+                <div class="col-6">
+                    <label for="lastEyeGrade" class="form-label">Last Eye Grade</label>
+                    <input type="text" class="form-control form-control" placeholder="1.75" id="lastEyeGrade">
+                </div>
+            </div>
+        </div>
+        <div class="container-fluid" style="padding-top: 3%; padding-bottom: 3%; padding-left: 25%; padding-right: 25%;">
+            <h4>Appointment Information</h4>
+            <div class="mb-3" style="padding-left: 2%; padding-right: 2%;">
+                <label for="visitReason" class="form-label">What is your reason for this visit?</label>
+                <textarea class="form-control" id="visitReason" rows="5"></textarea>
+            </div>
+            <div style="text-align: center;">
+                <button type="button" class="btn" style="width: 30%;">SUBMIT</button>
+            </div>
+        </div>
+        <div class="container-fluid" style="background-color: #F3F3F3; padding-top: 3%; padding-bottom: 3%; padding-left: 20%; padding-right: 20%">
+            <footer>
+                <div class="row g-3" >
+                    <div class="col-6">
+                        <h5>LEAVE US YOUR MESSAGE</h5><br>
+                        <input type="text" class="form-control form-control" placeholder="Name" id="footerName"><br>
+                        <input type="email" class="form-control form-control" placeholder="Email Address" id="footerEmail"><br>
+                        <textarea class="form-control" placeholder="Message" id="footerMessage" rows="5"></textarea><br>
+                        <div style="text-align: center">
+                            <button type="button" class="btn" 
+                            style="width: 100%">SUBMIT</button>
+                        </div>
+                    </div>
+                    <div class="col-2">
+                        <h5>HELP</h5>
+                    </div>
+                    <div class="col-2">
+                        <h5>COMPANY</h5>
+                    </div>
+                    <div class="col-2">
+                        <h5>CONTACT</h5>
+                    </div>
+                </div>   
+                <p style="text-align: center; font-weight: normal; padding-top: 5%;">Copyright © 2022 FRFR Technologies.<br>
+                    All Rights Reserved.</p>        
+            </footer>
+        </div>
+    </body>
+</html>
