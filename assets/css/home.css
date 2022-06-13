@@ -1,0 +1,85 @@
+header {
+  min-height: 90vh;
+  background: linear-gradient(rgba(0, 0, 0, 0.075), rgba(0, 0, 0, 0)),
+    url(/assets/images/banner.jpg) center/cover no-repeat;
+  display: flex;
+  flex-direction: column;
+  justify-content: stretch;
+  margin: 0;
+  padding: 0;
+}
+
+.banner {
+  flex: 1; /* important for responsiveness  */
+  display: flex;
+  /* align-items:center; */
+  justify-content: start;
+}
+.banner .container .tagline {
+  padding: 6rem 0 1rem 0;
+  font-family: "Poppins", sans-serif;
+  color: var(--black);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+.banner .container .tagline h1 {
+  font-size: 4rem;
+  font-weight: 600;
+}
+.banner .container .tagline h2 {
+  font-size: 3rem;
+  font-weight: 500;
+}
+.banner .container p.lead {
+  color: var(--black);
+  max-width: 450px;
+  padding: 1.5rem 0 2rem 0;
+  font-weight: 400;
+}
+.banner .container .shop-now-div {
+  margin-top: 3rem;
+}
+.banner .container a.btn-default {
+  background: var(--blue);
+  font-size: 1.2rem;
+  color: white;
+  letter-spacing: 1px;
+  font-weight: 600;
+  border: 1px solid #1aa3f3;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+.banner .container a.btn-default:hover {
+  font-weight: 700;
+  border: 2px solid var(--blue);
+}
+
+@media (max-width: 1150px) {
+  .banner,
+  .banner .container p.lead {
+    text-align: center;
+    margin: auto;
+    align-items: center;
+  }
+}
+.featured-item {
+  background: #fafafa;
+  padding: 3rem 0;
+}
+
+.featured-item h2 {
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+.featured-item a {
+  font-weight: 600;
+  font-size: 1.3rem;
+  color: var(--blue);
+}
+.featured-item a:hover {
+  font-weight: 700;
+}
+.carousel-control-next,
+.carousel-control-prev {
+  width: 7%;
+}

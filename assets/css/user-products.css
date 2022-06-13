@@ -155,7 +155,8 @@ select.form-select,
   font-weight: 600;
   height: 26px;
   width: 65px;
-  font-size: 0.9rem;
+  font-size: 0.92rem;
+  color: var(--black);
 }
 .wrapper .card {
   /* filter: drop-shadow(0px 2px 3px rgba(0, 0, 0, 0.25)); */
