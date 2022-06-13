@@ -8,11 +8,6 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Set Appointment</title>
         <style>
-            label, h3, h4{
-                font-family: Helvetica;
-                font-weight: bold;
-            }
-            
             .btn-default {
                 background: #FFFFFF;
                 border: 1px solid #50ABF1;
@@ -22,18 +17,6 @@
                 background: #50ABF1;
                 color: #FFFFFF;
             }
-        </style>
-        <!-- footer -->
-        <style>
-            p, h5{
-                color: #6B6B6B;
-                font-family: Helvetica;
-                font-weight: bold;
-            }
-            .btn, .btn:hover{
-                background-color: #50ABF1; 
-                color: #FFFFFF; 
-            } 
         </style>
     </head>
     <body>
@@ -79,18 +62,16 @@
                       <li><a class="dropdown-item" href="#">History</a></li>
                       <li><a class="dropdown-item" href="#">Sign Out</a></li>
                     </ul>
-                </li>
-                    
-                    
+                </li>      
             </ul>
             </div>
           </nav>
           <header style="text-align: center; padding: 2%; background-color: #FCFCFC">
             <h3>IN-STORE APPOINTMENT FORM</h3>
         </header>
-        <div class="container-fluid" style="padding-top: 3%; padding-bottom: 3%; padding-left: 25%; padding-right: 25%;">
+        <div class="container-fluid">
             <h4>Appointment Information</h4>
-            <div class="row" style="padding-left: 2%; padding-right: 2%;">
+            <div class="row container">
                 <label for="appointmentDate" class="form-label">Appointment</label>
                 <div class="col">
                     <input type="date" class="form-control form-control" id="appointmentDate">
@@ -130,48 +111,10 @@
                         </div>
                     </div>
                 </div>
-                
-                
             </div>
         </div>
-        <div class="container-fluid" style="padding-top: 3%; padding-bottom: 3%; padding-left: 25%; padding-right: 25%; background-color: #F3F3F3;">
-            <h4>Personal Information</h4>
-            <div class="row g-3" style="padding-left: 2%; padding-right: 2%;">
-                <div class="col-3">
-                    <label for="firstname" class="form-label">First Name</label>
-                    <input type="text" class="form-control form-control" placeholder="First name" id="firstname">
-                </div>
-                <div class="col-3">
-                    <label for="middlename" class="form-label">Middle Name</label>
-                    <input type="text" class="form-control form-control" placeholder="Middle name" id="middlename">
-                </div>
-                <div class="col-3">
-                    <label for="lastname" class="form-label">Last Name</label>
-                    <input type="text" class="form-control form-control" placeholder="Last name" id="lastname">
-                </div>
-                <div class="col-3">
-                    <label for="suffix" class="form-label">Suffix</label>
-                    <input type="text" class="form-control form-control" placeholder="Suffix" id="suffix">
-                </div>
-                <div class="col-12">
-                    <label for="address" class="form-label">Complete Address</label>
-                    <input type="text" class="form-control form-control" id="address">
-                </div>
-                <div class="col-6">
-                    <label for="birthDate" class="form-label">Birthdate</label>
-                    <input type="date" class="form-control form-control" placeholder="mm/dd/yy" id="birthDate">
-                </div>
-                <div class="col-6">
-                    <label for="emailAddress" class="form-label">Email</label>
-                    <input type="email" class="form-control form-control" placeholder="Email Address" id="emailAddress">
-                </div>
-                <div class="col-6">
-                    <label for="contactNumber" class="form-label">Contact Number</label>
-                    <div class="input-group input-group mb-3">
-                        <span class="input-group-text" style="font-weight: bold;">+63</span>
-                        <input type="tel" class="form-control" placeholder="9123456789" id="contactNumber">
-                    </div>  
-                </div>
+        <div class="container-fluid">
+            <div class="row g-3 container">
                 <div class="col-12">
                     <label for="fistVisit" class="form-label">Is this your first visit in our clinic?</label>
                     <div class="col-12">
@@ -186,35 +129,32 @@
                     </div>
                 </div>
                 <div class="col-6">
-                    <label for="birthDate" class="form-label">Date of Last Eye Exam</label>
-                    <input type="date" class="form-control form-control" id="birthDate">
+                    <label for="lastEyeExam" class="form-label">Date of Last Eye Exam</label>
+                    <input type="date" class="form-control form-control" id="lastEyeExam">
                 </div>
                 <div class="col-6">
                     <label for="lastEyeGrade" class="form-label">Last Eye Grade</label>
                     <input type="text" class="form-control form-control" placeholder="1.75" id="lastEyeGrade">
                 </div>
+                <div class="mb-3">
+                    <label for="visitReason" class="form-label">What is your reason for this visit?</label>
+                    <textarea class="form-control" id="visitReason" rows="5"></textarea>
+                </div>
+                <div style="text-align: center;">
+                    <button type="button" class="btn btn-default" style="width: 30%;">SUBMIT</button>
+                </div>
             </div>
         </div>
-        <div class="container-fluid" style="padding-top: 3%; padding-bottom: 3%; padding-left: 25%; padding-right: 25%;">
-            <h4>Appointment Information</h4>
-            <div class="mb-3" style="padding-left: 2%; padding-right: 2%;">
-                <label for="visitReason" class="form-label">What is your reason for this visit?</label>
-                <textarea class="form-control" id="visitReason" rows="5"></textarea>
-            </div>
-            <div style="text-align: center;">
-                <button type="button" class="btn" style="width: 30%;">SUBMIT</button>
-            </div>
-        </div>
-        <div class="container-fluid" style="background-color: #F3F3F3; padding-top: 3%; padding-bottom: 3%; padding-left: 20%; padding-right: 20%">
+        <div class="container-fluid">
             <footer>
-                <div class="row g-3" >
+                <div class="row g-3 container" >
                     <div class="col-6">
                         <h5>LEAVE US YOUR MESSAGE</h5><br>
                         <input type="text" class="form-control form-control" placeholder="Name" id="footerName"><br>
                         <input type="email" class="form-control form-control" placeholder="Email Address" id="footerEmail"><br>
                         <textarea class="form-control" placeholder="Message" id="footerMessage" rows="5"></textarea><br>
                         <div style="text-align: center">
-                            <button type="button" class="btn" 
+                            <button type="button" class="btn btn-default" 
                             style="width: 100%">SUBMIT</button>
                         </div>
                     </div>
@@ -228,7 +168,7 @@
                         <h5>CONTACT</h5>
                     </div>
                 </div>   
-                <p style="text-align: center; font-weight: normal; padding-top: 5%;">Copyright © 2022 FRFR Technologies.<br>
+                <p style="text-align: center;">Copyright © 2022 FRFR Technologies.<br>
                     All Rights Reserved.</p>        
             </footer>
         </div>
