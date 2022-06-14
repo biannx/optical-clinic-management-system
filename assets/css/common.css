@@ -17,7 +17,7 @@
   --cancelHover: #ee4747;
   --lightgray: #cacaca;
   --labelNew: #98DAD6;
-
+  --cream: #F3F3F3;
 }
 
 *{
@@ -31,7 +31,14 @@ html,body{
   background: #fafafa;
   font-size: 92%;
 }
+
+
 /* common */
+
+.container-bg {
+  background-color: var(--cream);
+}
+
 .addBtn {
   background-color: var(--addBtn);
   opacity: 0.9;

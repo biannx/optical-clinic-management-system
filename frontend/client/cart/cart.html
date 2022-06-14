@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="/assets/css/bootstrap.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="/assets/css/common.css" />
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.5.0/css/all.css"
+    />
+    <link
+      href="/assets/css/dataTables.bootstrap5.min.css"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <link href="/assets/css/cart.css" rel="stylesheet" type="text/css"/>
+    <title>My Cart</title>
+</head>
+<body>
+    <div class="container-fluid container-bg">
+        <div class="container py-4">
+            <a class="fs-4 text-decoration-none black-font" href="#">
+                <i class="fas fa-arrow-left fs-4"></i> 
+                <span class="mx-3">Back to shopping</span>
+            </a>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="row gx-2 my-4">
+            <div class="col-lg-6 col-md-12 pt-4">
+                <h3 class="font-cart heavy-font mb-3">Shopping Cart</h3>
+                <form class=" form-control-lg">
+                    <div class="p-2 container-bg container-radius mb-3">
+                        <div class="d-flex align-items-center form-check">
+                            <input class="form-check-input mb-1" type="checkbox" value="" id="selectAll">
+                            <label class="form-check-label mx-2 font-cart light-font fs-5" for="selectAll">
+                                SELECT ALL (1 ITEM(S))
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="p-2 container-bg container-radius mb-3">
+                        <div class="d-flex align-items-center form-check justify-content-around row g-0">
+                            <input class="col-lg-1 form-check-input" type="checkbox" value="" id="item1">
+                            <div class="col-lg-11 form-check-label mx-2" for="item1">
+                                <div class="cart-card card position-relative border-0">
+                                    <div class="row no-gutters" style="height:100%">
+                                        <div class="col-md-4">
+                                        <img src="../../../assets/images/product-img.png" class="img-fluid h-100" alt="...">
+                                        </div>
+                                        <div class="col-md-8">
+                                        <div class="cart-card-body card-body d-flex flex-column container-bg py-0 pe-0">
+                                            <a href="#" class="text-decoration-none black-font align-self-end p-0 m-0" type="button"><i class="fas fa-trash-alt align-self-end"></i></a>
+                                            <div class="mb-auto">
+                                                <h5 class="font-cart heavy-font">BLUE SPRING HINGE</h5>
+                                                <p class="font-cart light-font fs-6">COLOR: RHINO</p>
+                                            </div>
+                                            <div class="d-flex">
+                                                <div class="btn-group me-auto">
+                                                    <button class="btn btn-secondary btn-sm" type="button">+</button>
+                                                    <button class="btn btn-secondary disabled btn-sm" type="button">1</button>
+                                                    <button class="btn btn-secondary btn-sm" type="button">-</button>
+                                                </div>
+                                                <div>
+                                                <p class="m-0 heavy-font">P1,000.25</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>  
+                    </div>
+
+                    <div class="p-2 container-bg container-radius mb-3">
+                        <div class="d-flex align-items-center form-check justify-content-around row g-0">
+                            <input class="col-lg-1 form-check-input" type="checkbox" value="" id="item1">
+                            <div class="col-lg-11 form-check-label mx-2" for="item1">
+                                <div class="cart-card card position-relative border-0">
+                                    <div class="row no-gutters" style="height:100%">
+                                        <div class="col-md-4">
+                                        <img src="../../../assets/images/product-img.png" class="img-fluid h-100" alt="...">
+                                        </div>
+                                        <div class="col-md-8">
+                                        <div class="cart-card-body card-body d-flex flex-column container-bg py-0 pe-0">
+                                            <a href="#" class="text-decoration-none black-font align-self-end p-0 m-0" type="button"><i class="fas fa-trash-alt align-self-end"></i></a>
+                                            <div class="mb-auto">
+                                                <h5 class="font-cart heavy-font">BLUE SPRING HINGE</h5>
+                                                <p class="font-cart light-font fs-6">COLOR: RHINO</p>
+                                            </div>
+                                            <div class="d-flex">
+                                                <div class="btn-group me-auto">
+                                                    <button class="btn btn-secondary btn-sm" type="button">+</button>
+                                                    <button class="btn btn-secondary disabled btn-sm" type="button">1</button>
+                                                    <button class="btn btn-secondary btn-sm" type="button">-</button>
+                                                </div>
+                                                <div>
+                                                <p class="m-0 heavy-font">P1,000.25</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>  
+                    </div>
+
+                    <div class="p-2 container-bg container-radius mb-3">
+                        <div class="d-flex align-items-center form-check justify-content-around row g-0">
+                            <input class="col-lg-1 form-check-input" type="checkbox" value="" id="item1">
+                            <div class="col-lg-11 form-check-label mx-2" for="item1">
+                                <div class="cart-card card position-relative border-0">
+                                    <div class="row no-gutters" style="height:100%">
+                                        <div class="col-md-4">
+                                        <img src="../../../assets/images/product-img.png" class="img-fluid h-100" alt="...">
+                                        </div>
+                                        <div class="col-md-8">
+                                        <div class="cart-card-body card-body d-flex flex-column container-bg py-0 pe-0">
+                                            <a href="#" class="text-decoration-none black-font align-self-end p-0 m-0" type="button"><i class="fas fa-trash-alt align-self-end"></i></a>
+                                            <div class="mb-auto">
+                                                <h5 class="font-cart heavy-font">BLUE SPRING HINGE</h5>
+                                                <p class="font-cart light-font fs-6">COLOR: RHINO</p>
+                                            </div>
+                                            <div class="d-flex">
+                                                <div class="btn-group me-auto">
+                                                    <button class="btn btn-secondary btn-sm" type="button">+</button>
+                                                    <button class="btn btn-secondary disabled btn-sm" type="button">1</button>
+                                                    <button class="btn btn-secondary btn-sm" type="button">-</button>
+                                                </div>
+                                                <div>
+                                                <p class="m-0 heavy-font">P1,000.25</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>  
+                    </div>
+
+                    <div class="p-2 container-bg container-radius mb-3">
+                        <div class="d-flex align-items-center form-check justify-content-around row g-0">
+                            <input class="col-lg-1 form-check-input" type="checkbox" value="" id="item1">
+                            <div class="col-lg-11 form-check-label mx-2" for="item1">
+                                <div class="cart-card card position-relative border-0">
+                                    <div class="row no-gutters" style="height:100%">
+                                        <div class="col-md-4">
+                                        <img src="../../../assets/images/product-img.png" class="img-fluid h-100" alt="...">
+                                        </div>
+                                        <div class="col-md-8">
+                                        <div class="cart-card-body card-body d-flex flex-column container-bg py-0 pe-0">
+                                            <a href="#" class="text-decoration-none black-font align-self-end p-0 m-0" type="button"><i class="fas fa-trash-alt align-self-end"></i></a>
+                                            <div class="mb-auto">
+                                                <h5 class="font-cart heavy-font">BLUE SPRING HINGE</h5>
+                                                <p class="font-cart light-font fs-6">COLOR: RHINO</p>
+                                            </div>
+                                            <div class="d-flex">
+                                                <div class="btn-group me-auto">
+                                                    <button class="btn btn-secondary btn-sm" type="button">+</button>
+                                                    <button class="btn btn-secondary disabled btn-sm" type="button">1</button>
+                                                    <button class="btn btn-secondary btn-sm" type="button">-</button>
+                                                </div>
+                                                <div>
+                                                <p class="m-0 heavy-font">P1,000.25</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>  
+                    </div>
+                </form>
+            </div>
+
+            <div class="col-lg-6 col-md-12">
+                <div class="form-control border-white">
+                    <div class="container-bg p-4 container-radius">
+                        <h3 class="font-cart heavy-font mb-3">Order Summary</h3>
+                        <div class="px-5">
+                            <div class="p-2 container-radius mb-4 cart-checkout-card-bg">
+                                <div class="d-flex">
+                                    <label class="form-check-label mx-2 font-cart heavy-font fs-4 me-auto">
+                                        SUBTOTAL (4 ITEM(S))
+                                    </label>
+                                    <label class="form-check-label font-cart heavy-font fs-4">
+                                        P4,001.00
+                                    </label>
+                                </div>
+                            </div>
+        
+                            <div class="p-2 container-radius mb-5 cart-checkout-card-bg">
+                                <div class="d-flex">
+                                    <label class="form-check-label mx-2 font-cart heavy-font fs-4 me-auto">
+                                        SHIPPING FEE
+                                    </label>
+                                    <label class="form-check-label font-cart heavy-font fs-4">
+                                        P0.00
+                                    </label>
+                                </div>
+                            </div>
+        
+                            <div class="p-2 container-radius mb-4 cart-checkout-card-bg">
+                                <div class="d-flex">
+                                    <label class="form-check-label mx-2 font-cart heavy-font fs-4 me-auto">
+                                        TOTAL
+                                    </label>
+                                    <label class="form-check-label font-cart heavy-font fs-4">
+                                        P4,001.00
+                                    </label>
+                                </div>
+                            </div>
+
+                            
+                            <button id="checkout-btn" class="btn w-100 font-cart heavy-font container-radius">PROCEED TO CHECKOUT</button>
+                        </div>
+                        
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+
+        
+        
+    </div>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+      crossorigin="anonymous"
+    ></script>
+</body>
+</html>
