@@ -1,36 +1,30 @@
-header{
-    text-align: center; 
-    background-color: #FCFCFC;
+footer {
+  font-family: Helvetica;
+  font-weight: bold;
+  color: #6b6b6b;
 }
-footer, a{
-    font-family: Helvetica;
-    font-weight: bold;
-    text-decoration: none;
-    color: #6B6B6B;
+a {
+  font-weight: bold;
 }
 label {
-    font-weight: bold;
-    font-family: Helvetica;
+  font-weight: bold;
+  font-family: Helvetica;
 }
 .small {
-    font-size: 12px;
-    color: #55a8ba;
-    font-family: Helvetica;
+  font-size: 12px;
+  color: #55a8ba;
+  font-family: Helvetica;
 }
-.btn-time {
-    background: #FFFFFF;
-    border: 1px solid #50ABF1;
-    color: #50ABF1;
+button {
+  padding-bottom: 2%;
 }
-.btn-time:hover{
-    background: #50ABF1;
-    color: #FFFFFF;
+.btn-default {
+  background: #ffffff;
+  border: 1px solid #50abf1;
+  color: #50abf1;
 }
-.btn-default{
-    background: #50ABF1;
-    color: #FFFFFF;
+.btn-default:hover {
+  background: #50abf1;
+  color: #ffffff;
 }
-.btn-default:hover{
-    background: #3e91d1;
-    color: #FFFFFF;
-}
+
