@@ -34,6 +34,17 @@ html,body{
 
 
 /* common */
+.heavy-font {
+  font-weight: 700;
+}
+
+.open-sans {
+  font-family: "Open Sans";
+}
+
+.helvetica {
+  font-family: "Helvetica";
+}
 
 .container-bg {
   background-color: var(--cream);
