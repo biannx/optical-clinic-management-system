@@ -3,8 +3,8 @@
   <head>
     <meta charset="UTF-8" />
     <link href="\assets\css\bootstrap.min.css" rel="stylesheet" />
-    <link href="\assets\css\common.css" rel="stylesheet" />
     <link href="\assets\css\client.css" rel="stylesheet" />
+    <link href="\assets\css\common.css" rel="stylesheet" />
     <link href="\assets\css\user-products.css" rel="stylesheet" />
     <link href="\assets\css\home.css" rel="stylesheet" />
     <link
@@ -122,11 +122,11 @@
     </header>
 
     <div class="container-fluid featured-item">
-        <div class="container d-flex justify-content-between align-items-center">
-          <h2>JUST IN</h2>
-          <a href="../client/products/all-products.html">VIEW ALL</a>
-        </div>
-				<div class="container-fluid">
+      <div class="container d-flex justify-content-between align-items-center">
+        <h1>JUST IN</h1>
+        <a href="../client/products/all-products.html">VIEW ALL</a>
+      </div>
+      <div class="container-fluid">
         <div
           id="carouselFeaturedProduct"
           class="carousel slide carousel-dark"
@@ -454,6 +454,126 @@
           </button>
         </div>
         <!-- bago mag container -->
+      </div>
+    </div>
+
+    <div class="container-fluid about-us-wrapper">
+      <div class="container">
+        <h1 class="pb-5">About us</h1>
+        <div class="row">
+          <div class="col-lg-6 col-md-12 col-sm-12">
+            <img src="/assets/images/doctors.svg" alt="Eye Store" />
+          </div>
+          <div class="col-lg-6 col-md-12 col-sm-12 about-us p-4">
+            <h2 class="text-center pb-3">New Vision Clinic</h2>
+            <p class="about-us-text">
+              We provide an emphasis on preventative care services to promote
+              our patients' eyesight and vision. We recognize that our patients
+              are entrusting us with the care of their eyes. Protecting your
+              overall health can go a long way toward keeping your eyes healthy!
+              <!-- It’s important to make healthy choices and take good care of
+              yourself.  -->
+            </p>
+            <p>
+              <strong> Your exam will be reviewed by a licensed ophthalmologist.</strong>
+            </p>
+            <div class="text-center read-faqs-button">
+              <a href="" class="btn btn-default read-faqs-button">
+                READ FAQs
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="container-fluid services-wrapper">
+      <div class="container">
+        <h1>Services</h1>
+        <div class="row">
+          <div class="col-lg-4 col-md-6 col-sm-12 text-center">
+            <div class="first">
+              <img src="/assets/images/direction.svg" alt="Eye Store" />
+              <div>
+                <p>Want to get an eye check?</p>
+                <p class="fw-bold">Get an in-store eye exam!</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-6 col-sm-12 text-center">
+            <div class="second">
+              <img src="/assets/images/medicine.svg" alt="Eye Store" />
+              <div>
+                <p>Schedule your eye examination here:</p>
+                <a class="btn btn-default">Set your appointment</a>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-12 col-sm-12 text-center">
+            <div class="third">
+              <img src="/assets/images/message.svg" alt="Eye Store" />
+              <p>
+                A <strong>confirmation email</strong> and SMS message will be
+                sent to your registered email and phone number.
+              </p>
+              <p class="check-inbox-text">
+                Check your inbox on a regular basis to prevent missing an
+                appointment!
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- footer -->
+    <div class="container-fluid footer-wrapper py-5">
+      <div class="container">
+        <footer>
+          <div class="row g-3">
+            <div class="col-6">
+              <h5>LEAVE US YOUR MESSAGE</h5>
+              <br />
+              <input
+                type="text"
+                class="form-control form-control"
+                placeholder="Name"
+                id="footerName"
+              /><br />
+              <input
+                type="email"
+                class="form-control form-control"
+                placeholder="Email Address"
+                id="footerEmail"
+              /><br />
+              <textarea
+                class="form-control"
+                placeholder="Message"
+                id="footerMessage"
+                rows="5"
+              ></textarea
+              ><br />
+              <div class="py-3">
+                <button type="button" class="btn btn-default w-100">
+                  SUBMIT
+                </button>
+              </div>
+            </div>
+            <div class="col-2">
+              <h5>HELP</h5>
+            </div>
+            <div class="col-2">
+              <h5>COMPANY</h5>
+            </div>
+            <div class="col-2">
+              <h5>CONTACT</h5>
+            </div>
+          </div>
+          <p style="text-align: center; font-weight: normal; padding-top: 5%">
+            Copyright © 2022 FRFR Technologies.<br />
+            All Rights Reserved.
+          </p>
+        </footer>
       </div>
     </div>
     <script
