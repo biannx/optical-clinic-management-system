@@ -1,15 +1,12 @@
 header{
     text-align: center; 
-    padding: 2%; 
     background-color: #FCFCFC;
 }
-footer{
+footer, a{
     font-family: Helvetica;
     font-weight: bold;
+    text-decoration: none;
     color: #6B6B6B;
-}
-a{
-    font-weight: bold;
 }
 label {
     font-weight: bold;
@@ -20,15 +17,20 @@ label {
     color: #55a8ba;
     font-family: Helvetica;
 }
-button {
-    padding-bottom: 2%;
-}
-.btn-default {
+.btn-time {
     background: #FFFFFF;
     border: 1px solid #50ABF1;
     color: #50ABF1;
 }
-.btn-default:hover{
+.btn-time:hover{
     background: #50ABF1;
+    color: #FFFFFF;
+}
+.btn-default{
+    background: #50ABF1;
+    color: #FFFFFF;
+}
+.btn-default:hover{
+    background: #3e91d1;
     color: #FFFFFF;
 }
