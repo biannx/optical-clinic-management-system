@@ -11,59 +11,74 @@
       rel="stylesheet"
       type="text/css"
     />
-    <link href="\assets\css\client.css" rel="stylesheet" />
+    <link href="\assets\css\common.css" 
+      rel="stylesheet" 
+    />
+    <link
+      href="\assets\css\client.css"
+      rel="stylesheet"
+    />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Client | Footer</title>
   </head>
   <body>
-    <div class="container-fluid py-5">
-      <div class="container">
-        <footer>
-          <div class="row g-3">
-            <div class="col-6">
-              <h5>LEAVE US YOUR MESSAGE</h5>
-              <br />
-              <input
-                type="text"
-                class="form-control form-control"
-                placeholder="Name"
-                id="footerName"
-              /><br />
-              <input
-                type="email"
-                class="form-control form-control"
-                placeholder="Email Address"
-                id="footerEmail"
-              /><br />
-              <textarea
-                class="form-control"
-                placeholder="Message"
-                id="footerMessage"
-                rows="5"
-              ></textarea
-              ><br />
-              <div class="py-3">
-                <button type="button" class="btn btn-default w-100">
-                  SUBMIT
-                </button>
+    <section class="footer-body">
+      <div class="container-fluid py-5">
+        <div class="container">
+          <footer>
+            <div class="row g-3">
+              <div class="col-4">
+                <h4>LEAVE US YOUR MESSAGE</h4>
+                <br />
+                <input
+                  type="text"
+                  class="form-control form-control"
+                  placeholder="Name"
+                  id="footerName"
+                /><br />
+                <input
+                  type="email"
+                  class="form-control form-control"
+                  placeholder="Email Address"
+                  id="footerEmail"
+                /><br />
+                <textarea
+                  class="form-control"
+                  placeholder="Message"
+                  id="footerMessage"
+                  rows="5"
+                ></textarea
+                ><br />
+                <div>
+                  <button type="button" class="btn btn-blue w-100">
+                    SUBMIT
+                  </button>
+                </div>
+              </div>
+              <div class="col-2">
+                <h4>HELP</h4>
+                <p><a class="footer-link" href="#">FAQs</a></p>
+                <p><a class="footer-link" href="#">About Us</a></p>
+              </div>
+              <div class="col-3">
+                <h4>COMPANY</h4>
+                <p><a class="footer-link" href="#">Terms and Conditions</a></p>
+                <p><a class="footer-link" href="#">Products</a></p>
+                <p><a class="footer-link" href="#">Services</a></p>
+              </div>
+              <div class="col-3">
+                <h4>CONTACT</h4>
+                <p>Email: opticeye@gmail.com</p>
+                <p>Phone: +639123456789</p>
               </div>
             </div>
-            <div class="col-2">
-              <h5>HELP</h5>
-            </div>
-            <div class="col-2">
-              <h5>COMPANY</h5>
-            </div>
-            <div class="col-2">
-              <h5>CONTACT</h5>
-            </div>
-          </div>
-          <p style="text-align: center; font-weight: normal; padding-top: 5%">
-            Copyright © 2022 FRFR Technologies.<br />
-            All Rights Reserved.
-          </p>
-        </footer>
+            <p class="text-center py-5">
+              Copyright © 2022 FRFR Technologies.<br />
+              All Rights Reserved.
+            </p>
+          </footer>
+        </div>
       </div>
-    </div>
+  </section>
   </body>
 </html>
