@@ -1,8 +1,11 @@
 /* user products */
+body{
+  background: #fdfdfd;
+}
 .head {
   height: 4rem;
   position: relative;
-  background: #e2e2e4;
+  background: grey;
 }
 .head:before {
   padding-top: 2%;
@@ -67,8 +70,9 @@ form.search-wrapper input[type="search"]:focus {
   padding-bottom: 0.8rem;
 }
 .container .filter-head select.form-select,
-.container .filter-button {
+.container .filter-button{
   width: 9rem;
+  height: 3rem;
 }
 .container .filter-button:hover,
 .wrapper .card .card-body .add-to-bag a:hover,
@@ -80,10 +84,7 @@ form.search-wrapper input[type="search"]:focus {
   color: white;
   font-weight: 600;
   outline: none;
-}
 
-.container .filter-reset {
-  display: none;
 }
 
 .container .filter-button input[type="reset"] {
@@ -131,6 +132,9 @@ select.form-select,
 .grid-container > * {
   margin: 1rem 0;
 }
+.row {
+   --bs-gutter-x: 0;
+}
 .wrapper {
   padding: 1.2rem 0 1.5rem 0;
 }
@@ -146,7 +150,7 @@ select.form-select,
 .wrapper .label-new {
   position: absolute;
   right: 0;
-  top: 20px;
+  top: 15px;
 }
 .wrapper .label-new span {
   background: var(--labelNew);
