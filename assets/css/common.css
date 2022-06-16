@@ -50,6 +50,10 @@ html,body{
   font-family: "Helvetica";
 }
 
+.poppins {
+  font-family: "Poppins";
+}
+
 .container-bg {
   background-color: var(--cream);
 }
