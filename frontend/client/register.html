@@ -43,6 +43,9 @@
                       <li class="nav-item px-4">
                           <a class="nav-link" href="\frontend\client\appointment.html">SET APPOINTMENT</a>
                       </li>
+                      <li class="nav-item px-4">
+                          <a class="nav-link" href="frontend\client\faqs.html">FAQs</a>
+                      </li>
                   </ul>
               </div>
               <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
@@ -67,163 +70,168 @@
           integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
           crossorigin="anonymous"
       ></script>
-    <form class="container-fluid container w-50 p-3 needs-validation" novalidate>
-      <h4 class="pt-5">REGISTER</h4>
-      <div class="row mb-3">
-        <div class="col-4 py-3">
-          <label for="givenName" class="form-label" required>Given Name*</label>
-          <input
-            type="text"
-            class="form-control form-control is-invalid"
-            placeholder="Given Name"
-            id="givenName"
-          />
-          <div id="givenName" class="invalid-feedback">
-            What is your name?
-          </div>
-        </div>
-        <div class="col-4 py-3">
-          <label for="middleName" class="form-label">Middle Name</label>
-          <input
-            type="text"
-            class="form-control form-control"
-            placeholder="Middle Name"
-            id="middleName"
-          />
-        </div>
-        <div class="col-4 py-3">
-          <label for="lastName" class="form-label">Last Name*</label>
-          <input
-            type="text"
-            class="form-control form-control is-invalid"
-            placeholder="Last Name"
-            id="lastName"
-          />
-          <div id="lastName" class="invalid-feedback">
-            What is your name?
-          </div>   
-        </div>
-        <div class="col-4 py-3">
-          <label for="suffix" class="form-label" required>Suffix</label>
-          <input
-            type="text"
-            class="form-control form-control"
-            placeholder="Suffix"
-            id="suffix"
-          />     
-        </div>
-        <div class="col-4 py-3">
-          <label for="birthDate" class="form-label">Birthdate*</label>
-          <input
-            type="date"
-            class="form-control is-invalid"
-            placeholder="mm/dd/yy"
-            id="birthDate"
-          />
-          <div id="birthDate" class="invalid-feedback">
-            Provide birthdate.
-          </div> 
-        </div>
-        <div class="col-4 py-3">
-          <label for="fistVisit" class="form-label">Sex*</label>
-          <div class="col-12">
-            <div class="form-check form-check-inline">
+    <form class="needs-validation" novalidate>
+      <div class="container-fluid">
+        <div class="container w-50 pt-5">
+          <h4 class="pt-5">REGISTER</h4>
+          <div class="row mb-3">
+            <div class="col-4 py-3">
+              <label for="givenName" class="form-label" required>Given Name*</label>
               <input
-                class="form-check-input"
-                type="radio"
-                name="sex"
-                id="male"
-                value="male"
+                type="text"
+                class="form-control form-control is-invalid"
+                placeholder="Given Name"
+                id="givenName"
+              />
+              <div id="givenName" class="invalid-feedback">
+                What is your name?
+              </div>
+            </div>
+            <div class="col-4 py-3">
+              <label for="middleName" class="form-label">Middle Name</label>
+              <input
+                type="text"
+                class="form-control form-control"
+                placeholder="Middle Name"
+                id="middleName"
+              />
+            </div>
+            <div class="col-4 py-3">
+              <label for="lastName" class="form-label">Last Name*</label>
+              <input
+                type="text"
+                class="form-control form-control is-invalid"
+                placeholder="Last Name"
+                id="lastName"
+              />
+              <div id="lastName" class="invalid-feedback">
+                What is your name?
+              </div>   
+            </div>
+            <div class="col-4 py-3">
+              <label for="suffix" class="form-label" required>Suffix</label>
+              <input
+                type="text"
+                class="form-control form-control"
+                placeholder="Suffix"
+                id="suffix"
+              />     
+            </div>
+            <div class="col-4 py-3">
+              <label for="birthDate" class="form-label">Birthdate*</label>
+              <input
+                type="date"
+                class="form-control is-invalid"
+                placeholder="mm/dd/yy"
+                id="birthDate"
+              />
+              <div id="birthDate" class="invalid-feedback">
+                Provide birthdate.
+              </div> 
+            </div>
+            <div class="col-4 py-3">
+              <label for="fistVisit" class="form-label">Sex*</label>
+              <div class="col-12">
+                <div class="form-check form-check-inline">
+                  <input
+                    class="form-check-input"
+                    type="radio"
+                    name="sex"
+                    id="male"
+                    value="male"
+                    required
+                  />
+                  <label
+                    class="form-check-label"
+                    for="male"
+                    style="font-weight: normal"
+                    >Male</label
+                  >
+                </div>
+                <div class="form-check form-check-inline">
+                  <input
+                    class="form-check-input"
+                    type="radio"
+                    name="sex"
+                    id="female"
+                    value="female"
+                    required
+                  />
+                  <label
+                    class="form-check-label"
+                    for="female"
+                    style="font-weight: normal"
+                    >Female</label
+                  >
+                </div>
+              </div>
+              <div class="invalid-feedback">
+                Provide your sex.
+              </div>
+            </div>
+            <div class="col-6 py-3">
+              <label for="emailAddress" class="form-label">Email*</label>
+              <input
+                type="email"
+                class="form-control form-control is-invalid"
+                placeholder="Email Address"
+                id="emailAddress"
                 required
               />
-              <label
-                class="form-check-label"
-                for="male"
-                style="font-weight: normal"
-                >Male</label
-              >
+                  <div id="emailAddress" class="invalid-feedback">
+                    Invalid email.
+                  </div>  
             </div>
-            <div class="form-check form-check-inline">
+            <div class="col-6 py-3">
+              <label for="confirmEmail" class="form-label">Confirm Email*</label>
               <input
-                class="form-check-input"
-                type="radio"
-                name="sex"
-                id="female"
-                value="female"
+                type="email"
+                class="form-control form-control is-invalid"
+                placeholder="Confirm Email"
+                id="confirmEmail"
                 required
               />
-              <label
-                class="form-check-label"
-                for="female"
-                style="font-weight: normal"
-                >Female</label
+                  <div id="confirmEmail" class="invalid-feedback">
+                    Please reconfirm your email.
+                  </div>  
+            </div>
+            <div class="col-6 py-3">
+              <label for="password" class="form-label">Password*</label>
+              <input
+                type="password"
+                class="form-control form-control is-invalid"
+                placeholder="Password"
+                id="password"
+                required
+              />
+                <div id="password" class="invalid-feedback">
+                  Enter a combination of at least eight characters, upper case letters, numbers, and special characters.
+                </div>  
+            </div>
+            <div class="col-6 py-3">
+              <label for="confirmPassword" class="form-label"
+                >Confirm Password*</label
               >
+              <input
+                type="password"
+                class="form-control form-control is-invalid"
+                placeholder="Confirm Password"
+                id="confirmPassword"
+                required
+              />
+                <div id="confirmPassword" class="invalid-feedback">
+                  Please reconfirm your password.
+                </div> 
+            </div>
+            <div class="py-3 text-center">
+              <button type="button" class="btn btn-blue w-50">
+                Create Account
+              </button>
             </div>
           </div>
-          <div class="invalid-feedback">
-            Provide your sex.
-          </div>
-        </div>
-        <div class="col-6 py-3">
-          <label for="emailAddress" class="form-label">Email*</label>
-          <input
-            type="email"
-            class="form-control form-control is-invalid"
-            placeholder="Email Address"
-            id="emailAddress"
-            required
-          />
-              <div id="emailAddress" class="invalid-feedback">
-                Invalid email.
-              </div>  
-        </div>
-        <div class="col-6 py-3">
-          <label for="confirmEmail" class="form-label">Confirm Email*</label>
-          <input
-            type="email"
-            class="form-control form-control is-invalid"
-            placeholder="Confirm Email"
-            id="confirmEmail"
-            required
-          />
-              <div id="confirmEmail" class="invalid-feedback">
-                Please reconfirm your email.
-              </div>  
-        </div>
-        <div class="col-6 py-3">
-          <label for="password" class="form-label">Password*</label>
-          <input
-            type="password"
-            class="form-control form-control is-invalid"
-            placeholder="Password"
-            id="password"
-            required
-          />
-            <div id="password" class="invalid-feedback">
-              Enter a combination of at least eight characters, upper case letters, numbers, and special characters.
-            </div>  
-        </div>
-        <div class="col-6 py-3">
-          <label for="confirmPassword" class="form-label"
-            >Confirm Password*</label
-          >
-          <input
-            type="password"
-            class="form-control form-control is-invalid"
-            placeholder="Confirm Password"
-            id="confirmPassword"
-            required
-          />
-            <div id="confirmPassword" class="invalid-feedback">
-              Please reconfirm your password.
-            </div> 
-        </div>
-        <div class="py-3 text-center">
-          <button type="button" class="btn btn-blue w-50">
-            Create Account
-          </button>
         </div>
       </div>
+      
     </form>
   </body>
 </html>

@@ -18,7 +18,7 @@
     </head>
     <body>
         <div class="container-fluid">
-            <nav class="navbar sticky-top navbar-expand-lg navbar-light bg-light">
+            <nav class="navbar fixed-top navbar-expand-lg navbar-light bg-light">
                 <div class="container-fluid">
                     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                         <span class="navbar-toggler-icon"></span>
@@ -44,6 +44,9 @@
                             </li>
                             <li class="nav-item px-4">
                                 <a class="nav-link" href="\frontend\client\appointment.html">SET APPOINTMENT</a>
+                            </li>
+                            <li class="nav-item px-4">
+                                <a class="nav-link" href="frontend\client\faqs.html">FAQs</a>
                             </li>
                         </ul>
                     </div>
@@ -83,70 +86,73 @@
                 integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
                 crossorigin="anonymous"
             ></script>
-          <header>
-            <h4 class="text-center py-5">IN-STORE APPOINTMENT FORM</h4>
-        </header>
-        <div class="container-fluid w-75 p3">
-            <div class="container">
-                <h4 class="pb-4">Appointment Information</h4>
-                <div class="row g-3">
-                    <div class="col-6">
-                        <label for="appointmentDate" class="form-label">Appointment</label>
-                        <input type="date" class="form-control form-control" id="appointmentDate">
-                    </div>
-                    <div class="col-6">
-                        <label for="appointmentTime" class="form-label w-100">Appointment Time</label>
-                        <div class="row g-3">
-                            <div class="col-6">
-                                <div class="pb-2"><button type="button" class="btn btn-blue w-100">09:00</button></div>
-                                <div class="pb-2"><button type="button" class="btn btn-blue w-100">11:00</button></div>
-                                <div class="pb-2"><button type="button" class="btn btn-blue w-100">13:00</button></div>
-                                <div class="pb-2"><button type="button" class="btn btn-blue w-100">15:00</button></div>
+        <div class="container-fluid">
+            <div class="container w-75 pt-5">
+                <header>
+                    <h4 class="text-center py-5">IN-STORE APPOINTMENT FORM</h4>
+                </header>
+                <div class="container">
+                    <h4 class="pb-4">Appointment Information</h4>
+                    <div class="row g-3">
+                        <div class="col-6">
+                            <label for="appointmentDate" class="form-label">Appointment</label>
+                            <input type="date" class="form-control form-control" id="appointmentDate">
+                        </div>
+                        <div class="col-6">
+                            <label for="appointmentTime" class="form-label w-100">Appointment Time</label>
+                            <div class="row g-3">
+                                <div class="col-6">
+                                    <div class="pb-2"><button type="button" class="btn btn-blue w-100">09:00</button></div>
+                                    <div class="pb-2"><button type="button" class="btn btn-blue w-100">11:00</button></div>
+                                    <div class="pb-2"><button type="button" class="btn btn-blue w-100">13:00</button></div>
+                                    <div class="pb-2"><button type="button" class="btn btn-blue w-100">15:00</button></div>
+                                </div>
+                                <div class="col-6">
+                                    <div class="pb-2"><button type="button" class="btn btn-blue w-100">10:00</button></div>
+                                    <div class="pb-2"><button type="button" class="btn btn-blue w-100">12:00</button></div>
+                                    <div class="pb-2"><button type="button" class="btn btn-blue w-100">14:00</button></div>
+                                    <div class="pb-2"><button type="button" class="btn btn-blue w-100">16:00</button></div>
+                                </div>
                             </div>
-                            <div class="col-6">
-                                <div class="pb-2"><button type="button" class="btn btn-blue w-100">10:00</button></div>
-                                <div class="pb-2"><button type="button" class="btn btn-blue w-100">12:00</button></div>
-                                <div class="pb-2"><button type="button" class="btn btn-blue w-100">14:00</button></div>
-                                <div class="pb-2"><button type="button" class="btn btn-blue w-100">16:00</button></div>
+                                
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="row g-3 container">
+                    <div class="col-12 py-3">
+                        <label for="fistVisit" class="form-label">Is this your first visit in our clinic?</label>
+                        <div class="col-12 py-3">
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" name="fisrtVisit" id="fisrtVisitYes" value="yes">
+                                <label class="form-check-label" for="fisrtVisitYes" style="font-weight: normal">Yes</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" name="fisrtVisit" id="fisrtVisitNo" value="no">
+                                <label class="form-check-label" for="fisrtVisitNo" style="font-weight: normal">No</label>
                             </div>
                         </div>
-                            
+                    </div>
+                    <div class="col-6 py-3">
+                        <label for="lastEyeExam" class="form-label">Date of Last Eye Exam</label>
+                        <input type="date" class="form-control form-control" id="lastEyeExam">
+                    </div>
+                    <div class="col-6 py-3">
+                        <label for="lastEyeGrade" class="form-label">Last Eye Grade</label>
+                        <input type="text" class="form-control form-control" placeholder="1.75" id="lastEyeGrade">
+                    </div>
+                    <div class="mb-3 py-3">
+                        <label for="visitReason" class="form-label">What is your reason for this visit?</label>
+                        <textarea class="form-control" id="visitReason" rows="5"></textarea>
+                    </div>
+                    <div class="text-center pb-5">
+                        <button type="button" class="btn btn-blue w-50">
+                            SUBMIT
+                        </button>
                     </div>
                 </div>
             </div>
             
-            <div class="row g-3 container">
-                <div class="col-12 py-3">
-                    <label for="fistVisit" class="form-label">Is this your first visit in our clinic?</label>
-                    <div class="col-12 py-3">
-                        <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="radio" name="fisrtVisit" id="fisrtVisitYes" value="yes">
-                            <label class="form-check-label" for="fisrtVisitYes" style="font-weight: normal">Yes</label>
-                        </div>
-                        <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="radio" name="fisrtVisit" id="fisrtVisitNo" value="no">
-                            <label class="form-check-label" for="fisrtVisitNo" style="font-weight: normal">No</label>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-6 py-3">
-                    <label for="lastEyeExam" class="form-label">Date of Last Eye Exam</label>
-                    <input type="date" class="form-control form-control" id="lastEyeExam">
-                </div>
-                <div class="col-6 py-3">
-                    <label for="lastEyeGrade" class="form-label">Last Eye Grade</label>
-                    <input type="text" class="form-control form-control" placeholder="1.75" id="lastEyeGrade">
-                </div>
-                <div class="mb-3 py-3">
-                    <label for="visitReason" class="form-label">What is your reason for this visit?</label>
-                    <textarea class="form-control" id="visitReason" rows="5"></textarea>
-                </div>
-                <div class="text-center pb-5">
-                    <button type="button" class="btn btn-blue w-50">
-                        SUBMIT
-                    </button>
-                </div>
-            </div>
         </div>
         <section class="footer-body">
             <div class="container-fluid py-5">
