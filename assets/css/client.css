@@ -31,3 +31,15 @@ nav{
   color: #ffffff;
   opacity: 1;
 }
+h1{
+  color: #333333;
+  text-transform: uppercase;
+  font-weight: 700;
+  margin-top: 14px !important;
+}
+.big-icon{
+  font-size: 2.5rem;
+}
+.text-digit{
+  width: 3rem;
+}

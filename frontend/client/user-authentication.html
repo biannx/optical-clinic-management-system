@@ -3,22 +3,32 @@
   <head>
     <meta charset="UTF-8" />
     <link href="\assets\css\bootstrap.min.css" rel="stylesheet" />
-    <link rel="stylesheet" href="\assets\css\common.css" />
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.5.0/css/all.css"
+    />
+    <link href="\assets\css\common.css" 
+      rel="stylesheet" 
+    />
+    <link href="\assets\css\client.css" 
+      rel="stylesheet" 
+    />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Client | Navigation</title>
+    <title>User Authentication</title>
   </head>
   <body>
     <div class="container-fluid">
         <nav class="navbar sticky-top navbar-expand-lg navbar-light bg-light">
             <div class="container-fluid">
-                <a class="navbar-brand" href="#">
-                    <img src="\assets\images\plain-avatar.png" alt="" width="50px" height="50px" class="d-inline-block align-text-center">
-                    New Vision
-                </a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                     <!-- <i class="fas fa-bars"></i> -->
                 </button>
+                <a class="navbar-brand" href="#">
+                    <img src="\assets\images\logo.png" alt="" width="50px"class="d-inline-block align-text-center">
+                    New Vision
+                </a>
+                
                 <div class="collapse navbar-collapse justify-content-center" id="navbarSupportedContent">
                     <ul class="navbar-nav mb-2 mb-lg-0">
                         <!-- Active
@@ -26,24 +36,27 @@
                             <a class="nav-link active" aria-current="page" href="#">Home</a>
                         </li>
                         -->
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">HOME</a>
+                        <li class="nav-item px-4">
+                            <a class="nav-link navbar-link" href="#">HOME</a>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">PRODUCTS</a>
+                        <li class="nav-item px-4">
+                            <a class="nav-link" href="\frontend\client\products\all-products.html">PRODUCTS</a>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">SET APPOINTMENT</a>
+                        <li class="nav-item px-4">
+                            <a class="nav-link" href="\frontend\client\appointment.html">SET APPOINTMENT</a>
+                        </li>
+                        <li class="nav-item px-4">
+                            <a class="nav-link" href="frontend\client\faqs.html">FAQs</a>
                         </li>
                     </ul>
                 </div>
                 <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
                     <li class="nav-item">
-                        <a class="nav-link" href="#"><i class="fas fa-cart-arrow-down"></i></a>
+                        <a class="nav-link py-3" href="#"><i class="fas fa-cart-arrow-down"></i></a>
                     </li> 
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                        <img src="\assets\images\plain-avatar.png" alt="" width="30px" height="30px" class="d-inline-block">
+                        <img src="\assets\images\avatar.png" alt="" width="30px" class="d-inline-block">
                         </a>
                         <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                             <li><a class="dropdown-item" href="#">Profile</a></li>
@@ -52,9 +65,92 @@
                             <li><a class="dropdown-item" href="#">Sign Out</a></li>
                         </ul>
                     </li>
+                    <!--
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        <img src="\assets\images\plain-avatar.png" alt="" width="30px" class="d-inline-block">
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <li><a class="dropdown-item" href="#">Sign In</a></li>
+                            <li><a class="dropdown-item" href="#">Register</a></li>
+                        </ul>
+                    </li>
+                    -->
+                    
                 </ul>
             </div>
           </nav>
+        </div>
+        <script
+            src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+            crossorigin="anonymous"
+        ></script>
+        <div class="container-fluid">
+            <div class="container text-center pt-5">
+                <h1>Verify your email</h1>
+                <div class="d-flex justify-content-center">
+                    <i class="fas fa-envelope big-icon"></i>
+                    <p class="p-2">Enter the code we sent to your email.</p>
+                </div>
+                <div class="row g-3">
+                    <div class="col-2">
+                        <input
+                        type="text"
+                        class="form-control"
+                        id="digit1"
+                        />
+                    </div>
+                    <div class="col-2">
+                        <input
+                        type="text"
+                        class="form-control"
+                        id="digit2"
+                        />
+                    </div>
+                    <div class="col-2">
+                        <input
+                        type="text"
+                        class="form-control"
+                        id="digit3"
+                        />
+                    </div>
+                    <div class="col-2">
+                        <input
+                        type="text"
+                        class="form-control"
+                        id="digit4"
+                        />
+                    </div>
+                    <div class="col-2">
+                        <input
+                        type="text"
+                        class="form-control"
+                        id="digit5"
+                        />
+                    </div>
+                    <div class="col-2">
+                        <input
+                        type="text"
+                        class="form-control"
+                        id="digit6"
+                        />
+                    </div>
+                    <div class="col-12 pt-5">
+                        Didn't receive the code?
+                    </div>
+                    <div class="col-12">
+                        <a href="#">Resend</a>
+                    </div>
+                    <div class="text-center pb-5">
+                        <button type="button" class="btn btn-blue w-25">
+                            Confirm
+                        </button>
+                    </div>
+                </div>
+                
+            </div>
+            
         </div>
     </body>
 </html>
