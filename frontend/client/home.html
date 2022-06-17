@@ -15,9 +15,9 @@
     <title>New Vision</title>
   </head>
   <body>
-    <div class="container">
-      <nav class="navbar sticky-top navbar-expand-lg navbar-light bg-light">
-        <div class="container-fluid">
+    <div class="container-fluid">
+      <nav class="navbar fixed-top navbar-expand-lg navbar-light bg-light">
+        <div class="container">
           <button
             class="navbar-toggler"
             type="button"
@@ -51,19 +51,22 @@
                         </li>
                         -->
               <li class="nav-item px-4">
-                <a class="nav-link" href="#">HOME</a>
+                <a class="nav-link navbar-link" href="#">HOME</a>
               </li>
               <li class="nav-item px-4">
                 <a
                   class="nav-link"
-                  href="frontend\client\products\all-products.html"
+                  href="\frontend\client\products\all-products.html"
                   >PRODUCTS</a
                 >
               </li>
               <li class="nav-item px-4">
-                <a class="nav-link" href="frontend\client\appointment.html"
+                <a class="nav-link" href="\frontend\client\appointment.html"
                   >SET APPOINTMENT</a
                 >
+              </li>
+              <li class="nav-item px-4">
+                <a class="nav-link" href="frontend\client\faqs.html">FAQs</a>
               </li>
             </ul>
           </div>
@@ -96,6 +99,17 @@
                 <li><a class="dropdown-item" href="#">Sign Out</a></li>
               </ul>
             </li>
+            <!--
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        <img src="\assets\images\plain-avatar.png" alt="" width="30px" class="d-inline-block">
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <li><a class="dropdown-item" href="#">Sign In</a></li>
+                            <li><a class="dropdown-item" href="#">Register</a></li>
+                        </ul>
+                    </li>
+                    -->
           </ul>
         </div>
       </nav>
@@ -121,8 +135,8 @@
       </div>
     </header>
 
-    <div class="container-fluid featured-item">
-      <div class="container d-flex justify-content-between align-items-center">
+    <div class="featured-item">
+      <div class="container d-flex justify-content-lg-between flex-wrap align-items-center">
         <h1>JUST IN</h1>
         <a href="../client/products/all-products.html">VIEW ALL</a>
       </div>
@@ -152,7 +166,7 @@
             <div class="carousel-item active">
               <div class="container">
                 <div class="row">
-                  <div class="col-lg-3 col-md-6 col-sm-6">
+                  <div class="col-lg-3 col-md-6 col-6 col-6">
                     <div class="wrapper">
                       <!-- 1 -->
                       <div class="card">
@@ -186,7 +200,7 @@
                       </div>
                     </div>
                   </div>
-                  <div class="col-lg-3 col-md-6 col-sm-6">
+                  <div class="col-lg-3 col-md-6 col-6">
                     <div class="wrapper">
                       <!-- 2 -->
                       <div class="card">
@@ -220,7 +234,7 @@
                       </div>
                     </div>
                   </div>
-                  <div class="col-lg-3 col-md-6 col-sm-6">
+                  <div class="col-lg-3 col-md-6 col-6">
                     <div class="wrapper">
                       <!-- 3 -->
                       <div class="card">
@@ -254,7 +268,7 @@
                       </div>
                     </div>
                   </div>
-                  <div class="col-lg-3 col-md-6 col-sm-6">
+                  <div class="col-lg-3 col-md-6 col-6">
                     <div class="wrapper">
                       <!-- 4 -->
                       <div class="card">
@@ -294,7 +308,7 @@
             <div class="carousel-item">
               <div class="container">
                 <div class="row">
-                  <div class="col-lg-3 col-md-6 col-sm-6">
+                  <div class="col-lg-3 col-md-6 col-6">
                     <div class="wrapper">
                       <!-- 1 -->
                       <div class="card">
@@ -328,7 +342,7 @@
                       </div>
                     </div>
                   </div>
-                  <div class="col-lg-3 col-md-6 col-sm-6">
+                  <div class="col-lg-3 col-md-6 col-6">
                     <div class="wrapper">
                       <!-- 2 -->
                       <div class="card">
@@ -362,7 +376,7 @@
                       </div>
                     </div>
                   </div>
-                  <div class="col-lg-3 col-md-6 col-sm-6">
+                  <div class="col-lg-3 col-md-6 col-6">
                     <div class="wrapper">
                       <!-- 3 -->
                       <div class="card">
@@ -396,7 +410,7 @@
                       </div>
                     </div>
                   </div>
-                  <div class="col-lg-3 col-md-6 col-sm-6">
+                  <div class="col-lg-3 col-md-6 col-6">
                     <div class="wrapper">
                       <!-- 4 -->
                       <div class="card">
@@ -435,7 +449,7 @@
             </div>
           </div>
           <button
-            class="carousel-control-prev"
+            class="carousel-control-prev" 
             type="button"
             data-bs-target="#carouselFeaturedProduct"
             data-bs-slide="prev"
@@ -527,7 +541,7 @@
     </div>
 
     <!-- footer -->
-    <div class="container-fluid footer-wrapper py-5" style="background: #e4e4e4;">
+    <!-- <div class="container-fluid footer-wrapper py-5" style="background: #e4e4e4;">
       <div class="container">
         <footer>
           <div class="row g-3">
@@ -574,7 +588,7 @@
             All Rights Reserved.
           </p>
         </footer>
-      </div>
+      </div> -->
     </div>
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
