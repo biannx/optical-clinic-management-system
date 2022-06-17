@@ -1,0 +1,607 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="/assets/css/bootstrap.min.css" rel="stylesheet" />
+        <link rel="stylesheet" href="/assets/css/common.css" />
+        <link
+          rel="stylesheet"
+          href="https://use.fontawesome.com/releases/v5.5.0/css/all.css"
+        />
+        <link
+          href="/assets/css/dataTables.bootstrap5.min.css"
+          rel="stylesheet"
+          type="text/css"
+        />
+        <link rel="stylesheet" href="/assets/css/customers.css" />
+        <link rel="stylesheet" href="/assets/css/adminSidebar.css" />
+        <link href="/assets/css/history-appointment.css" rel="stylesheet" type="text/css"/>
+
+        <title>Appointment History</title>
+    </head>
+<body>
+    <h1 class="text-center helvetica heavy-font blue-font mb-5">HISTORY</h1>
+
+    <div class="container align-self-center my-3"> <!-- start here --> 
+        <ul class="nav nav-tabs nav-fill" id="myTab" role="tablist">
+          <li class="nav-item" role="presentation">
+            <button
+              class="nav-link active"
+              id="appointment-tab"
+              data-bs-toggle="tab"
+              data-bs-target="#appointment"
+              type="button"
+              role="tab"
+              aria-controls="appointment"
+              aria-selected="true"
+            >
+              Appointment
+            </button>
+          </li>
+          <li class="nav-item" role="presentation">
+            <button
+              class="nav-link"
+              id="purchase-tab"
+              data-bs-toggle="tab"
+              data-bs-target="#purchase"
+              type="button"
+              role="tab"
+              aria-controls="purchase"
+              aria-selected="false"
+            >
+              Purchase History
+            </button>
+          </li>
+          <li class="nav-item" role="presentation">
+            <button
+              class="nav-link"
+              id="eye-history-tab"
+              data-bs-toggle="tab"
+              data-bs-target="#eye"
+              type="button"
+              role="tab"
+              aria-controls="contact"
+              aria-selected="false"
+            >
+              Eye History
+            </button>
+          </li>
+        </ul>
+
+        <div class="tab-content" id="viewCustomerContent">
+          <div
+            class="tab-pane fade show active"
+            id="appointment"
+            role="tabpanel"
+            aria-labelledby="appointment-tab"
+          >
+          <div class="mt-4" id="appointment-table-data">
+            <div class="table-wrapper px-4">
+              <div class="table-title">
+                <!--Table Header-->
+                <h4 class="px-1 pt-4 fw-bold">List of Appointments</h4>
+              </div>
+              <hr class="my-4" />
+              <div class="container-fluid table-responsive pt-2">
+                <table
+                  class="table table-hover align-middle align-items-center table-body"
+                  aria-label="Customers' List"
+                  id="appointmentTableList"
+                >
+                  <!--Table Body-->
+                  <thead>
+                    <tr>
+                      <th scope="col">
+                        <div class="form-check">
+                          <input
+                            class="form-check-input check-all"
+                            type="checkbox"
+                            value=""
+                            id="check-all-customer"
+                          />
+                          <label
+                            class="form-check-label"
+                            for="check-all-customer"
+                          >
+                            All
+                          </label>
+                        </div>
+                      </th>
+                      <th scope="col">ID</th>
+                      <th scope="col">Name</th>
+                      <th scope="col">Email</th>
+                      <th scope="col">Status</th>
+                      <th scope="col">Action</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>
+                        <div class="form-check">
+                          <input
+                            class="form-check-input check-list"
+                            type="checkbox"
+                            value=""
+                            id="check-one-customer"
+                          />
+                        </div>
+                      </td>
+                      <td class="center_align">Appointment-1</td>
+                      <td class="center_align">
+                        <img
+                          src="../../../assets/images/avatar.png"
+                          class="img-table-list mx-2"
+                        />Juan dela Cruz
+                      </td>
+                      <td class="center_align">testemail@email.com</td>
+                      <td>
+                        <span class="badge success helvetica">Completed</span>
+                      </td>
+                      <td>
+                        <button 
+                        type="button"
+                        id="view" 
+                        class="btn view-data data" 
+                        data-bs-toggle="modal" 
+                        data-bs-target="#viewAppointment">
+                          View Details
+                        </button>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <div class="form-check">
+                          <input
+                            class="form-check-input check-list"
+                            type="checkbox"
+                            value=""
+                            id="check-one-customer"
+                          />
+                        </div>
+                      </td>
+                      <td class="center_align">Appointment-1</td>
+                      <td class="center_align">
+                        <img
+                          src="../../../assets/images/avatar.png"
+                          class="img-table-list mx-2"
+                        />Juan dela Cruz
+                      </td>
+                      <td class="center_align">testemail1@email.com</td>
+                      <td>
+                        <span class="badge cancelled helvetica">Cancelled</span>
+                      </td>
+                      <td>
+                        <button
+                        type="button"
+                        id="view"
+                        class="btn view-data data"
+                        data-bs-toggle="modal"
+                        data-bs-target="#viewAppointment"
+                        title="View Details"
+                        >
+                        View Details
+                        </button>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <div class="form-check">
+                          <input
+                            class="form-check-input check-list"
+                            type="checkbox"
+                            value=""
+                            id="check-one-customer"
+                          />
+                        </div>
+                      </td>
+                      <td class="center_align">Appointment-1</td>
+                      <td class="center_align">
+                        <img
+                          src="../../../assets/images/avatar.png"
+                          class="img-table-list mx-2"
+                        />Juan dela Cruz
+                      </td>
+                      <td class="center_align">testemail2@email.com</td>
+                      <td>
+                        <span class="badge on-progress helvetica">On Progress</span>
+                      </td>
+                      <td>
+                        <button
+                        type="button"
+                        id="view"
+                        class="btn view-data data"
+                        data-bs-toggle="modal"
+                        data-bs-target="#viewAppointment"
+                        title="View Details"
+                        >
+                        View Details
+                        </button>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+                <br />
+
+                <!-- Batch Archive Button -->
+                
+              </div>
+            </div>
+          </div>
+          </div>
+
+          <!--Purchase History Tab-->
+          <div
+            class="tab-pane fade"
+            id="purchase"
+            role="tabpanel"
+            aria-labelledby="purchase-tab"
+          >
+            <div class="table-wrapper container-fluid my-2 p-5">
+              <p class="tab-header pb-4">Purchase History</p>
+              <div class="container-fluid table-responsive">
+                <table
+                  class="table table-hover align-middle align-items-center table-body"
+                  aria-label="Purchase History"
+                  id="purchaseHistoryTableList"
+                >
+                  <!--Table Body-->
+                  <thead>
+                    <tr>
+                      <th scope="col">#</th>
+                      <th scope="col">Date</th>
+                      <th scope="col">Item</th>
+                      <th scope="col">Product Name</th>
+                      <th scope="col">Payment</th>
+                      <th scope="col">Status</th>
+                      <th scope="col">Action</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>1</td>
+                      <td>09-30-22</td>
+                      <td>
+                        <img
+                          src="/assets/images/product-img.png"
+                          class="purchase-img-table-list mx-2"
+                          alt="Product Image"
+                        />
+                      </td>
+                      <td>
+                        <span class="text-capitalize text-break"
+                          >Lorem ipsum dolor sit amet consectetur,
+                          adipisicing elit. Impedit error rerum.</span
+                        >
+                      </td>
+                      <td>Cash on Hand</td>
+                      <td>
+                        <span class="badge success helvetica">Completed</span>
+                        <!-- <button
+                            class="btn archive-data data"
+                            title="Cancelled Transaction"
+                          >
+                            Cancelled
+                          </button> -->
+                      </td>
+                      <td>
+                        <button 
+                        type="button"
+                        id="view" 
+                        class="btn view-data data" 
+                        data-bs-toggle="modal" 
+                        data-bs-target="#viewPurchaseHistory">
+                          View Details
+                        </button>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>1</td>
+                      <td>09-30-22</td>
+                      <td>
+                        <img
+                          src="/assets/images/product-img.png"
+                          class="purchase-img-table-list mx-2"
+                          alt="Product Image"
+                        />
+                      </td>
+                      <td>
+                        <span class="text-capitalize text-break"
+                          >test2</span
+                        >
+                      </td>
+                      <td>Paypal</td>
+                      <td>
+                        <span class="badge cancelled helvetica">Cancelled</span>
+                      </td>
+                      <td>
+                        <button
+                        type="button"
+                        id="view"
+                        class="btn view-data data"
+                        data-bs-toggle="modal"
+                        data-bs-target="#viewAppointment"
+                        title="View Details"
+                        >
+                        View Details
+                        </button>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>1</td>
+                      <td>09-30-22</td>
+                      <td>
+                        <img
+                          src="/assets/images/product-img.png"
+                          class="purchase-img-table-list mx-2"
+                          alt="Product Image"
+                        />
+                      </td>
+                      <td>
+                        <span class="text-capitalize text-break"
+                          >test2</span
+                        >
+                      </td>
+                      <td>Paypal</td>
+                      <td>
+                        <span class="badge on-progress helvetica">On Progress</span>
+                      </td>
+                      <td>
+                        <button
+                        type="button"
+                        id="view"
+                        class="btn view-data data"
+                        data-bs-toggle="modal"
+                        data-bs-target="#viewAppointment"
+                        title="View Details"
+                        >
+                        View Details
+                        </button>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+                <br />
+              </div>
+            </div>
+          </div>
+
+          <!-- View Purchase Details Offcanvas -->
+          <div
+            class="offcanvas offcanvas-end"
+            tabindex="-1"
+            id="purchaseDetails"
+            aria-labelledby="purchaseDetailsLabel"
+          >
+            <div class="offcanvas-header">
+              <h5 id="purchaseDetailsLabel">View Purchase Details</h5>
+              <button
+                type="button"
+                class="btn-close text-reset"
+                data-bs-dismiss="offcanvas"
+                aria-label="Close"
+              ></button>
+            </div>
+            <div class="offcanvas-body">
+              <p class="tab-header">Recipient</p>
+
+              <!-- Name -->
+              <div class="row">
+                <div class="col-lg-4">name:</div>
+                <div class="col-lg-8 fw-bold">juan dela cruz</div>
+              </div>
+
+              <!-- Contact No. -->
+              <div class="row">
+                <div class="col-lg-4">contact No:</div>
+                <div class="col-lg-8 fw-bold">091234566789</div>
+              </div>
+
+              <!-- Address -->
+              <div class="row">
+                <div class="col-lg-4">adress:</div>
+                <div class="col-lg-8 fw-bold">
+                  <address>
+                    Lorem ipsum, dolor sit amet consectetur adipisicing
+                    elit. Velit neque veniam deleniti quod natus iure quo
+                    dicta dolorum id incidunt!
+                  </address>
+                </div>
+              </div>
+
+              <p class="tab-header">Purchased item</p>
+              <!-- Purchased Date -->
+              <div class="row">
+                <div class="col-lg-4">date:</div>
+                <div class="col-lg-8 fw-bold">09/22/22</div>
+              </div>
+
+              <!-- Purchase ID -->
+              <div class="row">
+                <div class="col-lg-4">ID:</div>
+                <div class="col-lg-8 fw-bold">purchase-1</div>
+              </div>
+
+              <!-- Purchase Photo -->
+              <div class="row">
+                <div class="col-lg-4">Product Photo:</div>
+                <div
+                  class="col-lg-8 text-center py-3"
+                  id="purchase-img-history"
+                >
+                  <img
+                    src="/assets/images/product-img.png"
+                    alt="Product Image"
+                  />
+                </div>
+              </div>
+
+              <!-- Purchased Product Name -->
+              <div class="row mt-2">
+                <div class="col-lg-4">Product Name:</div>
+                <div class="col-lg-8 fw-bold">juan dela cruz</div>
+              </div>
+
+              <!-- Purchased Category -->
+              <div class="row">
+                <div class="col-lg-4">category:</div>
+                <div class="col-lg-8 fw-bold">
+                  uv lens, medium, acetate, matte
+                </div>
+              </div>
+
+              <!-- Purchased Number of Items -->
+              <div class="row">
+                <div class="col-lg-4">no. of item:</div>
+                <div class="col-lg-8 fw-bold">1</div>
+              </div>
+
+              <!-- Purchased Total  -->
+              <div class="row">
+                <div class="col-lg-4">total:</div>
+                <div class="col-lg-8 fw-bold">Php 3566,22</div>
+              </div>
+
+              <!-- Purchased Payment  -->
+              <div class="row">
+                <div class="col-lg-4">Payment:</div>
+                <div class="col-lg-8 fw-bold">Paypal</div>
+              </div>
+
+              <!-- Purchased Reference  -->
+              <div class="row">
+                <div class="col-lg-4">Reference:</div>
+                <div class="col-lg-8 fw-bold">24234324242</div>
+              </div>
+
+              <!-- Purchased Status  -->
+              <div class="row py-2 mb-2">
+                <div class="col-lg-4">Status:</div>
+                <div class="col-lg-8 fw-bold">success</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Eye History Tab -->
+          <div
+            class="tab-pane fade"
+            id="eye"
+            role="tabpanel"
+            aria-labelledby="eye-history-tab"
+          >
+            <div class="table-wrapper container-fluid my-2 p-5">
+              <div class="d-flex justify-content-between">
+                <p class="tab-header">Eye History</p>
+              </div>
+              <div class="container-fluid table-responsive mt-4">
+                <table
+                  class="table table-hover align-middle align-items-center table-body"
+                  aria-label="Purchase History"
+                  id="eyeHistoryTableList"
+                >
+                  <!--Table Body-->
+                  <thead>
+                    <tr>
+                      <th scope="col">#</th>
+                      <th scope="col">Date</th>
+                      <th scope="col">Previous Grade</th>
+                      <th scope="col">Current Grade</th>
+                      <th scope="col">Attendant</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>1</td>
+                      <td>09-30-22</td>
+                      <td>20/40</td>
+                      <td>50/30</td>
+                      <td>Dr. Lida Cruz</td>
+                    </tr>
+                  </tbody>
+                </table>
+                <br />
+              </div>
+            </div>
+          </div>
+        </div>
+    </div>
+    
+    <div class="modal fade" id="viewAppointment" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="staticBackdropLabel">Modal title</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <p>history - view appt modal</p>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            <button type="button" class="btn btn-primary">Understood</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="modal fade" id="viewPurchaseHistory" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="staticBackdropLabel">Modal title</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <p>purchase view modal = history - view purchase modal xxxxLove you emji :*xxxxx</p>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            <button type="button" class="btn btn-primary">Understood</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- jQuery DataTables JS CDN -->
+    <script src="/assets/js/jquery-3.5.1.js"></script>
+    <script src="/assets/js/jquery.dataTables.min.js"></script>
+    <script src="/assets/js/dataTables.bootstrap5.min.js"></script>
+    <script>
+      $(document).ready(function () {
+        $("#appointmentTableList").DataTable({
+          columnDefs: [{ className: "dt-center", targets: "_all" }],
+          lengthMenu: [
+            [20, 25, 50, -1],
+            [20, 25, 50, "All"],
+          ],
+        });
+        jQuery(".dataTable").wrap('<div class="dataTables_scroll" />');
+      });
+
+      $(document).ready(function () {
+        $("#purchaseHistoryTableList").DataTable({
+          columnDefs: [{ className: "dt-center", targets: "_all" }],
+          lengthMenu: [
+            [20, 25, 50, -1],
+            [20, 25, 50, "All"],
+          ],
+        });
+        jQuery(".dataTable").wrap('<div class="dataTables_scroll" />');
+      });
+
+      $(document).ready(function () {
+        $("#eyeHistoryTableList").DataTable({
+          columnDefs: [{ className: "dt-center", targets: "_all" }],
+          lengthMenu: [
+            [20, 25, 50, -1],
+            [20, 25, 50, "All"],
+          ],
+        });
+        jQuery(".dataTable").wrap('<div class="dataTables_scroll" />');
+      });
+    </script>
+    <script src="/assets/js/attendants.js"></script>
+    <script src="/assets/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
