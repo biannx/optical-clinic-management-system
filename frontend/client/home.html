@@ -1,0 +1,599 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="UTF-8" />
+    <link href="\assets\css\bootstrap.min.css" rel="stylesheet" />
+    <link href="\assets\css\client.css" rel="stylesheet" />
+    <link href="\assets\css\common.css" rel="stylesheet" />
+    <link href="\assets\css\user-products.css" rel="stylesheet" />
+    <link href="\assets\css\home.css" rel="stylesheet" />
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.5.0/css/all.css"
+    />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>New Vision</title>
+  </head>
+  <body>
+    <div class="container-fluid">
+      <nav class="navbar fixed-top navbar-expand-lg navbar-light bg-light">
+        <div class="container">
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+            <!-- <i class="fas fa-bars"></i> -->
+          </button>
+          <a class="navbar-brand" href="#">
+            <img
+              src="\assets\images\logo.png"
+              alt=""
+              width="50px"
+              class="d-inline-block align-text-center"
+            />
+            New Vision
+          </a>
+
+          <div
+            class="collapse navbar-collapse justify-content-center"
+            id="navbarSupportedContent"
+          >
+            <ul class="navbar-nav mb-2 mb-lg-0">
+              <!-- Active
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="#">Home</a>
+                        </li>
+                        -->
+              <li class="nav-item px-4">
+                <a class="nav-link navbar-link" href="#">HOME</a>
+              </li>
+              <li class="nav-item px-4">
+                <a
+                  class="nav-link"
+                  href="\frontend\client\products\all-products.html"
+                  >PRODUCTS</a
+                >
+              </li>
+              <li class="nav-item px-4">
+                <a class="nav-link" href="\frontend\client\appointment.html"
+                  >SET APPOINTMENT</a
+                >
+              </li>
+              <li class="nav-item px-4">
+                <a class="nav-link" href="frontend\client\faqs.html">FAQs</a>
+              </li>
+            </ul>
+          </div>
+          <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link py-3" href="#"
+                ><i class="fas fa-cart-arrow-down"></i
+              ></a>
+            </li>
+            <li class="nav-item dropdown">
+              <a
+                class="nav-link dropdown-toggle"
+                href="#"
+                id="navbarDropdown"
+                role="button"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+              >
+                <img
+                  src="\assets\images\avatar.png"
+                  alt=""
+                  width="30px"
+                  class="d-inline-block"
+                />
+              </a>
+              <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <li><a class="dropdown-item" href="#">Profile</a></li>
+                <li><a class="dropdown-item" href="#">Settings</a></li>
+                <li><a class="dropdown-item" href="#">History</a></li>
+                <li><a class="dropdown-item" href="#">Sign Out</a></li>
+              </ul>
+            </li>
+            <!--
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        <img src="\assets\images\plain-avatar.png" alt="" width="30px" class="d-inline-block">
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <li><a class="dropdown-item" href="#">Sign In</a></li>
+                            <li><a class="dropdown-item" href="#">Register</a></li>
+                        </ul>
+                    </li>
+                    -->
+          </ul>
+        </div>
+      </nav>
+    </div>
+
+    <header>
+      <div class="banner">
+        <div class="container">
+          <div class="tagline">
+            <h1>Expert eyecare</h1>
+            <h2>With the Latest Eyewear</h2>
+          </div>
+          <p class="lead">
+            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Accusamus
+            error incidunt earum inventore! Modi alias accusantium, officia
+            neque recusandae ducimus amet ab, nihil voluptates eaque iusto hic
+            doloremque error?
+          </p>
+          <div class="shop-now-div">
+            <a href="" class="btn btn-default"> shop now </a>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <div class="featured-item">
+      <div class="container d-flex justify-content-lg-between flex-wrap align-items-center">
+        <h1>JUST IN</h1>
+        <a href="../client/products/all-products.html">VIEW ALL</a>
+      </div>
+      <div class="container-fluid">
+        <div
+          id="carouselFeaturedProduct"
+          class="carousel slide carousel-dark"
+          data-bs-ride="carousel"
+        >
+          <div class="carousel-indicators my-3">
+            <button
+              type="button"
+              data-bs-target="#carouselFeaturedProduct"
+              data-bs-slide-to="0"
+              class="active"
+              aria-current="true"
+              aria-label="Slide 1"
+            ></button>
+            <button
+              type="button"
+              data-bs-target="#carouselFeaturedProduct"
+              data-bs-slide-to="1"
+              aria-label="Slide 2"
+            ></button>
+          </div>
+          <div class="carousel-inner">
+            <div class="carousel-item active">
+              <div class="container">
+                <div class="row">
+                  <div class="col-lg-3 col-md-6 col-6 col-6">
+                    <div class="wrapper">
+                      <!-- 1 -->
+                      <div class="card">
+                        <a href="../client/products/all-products.html">
+                          <img
+                            src="/assets/images/product-img.png"
+                            class="card-img-top"
+                            alt="..."
+                          />
+                          <div class="label-new">
+                            <span>new</span>
+                          </div>
+                        </a>
+                        <div class="card-body">
+                          <a href="../client/products/all-products.html">
+                            <h6 class="card-title">
+                              Original Blue Spring Hinge
+                            </h6>
+                          </a>
+                          <p class="card-text">Normal, UV Lens</p>
+                          <div class="d-flex justify-content-between">
+                            <p class="price">
+                              <i
+                                class="fas fa-tag px-1 tag"
+                                aria-hidden="true"
+                              ></i>
+                              <span class="px-1">Php 2,280</span>
+                            </p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-lg-3 col-md-6 col-6">
+                    <div class="wrapper">
+                      <!-- 2 -->
+                      <div class="card">
+                        <a href="../client/products/all-products.html">
+                          <img
+                            src="/assets/images/product-img.png"
+                            class="card-img-top"
+                            alt="..."
+                          />
+                          <div class="label-new">
+                            <span>new</span>
+                          </div>
+                        </a>
+                        <div class="card-body">
+                          <a href="../client/products/all-products.html">
+                            <h6 class="card-title">
+                              Original Blue Spring Hinge
+                            </h6>
+                          </a>
+                          <p class="card-text">Normal, UV Lens</p>
+                          <div class="d-flex justify-content-between">
+                            <p class="price">
+                              <i
+                                class="fas fa-tag px-1 tag"
+                                aria-hidden="true"
+                              ></i>
+                              <span class="px-1">Php 2,280</span>
+                            </p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-lg-3 col-md-6 col-6">
+                    <div class="wrapper">
+                      <!-- 3 -->
+                      <div class="card">
+                        <a href="../client/products/all-products.html">
+                          <img
+                            src="/assets/images/product-img.png"
+                            class="card-img-top"
+                            alt="..."
+                          />
+                          <div class="label-new">
+                            <span>new</span>
+                          </div>
+                        </a>
+                        <div class="card-body">
+                          <a href="../client/products/all-products.html">
+                            <h6 class="card-title">
+                              Original Blue Spring Hinge
+                            </h6>
+                          </a>
+                          <p class="card-text">Normal, UV Lens</p>
+                          <div class="d-flex justify-content-between">
+                            <p class="price">
+                              <i
+                                class="fas fa-tag px-1 tag"
+                                aria-hidden="true"
+                              ></i>
+                              <span class="px-1">Php 2,280</span>
+                            </p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-lg-3 col-md-6 col-6">
+                    <div class="wrapper">
+                      <!-- 4 -->
+                      <div class="card">
+                        <a href="../client/products/all-products.html">
+                          <img
+                            src="/assets/images/product-img.png"
+                            class="card-img-top"
+                            alt="..."
+                          />
+                          <div class="label-new">
+                            <span>new</span>
+                          </div>
+                        </a>
+                        <div class="card-body">
+                          <a href="../client/products/all-products.html">
+                            <h6 class="card-title">
+                              Original Blue Spring Hinge
+                            </h6>
+                          </a>
+                          <p class="card-text">Normal, UV Lens</p>
+                          <div class="d-flex justify-content-between">
+                            <p class="price">
+                              <i
+                                class="fas fa-tag px-1 tag"
+                                aria-hidden="true"
+                              ></i>
+                              <span class="px-1">Php 2,280</span>
+                            </p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="carousel-item">
+              <div class="container">
+                <div class="row">
+                  <div class="col-lg-3 col-md-6 col-6">
+                    <div class="wrapper">
+                      <!-- 1 -->
+                      <div class="card">
+                        <a href="../client/products/all-products.html">
+                          <img
+                            src="/assets/images/product-img.png"
+                            class="card-img-top"
+                            alt="..."
+                          />
+                          <div class="label-new">
+                            <span>new</span>
+                          </div>
+                        </a>
+                        <div class="card-body">
+                          <a href="../client/products/all-products.html">
+                            <h6 class="card-title">
+                              Original Blue Spring Hinge
+                            </h6>
+                          </a>
+                          <p class="card-text">Normal, UV Lens</p>
+                          <div class="d-flex justify-content-between">
+                            <p class="price">
+                              <i
+                                class="fas fa-tag px-1 tag"
+                                aria-hidden="true"
+                              ></i>
+                              <span class="px-1">Php 2,280</span>
+                            </p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-lg-3 col-md-6 col-6">
+                    <div class="wrapper">
+                      <!-- 2 -->
+                      <div class="card">
+                        <a href="../client/products/all-products.html">
+                          <img
+                            src="/assets/images/product-img.png"
+                            class="card-img-top"
+                            alt="..."
+                          />
+                          <div class="label-new">
+                            <span>new</span>
+                          </div>
+                        </a>
+                        <div class="card-body">
+                          <a href="../client/products/all-products.html">
+                            <h6 class="card-title">
+                              Original Blue Spring Hinge
+                            </h6>
+                          </a>
+                          <p class="card-text">Normal, UV Lens</p>
+                          <div class="d-flex justify-content-between">
+                            <p class="price">
+                              <i
+                                class="fas fa-tag px-1 tag"
+                                aria-hidden="true"
+                              ></i>
+                              <span class="px-1">Php 2,280</span>
+                            </p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-lg-3 col-md-6 col-6">
+                    <div class="wrapper">
+                      <!-- 3 -->
+                      <div class="card">
+                        <a href="../client/products/all-products.html">
+                          <img
+                            src="/assets/images/product-img.png"
+                            class="card-img-top"
+                            alt="..."
+                          />
+                          <div class="label-new">
+                            <span>new</span>
+                          </div>
+                        </a>
+                        <div class="card-body">
+                          <a href="../client/products/all-products.html">
+                            <h6 class="card-title">
+                              Original Blue Spring Hinge
+                            </h6>
+                          </a>
+                          <p class="card-text">Normal, UV Lens</p>
+                          <div class="d-flex justify-content-between">
+                            <p class="price">
+                              <i
+                                class="fas fa-tag px-1 tag"
+                                aria-hidden="true"
+                              ></i>
+                              <span class="px-1">Php 2,280</span>
+                            </p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-lg-3 col-md-6 col-6">
+                    <div class="wrapper">
+                      <!-- 4 -->
+                      <div class="card">
+                        <a href="../client/products/all-products.html">
+                          <img
+                            src="/assets/images/product-img.png"
+                            class="card-img-top"
+                            alt="..."
+                          />
+                          <div class="label-new">
+                            <span>new</span>
+                          </div>
+                        </a>
+                        <div class="card-body">
+                          <a href="../client/products/all-products.html">
+                            <h6 class="card-title">
+                              Original Blue Spring Hinge
+                            </h6>
+                          </a>
+                          <p class="card-text">Normal, UV Lens</p>
+                          <div class="d-flex justify-content-between">
+                            <p class="price">
+                              <i
+                                class="fas fa-tag px-1 tag"
+                                aria-hidden="true"
+                              ></i>
+                              <span class="px-1">Php 2,280</span>
+                            </p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <button
+            class="carousel-control-prev" 
+            type="button"
+            data-bs-target="#carouselFeaturedProduct"
+            data-bs-slide="prev"
+          >
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+          </button>
+          <button
+            class="carousel-control-next"
+            type="button"
+            data-bs-target="#carouselFeaturedProduct"
+            data-bs-slide="next"
+          >
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+          </button>
+        </div>
+        <!-- bago mag container -->
+      </div>
+    </div>
+
+    <div class="container-fluid about-us-wrapper">
+      <div class="container">
+        <h1 class="pb-5">About us</h1>
+        <div class="row">
+          <div class="col-lg-6 col-md-12 col-sm-12">
+            <img src="/assets/images/doctors.svg" alt="Eye Store" />
+          </div>
+          <div class="col-lg-6 col-md-12 col-sm-12 about-us">
+            <h2 class="text-lg-start text-md-center pb-3">Our Vission</h2>
+            <p class="text-lg-start text-md-center about-us-text">
+              We provide an emphasis on preventative care services to promote
+              our patients' eyesight and vision. We recognize that our patients
+              are entrusting us with the care of their eyes. Protecting your
+              overall health can go a long way toward keeping your eyes healthy!
+              <!-- It’s important to make healthy choices and take good care of
+              yourself.  -->
+            </p>
+            <p class="text-lg-start text-md-center">
+              <strong> Your exam will be reviewed by a licensed ophthalmologist.</strong>
+            </p>
+            <div class="text-lg-start text-md-center read-faqs-button">
+              <a href="" class="btn btn-default read-faqs-button">
+                READ FAQs
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="container-fluid services-wrapper">
+      <div class="container">
+        <h1>Services</h1>
+        <div class="row">
+          <div class="col-lg-4 col-md-6 col-sm-12 text-center">
+            <div class="first">
+              <img src="/assets/images/direction.svg" alt="Eye Store" />
+              <div>
+                <p>Want to get an eye check?</p>
+                <p class="fw-bold">Get an in-store eye exam!</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-6 col-sm-12 text-center">
+            <div class="second">
+              <img src="/assets/images/medicine.svg" alt="Eye Store" />
+              <div>
+                <p>Schedule your eye examination here:</p>
+                <a class="btn btn-default">Set your appointment</a>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-12 col-sm-12 text-center">
+            <div class="third">
+              <img src="/assets/images/message.svg" alt="Eye Store" />
+              <p>
+                A <strong>confirmation email</strong> and SMS message will be
+                sent to your registered email and phone number.
+              </p>
+              <p class="check-inbox-text">
+                Check your inbox on a regular basis to prevent missing an
+                appointment!
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- footer -->
+    <!-- <div class="container-fluid footer-wrapper py-5" style="background: #e4e4e4;">
+      <div class="container">
+        <footer>
+          <div class="row g-3">
+            <div class="col-6">
+              <h5>LEAVE US YOUR MESSAGE</h5>
+              <br />
+              <input
+                type="text"
+                class="form-control form-control"
+                placeholder="Name"
+                id="footerName"
+              /><br />
+              <input
+                type="email"
+                class="form-control form-control"
+                placeholder="Email Address"
+                id="footerEmail"
+              /><br />
+              <textarea
+                class="form-control"
+                placeholder="Message"
+                id="footerMessage"
+                rows="5"
+              ></textarea
+              ><br />
+              <div class="py-3">
+                <button type="button" class="btn btn-default text-dark py-3 w-100">
+                  SUBMIT
+                </button>
+              </div>
+            </div>
+            <div class="col-2">
+              <h5>HELP</h5>
+            </div>
+            <div class="col-2">
+              <h5>COMPANY</h5>
+            </div>
+            <div class="col-2">
+              <h5>CONTACT</h5>
+            </div>
+          </div>
+          <p style="text-align: center; font-weight: normal; padding-top: 5%">
+            Copyright © 2022 FRFR Technologies.<br />
+            All Rights Reserved.
+          </p>
+        </footer>
+      </div> -->
+    </div>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>

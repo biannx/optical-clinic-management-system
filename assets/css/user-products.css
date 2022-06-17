@@ -1,8 +1,11 @@
 /* user products */
+body{
+  background: #fdfdfd;
+}
 .head {
   height: 4rem;
   position: relative;
-  background: #e2e2e4;
+  background: grey;
 }
 .head:before {
   padding-top: 2%;
@@ -67,23 +70,26 @@ form.search-wrapper input[type="search"]:focus {
   padding-bottom: 0.8rem;
 }
 .container .filter-head select.form-select,
-.container .filter-button {
-  width: 9rem;
+.container .filter-button{
+  min-width: 9rem;
+  height: 100%;
+  min-height: 3rem;
 }
 .container .filter-button:hover,
-.wrapper .card .card-body .add-to-bag a:hover,
-.container .btn-outline:hover,
-.container .btn-outline:focus-visible,
-.container .btn-outline:active {
+.wrapper .card .card-body .add-to-bag a:hover
+{
   background: var(--addBtn);
   border: 1px solid rgb(98, 143, 226);
   color: white;
   font-weight: 600;
   outline: none;
+  box-shadow: none;
+
 }
 
-.container .filter-reset {
-  display: none;
+.btn-check:focus{
+  box-shadow: none;
+  outline: none;
 }
 
 .container .filter-button input[type="reset"] {
@@ -97,6 +103,8 @@ select.form-select,
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
+
+
 .btn-secondary,
 .btn-secondary:focus {
   background: #f1f1f1;
@@ -131,8 +139,9 @@ select.form-select,
 .grid-container > * {
   margin: 1rem 0;
 }
+
 .wrapper {
-  padding: 1.2rem 0 1.5rem 0;
+  padding: 1.2rem 0 1.2rem 0;
 }
 .wrapper a {
   text-decoration: none;
@@ -146,7 +155,7 @@ select.form-select,
 .wrapper .label-new {
   position: absolute;
   right: 0;
-  top: 20px;
+  top: 15px;
 }
 .wrapper .label-new span {
   background: var(--labelNew);
@@ -155,7 +164,8 @@ select.form-select,
   font-weight: 600;
   height: 26px;
   width: 65px;
-  font-size: 0.9rem;
+  font-size: 0.92rem;
+  color: var(--black);
 }
 .wrapper .card {
   /* filter: drop-shadow(0px 2px 3px rgba(0, 0, 0, 0.25)); */
@@ -167,7 +177,9 @@ select.form-select,
 }
 .wrapper .card img {
   /* max-width: 255px; */
-  height: 240px;
+  /* height: 100%; */
+  max-height: 250px;
+  min-height: 200px;
   max-width: 20rem;
   padding: 1.5rem 0.8rem;
   width: 100%;

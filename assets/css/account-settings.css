@@ -1,0 +1,22 @@
+.account-settings-btn {
+    color: #FFFFFF;
+    height: 3em;
+    width: 20em;
+}
+
+.blue {
+    color: #50ABF1
+}
+
+.blue-bg {
+    background-color: #50ABF1;
+}
+
+.red-bg {
+    background-color: #F57575;
+}
+
+.settings-container {
+    width: 50vw;
+    min-width: 400px;
+}

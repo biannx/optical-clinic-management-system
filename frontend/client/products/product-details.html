@@ -39,69 +39,74 @@
           />
         </div>
         <div class="col-lg-5 col-sm-12">
-          <h2 class="product-name">original blue spring hinge</h2>
-          <p class="lens-type-text">Lens Type</p>
-          <input
-            type="checkbox"
-            class="btn-check"
-            id="btn-check-normal"
-            name="lens"
-            autocomplete="off"
-          />
-          <label class="btn btn-outline" for="btn-check-normal"
-            >Normal</label
-          >
-          <input
-            type="checkbox"
-            class="btn-check"
-            id="btn-check-UV"
-            name="lens"
-            autocomplete="off"
-          />
-          <label class="btn btn-outline mx-2" for="btn-check-UV"
-            >UV Lens</label
-          >
-          <br /><br />
-          <h4>description</h4>
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nisi
-            praesentium eius, officia voluptates tempore quas odit deleniti,
-            corporis voluptate odio accusantium maiores quo nobis debitis nihil
-            cumque earum.
-          </p>
-          <div id="table-category">
-            <div class="tr">
-              <div class="td">lens type:</div>
-              <div class="td prod-img-category-text">normal</div>
+          <form action="">
+            <h2 class="product-name">original blue spring hinge</h2>
+            <p class="lens-type-text">Lens Type</p>
+            <input
+              type="checkbox"
+              class="btn-check"
+              id="btn-check-normal"
+              name="lens"
+              autocomplete="off"
+            />
+            <label class="btn btn-outline-primary" for="btn-check-normal">Normal</label>
+            <input
+              type="checkbox"
+              class="btn-check"
+              id="btn-check-UV"
+              name="lens"
+              autocomplete="off"
+            />
+            <label class="btn btn-outline-primary mx-2" for="btn-check-UV"
+              >UV Lens</label
+            >
+            <br /><br />
+            <h4>description</h4>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nisi
+              praesentium eius, officia voluptates tempore quas odit deleniti,
+              corporis voluptate odio accusantium maiores quo nobis debitis
+              nihil cumque earum.
+            </p>
+            <div id="table-category">
+              <div class="tr">
+                <div class="td">width:</div>
+                <div class="td prod-img-category-text">medium</div>
+              </div>
+              <div class="tr">
+                <div class="td">material:</div>
+                <div class="td prod-img-category-text">acetate</div>
+              </div>
+              <div class="tr">
+                <div class="td">hinge:</div>
+                <div class="td prod-img-category-text">standard</div>
+              </div>
+              <div class="tr">
+                <div class="td">finish:</div>
+                <div class="td prod-img-category-text">matte</div>
+              </div>
+              <div class="tr">
+                <div class="td">price:</div>
+                <div class="td prod-img-category-text">Php 2423.33</div>
+              </div>
+              <div class="tr">
+                <div class="td">No. of Items</div>
+                <input
+                  type="number"
+                  name="numOfItem"
+                  class="w-50 text-center"
+                  min="0"
+                  value="0"
+                  required
+                />
+              </div>
             </div>
-            <div class="tr">
-              <div class="td">width:</div>
-              <div class="td prod-img-category-text">medium</div>
+            <div class="d-flex my-3">
+              <button type="submit" class="btn add-to-cart flex-fill">
+                add to cart
+              </button>
             </div>
-            <div class="tr">
-              <div class="td">material:</div>
-              <div class="td prod-img-category-text">acetate</div>
-            </div>
-            <div class="tr">
-              <div class="td">hinge:</div>
-              <div class="td prod-img-category-text">standard</div>
-            </div>
-            <div class="tr">
-              <div class="td">finish:</div>
-              <div class="td prod-img-category-text">matte</div>
-            </div>
-          </div>
-
-          <!-- <p>Lens Type: <span class="text-uppercase px-3 fw-bold">normal</span></p>
-          <p>Width: <span class="text-uppercase px-3 fw-bold">normal</span></p>
-          <p>Material: <span class="text-uppercase px-3 fw-bold">normal</span></p>
-          <p>Finish: <span class="text-uppercase px-3 fw-bold">normal</span></p> -->
-
-          <div class="d-flex my-3">
-            <button type="button" class="btn add-to-cart flex-fill">
-              add to cart
-            </button>
-          </div>
+          </form>
         </div>
       </div>
 
@@ -131,21 +136,12 @@
             <a href="./product-details.html">
               <h6 class="card-title">Original Blue Spring Hinge</h6>
             </a>
-            <p class="card-text">Reading Glass</p>
+            <p class="card-text">Normal, UV Lens</p>
             <div class="d-flex justify-content-between">
-              <p class="price">Php 2,280</p>
-            </div>
-            <div class="d-flex add-to-bag py-1 py-2">
-              <a
-                type="button"
-                class="btn btn-secondary flex-fill d-flex justify-content-between mb-2 py-2"
-              >
-                <div>
-                  <i class="fa fa-plus" aria-hidden="true"></i>
-                  <span class="px-2">Add to Cart</span>
-                </div>
-                <i class="fas fa-shopping-bag bag" aria-hidden="true"></i>
-              </a>
+              <p class="price">
+                <i class="fas fa-tag px-1 tag" aria-hidden="true"></i>
+                <span class="px-1">Php 2,280</span>
+              </p>
             </div>
           </div>
         </div>
@@ -165,21 +161,12 @@
             <a href="./product-details.html">
               <h6 class="card-title">Original Blue Spring Hinge</h6>
             </a>
-            <p class="card-text">Reading Glass</p>
+            <p class="card-text">Normal, UV Lens</p>
             <div class="d-flex justify-content-between">
-              <p class="price">Php 2,280</p>
-            </div>
-            <div class="d-flex add-to-bag py-1 py-2">
-              <a
-                type="button"
-                class="btn btn-secondary flex-fill d-flex justify-content-between mb-2 py-2"
-              >
-                <div>
-                  <i class="fa fa-plus" aria-hidden="true"></i>
-                  <span class="px-2">Add to Cart</span>
-                </div>
-                <i class="fas fa-shopping-bag bag" aria-hidden="true"></i>
-              </a>
+              <p class="price">
+                <i class="fas fa-tag px-1 tag" aria-hidden="true"></i>
+                <span class="px-1">Php 2,280</span>
+              </p>
             </div>
           </div>
         </div>
@@ -199,21 +186,12 @@
             <a href="./product-details.html">
               <h6 class="card-title">Original Blue Spring Hinge</h6>
             </a>
-            <p class="card-text">Reading Glass</p>
+            <p class="card-text">Normal, UV Lens</p>
             <div class="d-flex justify-content-between">
-              <p class="price">Php 2,280</p>
-            </div>
-            <div class="d-flex add-to-bag py-1 py-2">
-              <a
-                type="button"
-                class="btn btn-secondary flex-fill d-flex justify-content-between mb-2 py-2"
-              >
-                <div>
-                  <i class="fa fa-plus" aria-hidden="true"></i>
-                  <span class="px-2">Add to Cart</span>
-                </div>
-                <i class="fas fa-shopping-bag bag" aria-hidden="true"></i>
-              </a>
+              <p class="price">
+                <i class="fas fa-tag px-1 tag" aria-hidden="true"></i>
+                <span class="px-1">Php 2,280</span>
+              </p>
             </div>
           </div>
         </div>
@@ -233,21 +211,12 @@
             <a href="./product-details.html">
               <h6 class="card-title">Original Blue Spring Hinge</h6>
             </a>
-            <p class="card-text">Reading Glass</p>
+            <p class="card-text">Normal, UV Lens</p>
             <div class="d-flex justify-content-between">
-              <p class="price">Php 2,280</p>
-            </div>
-            <div class="d-flex add-to-bag py-1 py-2">
-              <a
-                type="button"
-                class="btn btn-secondary flex-fill d-flex justify-content-between mb-2 py-2"
-              >
-                <div>
-                  <i class="fa fa-plus" aria-hidden="true"></i>
-                  <span class="px-2">Add to Cart</span>
-                </div>
-                <i class="fas fa-shopping-bag bag" aria-hidden="true"></i>
-              </a>
+              <p class="price">
+                <i class="fas fa-tag px-1 tag" aria-hidden="true"></i>
+                <span class="px-1">Php 2,280</span>
+              </p>
             </div>
           </div>
         </div>
@@ -267,21 +236,12 @@
             <a href="./product-details.html">
               <h6 class="card-title">Original Blue Spring Hinge</h6>
             </a>
-            <p class="card-text">Reading Glass</p>
+            <p class="card-text">Normal, UV Lens</p>
             <div class="d-flex justify-content-between">
-              <p class="price">Php 2,280</p>
-            </div>
-            <div class="d-flex add-to-bag py-1 py-2">
-              <a
-                type="button"
-                class="btn btn-secondary flex-fill d-flex justify-content-between mb-2 py-2"
-              >
-                <div>
-                  <i class="fa fa-plus" aria-hidden="true"></i>
-                  <span class="px-2">Add to Cart</span>
-                </div>
-                <i class="fas fa-shopping-bag bag" aria-hidden="true"></i>
-              </a>
+              <p class="price">
+                <i class="fas fa-tag px-1 tag" aria-hidden="true"></i>
+                <span class="px-1">Php 2,280</span>
+              </p>
             </div>
           </div>
         </div>
@@ -301,21 +261,12 @@
             <a href="./product-details.html">
               <h6 class="card-title">Original Blue Spring Hinge</h6>
             </a>
-            <p class="card-text">Reading Glass</p>
+            <p class="card-text">Normal, UV Lens</p>
             <div class="d-flex justify-content-between">
-              <p class="price">Php 2,280</p>
-            </div>
-            <div class="d-flex add-to-bag py-1 py-2">
-              <a
-                type="button"
-                class="btn btn-secondary flex-fill d-flex justify-content-between mb-2 py-2"
-              >
-                <div>
-                  <i class="fa fa-plus" aria-hidden="true"></i>
-                  <span class="px-2">Add to Cart</span>
-                </div>
-                <i class="fas fa-shopping-bag bag" aria-hidden="true"></i>
-              </a>
+              <p class="price">
+                <i class="fas fa-tag px-1 tag" aria-hidden="true"></i>
+                <span class="px-1">Php 2,280</span>
+              </p>
             </div>
           </div>
         </div>
@@ -335,21 +286,12 @@
             <a href="./product-details.html">
               <h6 class="card-title">Original Blue Spring Hinge</h6>
             </a>
-            <p class="card-text">Reading Glass</p>
+            <p class="card-text">Normal, UV Lens</p>
             <div class="d-flex justify-content-between">
-              <p class="price">Php 2,280</p>
-            </div>
-            <div class="d-flex add-to-bag py-1 py-2">
-              <a
-                type="button"
-                class="btn btn-secondary flex-fill d-flex justify-content-between mb-2 py-2"
-              >
-                <div>
-                  <i class="fa fa-plus" aria-hidden="true"></i>
-                  <span class="px-2">Add to Cart</span>
-                </div>
-                <i class="fas fa-shopping-bag bag" aria-hidden="true"></i>
-              </a>
+              <p class="price">
+                <i class="fas fa-tag px-1 tag" aria-hidden="true"></i>
+                <span class="px-1">Php 2,280</span>
+              </p>
             </div>
           </div>
         </div>
@@ -369,25 +311,17 @@
             <a href="./product-details.html">
               <h6 class="card-title">Original Blue Spring Hinge</h6>
             </a>
-            <p class="card-text">Reading Glass</p>
+            <p class="card-text">Normal, UV Lens</p>
             <div class="d-flex justify-content-between">
-              <p class="price">Php 2,280</p>
-            </div>
-            <div class="d-flex add-to-bag py-1 py-2">
-              <a
-                type="button"
-                class="btn btn-secondary flex-fill d-flex justify-content-between mb-2 py-2"
-              >
-                <div>
-                  <i class="fa fa-plus" aria-hidden="true"></i>
-                  <span class="px-2">Add to Cart</span>
-                </div>
-                <i class="fas fa-shopping-bag bag" aria-hidden="true"></i>
-              </a>
+              <p class="price">
+                <i class="fas fa-tag px-1 tag" aria-hidden="true"></i>
+                <span class="px-1">Php 2,280</span>
+              </p>
             </div>
           </div>
         </div>
       </div>
+      <!-- Pagination -->
       <nav aria-label="Product Page Pagination">
         <ul class="pagination justify-content-center">
           <li class="page-item disabled">
@@ -408,55 +342,6 @@
         </ul>
       </nav>
       <br /><br />
-    </div>
-
-    <!-- footer -->
-    <div class="container-fluid pt-5 pb-2" style="background-color: #f3f3f3">
-      <footer class="container">
-        <div class="row g-3">
-          <div class="col-6">
-            <h5>LEAVE US YOUR MESSAGE</h5>
-            <br />
-            <input
-              type="text"
-              class="form-control form-control"
-              placeholder="Name"
-              id="footerName"
-            /><br />
-            <input
-              type="email"
-              class="form-control form-control"
-              placeholder="Email Address"
-              id="footerEmail"
-            /><br />
-            <textarea
-              class="form-control"
-              placeholder="Message"
-              id="footerMessage"
-              rows="5"
-            ></textarea
-            ><br />
-            <div style="text-align: center">
-              <button type="button" class="btn" style="width: 100%">
-                SUBMIT
-              </button>
-            </div>
-          </div>
-          <div class="col-2">
-            <h5>HELP</h5>
-          </div>
-          <div class="col-2">
-            <h5>COMPANY</h5>
-          </div>
-          <div class="col-2">
-            <h5>CONTACT</h5>
-          </div>
-        </div>
-        <p style="text-align: center; font-weight: normal; padding-top: 5%">
-          Copyright © 2022 FRFR Technologies.<br />
-          All Rights Reserved.
-        </p>
-      </footer>
     </div>
   </body>
 </html>
