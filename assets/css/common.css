@@ -28,10 +28,9 @@
   letter-spacing: 1%;
 }
 html,body{
-  background: #fafafa;
   font-size: 92%;
+  background: #f4f4f4 !important;
 }
-
 
 /* common */
 .blue-font {
@@ -196,12 +195,17 @@ td.dt-center {
   padding: 0.5rem 1.8rem;
   font-weight: 600;
   opacity: 0.95;
+  color: white;
 }
 .btn-default:hover {
   background: var(--saveHover);
   border: 1px solid rgb(101, 221, 101);
   opacity: 1;
+  color: black;
 }
+
+.modal .btn-danger,
+.modal .btn-danger:focus 
 .btn-danger,
 .btn-danger:focus {
   font-size: 0.9rem;
@@ -209,6 +213,7 @@ td.dt-center {
   color: #222;
   background: var(--cancel);
   opacity: 0.98;
+  border: 1px solid red;
 }
 .btn-danger:hover {
   background: var(--cancelHover);
@@ -270,12 +275,13 @@ input.form-control {
 }
 .modal .btn-secondary {
   font-size: 0.9rem;
-  background-color: #F37F7F;
+  background-color: var(--cancel);
+  border: 1px solid var(--cancelHover);
 }
 .modal .btn-secondary:hover {
   opacity: 1;
   background: none;
-  border: 1px solid #F37F7F;
+  border: 1px solid var(--cancelHover);
   color: black;
 }
 
