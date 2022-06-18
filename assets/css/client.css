@@ -43,3 +43,7 @@ h1{
 .text-digit{
   width: 3rem;
 }
+.navbar-brand{
+  font-weight: bold;
+  letter-spacing: 1px;
+}

@@ -10,6 +10,9 @@
     <link href="\assets\css\common.css" 
       rel="stylesheet" 
     />
+    <link href="\assets\css\client.css" 
+      rel="stylesheet" 
+    />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Sign In</title>
   </head>
@@ -17,25 +20,29 @@
   <body>
     <div class="container-fluid">
       <nav class="navbar fixed-top navbar-expand-lg navbar-light bg-light">
-        <div class="container">
+          <div class="container">
+              
+              <div class="navbar-brand pr-2">
+                  <img src="\assets\images\logo.png" 
+                  alt="" width="50px">
+              </div>
               <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                   <span class="navbar-toggler-icon"></span>
                   <!-- <i class="fas fa-bars"></i> -->
               </button>
-              <a class="navbar-brand" href="#">
-                  <img src="\assets\images\logo.png" alt="" width="50px"class="d-inline-block align-text-center">
-                  New Vision
-              </a>
-              
-              <div class="collapse navbar-collapse justify-content-center" id="navbarSupportedContent">
-                  <ul class="navbar-nav mb-2 mb-lg-0">
+              <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                  <div class="navbar-brand">
+                      New Vision
+                  </div>
+                  <div class="justify-content-center">
+                      <ul class="navbar-nav mb-2 mb-lg-0">
                       <!-- Active
                       <li class="nav-item">
                           <a class="nav-link active" aria-current="page" href="#">Home</a>
                       </li>
                       -->
                       <li class="nav-item px-4">
-                          <a class="nav-link navbar-link" href="#">HOME</a>
+                          <a class="nav-link navbar-link" href="\assets\css\home.css">HOME</a>
                       </li>
                       <li class="nav-item px-4">
                           <a class="nav-link" href="\frontend\client\products\all-products.html">PRODUCTS</a>
@@ -44,38 +51,41 @@
                           <a class="nav-link" href="\frontend\client\appointment.html">SET APPOINTMENT</a>
                       </li>
                       <li class="nav-item px-4">
-                          <a class="nav-link" href="frontend\client\faqs.html">FAQs</a>
+                          <a class="nav-link" href="\frontend\client\faqs.html">FAQs</a>
                       </li>
                   </ul>
-              </div>
-              <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-                  <li class="nav-item">
-                      <a class="nav-link py-3" href="#"><i class="fas fa-cart-arrow-down"></i></a>
-                  </li> 
-                  <li class="nav-item dropdown">
-                      <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                      <img src="\assets\images\plain-avatar.png" alt="" width="30px" class="d-inline-block">
-                      </a>
-                      <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                          <li><a class="dropdown-item" href="#">Sign In</a></li>
-                          <li><a class="dropdown-item" href="#">Register</a></li>
-                      </ul>
+                  </div> 
+                   <ul class="navbar-nav d-flex flex-row ms-auto me-3 px-4">
+                      <li class="nav-item me-3 me-lg-0">
+                          <a
+                            class="nav-link navbar-link"
+                            href="\frontend\client\sign-in.html"
+                            >Sign In</a
+                          >
+                        </li>
+                        <li class="nav-item me-3 me-lg-0">
+                          <a class="nav-link py-2" href="#"><i class="fas fa-cart-arrow-down"></i></a>
+                      </li>
                   </li>
-              </ul>
+                </ul>
+              </div>
           </div>
         </nav>
       </div>
-      <script
-          src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
-          integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
-          crossorigin="anonymous"
-      ></script>
-    <form class="needs-validation" novalidate>
-      <div class="container-fluid">
-        <div class="container w-50 pt-5">
+  <script
+    src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+    crossorigin="anonymous"
+  ></script>
+    <form class="vh-100 needs-validation" novalidate>
+      <div class="container py-5 h-100">
+        <div class="row d-flex justify-content-center align-items-center h-100">
+          <div class="col-12">
+            <div class="card" style="border-radius: 1rem;">
+              <div class="card-body p-5 text-left">
           <h4 class="pt-5">REGISTER</h4>
           <div class="row mb-3">
-            <div class="col-4 py-3">
+            <div class="col-lg-4 col-md-6 col-sm-12 py-3">
               <label for="givenName" class="form-label" required>Given Name*</label>
               <input
                 type="text"
@@ -87,7 +97,7 @@
                 What is your name?
               </div>
             </div>
-            <div class="col-4 py-3">
+            <div class="col-lg-4 col-md-6 col-sm-12 py-3">
               <label for="middleName" class="form-label">Middle Name</label>
               <input
                 type="text"
@@ -96,7 +106,7 @@
                 id="middleName"
               />
             </div>
-            <div class="col-4 py-3">
+            <div class="col-lg-4 col-md-6 col-sm-12 py-3">
               <label for="lastName" class="form-label">Last Name*</label>
               <input
                 type="text"
@@ -108,7 +118,7 @@
                 What is your name?
               </div>   
             </div>
-            <div class="col-4 py-3">
+            <div class="col-lg-4 col-md-6 col-sm-12 py-3">
               <label for="suffix" class="form-label" required>Suffix</label>
               <input
                 type="text"
@@ -117,7 +127,7 @@
                 id="suffix"
               />     
             </div>
-            <div class="col-4 py-3">
+            <div class="col-lg-4 col-md-6 col-sm-12 py-3">
               <label for="birthDate" class="form-label">Birthdate*</label>
               <input
                 type="date"
@@ -129,7 +139,7 @@
                 Provide birthdate.
               </div> 
             </div>
-            <div class="col-4 py-3">
+            <div class="col-lg-4 col-md-6 col-sm-12 py-3">
               <label for="fistVisit" class="form-label">Sex*</label>
               <div class="col-12">
                 <div class="form-check form-check-inline">
@@ -169,7 +179,7 @@
                 Provide your sex.
               </div>
             </div>
-            <div class="col-6 py-3">
+            <div class="col-lg-6 col-md-6 col-sm-12 py-3">
               <label for="emailAddress" class="form-label">Email*</label>
               <input
                 type="email"
@@ -182,7 +192,7 @@
                     Invalid email.
                   </div>  
             </div>
-            <div class="col-6 py-3">
+            <div class="col-lg-6 col-md-6 col-sm-12 py-3">
               <label for="confirmEmail" class="form-label">Confirm Email*</label>
               <input
                 type="email"
@@ -195,7 +205,7 @@
                     Please reconfirm your email.
                   </div>  
             </div>
-            <div class="col-6 py-3">
+            <div class="col-lg-6 col-md-6 col-sm-12 py-3">
               <label for="password" class="form-label">Password*</label>
               <input
                 type="password"
@@ -208,7 +218,7 @@
                   Enter a combination of at least eight characters, upper case letters, numbers, and special characters.
                 </div>  
             </div>
-            <div class="col-6 py-3">
+            <div class="col-lg-6 col-md-6 col-sm-12 py-3">
               <label for="confirmPassword" class="form-label"
                 >Confirm Password*</label
               >
@@ -231,6 +241,9 @@
           </div>
         </div>
       </div>
+    </div>
+  </div>
+</div>
       
     </form>
   </body>
