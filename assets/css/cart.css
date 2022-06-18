@@ -1,0 +1,38 @@
+.black-font {
+    color: #333333;
+}
+
+.font-cart {
+    font-family: "Helvetica";
+}
+  
+.heavy-font {
+    font-weight: 700;
+}
+  
+.light-font {
+    font-weight: 200;
+}
+
+.container-radius {
+    border-radius: .5em;
+}
+
+.cart-card {
+    height: 10em;
+}
+
+.cart-card-body {
+    height: 100%;
+}
+
+#checkout-btn {
+    font-size: 1.5em;
+    background-color: #50ABF1;
+    color: #FFFFFF;
+    height: 2.5em;
+}
+
+.cart-checkout-card-bg {
+    background-color: #FFFFFF;
+}

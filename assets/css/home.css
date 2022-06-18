@@ -123,7 +123,9 @@ body {
   padding-top: 3.5rem;
   padding-bottom: 3.5rem;
 }
-
+.featured-item .row {
+  --bs-gutter-x: 0;
+}
 .featured-item a {
   font-weight: 600;
   font-size: 1.5rem;
@@ -211,7 +213,6 @@ body {
 }
 
 .about-us-wrapper {
-  background: #fdfdfd;
   padding-top: 3.5rem;
   padding-bottom: 2rem;
 }
