@@ -22,7 +22,7 @@
   <body>
     <div class="sidebar" id="admin-sidebar">
       <div class="logo-details">
-        <img src="/assets/images/logo.png" class="logo" alt="Logo">
+        <img src="/assets/images/logo.png" class="logo" alt="Logo" />
         <span class="logo_name">Vision</span>
       </div>
 
@@ -52,7 +52,7 @@
           </a>
         </li>
         <li>
-         <a href="../orders/orders.html">
+          <a href="../orders/orders.html">
             <i class="fa fa-cart-arrow-down"></i>
             <span class="links_name">Orders</span>
           </a>
@@ -84,7 +84,6 @@
       </ul>
     </div>
 
-
     <section class="home-section">
       <nav>
         <div class="container-fluid d-flex">
@@ -108,13 +107,13 @@
         <div class="container-fluid">
           <div class="d-flex justify-content-end mx-2">
             <!-- Archives Button -->
-            <a
+            <!-- <a
               href="frontend/admin/admin/archives.html"
               class="btn archiveBtn text-white fw-bold px-4"
               id="archive-list-button"
               title="View Archive List"
               >Archives</a
-            >
+            > -->
 
             <!-- Create New Button trigger modal -->
             <button
@@ -194,9 +193,7 @@
                       <!-- Name -->
                       <div class="row mb-2 py-1">
                         <div class="col-lg-3 col-md-6 py-2">
-                          <label
-                            class="form-label asterisk"
-                            for="fnameAdmin"
+                          <label class="form-label asterisk" for="fnameAdmin"
                             >First Name:
                           </label>
                           <input
@@ -221,9 +218,7 @@
                           />
                         </div>
                         <div class="col-lg-3 col-md-6 py-2">
-                          <label
-                            class="form-label asterisk"
-                            for="surnameAdmin"
+                          <label class="form-label asterisk" for="surnameAdmin"
                             >Last Name:
                           </label>
                           <input
@@ -296,7 +291,7 @@
               <hr class="my-4" />
               <div class="container-fluid table-responsive pt-2">
                 <table
-                  class="table table-hover align-middle align-items-center table-body"
+                  class="table table-hover align-middle table-body"
                   aria-label="Customers' List"
                   id="adminsTableList"
                 >
@@ -320,7 +315,6 @@
                         </div>
                       </th>
                       <th scope="col">ID</th>
-                      <th scope="col">Admin Number</th>
                       <th scope="col">Name</th>
                       <th scope="col">Email</th>
                       <th scope="col">Action</th>
@@ -339,7 +333,6 @@
                         </div>
                       </td>
                       <td>Admin-1</td>
-                      <td>1234</td>
                       <td>
                         <img
                           src="/assets/images/avatar.png"
@@ -347,14 +340,14 @@
                         />juan dela cruz
                       </td>
                       <td>juandelacruz@gmail.com</td>
-                      <td>
-                        <div class="action-buttons" id="actions">
+                      <td class="action">
+                        <div class="action-buttons">
                           <ul>
                             <li>
                               <button
                                 type="button"
                                 id="view"
-                                class="btn view-data data"
+                                class="btn view-data data button_width"
                                 data-bs-toggle="modal"
                                 data-bs-target="#viewAdmin"
                                 title="View Details"
@@ -366,7 +359,7 @@
                               <button
                                 type="button"
                                 id="edit"
-                                class="btn update-data data"
+                                class="btn update-data data button_width"
                                 data-bs-toggle="modal"
                                 data-bs-target="#updateAdmin"
                                 title="Update Details"
@@ -378,11 +371,11 @@
                             <li>
                               <button
                                 type="button"
-                                class="btn archive-data data"
+                                class="btn archive-data data button_width"
                                 title="Archive Data"
                                 aria-hidden="true"
                               >
-                                Archive
+                                Activated
                               </button>
                             </li>
                           </ul>
@@ -394,14 +387,14 @@
                 <br />
 
                 <!-- Batch Archive Button -->
-                <div class="d-flex justify-content-end my-3">
+                <!-- <div class="d-flex justify-content-end my-3">
                   <button
                     type="button"
                     class="btn archive-all-data px-4 py-1 fw-bold text-white text-uppercase"
                   >
                     Archive Admins (6)
                   </button>
-                </div>
+                </div> -->
               </div>
             </div>
           </div>
@@ -464,9 +457,7 @@
                   <!-- View Name -->
                   <div class="row mb-2 py-1">
                     <div class="col-lg-3 col-md-6 py-2">
-                      <label
-                        class="form-label asterisk"
-                        for="fnameAdminView"
+                      <label class="form-label asterisk" for="fnameAdminView"
                         >First Name:
                       </label>
                       <input
@@ -724,11 +715,11 @@
         } else sidebarBtn.classList.replace("bx-menu-alt-right", "bx-menu");
       };
       $(document).ready(function () {
-        $("#attendantsTableList").DataTable({
+        $("#adminsTableList").DataTable({
           columnDefs: [{ className: "dt-center", targets: "_all" }],
           lengthMenu: [
-            [20, 25, 50, -1],
-            [20, 25, 50, "All"],
+            [5, 10, 15, -1],
+            [5, 10, 15, "All"],
           ],
         });
         jQuery(".dataTable").wrap('<div class="dataTables_scroll" />');
