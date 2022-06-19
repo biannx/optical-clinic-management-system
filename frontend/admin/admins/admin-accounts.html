@@ -107,13 +107,13 @@
         <div class="container-fluid">
           <div class="d-flex justify-content-end mx-2">
             <!-- Archives Button -->
-            <a
+            <!-- <a
               href="frontend/admin/admin/archives.html"
               class="btn archiveBtn text-white fw-bold px-4"
               id="archive-list-button"
               title="View Archive List"
               >Archives</a
-            >
+            > -->
 
             <!-- Create New Button trigger modal -->
             <button
@@ -315,7 +315,6 @@
                         </div>
                       </th>
                       <th scope="col">ID</th>
-                      <th scope="col">Admin Number</th>
                       <th scope="col">Name</th>
                       <th scope="col">Email</th>
                       <th scope="col">Action</th>
@@ -334,7 +333,6 @@
                         </div>
                       </td>
                       <td>Admin-1</td>
-                      <td>1234</td>
                       <td>
                         <img
                           src="/assets/images/avatar.png"
@@ -377,7 +375,7 @@
                                 title="Archive Data"
                                 aria-hidden="true"
                               >
-                                Archive
+                                Activated
                               </button>
                             </li>
                           </ul>
@@ -389,14 +387,14 @@
                 <br />
 
                 <!-- Batch Archive Button -->
-                <div class="d-flex justify-content-end my-3">
+                <!-- <div class="d-flex justify-content-end my-3">
                   <button
                     type="button"
                     class="btn archive-all-data px-4 py-1 fw-bold text-white text-uppercase"
                   >
                     Archive Admins (6)
                   </button>
-                </div>
+                </div> -->
               </div>
             </div>
           </div>
@@ -717,11 +715,11 @@
         } else sidebarBtn.classList.replace("bx-menu-alt-right", "bx-menu");
       };
       $(document).ready(function () {
-        $("#attendantsTableList").DataTable({
+        $("#adminsTableList").DataTable({
           columnDefs: [{ className: "dt-center", targets: "_all" }],
           lengthMenu: [
-            [20, 25, 50, -1],
-            [20, 25, 50, "All"],
+            [5, 10, 15, -1],
+            [5, 10, 15, "All"],
           ],
         });
         jQuery(".dataTable").wrap('<div class="dataTables_scroll" />');
