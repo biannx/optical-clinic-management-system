@@ -3,7 +3,7 @@
 }
 
 .font-cart {
-    font-family: "Helvetica";
+    font-family: "Poppins";
 }
   
 .heavy-font {
@@ -30,9 +30,17 @@
     font-size: 1.5em;
     background-color: #50ABF1;
     color: #FFFFFF;
-    height: 2.5em;
+}
+
+.qty-bg {
+    background-color: #50ABF1;
+    color: white;
 }
 
 .cart-checkout-card-bg {
     background-color: #FFFFFF;
+}
+
+.sf-mb {
+    margin-bottom: 6em;
 }
