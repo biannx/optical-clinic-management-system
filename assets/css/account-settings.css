@@ -1,7 +1,7 @@
 .account-settings-btn {
     color: #FFFFFF;
-    height: 3em;
-    width: 20em;
+    /* width: 15em; */
+    font-size: 1.5rem;
 }
 
 .blue {
@@ -17,6 +17,10 @@
 }
 
 .settings-container {
-    width: 50vw;
+    width: 40vw;
     min-width: 400px;
+}
+
+label {
+    font-size: 1.4rem;
 }
