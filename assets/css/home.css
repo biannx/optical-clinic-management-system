@@ -1,7 +1,7 @@
 header {
   min-height: 100vh;
-  background: linear-gradient(rgba(14, 1, 1, 0.075), rgba(3, 0, 0, 0)),
-    url(/assets/images/test.jpg) center/cover no-repeat fixed;
+  background: linear-gradient(rgba(66, 33, 33, 0.075), rgba(56, 42, 42, 0)),
+    url(/assets/images/banner.jpg) center/cover no-repeat fixed;
   display: flex;
   /* flex-direction: column; */
   justify-content: stretch;
@@ -31,7 +31,7 @@ body {
   color: whitesmoke;
   text-transform: uppercase;
   letter-spacing: 1px;
-  margin-top: 10rem;
+  margin-top: 8rem;
 }
 .banner .container .tagline h1 {
   font-size: 4.5rem;
@@ -62,6 +62,8 @@ body {
   letter-spacing: 2px;
   padding: 0.8rem 3.5rem;
   border-radius: 0.5rem;
+  box-shadow: 0px 4px 20px 0px rgba(0, 0, 0, 0.25);
+
 }
 .banner .container a.btn-default:hover,
 .services-wrapper .second a.btn:hover,
@@ -79,7 +81,6 @@ body {
   }
   .banner .container p.lead,
   .about-us-wrapper .row .about-us p {
-    color: var(--black);
     font-size: 1.8rem;
     max-width: 550px;
   }
@@ -122,7 +123,7 @@ body {
   }
 }
 .featured-item {
-  background-color: #eaeae7;
+  background: #e0e0e0; 
   padding-top: 3.5rem;
   padding-bottom: 3.5rem;
 }
@@ -144,7 +145,7 @@ body {
 
 /* services */
 .services-wrapper {
-  background-color: #eaeae7;
+  background: #e0e0e0; 
   padding-top: 3.8rem;
   padding-bottom: 3.5rem;
   font-size: 1.1rem;
@@ -217,7 +218,7 @@ body {
 
 .about-us-wrapper {
   padding-top: 3.5rem;
-  padding-bottom: 2rem;
+  padding-bottom: 3.5rem;
   /* background: #fdfdfd; */
 }
 .about-us-wrapper h2 {
