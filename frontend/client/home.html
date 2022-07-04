@@ -16,98 +16,72 @@
   </head>
   <body>
     <nav
-      class="navbar container-fluid sticky-top navbar-expand-lg navbar-light bg-light navbar-custom"
-    >
-      <div class="container">
-        <button
-          class="navbar-toggler"
-          type="button"
-          data-bs-toggle="collapse"
-          data-bs-target="#navbarSupportedContent"
-          aria-controls="navbarSupportedContent"
-          aria-expanded="false"
-          aria-label="Toggle navigation"
+    class="navbar container-fluid sticky-top navbar-expand-lg navbar-light bg-light navbar-custom"
+  >
+    <div class="container">
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-bs-toggle="collapse"
+        data-bs-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
+        <span class="navbar-toggler-icon"></span>
+        <!-- <i class="fas fa-bars"></i> -->
+      </button>
+      <div class="navbar-brand me-auto">
+        <img
+          src="\assets\images\logo.png"
+          alt="Brand Logo"
+          class="mx-2"
+          width="50px"
+        />
+        <span class="d-sm-none d-md-inline d-none d-sm-inline"
+          >New Vision</span
         >
-          <span class="navbar-toggler-icon"></span>
-          <!-- <i class="fas fa-bars"></i> -->
-        </button>
-        <div class="navbar-brand me-auto">
-          <img
-            src="\assets\images\logo.png"
-            alt="Brand Logo"
-            class="mx-2"
-            width="50px"
-          />
-          <span class="d-sm-none d-md-inline d-none d-sm-inline"
-            >New Vision</span
-          >
-        </div>
-        <div class="collapse navbar-collapse navs" id="navbarSupportedContent">
-          <!-- <div class="navbar-brand">New Vision</div> -->
-          <ul class="navbar-nav">
-            <!-- Active
-                    <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="#">Home</a>
-                    </li>
-                    -->
-            <li class="nav-item px-4 ms-lg-5 ms-md-0 ms-sm-0">
-              <a class="nav-link navbar-link" href="\assets\css\home.css"
-                >HOME</a
-              >
-            </li>
-            <li class="nav-item px-4">
-              <a
-                class="nav-link"
-                href="\frontend\client\products\all-products.html"
-                >PRODUCTS</a
-              >
-            </li>
-            <li class="nav-item px-4">
-              <a class="nav-link" href="\frontend\client\appointment.html"
-                >SET APPOINTMENT</a
-              >
-            </li>
-            <li class="nav-item px-4">
-              <a class="nav-link" href="frontend\client\faqs.html">FAQs</a>
-            </li>
-          </ul>
-        </div>
-
-        <div class="btn-group account-dropdown">
-          <a class="nav-link py-3 text-dark" href="#"
-            ><i class="fas fa-cart-arrow-down"></i
-          ></a>
-          <button
-            type="button"
-            class="btn dropdown-toggle"
-            data-bs-toggle="dropdown"
-            data-bs-display="static"
-            aria-expanded="false"
-          >
-            <img
-              src="\assets\images\avatar.png"
-              alt=""
-              width="30px"
-              class="d-inline-block"
-            />
-          </button>
-          <ul class="dropdown-menu dropdown-menu-end dropdown-menu-lg-end">
-            <li>
-              <a class="dropdown-item" style="z-index: 10" href="#">Profile</a>
-            </li>
-            <li>
-              <a class="dropdown-item" style="z-index: 10" href="#">Settings</a>
-            </li>
-            <li>
-              <a class="dropdown-item" style="z-index: 10" href="#">History</a>
-            </li>
-            <li>
-              <a class="dropdown-item" style="z-index: 10" href="#">Sign Out</a>
-            </li>
-          </ul>
-        </div>
       </div>
-    </nav>
+      <div class="collapse navbar-collapse navs" id="navbarSupportedContent">
+        <!-- <div class="navbar-brand">New Vision</div> -->
+        <ul class="navbar-nav mx-4">
+          <li class="nav-item px-4 ms-lg-5 ms-md-0 ms-sm-0">
+            <a class="nav-link navbar-link" href="\assets\css\home.css"
+              >HOME</a
+            >
+          </li>
+          <li class="nav-item px-4">
+            <a
+              class="nav-link"
+              href="\frontend\client\products\all-products.html"
+              >PRODUCTS</a
+            >
+          </li>
+          <li class="nav-item px-4">
+            <a class="nav-link" href="\frontend\client\appointment.html"
+              >SET APPOINTMENT</a
+            >
+          </li>
+          <li class="nav-item px-4">
+            <a class="nav-link" href="frontend\client\faqs.html">FAQs</a>
+          </li>
+        </ul>
+      </div>
+    <div class="btn-group account-dropdown">
+      <a
+        class="nav-link navbar-link text-dark sign-in-div mx-4 px-4"
+        href="\frontend\client\sign-in.html"
+        ><span class="sign-in-text">Sign In</span></a
+      >
+      <div class="cart">
+        <a class="nav-link cart-icon text-dark" href="#"
+        ><i class="fas fa-cart-arrow-down"></i
+      >
+      <span class="badge bg-primary rounded-pill">14</span>
+    </a>
+      </div>
+    </div>
+  </nav>
 
     <header>
       <div class="banner">

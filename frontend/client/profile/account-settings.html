@@ -1,47 +1,179 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link href="/assets/css/bootstrap.min.css" rel="stylesheet" />
-        <link rel="stylesheet" href="/assets/css/common.css" />
-        <link
-          rel="stylesheet"
-          href="https://use.fontawesome.com/releases/v5.5.0/css/all.css"
-        />
-        <link
-          href="/assets/css/dataTables.bootstrap5.min.css"
-          rel="stylesheet"
-          type="text/css"
-        />
-        <link href="/assets/css/account-settings.css" rel="stylesheet" type="text/css"/>
-        <title>Profile Account Settings</title>
-    </head>
-<body>
-    <div class="container-fluid settings-container bg-white p-5">
-        <h1 class="text-center helvetica heavy-font blue mb-5">Change Password</h1>
-        <form class="container">
-            <div class="form-group mb-5 mx-lg-5">
-                <label class="mb-3 open-sans heavy-font" for="oldPassword"><b>Old Password</b></label>
-                <input type="password" class="form-control" id="oldPassword" placeholder="************">
-            </div>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="/assets/css/bootstrap.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="/assets/css/common.css" />
+    <link rel="stylesheet" href="/assets/css/user-products.css" />
+    <link rel="stylesheet" href="/assets/css/client.css" />
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.5.0/css/all.css"
+    />
+    <link
+      href="/assets/css/dataTables.bootstrap5.min.css"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <link
+      href="/assets/css/account-settings.css"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <title>Profile Account Settings</title>
+  </head>
+  <body>
+    <nav
+      class="navbar container-fluid sticky-top navbar-expand-lg navbar-light bg-light navbar-custom"
+    >
+      <div class="container">
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+          <!-- <i class="fas fa-bars"></i> -->
+        </button>
+        <div class="navbar-brand me-auto">
+          <img
+            src="\assets\images\logo.png"
+            alt="Brand Logo"
+            class="mx-2"
+            width="50px"
+          />
+          <span class="d-sm-none d-md-inline d-none d-sm-inline"
+            >New Vision</span
+          >
+        </div>
+        <div class="collapse navbar-collapse navs" id="navbarSupportedContent">
+          <!-- <div class="navbar-brand">New Vision</div> -->
+          <ul class="navbar-nav mx-4">
+            <li class="nav-item px-4 ms-lg-5 ms-md-0 ms-sm-0">
+              <a class="nav-link navbar-link" href="\assets\css\home.css"
+                >HOME</a
+              >
+            </li>
+            <li class="nav-item px-4">
+              <a
+                class="nav-link"
+                href="\frontend\client\products\all-products.html"
+                >PRODUCTS</a
+              >
+            </li>
+            <li class="nav-item px-4">
+              <a class="nav-link" href="\frontend\client\appointment.html"
+                >SET APPOINTMENT</a
+              >
+            </li>
+            <li class="nav-item px-4">
+              <a class="nav-link" href="frontend\client\faqs.html">FAQs</a>
+            </li>
+          </ul>
+        </div>
 
-            <div class="form-group mb-5 mx-lg-5">
-                <label class="mb-3 open-sans heavy-font" for="newPassword"><b>New Password</b></label>
-                <input type="password" class="form-control" id="newPassword" placeholder="************">
-            </div>
+        <div class="btn-group account-dropdown">
+          <div class="cart-customer">
+            <a class="nav-link text-dark" href="#"
+              ><i class="fas fa-cart-arrow-down"></i>
+              <span class="badge bg-primary rounded-pill">14</span>
+            </a>
+          </div>
 
-            <div class="form-group mb-5 mx-lg-5">
-                <label class="mb-3 open-sans heavy-font" for="confirmPassword"><bold>Confirm Password</bold></label>
-                <input type="password" class="form-control" id="confirmPassword" placeholder="************">
-            </div>
+          <button
+            type="button"
+            class="btn dropdown-toggle"
+            data-bs-toggle="dropdown"
+            data-bs-display="static"
+            aria-expanded="false"
+          >
+            <img
+              src="\assets\images\avatar.png"
+              alt=""
+              width="30px"
+              class="d-inline-block"
+            />
+          </button>
+          <ul class="dropdown-menu dropdown-menu-end dropdown-menu-lg-end">
+            <li>
+              <a class="dropdown-item" style="z-index: 10" href="#">Profile</a>
+            </li>
+            <li>
+              <a class="dropdown-item" style="z-index: 10" href="#">Settings</a>
+            </li>
+            <li>
+              <a class="dropdown-item" style="z-index: 10" href="#">History</a>
+            </li>
+            <li>
+              <a class="dropdown-item" style="z-index: 10" href="#">Sign Out</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
 
-            <div class="d-grid gap-2 px-5 mx-lg-5 text-center">
-                <button class="btn blue-bg account-settings-btn mx-lg-5 fw-bold mb-1" type="button">Save Changes</button>
-                <button class="btn red-bg account-settings-btn mx-lg-5 fw-bold" type="button">Discard</button>
-              </div>
-        </form>
+    <div class="container settings-container card py-5 px-4">
+      <h3 class="text-center helvetica heavy-font blue mb-5">
+        Change Password
+      </h3>
+      <form class="container">
+        <div class="form-group mb-4 mx-lg-5">
+          <label class="mb-3 open-sans heavy-font" for="oldPassword"
+            ><b>Old Password</b></label
+          >
+          <input
+            type="password"
+            class="form-control"
+            id="oldPassword"
+            placeholder="************"
+          />
+        </div>
+
+        <div class="form-group mb-4 mx-lg-5">
+          <label class="mb-3 open-sans heavy-font" for="newPassword"
+            ><b>New Password</b></label
+          >
+          <input
+            type="password"
+            class="form-control"
+            id="newPassword"
+            placeholder="************"
+          />
+        </div>
+
+        <div class="form-group mb-4 mx-lg-5">
+          <label class="mb-3 open-sans heavy-font" for="confirmPassword"
+            ><bold>Confirm Password</bold></label
+          >
+          <input
+            type="password"
+            class="form-control"
+            id="confirmPassword"
+            placeholder="************"
+          />
+        </div>
+
+        <div class="d-grid gap-2 px-5 mt-5">
+          <button
+            class="btn blue-bg account-settings-btn py-2 fw-bold mb-1 w-75"
+            type="button"
+          >
+            Save Changes
+          </button>
+          <button
+            class="btn red-bg account-settings-btn py-2 fw-bold w-75"
+            type="button"
+          >
+            Discard
+          </button>
+        </div>
+      </form>
     </div>
 
     <script
@@ -49,5 +181,5 @@
       integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
       crossorigin="anonymous"
     ></script>
-</body>
+  </body>
 </html>
