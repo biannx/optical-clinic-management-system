@@ -5,6 +5,7 @@
     <link href="/assets/css/bootstrap.min.css" rel="stylesheet" />
     <link rel="stylesheet" href="/assets/css/common.css" />
     <link rel="stylesheet" href="/assets/css/user-products.css" />
+    <link rel="stylesheet" href="/assets/css/client.css" />
     <link
       rel="stylesheet"
       href="https://use.fontawesome.com/releases/v5.5.0/css/all.css"
@@ -18,6 +19,99 @@
     <title>Products</title>
   </head>
   <body>
+    <nav
+      class="navbar container-fluid sticky-top navbar-expand-lg navbar-light bg-light navbar-custom"
+    >
+      <div class="container">
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+          <!-- <i class="fas fa-bars"></i> -->
+        </button>
+        <div class="navbar-brand me-auto">
+          <img
+            src="\assets\images\logo.png"
+            alt="Brand Logo"
+            class="mx-2"
+            width="50px"
+          />
+          <span class="d-sm-none d-md-inline d-none d-sm-inline"
+            >New Vision</span
+          >
+        </div>
+        <div class="collapse navbar-collapse navs" id="navbarSupportedContent">
+          <!-- <div class="navbar-brand">New Vision</div> -->
+          <ul class="navbar-nav mx-5">
+            <!-- Active
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#">Home</a>
+                    </li>
+                    -->
+            <li class="nav-item px-4 ms-lg-5 ms-md-0 ms-sm-0">
+              <a class="nav-link navbar-link" href="\assets\css\home.css"
+                >HOME</a
+              >
+            </li>
+            <li class="nav-item px-4">
+              <a
+                class="nav-link"
+                href="\frontend\client\products\all-products.html"
+                >PRODUCTS</a
+              >
+            </li>
+            <li class="nav-item px-4">
+              <a class="nav-link" href="\frontend\client\appointment.html"
+                >SET APPOINTMENT</a
+              >
+            </li>
+            <li class="nav-item px-4">
+              <a class="nav-link" href="frontend\client\faqs.html">FAQs</a>
+            </li>
+          </ul>
+        </div>
+
+        <div class="btn-group account-dropdown">
+          <a class="nav-link py-3 text-dark" href="#"
+            ><i class="fas fa-cart-arrow-down"></i
+          ></a>
+          <button
+            type="button"
+            class="btn dropdown-toggle"
+            data-bs-toggle="dropdown"
+            data-bs-display="static"
+            aria-expanded="false"
+          >
+            <img
+              src="\assets\images\avatar.png"
+              alt=""
+              width="30px"
+              class="d-inline-block"
+            />
+          </button>
+          <ul class="dropdown-menu dropdown-menu-end dropdown-menu-lg-end">
+            <li>
+              <a class="dropdown-item" style="z-index: 10" href="#">Profile</a>
+            </li>
+            <li>
+              <a class="dropdown-item" style="z-index: 10" href="#">Settings</a>
+            </li>
+            <li>
+              <a class="dropdown-item" style="z-index: 10" href="#">History</a>
+            </li>
+            <li>
+              <a class="dropdown-item" style="z-index: 10" href="#">Sign Out</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
     <div class="head">
       <form action="#" class="search-wrapper" >
         <div class="d-flex justify-content-center search-box">
@@ -33,6 +127,9 @@
           </button>
         </div>
       </form>
+      <!-- <p class="container text-center">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum ex labore dignissimos dolorem perferendis provident, cumque quaerat tenetur eius doloribus.
+      </p> -->
     </div>
     <form action="">
       <div class="container">
@@ -48,7 +145,7 @@
             type="reset"
             class="btn btn-secondary filter-button"
             id="filter-by-button"
-            title="Hide and Reset"
+            data-bs-toggle="tooltip" data-bs-placement="bottom"
           >
             <i class="fas fa-filter"></i>
             <span class="px-1">Filter by</span>
@@ -124,367 +221,323 @@
         </div>
 
         <!-- Product List -->
-        <div class="wrapper d-flex flex-wrap justify-content-between">
+        <div class="wrapper">
           <!-- 1 -->
-          <div class="card">
-            <a href="./product-details.html">
-              <img
-                src="/assets/images/product-img.png"
-                class="card-img-top"
-                alt="..."
-              />
-              <div class="label-new">
-                <span>new</span>
+          <div class="row">
+            <div class="col-xl-3 col-lg-4 col-md-6 col-sm-6">
+              <div class="card">
+                <a href="./product-details.html">
+                  <img
+                    src="/assets/images/product-img.png"
+                    class="card-img-top"
+                    alt="..."
+                  />
+                  <div class="label-new">
+                    <span>new</span>
+                  </div>
+                </a>
+                <div class="card-body">
+                  <a href="./product-details.html">
+                    <h6 class="card-title">Original Blue Spring Hinge</h6>
+                  </a>
+                  <p class="card-text">Normal, UV Lens</p>
+                  <div class="d-flex justify-content-between">
+                    <p class="price">
+                      <i class="fas fa-tag px-1 tag" aria-hidden="true"></i>
+                      <span class="px-1">Php 2,280</span>
+                    </p>
+                  </div>
+                </div>
               </div>
-            </a>
-            <div class="card-body">
-              <a href="./product-details.html">
-                <h6 class="card-title">Original Blue Spring Hinge</h6>
-              </a>
-              <p class="card-text">Normal, UV Lens</p>
-              <div class="d-flex justify-content-between">
-                <p class="price">
-                  <i class="fas fa-tag px-1 tag" aria-hidden="true"></i>
-                  <span class="px-1">Php 2,280</span>
-                </p>
-                <!-- <div>
-                  <button title="Add to favorites">
-                    <i class="fas fa-heart px-2 heart" aria-hidden="true"></i>
-                  </button> 
-                </div> -->
+            </div>
+            <div class="col-xl-3 col-lg-4 col-md-6 col-sm-6">
+              <div class="card">
+                <a href="./product-details.html">
+                  <img
+                    src="/assets/images/product-img.png"
+                    class="card-img-top"
+                    alt="..."
+                  />
+                  <div class="label-new">
+                    <span>new</span>
+                  </div>
+                </a>
+                <div class="card-body">
+                  <a href="./product-details.html">
+                    <h6 class="card-title">Original Blue Spring Hinge</h6>
+                  </a>
+                  <p class="card-text">Normal, UV Lens</p>
+                  <div class="d-flex justify-content-between">
+                    <p class="price">
+                      <i class="fas fa-tag px-1 tag" aria-hidden="true"></i>
+                      <span class="px-1">Php 2,280</span>
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-xl-3 col-lg-4 col-md-6 col-sm-6">
+              <div class="card">
+                <a href="./product-details.html">
+                  <img
+                    src="/assets/images/product-img.png"
+                    class="card-img-top"
+                    alt="..."
+                  />
+                  <div class="label-new">
+                    <span>new</span>
+                  </div>
+                </a>
+                <div class="card-body">
+                  <a href="./product-details.html">
+                    <h6 class="card-title">Original Blue Spring Hinge</h6>
+                  </a>
+                  <p class="card-text">Normal, UV Lens</p>
+                  <div class="d-flex justify-content-between">
+                    <p class="price">
+                      <i class="fas fa-tag px-1 tag" aria-hidden="true"></i>
+                      <span class="px-1">Php 2,280</span>
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-xl-3 col-lg-4 col-md-6 col-sm-6">
+              <div class="card">
+                <a href="./product-details.html">
+                  <img
+                    src="/assets/images/product-img.png"
+                    class="card-img-top"
+                    alt="..."
+                  />
+                  <div class="label-new">
+                    <span>new</span>
+                  </div>
+                </a>
+                <div class="card-body">
+                  <a href="./product-details.html">
+                    <h6 class="card-title">Original Blue Spring Hinge</h6>
+                  </a>
+                  <p class="card-text">Normal, UV Lens</p>
+                  <div class="d-flex justify-content-between">
+                    <p class="price">
+                      <i class="fas fa-tag px-1 tag" aria-hidden="true"></i>
+                      <span class="px-1">Php 2,280</span>
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-xl-3 col-lg-4 col-md-6 col-sm-6">
+              <div class="card">
+                <a href="./product-details.html">
+                  <img
+                    src="/assets/images/product-img.png"
+                    class="card-img-top"
+                    alt="..."
+                  />
+                  <div class="label-new">
+                    <span>new</span>
+                  </div>
+                </a>
+                <div class="card-body">
+                  <a href="./product-details.html">
+                    <h6 class="card-title">Original Blue Spring Hinge</h6>
+                  </a>
+                  <p class="card-text">Normal, UV Lens</p>
+                  <div class="d-flex justify-content-between">
+                    <p class="price">
+                      <i class="fas fa-tag px-1 tag" aria-hidden="true"></i>
+                      <span class="px-1">Php 2,280</span>
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-xl-3 col-lg-4 col-md-6 col-sm-6">
+              <div class="card">
+                <a href="./product-details.html">
+                  <img
+                    src="/assets/images/product-img.png"
+                    class="card-img-top"
+                    alt="..."
+                  />
+                  <div class="label-new">
+                    <span>new</span>
+                  </div>
+                </a>
+                <div class="card-body">
+                  <a href="./product-details.html">
+                    <h6 class="card-title">Original Blue Spring Hinge</h6>
+                  </a>
+                  <p class="card-text">Normal, UV Lens</p>
+                  <div class="d-flex justify-content-between">
+                    <p class="price">
+                      <i class="fas fa-tag px-1 tag" aria-hidden="true"></i>
+                      <span class="px-1">Php 2,280</span>
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-xl-3 col-lg-4 col-md-6 col-sm-6">
+              <div class="card">
+                <a href="./product-details.html">
+                  <img
+                    src="/assets/images/product-img.png"
+                    class="card-img-top"
+                    alt="..."
+                  />
+                  <div class="label-new">
+                    <span>new</span>
+                  </div>
+                </a>
+                <div class="card-body">
+                  <a href="./product-details.html">
+                    <h6 class="card-title">Original Blue Spring Hinge</h6>
+                  </a>
+                  <p class="card-text">Normal, UV Lens</p>
+                  <div class="d-flex justify-content-between">
+                    <p class="price">
+                      <i class="fas fa-tag px-1 tag" aria-hidden="true"></i>
+                      <span class="px-1">Php 2,280</span>
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-xl-3 col-lg-4 col-md-6 col-sm-6">
+              <div class="card">
+                <a href="./product-details.html">
+                  <img
+                    src="/assets/images/product-img.png"
+                    class="card-img-top"
+                    alt="..."
+                  />
+                  <div class="label-new">
+                    <span>new</span>
+                  </div>
+                </a>
+                <div class="card-body">
+                  <a href="./product-details.html">
+                    <h6 class="card-title">Original Blue Spring Hinge</h6>
+                  </a>
+                  <p class="card-text">Normal, UV Lens</p>
+                  <div class="d-flex justify-content-between">
+                    <p class="price">
+                      <i class="fas fa-tag px-1 tag" aria-hidden="true"></i>
+                      <span class="px-1">Php 2,280</span>
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-xl-3 col-lg-4 col-md-6 col-sm-6">
+              <div class="card">
+                <a href="./product-details.html">
+                  <img
+                    src="/assets/images/product-img.png"
+                    class="card-img-top"
+                    alt="..."
+                  />
+                  <div class="label-new">
+                    <span>new</span>
+                  </div>
+                </a>
+                <div class="card-body">
+                  <a href="./product-details.html">
+                    <h6 class="card-title">Original Blue Spring Hinge</h6>
+                  </a>
+                  <p class="card-text">Normal, UV Lens</p>
+                  <div class="d-flex justify-content-between">
+                    <p class="price">
+                      <i class="fas fa-tag px-1 tag" aria-hidden="true"></i>
+                      <span class="px-1">Php 2,280</span>
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-xl-3 col-lg-4 col-md-6 col-sm-6">
+              <div class="card">
+                <a href="./product-details.html">
+                  <img
+                    src="/assets/images/product-img.png"
+                    class="card-img-top"
+                    alt="..."
+                  />
+                  <div class="label-new">
+                    <span>new</span>
+                  </div>
+                </a>
+                <div class="card-body">
+                  <a href="./product-details.html">
+                    <h6 class="card-title">Original Blue Spring Hinge</h6>
+                  </a>
+                  <p class="card-text">Normal, UV Lens</p>
+                  <div class="d-flex justify-content-between">
+                    <p class="price">
+                      <i class="fas fa-tag px-1 tag" aria-hidden="true"></i>
+                      <span class="px-1">Php 2,280</span>
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-xl-3 col-lg-4 col-md-6 col-sm-6">
+              <div class="card">
+                <a href="./product-details.html">
+                  <img
+                    src="/assets/images/product-img.png"
+                    class="card-img-top"
+                    alt="..."
+                  />
+                  <div class="label-new">
+                    <span>new</span>
+                  </div>
+                </a>
+                <div class="card-body">
+                  <a href="./product-details.html">
+                    <h6 class="card-title">Original Blue Spring Hinge</h6>
+                  </a>
+                  <p class="card-text">Normal, UV Lens</p>
+                  <div class="d-flex justify-content-between">
+                    <p class="price">
+                      <i class="fas fa-tag px-1 tag" aria-hidden="true"></i>
+                      <span class="px-1">Php 2,280</span>
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-xl-3 col-lg-4 col-md-6 col-sm-6">
+              <div class="card">
+                <a href="./product-details.html">
+                  <img
+                    src="/assets/images/product-img.png"
+                    class="card-img-top"
+                    alt="..."
+                  />
+                  <div class="label-new">
+                    <span>new</span>
+                  </div>
+                </a>
+                <div class="card-body">
+                  <a href="./product-details.html">
+                    <h6 class="card-title">Original Blue Spring Hinge</h6>
+                  </a>
+                  <p class="card-text">Normal, UV Lens</p>
+                  <div class="d-flex justify-content-between">
+                    <p class="price">
+                      <i class="fas fa-tag px-1 tag" aria-hidden="true"></i>
+                      <span class="px-1">Php 2,280</span>
+                    </p>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
-          <!-- 2 -->
-          <div class="card">
-            <a href="./product-details.html">
-              <img
-                src="/assets/images/product-img.png"
-                class="card-img-top"
-                alt="..."
-              />
-              <div class="label-new">
-                <span>new</span>
-              </div>
-            </a>
-            <div class="card-body">
-              <a href="./product-details.html">
-                <h6 class="card-title">Original Blue Spring Hinge</h6>
-              </a>
-              <p class="card-text">Normal, UV Lens</p>
-              <div class="d-flex justify-content-between">
-                <p class="price">
-                  <i class="fas fa-tag px-1 tag" aria-hidden="true"></i>
-                  <span class="px-1">Php 2,280</span>
-                </p>
-                <!-- <div>
-                  <button title="Add to favorites">
-                    <i class="fas fa-heart px-2 heart" aria-hidden="true"></i>
-                  </button> 
-                </div> -->
-              </div>
-            </div>
-          </div>
-          <!-- 3 -->
-          <div class="card">
-            <a href="./product-details.html">
-              <img
-                src="/assets/images/product-img.png"
-                class="card-img-top"
-                alt="..."
-              />
-              <div class="label-new">
-                <span>new</span>
-              </div>
-            </a>
-            <div class="card-body">
-              <a href="./product-details.html">
-                <h6 class="card-title">Original Blue Spring Hinge</h6>
-              </a>
-              <p class="card-text">Normal, UV Lens</p>
-              <div class="d-flex justify-content-between">
-                <p class="price">
-                  <i class="fas fa-tag px-1 tag" aria-hidden="true"></i>
-                  <span class="px-1">Php 2,280</span>
-                </p>
-                <!-- <div>
-                  <button title="Add to favorites">
-                    <i class="fas fa-heart px-2 heart" aria-hidden="true"></i>
-                  </button> 
-                </div> -->
-              </div>
-            </div>
-          </div>
-          <!-- 4 -->
-          <div class="card">
-            <a href="./product-details.html">
-              <img
-                src="/assets/images/product-img.png"
-                class="card-img-top"
-                alt="..."
-              />
-              <div class="label-new">
-                <span>new</span>
-              </div>
-            </a>
-            <div class="card-body">
-              <a href="./product-details.html">
-                <h6 class="card-title">Original Blue Spring Hinge</h6>
-              </a>
-              <p class="card-text">Normal, UV Lens</p>
-              <div class="d-flex justify-content-between">
-                <p class="price">
-                  <i class="fas fa-tag px-1 tag" aria-hidden="true"></i>
-                  <span class="px-1">Php 2,280</span>
-                </p>
-                <!-- <div>
-                  <button title="Add to favorites">
-                    <i class="fas fa-heart px-2 heart" aria-hidden="true"></i>
-                  </button> 
-                </div> -->
-              </div>
-            </div>
-          </div>
-          <!-- 5 -->
-          <div class="card">
-            <a href="./product-details.html">
-              <img
-                src="/assets/images/product-img.png"
-                class="card-img-top"
-                alt="..."
-              />
-              <div class="label-new">
-                <span>new</span>
-              </div>
-            </a>
-            <div class="card-body">
-              <a href="./product-details.html">
-                <h6 class="card-title">Original Blue Spring Hinge</h6>
-              </a>
-              <p class="card-text">Normal, UV Lens</p>
-              <div class="d-flex justify-content-between">
-                <p class="price">
-                  <i class="fas fa-tag px-1 tag" aria-hidden="true"></i>
-                  <span class="px-1">Php 2,280</span>
-                </p>
-                <!-- <div>
-                  <button title="Add to favorites">
-                    <i class="fas fa-heart px-2 heart" aria-hidden="true"></i>
-                  </button> 
-                </div> -->
-              </div>
-            </div>
-          </div>
-          <!-- 6 -->
-          <div class="card">
-            <a href="./product-details.html">
-              <img
-                src="/assets/images/product-img.png"
-                class="card-img-top"
-                alt="..."
-              />
-              <div class="label-new">
-                <span>new</span>
-              </div>
-            </a>
-            <div class="card-body">
-              <a href="./product-details.html">
-                <h6 class="card-title">Original Blue Spring Hinge</h6>
-              </a>
-              <p class="card-text">Normal, UV Lens</p>
-              <div class="d-flex justify-content-between">
-                <p class="price">
-                  <i class="fas fa-tag px-1 tag" aria-hidden="true"></i>
-                  <span class="px-1">Php 2,280</span>
-                </p>
-                <!-- <div>
-                  <button title="Add to favorites">
-                    <i class="fas fa-heart px-2 heart" aria-hidden="true"></i>
-                  </button> 
-                </div> -->
-              </div>
-            </div>
-          </div>
-          <!-- 7 -->
-          <div class="card">
-            <a href="./product-details.html">
-              <img
-                src="/assets/images/product-img.png"
-                class="card-img-top"
-                alt="..."
-              />
-              <div class="label-new">
-                <span>new</span>
-              </div>
-            </a>
-            <div class="card-body">
-              <a href="./product-details.html">
-                <h6 class="card-title">Original Blue Spring Hinge</h6>
-              </a>
-              <p class="card-text">Normal, UV Lens</p>
-              <div class="d-flex justify-content-between">
-                <p class="price">
-                  <i class="fas fa-tag px-1 tag" aria-hidden="true"></i>
-                  <span class="px-1">Php 2,280</span>
-                </p>
-                <!-- <div>
-                  <button title="Add to favorites">
-                    <i class="fas fa-heart px-2 heart" aria-hidden="true"></i>
-                  </button> 
-                </div> -->
-              </div>
-            </div>
-          </div>
-          <!-- 8 -->
-          <div class="card">
-            <a href="./product-details.html">
-              <img
-                src="/assets/images/product-img.png"
-                class="card-img-top"
-                alt="..."
-              />
-              <div class="label-new">
-                <span>new</span>
-              </div>
-            </a>
-            <div class="card-body">
-              <a href="./product-details.html">
-                <h6 class="card-title">Original Blue Spring Hinge</h6>
-              </a>
-              <p class="card-text">Normal, UV Lens</p>
-              <div class="d-flex justify-content-between">
-                <p class="price">
-                  <i class="fas fa-tag px-1 tag" aria-hidden="true"></i>
-                  <span class="px-1">Php 2,280</span>
-                </p>
-                <!-- <div>
-                  <button title="Add to favorites">
-                    <i class="fas fa-heart px-2 heart" aria-hidden="true"></i>
-                  </button> 
-                </div> -->
-              </div>
-            </div>
-          </div>
-          <!-- 9 -->
-          <div class="card">
-            <a href="./product-details.html">
-              <img
-                src="/assets/images/product-img.png"
-                class="card-img-top"
-                alt="..."
-              />
-              <div class="label-new">
-                <span>new</span>
-              </div>
-            </a>
-            <div class="card-body">
-              <a href="./product-details.html">
-                <h6 class="card-title">Original Blue Spring Hinge</h6>
-              </a>
-              <p class="card-text">Normal, UV Lens</p>
-              <div class="d-flex justify-content-between">
-                <p class="price">
-                  <i class="fas fa-tag px-1 tag" aria-hidden="true"></i>
-                  <span class="px-1">Php 2,280</span>
-                </p>
-                <!-- <div>
-                  <button title="Add to favorites">
-                    <i class="fas fa-heart px-2 heart" aria-hidden="true"></i>
-                  </button> 
-                </div> -->
-              </div>
-            </div>
-          </div>
-          <!-- 10 -->
-          <div class="card">
-            <a href="./product-details.html">
-              <img
-                src="/assets/images/product-img.png"
-                class="card-img-top"
-                alt="..."
-              />
-              <div class="label-new">
-                <span>new</span>
-              </div>
-            </a>
-            <div class="card-body">
-              <a href="./product-details.html">
-                <h6 class="card-title">Original Blue Spring Hinge</h6>
-              </a>
-              <p class="card-text">Normal, UV Lens</p>
-              <div class="d-flex justify-content-between">
-                <p class="price">
-                  <i class="fas fa-tag px-1 tag" aria-hidden="true"></i>
-                  <span class="px-1">Php 2,280</span>
-                </p>
-                <!-- <div>
-                  <button title="Add to favorites">
-                    <i class="fas fa-heart px-2 heart" aria-hidden="true"></i>
-                  </button> 
-                </div> -->
-              </div>
-            </div>
-          </div>
-          <!-- 11 -->
-          <div class="card">
-            <a href="./product-details.html">
-              <img
-                src="/assets/images/product-img.png"
-                class="card-img-top"
-                alt="..."
-              />
-              <div class="label-new">
-                <span>new</span>
-              </div>
-            </a>
-            <div class="card-body">
-              <a href="./product-details.html">
-                <h6 class="card-title">Original Blue Spring Hinge</h6>
-              </a>
-              <p class="card-text">Normal, UV Lens</p>
-              <div class="d-flex justify-content-between">
-                <p class="price">
-                  <i class="fas fa-tag px-1 tag" aria-hidden="true"></i>
-                  <span class="px-1">Php 2,280</span>
-                </p>
-                <!-- <div>
-                  <button title="Add to favorites">
-                    <i class="fas fa-heart px-2 heart" aria-hidden="true"></i>
-                  </button> 
-                </div> -->
-              </div>
-            </div>
-          </div>
-          <!-- 12 -->
-          <div class="card">
-            <a href="./product-details.html">
-              <img
-                src="/assets/images/product-img.png"
-                class="card-img-top"
-                alt="..."
-              />
-              <div class="label-new">
-                <span>new</span>
-              </div>
-            </a>
-            <div class="card-body">
-              <a href="./product-details.html">
-                <h6 class="card-title">Original Blue Spring Hinge</h6>
-              </a>
-              <p class="card-text">Normal, UV Lens</p>
-              <div class="d-flex justify-content-between">
-                <p class="price">
-                  <i class="fas fa-tag px-1 tag" aria-hidden="true"></i>
-                  <span class="px-1">Php 2,280</span>
-                </p>
-                <!-- <div>
-                  <button title="Add to favorites">
-                    <i class="fas fa-heart px-2 heart" aria-hidden="true"></i>
-                  </button> 
-                </div> -->
-              </div>
-            </div>
-          </div>
+          
         </div>
         <br />
         <!-- pagination -->
@@ -511,71 +564,84 @@
       </div>
     </form>
 
-    <!-- footer -->
-    <div class="container-fluid pt-5 pb-2" style="background-color: #f3f3f3">
-      <footer class="container">
-        <div class="row g-3">
-          <div class="col-6">
-            <h5>LEAVE US YOUR MESSAGE</h5>
-            <br />
-            <input
-              type="text"
-              class="form-control form-control"
-              placeholder="Name"
-              id="footerName"
-            /><br />
-            <input
-              type="email"
-              class="form-control form-control"
-              placeholder="Email Address"
-              id="footerEmail"
-            /><br />
-            <textarea
-              class="form-control"
-              placeholder="Message"
-              id="footerMessage"
-              rows="5"
-            ></textarea
-            ><br />
-            <div style="text-align: center">
-              <button type="button" class="btn" style="width: 100%">
-                SUBMIT
-              </button>
+    <section class="footer-body">
+      <div class="container-fluid py-5">
+        <div class="container">
+          <footer>
+            <div class="row g-3">
+              <div class="col-lg-4 col-md-12 col-sm-12">
+                <h4>LEAVE US YOUR MESSAGE</h4>
+                <br />
+                <input
+                  type="text"
+                  class="form-control form-control"
+                  placeholder="Name"
+                  id="footerName"
+                /><br />
+                <input
+                  type="email"
+                  class="form-control form-control"
+                  placeholder="Email Address"
+                  id="footerEmail"
+                /><br />
+                <textarea
+                  class="form-control"
+                  placeholder="Message"
+                  id="footerMessage"
+                  rows="8"
+                ></textarea
+                ><br />
+                <div>
+                  <button type="button" class="btn btn-blue w-100">
+                    SUBMIT
+                  </button>
+                </div>
+              </div>
+              <div class="col-lg-2 col-md-4 col-sm-12">
+                <h4>HELP</h4>
+                <p><a class="footer-link" href="#">FAQs</a></p>
+                <p><a class="footer-link" href="#">About Us</a></p>
+              </div>
+              <div class="col-lg-3 col-md-4 col-sm-12">
+                <h4>COMPANY</h4>
+                <p><a class="footer-link" href="#">Terms and Conditions</a></p>
+                <p><a class="footer-link" href="#">Products</a></p>
+                <p><a class="footer-link" href="#">Services</a></p>
+              </div>
+              <div class="col-lg-3 col-md-4 col-sm-12">
+                <h4>CONTACT</h4>
+                <p>Email: opticeye@gmail.com</p>
+                <p>Phone: +639123456789</p>
+                <br>
+                <div class="d-flex contact-icons">
+                  <i class="fab fa-facebook" aria-hidden="true"></i>
+                  <i class="fab fa-instagram" aria-hidden="true"></i>
+                  <i class="fab fa-youtube" aria-hidden="true"></i>
+                </div>
+              </div>
             </div>
-          </div>
-          <div class="col-2">
-            <h5>HELP</h5>
-          </div>
-          <div class="col-2">
-            <h5>COMPANY</h5>
-          </div>
-          <div class="col-2">
-            <h5>CONTACT</h5>
-          </div>
+            <div class="text-center pt-5 mt-2 mb-1">
+              Copyright © 2022 FRFR Technologies.<br />
+              All Rights Reserved.
+            </div>
+          </footer>
         </div>
-        <p style="text-align: center; font-weight: normal; padding-top: 5%">
-          Copyright © 2022 FRFR Technologies.<br />
-          All Rights Reserved.
-        </p>
-      </footer>
-    </div>
-
+      </div>
+    </section>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js"></script>
+    
     <script>
       var filterButton = document.getElementById("filter-by-button");
       var categoryFilters = document.getElementById("category-filters");
-
       filterButton.addEventListener("click", function () {
         if (categoryFilters.style.display === "none") {
           categoryFilters.style.display = "grid";
+
         } else {
           categoryFilters.style.display = "none";
         }
       });
     </script>
-    <script
-      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
-      integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
-      crossorigin="anonymous"
-    ></script>
+
   </body>
 </html>
