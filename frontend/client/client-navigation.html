@@ -3,21 +3,21 @@
   <head>
     <meta charset="UTF-8" />
     <link href="\assets\css\bootstrap.min.css" rel="stylesheet" />
+    <link href="\assets\css\common.css" rel="stylesheet" />
+    <link href="\assets\css\user-products.css" rel="stylesheet" />
+    <link href="\assets\css\client.css" rel="stylesheet" />
     <link
       rel="stylesheet"
       href="https://use.fontawesome.com/releases/v5.5.0/css/all.css"
     />
-    <link href="\assets\css\common.css" rel="stylesheet" />
-    <link href="\assets\css\client.css" rel="stylesheet" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Client | Navigation</title>
+    <title>New Vision</title>
   </head>
   <body>
-    <nav class="navbar container-fluid sticky-top navbar-expand-lg navbar-light bg-light">
+    <nav
+      class="navbar container-fluid sticky-top navbar-expand-lg navbar-light bg-light navbar-custom"
+    >
       <div class="container">
-        <div class="navbar-brand pr-2">
-          <img src="\assets\images\logo.png" alt="" width="50px" />
-        </div>
         <button
           class="navbar-toggler"
           type="button"
@@ -30,68 +30,77 @@
           <span class="navbar-toggler-icon"></span>
           <!-- <i class="fas fa-bars"></i> -->
         </button>
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-          <div class="navbar-brand">New Vision</div>
-          <div class="justify-content-center">
-            <ul class="navbar-nav mb-2 mb-lg-0">
-              <!-- Active
-                      <li class="nav-item">
-                          <a class="nav-link active" aria-current="page" href="#">Home</a>
-                      </li>
-                      -->
-              <li class="nav-item px-4">
-                <a class="nav-link navbar-link" href="\assets\css\home.css"
-                  >HOME</a
-                >
-              </li>
-              <li class="nav-item px-4">
-                <a
-                  class="nav-link"
-                  href="\frontend\client\products\all-products.html"
-                  >PRODUCTS</a
-                >
-              </li>
-              <li class="nav-item px-4">
-                <a class="nav-link" href="\frontend\client\appointment.html"
-                  >SET APPOINTMENT</a
-                >
-              </li>
-              <li class="nav-item px-4">
-                <a class="nav-link" href="frontend\client\faqs.html">FAQs</a>
-              </li>
-            </ul>
-          </div>
-          <ul class="navbar-nav d-flex flex-row ms-auto me-3 px-4">
-            <li class="nav-item me-3 me-lg-0">
-              <a class="nav-link py-3" href="#"
-                ><i class="fas fa-cart-arrow-down"></i
-              ></a>
+        <div class="navbar-brand me-auto">
+          <img
+            src="\assets\images\logo.png"
+            alt="Brand Logo"
+            class="mx-2"
+            width="50px"
+          />
+          <span class="d-sm-none d-md-inline d-none d-sm-inline"
+            >New Vision</span
+          >
+        </div>
+        <div class="collapse navbar-collapse navs" id="navbarSupportedContent">
+          <!-- <div class="navbar-brand">New Vision</div> -->
+          <ul class="navbar-nav mx-4">
+            <li class="nav-item px-4 ms-lg-5 ms-md-0 ms-sm-0">
+              <a class="nav-link navbar-link" href="\assets\css\home.css"
+                >HOME</a
+              >
             </li>
-            <li class="nav-item me-3 me-lg-0 dropdown">
+            <li class="nav-item px-4">
               <a
-                class="nav-link dropdown-toggle"
-                href="#"
-                id="navbarDropdown"
-                role="button"
-                data-bs-toggle="dropdown"
-                aria-expanded="false"
+                class="nav-link"
+                href="\frontend\client\products\all-products.html"
+                >PRODUCTS</a
               >
-                <img
-                  src="\assets\images\avatar.png"
-                  alt=""
-                  width="30px"
-                  class="d-inline-block"
-                />
-              </a>
-              <ul
-                class="dropdown-menu dropdown-menu-end"
-                aria-labelledby="navbarDropdown"
+            </li>
+            <li class="nav-item px-4">
+              <a class="nav-link" href="\frontend\client\appointment.html"
+                >SET APPOINTMENT</a
               >
-                <li><a class="dropdown-item" href="#">Profile</a></li>
-                <li><a class="dropdown-item" href="#">Settings</a></li>
-                <li><a class="dropdown-item" href="#">History</a></li>
-                <li><a class="dropdown-item" href="#">Sign Out</a></li>
-              </ul>
+            </li>
+            <li class="nav-item px-4">
+              <a class="nav-link" href="frontend\client\faqs.html">FAQs</a>
+            </li>
+          </ul>
+        </div>
+
+        <div class="btn-group account-dropdown">
+          <div class="cart-customer">
+            <a class="nav-link text-dark" href="#"
+              ><i class="fas fa-cart-arrow-down"></i>
+              <span class="badge bg-primary rounded-pill">14</span>
+            </a>
+          </div>
+
+          <button
+            type="button"
+            class="btn dropdown-toggle"
+            data-bs-toggle="dropdown"
+            data-bs-display="static"
+            aria-expanded="false"
+          >
+            <img
+              src="\assets\images\avatar.png"
+              alt=""
+              width="30px"
+              class="d-inline-block"
+            />
+          </button>
+          <ul class="dropdown-menu dropdown-menu-end dropdown-menu-lg-end">
+            <li>
+              <a class="dropdown-item" style="z-index: 10" href="#">Profile</a>
+            </li>
+            <li>
+              <a class="dropdown-item" style="z-index: 10" href="#">Settings</a>
+            </li>
+            <li>
+              <a class="dropdown-item" style="z-index: 10" href="#">History</a>
+            </li>
+            <li>
+              <a class="dropdown-item" style="z-index: 10" href="#">Sign Out</a>
             </li>
           </ul>
         </div>
@@ -102,5 +111,6 @@
       integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
       crossorigin="anonymous"
     ></script>
+    <script src="/scripts/jquery.min.js"></script>
   </body>
 </html>

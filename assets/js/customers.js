@@ -20,3 +20,4 @@ update.addEventListener("click", function(){
     document.getElementById('save-update-button').style.display = "block";
     document.getElementById('cancel-update-button').style.display = "block";
 });
+

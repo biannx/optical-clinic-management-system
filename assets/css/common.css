@@ -3,7 +3,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Open Sans:wght@200;300;400;500;600;700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@200;300;400;500;600;700&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Helvetica:wght@200;300;400;500;600;700&display=swap');
+
 :root{
   --blue: #50ABF1;
   --lightgreen: #52B788;
@@ -50,7 +50,7 @@ html,body{
 }
 
 .helvetica {
-  font-family: "Helvetica";
+  font-family: "Poppins";
 }
 
 .poppins {

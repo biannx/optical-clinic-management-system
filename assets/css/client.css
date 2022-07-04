@@ -1,15 +1,83 @@
-.bg-light{
-  background: white !important;
+.navbar-custom {
+  padding: 0.8rem 0;
   box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.25);
 }
 
+/* change the brand and text color */
+.navbar-custom .navbar-brand,
+.navbar-custom .navbar-text {
+  color: #333;
+  font-size: 1.5rem;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+}
+
+.navbar-custom img{
+  width:55px !important;
+}
+
+/* change the link color */
+.navbar-custom .navbar-nav .nav-link {
+  color: #333;
+  font-size: 1.1rem;
+  padding: 0;
+  font-weight: 600;
+}
+.navbar-custom .navbar-nav .nav-link:first-child{
+  margin-left:2rem;
+}
+/* change the color of active or hovered links */
+.navbar-custom .nav-item.active .nav-link,
+.navbar-custom .nav-item:focus .nav-link,
+.navbar-custom .nav-item:hover .nav-link {
+  color:  #50ABF1;
+}
+
+.navbar-custom .dropdown-menu{
+  border: 1px solid rgba(0,0,0,.15);
+  min-width: 11rem;
+  /* margin: 45% -35%; */
+}
+@media (min-width: 1900px) {
+  .account-dropdown{
+    position: fixed;
+    top: 0;
+    right: 13.5%;
+  }
+}
+@media (min-width: 1400px) {
+  .navbar-custom .navbar-nav .nav-link:first-child{
+    margin-left:5rem;
+  }
+}
+@media (max-width: 1400px) {
+  .account-dropdown{
+    right: 7% !important;
+  }
+}
+@media (max-width: 1200px) {
+  .navbar-custom .navbar-nav .nav-link:first-child{
+    margin-left:0.5rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .account-dropdown{
+    right: 4% !important ;
+  }
+}
+@media (max-width: 520px) {
+  .account-dropdown{
+    right: 2% !important ;
+  }
+}
 .footer-link {
   text-decoration: none;
   color: var(--black);
 }
 .footer-body{
     font-size: 1rem;
-    background: #e0e0e0; 
+    background: lightgrey; 
 }
 .small {
   font-size: 12px;
@@ -70,6 +138,66 @@ body{
   margin-right: 1rem;
 }
 .contact-icons i:hover{
- background: black;
+ background: var(--blue);
  cursor: pointer;
+}
+
+.account-dropdown{
+  position: fixed;
+  top: 0;
+  right: 7.8% ;
+  padding-top: 0.3rem;
+}
+.fa-cart-arrow-down{
+  font-size: 1.3rem;
+  padding-top: 0.3rem;
+}
+.account-dropdown span.sign-in-text{
+  font-weight: 600;
+  border: 1px solid grey;
+  padding:0.5rem 1.3rem;
+  border-radius: 0.3rem;
+}
+.account-dropdown a.sign-in-div{
+  margin-top: 0.6rem;
+}
+.account-dropdown span.sign-in-text:hover{
+  font-weight: 600;
+  background: #50ABF1;
+  color: white;
+  border: 1px solid lightblue;
+}
+.account-dropdown .cart, .account-dropdown .cart-customer{
+  position:relative;
+  opacity:0.75;
+  margin: 0 0.8rem;
+}
+.account-dropdown .cart{
+  margin: 0 1.1rem;
+}
+.account-dropdown .cart:hover, .account-dropdown .cart-customer:hover{
+  opacity:1;
+}
+.account-dropdown .cart a{
+  position: absolute;
+  top: 5%;
+  right: 135%;
+  margin: 0 0.5rem;
+}
+.account-dropdown .cart i.fas{
+  margin: 0.25rem 0.5rem;
+}
+.account-dropdown .cart-customer i.fas{
+  margin: 0.5rem 0 0.5rem 0.5rem;
+}
+.account-dropdown .cart-customer span{
+  position: absolute;
+  top: 25%;
+  right: -21%;
+}
+.account-dropdown .cart span{
+  position: absolute;
+  top: 25%;
+  right: -7%;
+
 }

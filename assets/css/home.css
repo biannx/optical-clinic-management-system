@@ -1,7 +1,7 @@
 header {
   min-height: 100vh;
-  background: linear-gradient(rgba(14, 1, 1, 0.075), rgba(3, 0, 0, 0)),
-    url(/assets/images/test.jpg) center/cover no-repeat fixed;
+  background: linear-gradient(rgba(5, 5, 5, 0.075), rgba(2, 2, 2, 0)),
+    url(/assets/images/banner.png) center/cover no-repeat fixed;
   display: flex;
   /* flex-direction: column; */
   justify-content: stretch;
@@ -12,6 +12,7 @@ header {
 html,
 body {
   font-family: "Inter", sans-serif;
+  background: #f4f4f4 !important;
 }
 
 .banner {
@@ -24,30 +25,37 @@ body {
   display: grid;
   place-items: baseline;
   justify-content: baseline;
-  color: whitesmoke;
+  color: #333;
 }
 .banner .container .tagline {
   font-family: "Poppins", sans-serif;
-  color: whitesmoke;
   text-transform: uppercase;
   letter-spacing: 1px;
-  margin-top: 10rem;
+  margin-top: 6rem;
 }
 .banner .container .tagline h1 {
   font-size: 4.5rem;
   font-weight: 600;
-  color: whitesmoke;
 }
 .banner .container .tagline h2 {
   font-size: 3.5rem;
   font-weight: 500;
 }
 .banner .container p.lead {
-  color: whitesmoke;
   max-width: 450px;
   font-weight: 400;
   
 }
+.banner .container .price-start-text{
+  font-weight: 500;
+  font-size: 1.3rem;
+}
+.banner .container .price-start {
+  font-weight: 700;
+  letter-spacing: 2px;
+  font-size: 2.3rem;
+}
+
 .banner .container .shop-now-div {
   margin-bottom: 8rem;
 }
@@ -62,6 +70,8 @@ body {
   letter-spacing: 2px;
   padding: 0.8rem 3.5rem;
   border-radius: 0.5rem;
+  box-shadow: 0px 8px 15px 0px rgba(0, 0, 0, 0.25);
+
 }
 .banner .container a.btn-default:hover,
 .services-wrapper .second a.btn:hover,
@@ -79,18 +89,26 @@ body {
   }
   .banner .container p.lead,
   .about-us-wrapper .row .about-us p {
-    color: var(--black);
-    font-size: 1.8rem;
+    font-size: 1.6rem;
     max-width: 550px;
+  }
+  .banner .container .price-start-text {
+    font-size: 1.6rem;
+  }
+  .banner .container .price-start {
+    font-size: 2.5rem;
   }
 }
 @media (max-width: 1150px) {
   .banner,
   .banner .container .tagline,
-  .banner .container p.lead {
+  .banner .container p.lead,
+  .banner .container .banner-price{
     text-align: center;
     margin: auto;
-    /* align-items: center; */
+  }
+  .banner .container .banner-price{
+    padding-top:2rem ;
   }
   .banner .container .tagline {
     margin-top: 12rem;
@@ -104,7 +122,7 @@ body {
     padding-top: 5rem;
   }
   .about-us-wrapper .row .about-us {
-    padding-left: 0;
+    padding-left: 1.5rem !important;
     padding-right: 0;
   }
 }
@@ -122,7 +140,7 @@ body {
   }
 }
 .featured-item {
-  background-color: #eaeae7;
+  /* background: #e0e0e0;  */
   padding-top: 3.5rem;
   padding-bottom: 3.5rem;
 }
@@ -144,15 +162,15 @@ body {
 
 /* services */
 .services-wrapper {
-  background-color: #eaeae7;
-  padding-top: 3.8rem;
-  padding-bottom: 3.5rem;
+  /* background: #e0e0e0;  */
+  padding-top: 3.2rem;
+  padding-bottom: 3.8rem;
   font-size: 1.1rem;
 }
 .services-wrapper h1,
 .about-us-wrapper h1,
 .featured-item h1 {
-  color: var(--blue);
+  color: #005688;
   padding: 0.2rem 0 1.3rem 0;
   text-transform: uppercase;
   font-weight: 600;
@@ -216,9 +234,9 @@ body {
 }
 
 .about-us-wrapper {
-  padding-top: 3.5rem;
-  padding-bottom: 2rem;
-  /* background: #fdfdfd; */
+  padding-top: 5rem;
+  padding-bottom: 3.3rem;
+  background: #fdfdfd;
 }
 .about-us-wrapper h2 {
   text-transform: uppercase;
