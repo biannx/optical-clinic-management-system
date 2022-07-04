@@ -18,6 +18,8 @@
   --lightgray: #cacaca;
   --labelNew: #98DAD6;
   --cream: #F3F3F3;
+  --yellow: #FFC107;
+  --gray: #6C757D;
 }
 
 *{
@@ -158,11 +160,24 @@ td.dt-center {
   background: var(--blue);
   opacity: 0.8;
 }
+.pendingStatus-data{
+  background: var(--yellow);
+  opacity: 0.8;
+}
 .update-data {
   background: var(--lightgreen);
   opacity: 0.8;
 }
+.cancel-status {
+  background: var(--gray);
+  opacity: 0.8;
+}
 .archive-data {
+  background: var(--cancel);
+  opacity: 0.9;
+}
+
+.cancelled-data {
   background: var(--cancel);
   opacity: 0.9;
 }
@@ -173,6 +188,8 @@ td.dt-center {
 
 .view-data:hover,
 .update-data:hover,
+.cancel-status:hover,
+.cancelled-data,
 .archive-data:hover {
   opacity: 1;
 }
@@ -315,4 +332,8 @@ h4 {
 
 .center_align{
   text-align: center;
+}
+
+.order-details{
+  font-size: medium;
 }

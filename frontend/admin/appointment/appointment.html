@@ -114,419 +114,6 @@
                   title="View Archive List"
                   >Archives</a
                 >
-    
-                <!-- Create New Button trigger modal -->
-                <button
-                  type="button"
-                  class="btn addBtn text-white fw-bold px-3 mx-3"
-                  id="create-new-button"
-                  data-bs-toggle="modal"
-                  data-bs-target="#new_appointment"
-                  title="Create New Appointment"
-                >
-                  <i class="fa fa-plus" aria-hidden="true"></i>
-                  New Appointment
-                </button>
-              </div>
-    
-              <!-- Create Modal -->
-              <div
-              class="modal fade"
-              id="new_appointment"
-              data-bs-backdrop="static"
-              data-bs-keyboard="false"
-              tabindex="-1"
-              aria-labelledby="newAppointmentLabel"
-              aria-modal="true"
-              aria-hidden="true"
-              >
-                <div
-                  class="modal-dialog modal-lg modal-dialog-centered modal-dialog-scrollable"
-                >
-                  <div class="modal-content">
-                     <!-- Header -->
-                    <div class="modal-header">
-                      <h5 class="modal-title fw-bold text-uppercase px-2">
-                        New Appointment
-                      </h5>
-                      <button
-                        type="button"
-                        class="btn-close btn-close-white px-4"
-                        data-bs-dismiss="modal"
-                        aria-label="Close"
-                      ></button>
-                    </div>
-    
-                    <!-- Body -->
-                    <div class="modal-body">
-                      <form action="">
-                        <div class="container-fluid">
-                          <h5><b>Appointment Information</b></h2>
-                          
-                          <div class="row pt-2">
-                            <!-- Appt ID auto input -->
-                            <div class="col-lg-6 py-2">
-                              <label class="form-label" for="idAppointment">
-                                Appointment ID:
-                              </label>
-                              <input
-                                type="text"
-                                name="appointmentID"
-                                minlength="11"
-                                maxlength="11"
-                                class="form-control"
-                                aria-label="Appointment ID"
-                                placeholder="Appointment ID"
-                                required
-                                readonly
-                              />
-                            </div>
-    
-                            <!-- Date Added auto input -->
-                            <div class="col-lg-6 py-2">
-                              <label class="form-label" for="dateAppointment"
-                                >Date Added:
-                              </label>
-                              <input
-                                type="date"
-                                name="date"
-                                minlength="11"
-                                maxlength="11"
-                                class="form-control"
-                                aria-label="Date Added"
-                                placeholder="Date Added"
-                                required
-                                readonly
-                              />
-                            </div>
-                          </div>
-
-                          <!-- Reason for Visit -->
-                          <label
-                              class="form-label pt-2 asterisk"
-                              for="reasonAppointment"
-                            >Reason for Visit:
-                          </label>
-                          <input
-                            type="text"
-                            name="reasonVisit"
-                            class="form-control"
-                            value="Lorem Ipsum lorem ipsum"
-                            required
-                          />
-    
-                          <h5><b>Personal Information</b></h2>
-                          <!-- Name -->
-                          <div class="row mb-2 py-1">
-                            <div class="col-lg-3 col-md-6 py-2">
-                              <label
-                                class="form-label asterisk"
-                                for="fnameAppointment"
-                                >First Name:
-                              </label>
-    
-                              <input
-                                type="text"
-                                name="fname"
-                                class="form-control"
-                                id="fnameAppointment"
-                                placeholder="First Name"
-                                required
-                              />
-                            </div>
-                          
-                            <!-- Middle Name -->
-                            <div class="col-lg-3 col-md-6 py-2">
-                              <label
-                                class="form-label"
-                                for="midNameAppointment"
-                                >Middle Name:
-                              </label>
-    
-                              <input
-                                type="text"
-                                name="mname"
-                                class="form-control"
-                                id="midNameAppointment"
-                                placeholder="Middle Name"
-                              />
-                            </div> 
-                            
-                            <!-- Last Name -->
-                            <div class="col-lg-3 col-md-6 py-2">
-                              <label
-                                class="form-label asterisk"
-                                for="surnameAppointment"
-                                >Last Name:
-                              </label>
-    
-                              <input
-                                type="text"
-                                name="lname"
-                                class="form-control"
-                                id="surnameAppointment"
-                                placeholder="Last Name"
-                                required
-                              />
-                            </div>
-    
-                            <!-- Suffix -->
-                            <div class="col-lg-3 col-md-6 py-2">
-                              <label
-                                class="form-label"
-                                for="suffixAppointment"
-                                >Suffix:
-                              </label>
-    
-                              <input
-                                type="text"
-                                name="suffix"
-                                class="form-control"
-                                id="suffixAppointment"
-                                placeholder="Suffix"
-                              />
-                            </div>
-                          </div>
-    
-                          <!-- Birthday -->
-                          <div class="row">
-                            <div class="col-lg-6 py-2">
-                              <label class="form-label asterisk" for="bdayAppointment"
-                                >Birthday:
-                              </label>
-                              <input
-                                type="date"
-                                name="bday"
-                                class="form-control"
-                                id="bdayAppointment"
-                                placeholder="Birthday"
-                                required
-                              />
-                            </div>
-                          
-                            <!-- Gender -->
-                            <div class="col-lg-6 col-md-6 py-2">
-                              <label
-                                class="form-label asterisk"
-                                for="genderAppointment"
-                                >Sex:
-                              </label>
-    
-                              <div class="row">
-                                <div class="col-lg-6 col-md-12 pt-1">
-                                  <div class="form-check-inline">
-                                    <input
-                                      class="form-check-input"
-                                      type="radio"
-                                      name="gender"
-                                      value="Male"
-                                      id="male"
-                                      required
-                                    />
-                                    <label class="form-check-label" for="gender">
-                                      Male
-                                    </label>
-                                    <div></div>
-                                  </div>
-    
-                                  <div class="form-check-inline mb-3">
-                                    <input
-                                      class="form-check-input"
-                                      type="radio"
-                                      name="gender"
-                                      value="Female"
-                                      id="female"
-                                      required
-                                    />
-                                    <label class="form-check-label" for="gender">
-                                      Female
-                                    </label>
-                                  </div>
-                                </div>
-                              </div>
-                            </div>
-                        </div>
-    
-                        <!-- Address -->
-                        <label
-                        class="form-label pt-2 asterisk"
-                        for="addressAppointment"
-                        >Address:
-                        </label>
-                        <input
-                          type="text"
-                          name="address"
-                          class="form-control"
-                          id="addressAppointment"
-                          placeholder="Address"
-                          required
-                        />
-    
-                        <!-- Email Address -->
-                        <div class="row pt-2">
-                          <div class="col-lg-6 py-2">
-                            <label
-                              class="form-label asterisk"
-                              for="emailAppointment"
-                              >Email Address:
-                            </label>
-                            <input
-                              type="email"
-                              name="email"
-                              class="form-control"
-                              id="emailAppointment"
-                              placeholder="Email Address"
-                              required
-                            />
-                          </div>
-
-                          <!-- Contact Number -->
-                          <div class="col-lg-6 py-2 asterisk">
-                            <label
-                              class="form-label asterisk"
-                              for="contactAppointment"
-                              >Contact No:
-                            </label>
-                            <input
-                              type="tel"
-                              name="contactnum"
-                              id="contactAppointment"
-                              minlength="11"
-                              maxlength="11"
-                              class="form-control"
-                              aria-label="Contact Number"
-                              oninput="this.value = this.value.replace(/[^0-9.]/g, '')"
-                              placeholder="Contact Number"
-                              title="Numbers only"
-                              required
-                            />
-                          </div>
-                        </div>
-    
-                        <!-- Date Last Eye Exam -->
-                        <div class="row">
-                          <div class="col-lg-6 py-2">
-                            <label class="form-label" for="lastEyeAppointment"
-                              >Date of Last Eye Exam
-                            </label>
-                            <input
-                              type="date"
-                              name="bday"
-                              class="form-control"
-                              id="lastEyeAppointment"
-                              placeholder="Last Eye Exam"
-                            />
-                          </div>
-    
-                          <!-- Last Eye Grade -->
-                          <div class="col-lg-6 py-2">
-                            <label
-                              class="form-label"
-                              for="lastGradeAppointment"
-                              >Last Eye Grade
-                            </label>
-    
-                            <input
-                              type="number"
-                              name="lastgrade"
-                              class="form-control"
-                              id="lastGradeAppointment"
-                              placeholder="Last eye grade"
-                            />
-                          </div>
-                        </div>
-
-                        <!-- Date of Last Eye Exam -->
-                        <div class="row">
-                          <div class="col-lg-6 py-2">
-                            <label class="form-label asterisk" for="lastExamAppointment"
-                                >Date of Last Eye Exam:
-                            </label>
-                            <input
-                                type="date"
-                                name="bday"
-                                class="form-control"
-                                id="lastExamAppointment"
-                            />
-                          </div>
-
-                          <!-- Last Eye Grade -->
-                          <div class="col-lg-6 py-2 asterisk">
-                            <label
-                                class="form-label asterisk"
-                                for="lastGradeAppointment"
-                                >Last Eye Grade:
-                            </label>
-                            <input
-                                type="number"
-                                name="lastGrade"
-                                id="lastGradeAppointment"
-                                class="form-control"
-                                aria-label="Last Eye Grade"
-                                title="Numbers only"
-                                placeholder="Last eye grade"
-                            />
-                          </div>
-                        </div>
-
-                        <!-- First visit? -->
-                        <div class="col-lg-6 col-md-6 py-2">
-                          <label
-                              class="form-label asterisk"
-                              for="fvisitAppointment"
-                              >Is this your first visit on our clinic?:
-                          </label>
-                          <div class="row">
-                              <div class="col-lg-6 col-md-12 pt-1">
-                                <div class="form-check-inline">
-                                    <input
-                                    class="form-check-input"
-                                    type="radio"
-                                    name="fvisit"
-                                    value="yes"
-                                    id="yes"
-                                    required
-                                    readonly
-                                    />
-                                    <label class="form-check-label" for="fvisit">
-                                      Yes
-                                    </label>
-                                </div>
-                                <div class="form-check-inline mb-3">
-                                    <input
-                                    class="form-check-input"
-                                    type="radio"
-                                    name="fvisit"
-                                    value="no"
-                                    id="no"
-                                    required
-                                    />
-                                    <label class="form-check-label" for="fvisit">
-                                      No
-                                    </label>
-                                </div>
-                              </div>
-                            </div>
-                        
-                        </div>
-                      </form>
-                    </div>
-    
-                    <!-- Buttons -->
-                    <div class="modal-footer mx-3">
-                      <button type="button" class="btn btn-default px-3 mx-2">
-                        Save
-                      </button>
-                      <button
-                        type="button"
-                        class="btn btn-secondary py-2 px-3"
-                        data-bs-dismiss="modal"
-                      >
-                        Discard
-                      </button>
-                    </div>
-                  </div>
-                </div>
               </div>
             </div>
           </div>  
@@ -567,6 +154,7 @@
                       <th scope="col">ID</th>
                       <th scope="col">Name</th>
                       <th scope="col">Email</th>
+                      <th scope="col">Status</th>
                       <th scope="col">Action</th>
                     </tr>
                   </thead>
@@ -590,6 +178,173 @@
                         />Juan dela Cruz
                       </td>
                       <td class="center_align">testemail@email.com</td>
+                      <td class="action">
+                        <div class="action-buttons">
+                          <ul>
+                            <button 
+                              type="button" 
+                              id="status" 
+                              class="btn pendingStatus-data data button_width" 
+                              data-bs-toggle="modal" 
+                              data-bs-target="#pendingStatusAppointment"
+                              >
+                              Pending
+                            </button>
+                          </ul>
+                        </div>
+                      </td>
+                      <td class="action">
+                        <div class="action-buttons">
+                          <ul>
+                            <li>
+                              <button
+                                type="button"
+                                id="view"
+                                class="btn view-data data button_width"
+                                data-bs-toggle="modal"
+                                data-bs-target="#viewAppointment"
+                                title="View Details"
+                              >
+                                View
+                              </button>
+                            </li>
+                            <li>
+                              <button
+                                type="button"
+                                id="edit"
+                                class="btn update-data data button_width"
+                                data-bs-toggle="modal"
+                                data-bs-target="#updateAppointment"
+                                title="Update Details"
+                              >
+                                Update
+                              </button>
+                            </li>
+                            <li></li>
+                            <li>
+                              <button
+                                type="button"
+                                class="btn archive-data data button_width"
+                                title="Archive Data"
+                                aria-hidden="true"
+                              >
+                                Archive
+                              </button>
+                            </li>
+                          </ul>
+                        </div>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <div class="form-check">
+                          <input
+                            class="form-check-input check-list"
+                            type="checkbox"
+                            value=""
+                            id="check-one-customer"
+                          />
+                        </div>
+                      </td>
+                      <td class="center_align">Appointment-1</td>
+                      <td class="center_align">
+                        <img
+                          src="../../../assets/images/avatar.png"
+                          class="img-table-list mx-2"
+                        />Juan dela Cruz
+                      </td>
+                      <td class="center_align">testemail@email.com</td>
+                      <td class="action">
+                        <div class="action-buttons">
+                          <ul>
+                            <button 
+                              type="button" 
+                              id="status" 
+                              class="btn update-data data button_width" 
+                              data-bs-toggle="modal" 
+                              data-bs-target="#confirmStatusAppointment"
+                              >
+                              Confirmed
+                            </button>
+                          </ul>
+                        </div>
+                      </td>
+                      <td class="action">
+                        <div class="action-buttons">
+                          <ul>
+                            <li>
+                              <button
+                                type="button"
+                                id="view"
+                                class="btn view-data data button_width"
+                                data-bs-toggle="modal"
+                                data-bs-target="#viewAppointment"
+                                title="View Details"
+                              >
+                                View
+                              </button>
+                            </li>
+                            <li>
+                              <button
+                                type="button"
+                                id="edit"
+                                class="btn update-data data button_width"
+                                data-bs-toggle="modal"
+                                data-bs-target="#updateAppointment"
+                                title="Update Details"
+                              >
+                                Update
+                              </button>
+                            </li>
+                            <li></li>
+                            <li>
+                              <button
+                                type="button"
+                                class="btn archive-data data button_width"
+                                title="Archive Data"
+                                aria-hidden="true"
+                              >
+                                Archive
+                              </button>
+                            </li>
+                          </ul>
+                        </div>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <div class="form-check">
+                          <input
+                            class="form-check-input check-list"
+                            type="checkbox"
+                            value=""
+                            id="check-one-customer"
+                          />
+                        </div>
+                      </td>
+                      <td class="center_align">Appointment-1</td>
+                      <td class="center_align">
+                        <img
+                          src="../../../assets/images/avatar.png"
+                          class="img-table-list mx-2"
+                        />Juan dela Cruz
+                      </td>
+                      <td class="center_align">testemail@email.com</td>
+                      <td class="action">
+                        <div class="action-buttons">
+                          <ul>
+                            <button 
+                              type="button" 
+                              id="status" 
+                              class="btn archive-data data button_width" 
+                              data-bs-toggle="modal" 
+                              data-bs-target="#cancelStatusAppointment"
+                              >
+                              Cancelled
+                            </button>
+                          </ul>
+                        </div>
+                      </td>
                       <td class="action">
                         <div class="action-buttons">
                           <ul>
@@ -650,6 +405,288 @@
           </div>
         </div> 
 
+        <!-- Status Pending Appt Modal -->
+        <div
+          class="modal fade"
+          id="pendingStatusAppointment"
+          data-bs-backdrop="static"
+          data-bs-keyboard="false"
+          tabindex="-1"
+          aria-labelledby="pendingStatusAppointmentLabel"
+          aria-modal="true"
+          aria-hidden="true"
+          >
+          <div class="modal-dialog modal-lg modal-dialog-centered modal-dialog-scrollable">
+            <div class="modal-content">
+              <!-- Header -->
+              <div class="modal-header">
+                <h5 class="modal-title fw-bold text-uppercase px-2">
+                  STATUS: PENDING
+                </h5>
+                <button
+                  type="button"
+                  class="btn-close btn-close-white px-2"
+                  data-bs-dismiss="modal"
+                  aria-label="Close"
+                ></button>
+              </div>
+
+              <!-- Body -->
+              <div class="modal-body">
+                <div class="container-fluid">
+                  <h5 class="fw-bold">Appointment Information</h5>
+                  
+                  <div class="row">
+                    <!-- Date of Appointment -->
+                    <div class="col-lg-6 py-2">
+                      <label class="form-label" for="dateAppointmentStatus"
+                        >Date of Appointment:
+                      </label>
+                      <input
+                        type="date"
+                        name="date"
+                        id="dateAppointmentStatus"
+                        minlength="11"
+                        maxlength="11"
+                        class="form-control"
+                        aria-label="Date Modified"
+                        readonly
+                      />
+                    </div>
+
+                    <!-- Date Modified -->
+                    <div class="col-lg-6 py-2">
+                      <label class="form-label" for="dateAppointmentStatus"
+                        >Date Modified:
+                      </label>
+                      <input
+                        type="date"
+                        name="date"
+                        id="dateAppointmentStatus"
+                        minlength="11"
+                        maxlength="11"
+                        class="form-control"
+                        aria-label="Date Modified"
+                        readonly
+                      />
+                    </div>
+                  </div>
+
+                  <h5 class="fw-bold my-3">Attendant</h5>
+                  <select class="form-control py-2">
+                    <option>Attendant Name #1</option>
+                    <option>Attendant Name #2</option>
+                    <option>Attendant Name #3</option>
+                  </select>
+
+                </div>
+              </div>
+
+              <!-- Footer -->
+              <div class="modal-footer mx-2">
+                <button type="button" class="btn update-data data py-2">
+                  Confirm Appointment
+                </button>
+                <button type="button" class="btn cancel-status data py-2">
+                  Cancel Appointment
+                </button>
+                <button
+                  type="button"
+                  class="btn archive-data data py-2"
+                  data-bs-dismiss="modal"
+                >
+                  Close
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Status Confirmed Appt Modal -->
+        <div
+          class="modal fade"
+          id="confirmStatusAppointment"
+          data-bs-backdrop="static"
+          data-bs-keyboard="false"
+          tabindex="-1"
+          aria-labelledby="confirmStatusAppointmentLabel"
+          aria-modal="true"
+          aria-hidden="true"
+          >
+          <div class="modal-dialog modal-lg modal-dialog-centered modal-dialog-scrollable">
+            <div class="modal-content">
+              <!-- Header -->
+              <div class="modal-header">
+                <h5 class="modal-title fw-bold text-uppercase px-2">
+                  STATUS: CONFIRMED
+                </h5>
+                <button
+                  type="button"
+                  class="btn-close btn-close-white px-2"
+                  data-bs-dismiss="modal"
+                  aria-label="Close"
+                ></button>
+              </div>
+
+              <!-- Body -->
+              <div class="modal-body">
+                <div class="container-fluid">
+                  <h5 class="fw-bold">Appointment Information</h5>
+                  
+                  <div class="row">
+                    <!-- Date of Appointment -->
+                    <div class="col-lg-6 py-2">
+                      <label class="form-label" for="dateAppointmentStatus"
+                        >Date of Appointment:
+                      </label>
+                      <input
+                        type="date"
+                        name="date"
+                        id="dateAppointmentStatus"
+                        minlength="11"
+                        maxlength="11"
+                        class="form-control"
+                        aria-label="Date Modified"
+                        readonly
+                      />
+                    </div>
+
+                    <!-- Date Modified -->
+                    <div class="col-lg-6 py-2">
+                      <label class="form-label" for="dateAppointmentStatus"
+                        >Date Modified:
+                      </label>
+                      <input
+                        type="date"
+                        name="date"
+                        id="dateAppointmentStatus"
+                        minlength="11"
+                        maxlength="11"
+                        class="form-control"
+                        aria-label="Date Modified"
+                        readonly
+                      />
+                    </div>
+                  </div>
+
+                  <h5 class="fw-bold my-3">Attendant</h5>
+                  <select class="form-control py-2" readonly>
+                    <option>Attendant Name #1</option>
+                    <option>Attendant Name #2</option>
+                    <option>Attendant Name #3</option>
+                  </select>
+
+                </div>
+              </div>
+
+              <!-- Footer -->
+              <div class="modal-footer mx-2">
+                <button type="button" class="btn cancel-status data py-2">
+                  Cancel Appointment
+                </button>
+                <button
+                  type="button"
+                  class="btn archive-data data py-2"
+                  data-bs-dismiss="modal"
+                >
+                  Close
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Status Cancelled Appt Modal -->
+        <div
+          class="modal fade"
+          id="cancelStatusAppointment"
+          data-bs-backdrop="static"
+          data-bs-keyboard="false"
+          tabindex="-1"
+          aria-labelledby="cancelStatusAppointmentLabel"
+          aria-modal="true"
+          aria-hidden="true"
+          >
+          <div class="modal-dialog modal-lg modal-dialog-centered modal-dialog-scrollable">
+            <div class="modal-content">
+              <!-- Header -->
+              <div class="modal-header">
+                <h5 class="modal-title fw-bold text-uppercase px-2">
+                  STATUS: CANCELLED
+                </h5>
+                <button
+                  type="button"
+                  class="btn-close btn-close-white px-2"
+                  data-bs-dismiss="modal"
+                  aria-label="Close"
+                ></button>
+              </div>
+
+              <!-- Body -->
+              <div class="modal-body">
+                <div class="container-fluid">
+                  <h5 class="fw-bold">Appointment Information</h5>
+                  
+                  <div class="row">
+                    <!-- Date of Appointment -->
+                    <div class="col-lg-6 py-2">
+                      <label class="form-label" for="dateAppointmentStatus"
+                        >Date of Appointment:
+                      </label>
+                      <input
+                        type="date"
+                        name="date"
+                        id="dateAppointmentStatus"
+                        minlength="11"
+                        maxlength="11"
+                        class="form-control"
+                        aria-label="Date Modified"
+                        readonly
+                      />
+                    </div>
+
+                    <!-- Date Modified -->
+                    <div class="col-lg-6 py-2">
+                      <label class="form-label" for="dateAppointmentStatus"
+                        >Date Modified:
+                      </label>
+                      <input
+                        type="date"
+                        name="date"
+                        id="dateAppointmentStatus"
+                        minlength="11"
+                        maxlength="11"
+                        class="form-control"
+                        aria-label="Date Modified"
+                        readonly
+                      />
+                    </div>
+                  </div>
+
+                  <h5 class="fw-bold my-3">Attendant</h5>
+                  <select class="form-control py-2" readonly>
+                    <option>Attendant Name #1</option>
+                    <option>Attendant Name #2</option>
+                    <option>Attendant Name #3</option>
+                  </select>
+
+                </div>
+              </div>
+
+              <!-- Footer -->
+              <div class="modal-footer mx-2">
+                <button
+                  type="button"
+                  class="btn archive-data data py-2"
+                  data-bs-dismiss="modal"
+                >
+                  Close
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+
         <!-- View Appointment Details Modal -->
         <div
           class="modal fade"
@@ -676,12 +713,12 @@
                   data-bs-dismiss="modal"
                   aria-label="Close"
                 ></button>
+              </div>
 
               <!-- Body -->
-              </div>
               <div class="modal-body">
                 <div class="container-fluid">
-                  <h5><b>Appointment Information</b></h5>
+                  <h5 class="fw-bold">Appointment Information</h5>
 
                   <div class="row">
                     <!-- Appt ID auto input -->
@@ -706,7 +743,7 @@
                     <!-- Date Added -->
                     <div class="col-lg-6 py-2">
                       <label class="form-label" for="dateAppointmentView"
-                        >Date Added:
+                        >Date of Appointment:
                       </label>
                       <input
                         type="date"
@@ -737,171 +774,21 @@
                     readonly
                   />
 
-                  <h5><b>Personal Information</b></h2>
+                  <h5 class="fw-bold my-3"><b>Personal Information</b></h2>
                   <!-- View Name -->
-                  <div class="row mb-2 py-1">
-                    <div class="col-lg-3 col-md-6 py-2">
-                      <label
-                        class="form-label asterisk"
-                        for="fnameAppointmentView"
-                        >First Name:
-                      </label>
-                      <input
-                        type="text"
-                        name="fname"
-                        class="form-control"
-                        id="fnameAppointmentView"
-                        readonly
-                      />
-                    </div>
-                    <div class="col-lg-3 col-md-6 py-2">
-                      <label class="form-label" for="midnNameAppointmentView"
-                        >Middle Name:
-                      </label>
-                      <input
-                        type="text"
-                        name="midname"
-                        class="form-control"
-                        id="midnNameAppointmentView"
-                        readonly
-                      />
-                    </div>
-                    <div class="col-lg-3 col-md-6 py-2">
-                      <label
-                        class="form-label asterisk"
-                        for="surnameAppointmentView"
-                        >Last Name:
-                      </label>
-                      <input
-                        type="text"
-                        name="surname"
-                        class="form-control"
-                        id="surnameAppointmentView"
-                        readonly
-                      />
-                    </div>
-                    <div class="col-lg-3 col-md-6 py-2">
-                      <label class="form-label" for="suffixAppointmentView"
-                        >Suffix:
-                      </label>
-                      <input
-                        type="text"
-                        name="suffix"
-                        class="form-control"
-                        id="suffixAppointmentView"
-                        readonly
-                      />
-                    </div>
-                  </div>
-
-                  <!--View Birthday & Gender -->
-                  <div class="row">
-                    <div class="col-lg-6 py-2">
-                      <label class="form-label asterisk" for="bdayAppointmentView"
-                        >Birthday:
-                      </label>
-                      <input
-                        type="date"
-                        name="bday"
-                        class="form-control"
-                        id="bdayAppointmentView"
-                        readonly
-                      />
-                    </div>
-                    <div class="col-lg-6 col-md-6 py-2">
-                      <label
-                        class="form-label asterisk"
-                        for="genderAppointmentView"
-                        >Gender:
-                      </label>
-                      <div class="row">
-                        <div class="col-lg-6 col-md-12 pt-1">
-                          <div class="form-check-inline">
-                            <input
-                              class="form-check-input"
-                              type="radio"
-                              name="gender"
-                              value="Male"
-                              id="maleView"
-                              readonly
-                            />
-                            <label class="form-check-label" for="gender">
-                              Male
-                            </label>
-                            <div></div>
-                          </div>
-                          <div class="form-check-inline mb-3">
-                            <input
-                              class="form-check-input"
-                              type="radio"
-                              name="gender"
-                              value="Female"
-                              id="femaleView"
-                              readonly
-                            />
-                            <label class="form-check-label" for="gender">
-                              Female
-                            </label>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-
-                  <!-- View Address -->
                   <label
                     class="form-label pt-2 asterisk"
-                    for="addressAppointmentView"
-                    >Address:
+                    for="nameAppointmentView"
+                    >Name:
                   </label>
                   <input
                     type="text"
-                    name="address"
+                    name="name"
                     class="form-control"
-                    id="addressAppointmentView"
+                    id="nameAppointmentView"
+                    placeholder="Juan Dela Cruz (First Name, Last Name, Suffix)"
                     readonly
                   />
-
-                  <!-- View Email Address -->
-                  <div class="row pt-2">
-                    <div class="col-lg-6 py-2">
-                      <label
-                        class="form-label asterisk"
-                        for="emailAppointmentView"
-                        >Email Address:
-                      </label>
-                      <input
-                        type="email"
-                        name="email"
-                        class="form-control"
-                        id="emailAppointmentView"
-                        placeholder="testemail@email.com"
-                        readonly
-                      />
-                    </div>
-
-                    <!-- Contact Number -->
-                    <div class="col-lg-6 py-2 asterisk">
-                      <label
-                        class="form-label asterisk"
-                        for="contactAppointmentView"
-                        >Contact No:
-                      </label>
-                      <input
-                        type="tel"
-                        name="contactnum"
-                        id="contactAppointmentView"
-                        minlength="11"
-                        maxlength="11"
-                        class="form-control"
-                        aria-label="Contact Number"
-                        oninput="this.value = this.value.replace(/[^0-9.]/g, '')"
-                        title="Numbers only"
-                        placeholder="091234567989"
-                        readonly
-                      />
-                    </div>
-                  </div>
 
                   <!--View Last Eye Exam & Last Eye Grade -->
                   <div class="row">
@@ -1053,7 +940,7 @@
                       <!-- Date Added -->
                       <div class="col-lg-6 py-2">
                         <label class="form-label" for="dateAppointmentUpdate"
-                          >Date Added:
+                          >Date of Appointment:
                         </label>
                         <input
                           type="date"
@@ -1084,183 +971,54 @@
                       required
                     />
 
-                    <h5><b>Personal Information</b></h2>
-                    <!-- Update Name -->
-                    <div class="row mb-2 py-1">
-                      <div class="col-lg-3 col-md-6 py-2">
-                        <label
-                          class="form-label asterisk"
-                          for="fnameAppointmentUpdate"
-                          >First Name:
-                        </label>
-                        <input
-                          type="text"
-                          name="fname"
-                          class="form-control"
-                          id="fnameAppointmentUpdate"
-                          value="Juan "
-                          required
-                        />
-                      </div>
+                    <h5 class="fw-bold my-3"><b>Personal Information</b></h2>
 
-                      <div class="col-lg-3 col-md-6 py-2">
-                        <label class="form-label" for="midNameAppointmentUpdate"
-                          >Middle Name:
-                        </label>
-                        <input
-                          type="text"
-                          name="midname"
-                          class="form-control"
-                          id="midNameAppointmentUpdate"
-                          value="Francisco"
-                        />
-                      </div>
-
-                      <div class="col-lg-3 col-md-6 py-2">
-                        <label
-                          class="form-label asterisk"
-                          for="surnameAppointmentUpdate"
-                          >Last Name:
-                        </label>
-                        <input
-                          type="text"
-                          name="surname"
-                          class="form-control"
-                          id="surnameAppointmentUpdate"
-                          value="Dela Cruz"
-                          required
-                        />
-                      </div>
-
-                      <div class="col-lg-3 col-md-6 py-2">
-                        <label class="form-label" for="suffixAppointmentUpdate"
-                          >Suffix:
-                        </label>
-                        <input
-                          type="text"
-                          name="suffix"
-                          class="form-control"
-                          id="suffixAppointmentUpdate"
-                          value=""
-                        />
-                      </div>
-                    </div>
-
-
-                    <!-- Update Birthday -->
-                    <div class="row">
-                      <div class="col-lg-6 py-2">
-                        <label
-                          class="form-label asterisk"
-                          for="bdayAppointmentUpdate"
-                          >Birthday:
-                        </label>
-                        <input
-                          type="date"
-                          name="bday"
-                          class="form-control"
-                          id="bdayAppointmentUpdate"
-                          value=""
-                          required
-                        />
-                      </div>
-
-                      <!-- Update Gender -->
-                      <div class="col-lg-6 col-md-6 py-2">
-                        <label
-                          class="form-label asterisk"
-                          for="genderAppointmentUpdate"
-                          >Gender:
-                        </label>
-                        <div class="row">
-                          <div class="col-lg-6 col-md-12 pt-1">
-                            <div class="form-check-inline">
-                              <input
-                                class="form-check-input"
-                                type="radio"
-                                name="gender"
-                                value="Male"
-                                id="maleUpdate"
-                                required
-                              />
-                              <label class="form-check-label" for="gender">
-                                Male
-                              </label>
-                              <div></div>
-                            </div>
-                            <div class="form-check-inline mb-3">
-                              <input
-                                class="form-check-input"
-                                type="radio"
-                                name="gender"
-                                value="Female"
-                                id="femaleUpdate"
-                                required
-                              />
-                              <label class="form-check-label" for="gender">
-                                Female
-                              </label>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-
-                    <!-- Update Address -->
+                    <!-- View Name -->
                     <label
                       class="form-label pt-2 asterisk"
-                      for="addressAppointmentUpdate"
-                      >Address:
+                      for="nameAppointmentView"
+                      >Name:
                     </label>
                     <input
                       type="text"
-                      name="address"
+                      name="name"
                       class="form-control"
-                      id="addressAppointmentUpdate"
-                      value="Lorem Ipsum lorem ipsum"
-                      required
+                      id="nameAppointmentView"
+                      placeholder="Juan Dela Cruz (First Name, Last Name, Suffix)"
                     />
 
-                    <div class="row pt-2">
-                      <!-- Update Email Address -->
-                      <div class="col-lg-6 py-2">
-                        <label
-                          class="form-label asterisk"
-                          for="emailAppointmentUpdate"
-                          >Email Address:
-                        </label>
-                        <input
-                          type="email"
-                          name="email"
-                          class="form-control"
-                          id="emailAppointmentUpdate"
-                          value="sample@gmail.com"
-                          required
-                        />
-                      </div>
+                    <!-- Date of Last Eye Exam -->
+                    <div class="row">
+                        <div class="col-lg-6 py-2">
+                          <label class="form-label asterisk" for="v"
+                              >Date of Last Eye Exam:
+                          </label>
+                          <input
+                              type="date"
+                              name="bday"
+                              class="form-control"
+                              id="lastExamAppointmentUpdate"
+                          />
+                        </div>
 
-                      <!-- Contact Number -->
-                      <div class="col-lg-6 py-2 asterisk">
-                        <label
-                          class="form-label asterisk"
-                          for="contactAppointmentUpdate"
-                          >Contact No:
-                        </label>
-                        <input
-                          type="tel"
-                          name="contactnum"
-                          id="contactAppointmentUpdate"
-                          minlength="11"
-                          maxlength="11"
-                          class="form-control"
-                          aria-label="Contact Number"
-                          oninput="this.value = this.value.replace(/[^0-9.]/g, '')"
-                          value="0912456789"
-                          title="Numbers only"
-                          required
-                        />
+                        <!-- Last Eye Grade -->
+                        <div class="col-lg-6 py-2 asterisk">
+                          <label
+                              class="form-label asterisk"
+                              for="lastGradeAppointmentUpdate"
+                              >Last Eye Grade:
+                          </label>
+                          <input
+                              type="number"
+                              name="lastGrade"
+                              id="lastGradeAppointmentUpdate"
+                              class="form-control"
+                              aria-label="Last Eye Grade"
+                              title="Numbers only"
+                              placeholder="Last eye grade"
+                          />
+                        </div>
                       </div>
-                    </div>
 
                     <!-- First visit? -->
                     <div class="col-lg-6 col-md-6 py-2">
@@ -1301,39 +1059,6 @@
                         </div>
                       </div>
                     </div>
-
-                    <!-- Date of Last Eye Exam -->
-                    <div class="row">
-                        <div class="col-lg-6 py-2">
-                          <label class="form-label asterisk" for="v"
-                              >Date of Last Eye Exam:
-                          </label>
-                          <input
-                              type="date"
-                              name="bday"
-                              class="form-control"
-                              id="lastExamAppointmentUpdate"
-                          />
-                        </div>
-
-                        <!-- Last Eye Grade -->
-                        <div class="col-lg-6 py-2 asterisk">
-                          <label
-                              class="form-label asterisk"
-                              for="lastGradeAppointmentUpdate"
-                              >Last Eye Grade:
-                          </label>
-                          <input
-                              type="number"
-                              name="lastGrade"
-                              id="lastGradeAppointmentUpdate"
-                              class="form-control"
-                              aria-label="Last Eye Grade"
-                              title="Numbers only"
-                              placeholder="Last eye grade"
-                          />
-                        </div>
-                      </div>
 
                   </form>
                 </div>
