@@ -166,11 +166,69 @@
                         type="button"
                         class="btn update-data data button_width"
                         data-bs-toggle="modal"
-                        data-bs-target="#orderStatus"
-                        aria-controls="orderStatus"
+                        data-bs-target="#paidOrderStatus"
+                        aria-controls="paidOrderStatus"
                         title="Order Status"
                         >
                         Paid
+                        </button>
+                      </td>                        
+                    </tr>
+
+                    <tr>
+                      <td>
+                        <div class="form-check">
+                          <input
+                            class="form-check-input check-list"
+                            type="checkbox"
+                            value=""
+                            id="check-one-customer"
+                          />
+                        </div>
+                      </td>
+                      <td class="center_align">Order-1</td>
+                      <td class="center_align">TSH-SMA-POL</td>
+                      <td class="center_align">Php 5,123.10</td>
+                      <td class="center_align">Paypal</td>
+                      <td class="center_align">
+                        <button
+                        type="button"
+                        class="btn view-data data button_width"
+                        data-bs-toggle="modal"
+                        data-bs-target="#deliveredOrderStatus"
+                        aria-controls="deliveredOrderStatus"
+                        title="Order Status"
+                        >
+                        Delivered
+                        </button>
+                      </td>                        
+                    </tr>
+
+                    <tr>
+                      <td>
+                        <div class="form-check">
+                          <input
+                            class="form-check-input check-list"
+                            type="checkbox"
+                            value=""
+                            id="check-one-customer"
+                          />
+                        </div>
+                      </td>
+                      <td class="center_align">Order-1</td>
+                      <td class="center_align">TSH-SMA-POL</td>
+                      <td class="center_align">Php 5,123.10</td>
+                      <td class="center_align">Paypal</td>
+                      <td class="center_align">
+                        <button
+                        type="button"
+                        class="btn cancelled-data data button_width"
+                        data-bs-toggle="modal"
+                        data-bs-target="#cancelledOrderStatus"
+                        aria-controls="cancelledOrderStatus"
+                        title="Order Status"
+                        >
+                        Cancelled
                         </button>
                       </td>                        
                     </tr>
@@ -184,114 +242,327 @@
         </div>       
 
         <!-- Modal here -->
-        <!-- Order Status Modal -->
+        <!-- Paid Order Status Modal -->
         <div
-            class="modal fade"
-            id="orderStatus"
-            data-bs-backdrop="static"
-            data-bs-keyboard="false"
-            tabindex="-1"
-            aria-labelledby="orderStatusLabel"
-            aria-modal="true"
-            aria-hidden="true"
+          class="modal fade"
+          id="paidOrderStatus"
+          data-bs-backdrop="static"
+          data-bs-keyboard="false"
+          tabindex="-1"
+          aria-labelledby="paidOrderStatusLabel"
+          aria-modal="true"
+          aria-hidden="true"
         >
-            <div
-                class="modal-dialog modal-lg modal-dialog-centered modal-dialog-scrollable"
-            >
-                <div class="modal-content">
-                    <!-- Header -->
-                    <div class="modal-header">
-                        <h5 class="modal-title fw-bold text-uppercase px-2">
-                        View Order Status
-                        </h5>
-                        <button
-                        type="button"
-                        class="btn-close btn-close-white px-2"
-                        data-bs-dismiss="modal"
-                        aria-label="Close"
-                        ></button>
-                    </div>
-
-                    <!-- Body -->
-                    <div class="modal-body">
-                        <div class="container-fluid">
-                          <p class="tab-header">Recipient</p>
-                          
-                          <!-- Name -->
-                          <div class="row">
-                            <div class="col-lg-4">Name:</div>
-                            <div class="col-lg-8 fw-bold">JUAN DELA CRUZ</div>
-                          </div>
-
-                          <!-- Contact Number -->
-                          <div class="row">
-                            <div class="col-lg-4">Contact Number:</div>
-                            <div class="col-lg-8 fw-bold">09123456789</div>
-                          </div>
-
-                          <!-- Address -->
-                          <div class="row">
-                            <div class="col-lg-4">Address:</div>
-                            <div class="col-lg-8 fw-bold">
-                                <address>
-                                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo, ratione? Nihil, perferendis debitis beatae tenetur expedita officiis at sapiente esse nobis sed quo adipisci consequatur dignissimos maiores assumenda non aliquam!
-                                </address> 
-                            </div>
-                          </div>
-
-                          <p class="tab-header">Orders</p>
-
-                          <!-- ID -->
-                          <div class="row">
-                            <div class="col-lg-4">Order ID</div>
-                            <div class="col-lg-8 fw-bold">ORDER12342</div>
-                          </div>
-
-                          <!-- Item -->
-                          <div class="row">
-                            <div class="col-lg-4">Item</div>
-                            <div class="col-lg-8 fw-bold">SAMPLE ITEM NAMEE</div>
-                          </div>
-
-                          <!-- Number of Item -->
-                          <div class="row">
-                            <div class="col-lg-4">No. of Item</div>
-                            <div class="col-lg-8 fw-bold">13</div>
-                          </div>
-
-                          <!-- Total -->
-                          <div class="row">
-                            <div class="col-lg-4">Total Amount</div>
-                            <div class="col-lg-8 fw-bold">PHP 4,582.20</div>
-                          </div>
-
-                          <!-- Payment -->
-                          <div class="row">
-                            <div class="col-lg-4">Payment</div>
-                            <div class="col-lg-8 fw-bold">Paypal</div>
-                          </div>
-
-                          <!-- Order Reference -->
-                          <div class="row">
-                            <div class="col-lg-4">Reference</div>
-                            <div class="col-lg-8 fw-bold">TSH-SMA-POL</div>
-                          </div>
-
-                          <!-- Order Status -->
-                          <div class="row">
-                            <div class="col-lg-4">Status</div>
-                            <div class="col-lg-8 fw-bold">PAID</div>
-                          </div>
-
-
-
-                        </div>
-                </div>
+          <div
+            class="modal-dialog modal-lg modal-dialog-centered modal-dialog-scrollable"
+          >
+          <div class="modal-content">
+            <!-- Header -->
+            <div class="modal-header">
+              <h5 class="modal-title fw-bold text-uppercase px-2">
+               View Order Status
+              </h5>
+              <button
+                type="button"
+                class="btn-close btn-close-white px-2"
+                data-bs-dismiss="modal"
+                aria-label="Close"
+              ></button>
             </div>
+
+            <!-- Body -->
+            <div class="modal-body">
+              <div class="container-fluid">
+                <p class="tab-header fs-4">Recipient</p>
+                
+                <!-- Name -->
+                <div class="row py-1 order-details">
+                  <div class="col-lg-4 lh-lg">Name:</div>
+                  <div class="col-lg-8 fw-bold">JUAN DELA CRUZ</div>
+                </div>
+
+                <!-- Contact Number -->
+                <div class="row py-1 order-details">
+                  <div class="col-lg-4 lh-lg">Contact Number:</div>
+                  <div class="col-lg-8 fw-bold">09123456789</div>
+                </div>
+
+                <!-- Address -->
+                <div class="row py-1 order-details">
+                  <div class="col-lg-4 lh-lg">Address:</div>
+                  <div class="col-lg-8 fw-bold">
+                      <address>
+                          Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo, ratione? Nihil, perferendis debitis beatae tenetur expedita officiis at sapiente esse nobis sed quo adipisci consequatur dignissimos maiores assumenda non aliquam!
+                      </address> 
+                  </div>
+                </div>
+
+                <p class="tab-header fs-4">Orders</p>
+
+                <!-- ID -->
+                <div class="row py-1 order-details">
+                  <div class="col-lg-4 lh-lg">Order ID</div>
+                  <div class="col-lg-8 fw-bold">ORDER12342</div>
+                </div>
+
+                <!-- Item -->
+                <div class="row py-1 order-details">
+                  <div class="col-lg-4 lh-lg">Item</div>
+                  <div class="col-lg-8 fw-bold">SAMPLE ITEM NAMEE</div>
+                </div>
+
+                <!-- Number of Item -->
+                <div class="row py-1 order-details">
+                  <div class="col-lg-4 lh-lg">No. of Item</div>
+                  <div class="col-lg-8 fw-bold">13</div>
+                </div>
+
+                <!-- Total -->
+                <div class="row py-1 order-details">
+                  <div class="col-lg-4 lh-lg">Total Amount</div>
+                  <div class="col-lg-8 fw-bold">PHP 4,582.20</div>
+                </div>
+
+                <!-- Payment -->
+                <div class="row py-1 order-details">
+                  <div class="col-lg-4 lh-lg">Payment</div>
+                  <div class="col-lg-8 fw-bold">Paypal</div>
+                </div>
+
+                <!-- Order Reference -->
+                <div class="row py-1 order-details">
+                  <div class="col-lg-4 lh-lg">Reference</div>
+                  <div class="col-lg-8 fw-bold">TSH-SMA-POL</div>
+                </div>
+
+                <!-- Order Status -->
+                <div class="row py-1 order-details">
+                  <div class="col-lg-4 lh-lg">Status</div>
+                  <div class="col-lg-8 fw-bold">PAID</div>
+                </div>
+
+              </div>
+            </div>
+          </div>
         </div>
 
         
+        </div>
+
+        <!-- Cancelled Order Status Modal -->
+        <div
+        class="modal fade"
+        id="cancelledOrderStatus"
+        data-bs-backdrop="static"
+        data-bs-keyboard="false"
+        tabindex="-1"
+        aria-labelledby="cancelledOrderStatusLabel"
+        aria-modal="true"
+        aria-hidden="true"
+      >
+        <div
+          class="modal-dialog modal-lg modal-dialog-centered modal-dialog-scrollable"
+        >
+        <div class="modal-content">
+          <!-- Header -->
+          <div class="modal-header">
+            <h5 class="modal-title fw-bold text-uppercase px-2">
+              View Order Status
+            </h5>
+            <button
+              type="button"
+              class="btn-close btn-close-white px-2"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+
+          <!-- Body -->
+          <div class="modal-body">
+            <div class="container-fluid">
+              <p class="tab-header fs-4">Recipient</p>
+              
+              <!-- Name -->
+              <div class="row py-1 order-details">
+                <div class="col-lg-4 lh-lg">Name:</div>
+                <div class="col-lg-8 fw-bold">JUAN DELA CRUZ</div>
+              </div>
+
+              <!-- Contact Number -->
+              <div class="row py-1 order-details">
+                <div class="col-lg-4 lh-lg">Contact Number:</div>
+                <div class="col-lg-8 fw-bold">09123456789</div>
+              </div>
+
+              <!-- Address -->
+              <div class="row py-1 order-details">
+                <div class="col-lg-4 lh-lg">Address:</div>
+                <div class="col-lg-8 fw-bold">
+                    <address>
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo, ratione? Nihil, perferendis debitis beatae tenetur expedita officiis at sapiente esse nobis sed quo adipisci consequatur dignissimos maiores assumenda non aliquam!
+                    </address> 
+                </div>
+              </div>
+
+              <p class="tab-header fs-4">Orders</p>
+
+              <!-- ID -->
+              <div class="row py-1 order-details">
+                <div class="col-lg-4 lh-lg">Order ID</div>
+                <div class="col-lg-8 fw-bold">ORDER12342</div>
+              </div>
+
+              <!-- Item -->
+              <div class="row py-1 order-details">
+                <div class="col-lg-4 lh-lg">Item</div>
+                <div class="col-lg-8 fw-bold">SAMPLE ITEM NAMEE</div>
+              </div>
+
+              <!-- Number of Item -->
+              <div class="row py-1 order-details">
+                <div class="col-lg-4 lh-lg">No. of Item</div>
+                <div class="col-lg-8 fw-bold">13</div>
+              </div>
+
+              <!-- Total -->
+              <div class="row py-1 order-details">
+                <div class="col-lg-4 lh-lg">Total Amount</div>
+                <div class="col-lg-8 fw-bold">PHP 4,582.20</div>
+              </div>
+
+              <!-- Payment -->
+              <div class="row py-1 order-details">
+                <div class="col-lg-4 lh-lg">Payment</div>
+                <div class="col-lg-8 fw-bold">Paypal</div>
+              </div>
+
+              <!-- Order Reference -->
+              <div class="row py-1 order-details">
+                <div class="col-lg-4 lh-lg">Reference</div>
+                <div class="col-lg-8 fw-bold">TSH-SMA-POL</div>
+              </div>
+
+              <!-- Order Status -->
+              <div class="row py-1 order-details">
+                <div class="col-lg-4 lh-lg">Status</div>
+                <div class="col-lg-8 fw-bold">CANCELLED</div>
+              </div>
+
+            </div>
+          </div>
+        </div>
       </div>
+
+      
+        </div>
+
+        <!-- Delivered Order Status Modal -->
+        <div
+          class="modal fade"
+          id="deliveredOrderStatus"
+          data-bs-backdrop="static"
+          data-bs-keyboard="false"
+          tabindex="-1"
+          aria-labelledby="deliveredOrderStatusLabel"
+          aria-modal="true"
+          aria-hidden="true"
+        >
+          <div
+            class="modal-dialog modal-lg modal-dialog-centered modal-dialog-scrollable"
+          >
+          <div class="modal-content">
+            <!-- Header -->
+            <div class="modal-header">
+              <h5 class="modal-title fw-bold text-uppercase px-2">
+                View Order Status
+              </h5>
+              <button
+                type="button"
+                class="btn-close btn-close-white px-2"
+                data-bs-dismiss="modal"
+                aria-label="Close"
+              ></button>
+            </div>
+
+            <!-- Body -->
+            <div class="modal-body">
+              <div class="container-fluid">
+                <p class="tab-header fs-4">Recipient</p>
+                
+                <!-- Name -->
+                <div class="row py-1 order-details">
+                  <div class="col-lg-4 lh-lg">Name:</div>
+                  <div class="col-lg-8 fw-bold">JUAN DELA CRUZ</div>
+                </div>
+
+                <!-- Contact Number -->
+                <div class="row py-1 order-details">
+                  <div class="col-lg-4 lh-lg">Contact Number:</div>
+                  <div class="col-lg-8 fw-bold">09123456789</div>
+                </div>
+
+                <!-- Address -->
+                <div class="row py-1 order-details">
+                  <div class="col-lg-4 lh-lg">Address:</div>
+                  <div class="col-lg-8 fw-bold">
+                      <address>
+                          Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo, ratione? Nihil, perferendis debitis beatae tenetur expedita officiis at sapiente esse nobis sed quo adipisci consequatur dignissimos maiores assumenda non aliquam!
+                      </address> 
+                  </div>
+                </div>
+
+                <p class="tab-header fs-4">Orders</p>
+
+                <!-- ID -->
+                <div class="row py-1 order-details">
+                  <div class="col-lg-4 lh-lg">Order ID</div>
+                  <div class="col-lg-8 fw-bold">ORDER12342</div>
+                </div>
+
+                <!-- Item -->
+                <div class="row py-1 order-details">
+                  <div class="col-lg-4 lh-lg">Item</div>
+                  <div class="col-lg-8 fw-bold">SAMPLE ITEM NAMEE</div>
+                </div>
+
+                <!-- Number of Item -->
+                <div class="row py-1 order-details">
+                  <div class="col-lg-4 lh-lg">No. of Item</div>
+                  <div class="col-lg-8 fw-bold">13</div>
+                </div>
+
+                <!-- Total -->
+                <div class="row py-1 order-details">
+                  <div class="col-lg-4 lh-lg">Total Amount</div>
+                  <div class="col-lg-8 fw-bold">PHP 4,582.20</div>
+                </div>
+
+                <!-- Payment -->
+                <div class="row py-1 order-details">
+                  <div class="col-lg-4 lh-lg">Payment</div>
+                  <div class="col-lg-8 fw-bold">Paypal</div>
+                </div>
+
+                <!-- Order Reference -->
+                <div class="row py-1 order-details">
+                  <div class="col-lg-4 lh-lg">Reference</div>
+                  <div class="col-lg-8 fw-bold">TSH-SMA-POL</div>
+                </div>
+
+                <!-- Order Status -->
+                <div class="row py-1 order-details">
+                  <div class="col-lg-4 lh-lg">Status</div>
+                  <div class="col-lg-8 fw-bold">DELIVERED</div>
+                </div>
+
+              </div>
+            </div>
+          </div>
+        </div>
+
+      
+        </div>
+        
     </section>
 
 
