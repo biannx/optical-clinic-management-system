@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="UTF-8" />
+    <link href="/css/bootstrap.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="/css/adminSidebar.css" />
+    <link rel="stylesheet" href="/css/attendants.css" />
+    <link rel="stylesheet" href="/css/common.css" />
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.5.0/css/all.css"
+    />
+    <link
+      href="/css/dataTables.bootstrap5.min.css"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dashboard</title>
+  </head>
+  <body>
+    <%- include("../partials/admin-sidebar.ejs") %>
+
+    <section class="home-section">
+      <nav>
+        <div class="container-fluid d-flex">
+          <div class="sidebar-button me-auto">
+            <i class="fas fa-bars sidebarBtn"></i>
+            <span class="dashboard">Dashboard</span>
+          </div>
+
+          <a href="#" class="view-shop px-3">
+            <i class="fas fa-paper-plane" aria-hidden="true"></i>
+            <span class="view-shop-text px-2">View your shop</span>
+          </a>
+          <div class="profile-details px-2">
+            <span class="admin_name px-2">Admin Name</span>
+            <img src="/images/avatar.png" alt="" />
+          </div>
+        </div>
+      </nav>
+
+      <div class="home-content">
+        <div class="overview-boxes">
+          <div class="box">
+            <div class="right-side">
+              <div class="box-topic">Total Order</div>
+              <div class="number"><%= data.total_order %></div>
+            </div>
+            <i class="fas fa-shopping-cart cart" aria-hidden="true" title="Total Orders"></i>
+          </div>
+          <div class="box">
+            <div class="right-side">
+              <div class="box-topic">Total Sales</div>
+              <div class="number"><%= data.total_sales %></div>
+            </div>
+            <i class="fas fa-cart-plus cart two" aria-hidden="true" title="Total Sales"></i>
+          </div>
+          <div class="box">
+            <div class="right-side">
+              <div class="box-topic">Total Profit</div>
+              <div class="number"><%= data.total_profit %></div>
+            </div>
+            <i class="fas fa-dollar-sign cart three" aria-hidden="true" title="Total Profit"></i>
+          </div>
+          <div class="box">
+            <div class="right-side">
+              <div class="box-topic" id="registered">Registered Clients</div>
+              <div class="number"><%= data.total_customers %></div>
+            </div>
+            <i class="fas fa-users cart four" aria-hidden="true" title="Total Registered Customers"></i>
+          </div>
+        </div>
+
+        <div class="sales-boxes">
+          <div class="recent-sales box">
+            <div class="title py-2">Recent Orders</div>
+            <div class="sales-details">
+              <table class="table table-hover table-responsive">
+                <thead>
+                  <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Date</th>
+                    <th scope="col">Name</th>
+                    <th scope="col">Total</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <% let index = 0 %>
+                  <% if(orders) { %>
+                    <% for(let order of orders) { %>
+                      <% index += 1 %>
+                          <tr>
+                            <td><%= index %></td>
+                            <td><%= order.date.toDateString() %></td>
+                            <td>
+                              <img
+                                src="/images/plain-avatar.png"
+                                alt="Avatar"
+                              /><%= order.name %>
+                            </td>
+                            <td>Php 2300.33</td>
+                          </tr>
+                  <% }} %>
+                </tbody>
+              </table>
+            </div>
+            <div class="button">
+              <a href="/api/orders" title="See All Orders">See All</a>
+            </div>
+          </div>
+          <div class="top-sales box">
+            <div class="title py-2">Top Selling Product</div>
+            <table class="table table-responsive table-hover">
+              <thead>
+                <tr>
+                  <th scope="col">#</th>
+                  <th scope="col">Item</th>
+                  <th scope="col">Product</th>
+                  <th scope="col">Price</th>
+                </tr>
+              </thead>
+              <tbody>
+                <% index = 0 %>
+                <% if(top_seller_filtered) { %>
+                <% for(let product of top_seller_filtered) { %> 
+                  <% if(product != null) { %>
+                <tr>
+                  <th scope="row"><%= index += 1 %></th>
+                  <td>
+                    <img
+                      src="/images/<%= product.image %>"
+                      alt="Top Product"
+                    />
+                  </td>
+                  <td><%= product.name %></td>
+                  <td>Php <%= product.price %></td>
+                </tr>
+                <% }}} %>
+              </tbody>
+            </table>
+            <div class="button">
+              <a href="/api/products" title="Go to Products Page">Go to Products</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <script>
+      let sidebar = document.querySelector(".sidebar");
+      let sidebarBtn = document.querySelector(".sidebarBtn");
+      sidebarBtn.onclick = function () {
+        sidebar.classList.toggle("active");
+        if (sidebar.classList.contains("active")) {
+          sidebarBtn.classList.replace("bx-menu", "bx-menu-alt-right");
+        } else sidebarBtn.classList.replace("bx-menu-alt-right", "bx-menu");
+      };
+    </script>
+  </body>
+</html>

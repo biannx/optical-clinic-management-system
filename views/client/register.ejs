@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="UTF-8" />
+    <link href="\css\bootstrap.min.css" rel="stylesheet" />
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.5.0/css/all.css"
+    />
+    <link href="\css\common.css" 
+      rel="stylesheet" 
+    />
+    <link href="\css\client.css" 
+      rel="stylesheet" 
+    />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sign In</title>
+  </head>
+
+  <body>
+    <%- include("../partials/client-navigation-guest.ejs") %>
+    <form class="vh-100 needs-validation" 
+        method="POST" action="/register"
+        oninput='password1.setCustomValidity(password1.value != password.value ? "Passwords do not match." : "")' 
+        oninput='email1.setCustomValidity(email1.value != email.value ? "Email do not match." : "")' 
+        novalidate>
+      <div class="container py-5 h-100">
+        <div class="row d-flex justify-content-center align-items-center h-100">
+          <div class="col-12">
+            <div class="card" style="border-radius: 1rem;">
+              <div class="card-body p-5 text-left">
+          <h4 class="pt-5">REGISTER</h4>
+          <div class="row mb-3">
+            <div class="col-lg-4 col-md-6 col-sm-12 py-3">
+              <label for="givenName" class="form-label" required>Given Name*</label>
+              <input
+                type="text"
+                class="form-control form-control "
+                placeholder="Given Name"
+                id="givenName"
+                name="first_name"
+                required
+              />
+              <div id="givenName" class="invalid-feedback">
+                What is your name?
+              </div>
+            </div>
+            <div class="col-lg-4 col-md-6 col-sm-12 py-3">
+              <label for="middleName" class="form-label">Middle Name</label>
+              <input
+                type="text"
+                class="form-control form-control"
+                placeholder="Middle Name"
+                id="middleName"
+                name="middle_name"
+              />
+            </div>
+            <div class="col-lg-4 col-md-6 col-sm-12 py-3">
+              <label for="lastName" class="form-label">Last Name*</label>
+              <input
+                type="text"
+                class="form-control form-control "
+                placeholder="Last Name"
+                id="lastName"
+                name="last_name"
+                required
+              />
+              <div id="lastName" class="invalid-feedback">
+                What is your name?
+              </div>   
+            </div>
+            <div class="col-lg-4 col-md-6 col-sm-12 py-3">
+              <label for="suffix" class="form-label" required>Suffix</label>
+              <input
+                type="text"
+                class="form-control form-control"
+                placeholder="Suffix"
+                id="suffix"
+                name="suffix"
+              />     
+            </div>
+            <div class="col-lg-4 col-md-6 col-sm-12 py-3">
+              <label for="birthDate" class="form-label">Birthdate*</label>
+              <input
+                type="date"
+                class="form-control "
+                placeholder="mm/dd/yy"
+                id="birthDate"
+                name="birthday"
+                required
+              />
+              <div id="birthDate" class="invalid-feedback">
+                Provide birthdate.
+              </div> 
+            </div>
+            <div class="col-lg-4 col-md-6 col-sm-12 py-3">
+              <label for="fistVisit" class="form-label">Sex*</label>
+              <div class="col-12">
+                <div class="form-check form-check-inline">
+                  <input
+                    class="form-check-input"
+                    type="radio"
+                    name="sex"
+                    id="male"
+                    value="M"
+                    required
+                  />
+                  <label
+                    class="form-check-label"
+                    for="male"
+                    style="font-weight: normal"
+                    >Male</label
+                  >
+                </div>
+                <div class="form-check form-check-inline">
+                  <input
+                    class="form-check-input"
+                    type="radio"
+                    name="sex"
+                    id="female"
+                    value="F"
+                    required
+                  />
+                  <label
+                    class="form-check-label"
+                    for="female"
+                    style="font-weight: normal"
+                    >Female</label
+                  >
+                </div>
+              </div>
+              <div class="invalid-feedback">
+                Provide your sex.
+              </div>
+            </div>
+            <div class="col-lg-6 col-md-6 col-sm-12 py-3">
+                <label for="address" class="form-label">Address*</label>
+                <input
+                  type="text"
+                  class="form-control form-control "
+                  placeholder="Address"
+                  id="address"
+                  name="address"
+                  required
+                />
+            </div>
+            <div class="col-lg-6 col-md-6 col-sm-12 py-3">
+                <label for="contact" class="form-label">Contact*</label>
+                <input
+                  type="text"
+                  class="form-control form-control "
+                  placeholder="Contact"
+                  id="contact"
+                  name="contact"
+                  maxlength="12"
+                  required
+                />
+            </div>
+            <div class="col-lg-6 col-md-6 col-sm-12 py-3">
+              <label for="emailAddress" class="form-label">Email*</label>
+              <input
+                type="email"
+                class="form-control form-control "
+                placeholder="Email Address"
+                id="emailAddress"
+                name="email"
+                required
+              />
+                  <div id="emailAddress" class="invalid-feedback">
+                    Invalid email.
+                  </div>  
+            </div>
+            <div class="col-lg-6 col-md-6 col-sm-12 py-3">
+              <label for="confirmEmail" class="form-label">Confirm Email*</label>
+              <input
+                type="email"
+                class="form-control form-control "
+                placeholder="Confirm Email"
+                id="confirmEmail"
+                name="email1"
+                required
+              />
+                  <div id="confirmEmail" class="invalid-feedback">
+                    Please reconfirm your email.
+                  </div>  
+            </div>
+            <div class="col-lg-6 col-md-6 col-sm-12 py-3">
+              <label for="password" class="form-label">Password*</label>
+              <input
+                type="password"
+                class="form-control form-control "
+                placeholder="Password"
+                id="password"
+                name="password"
+                required
+              />
+                <div id="password" class="invalid-feedback">
+                  Enter a combination of at least eight characters, upper case letters, numbers, and special characters.
+                </div>  
+            </div>
+            <div class="col-lg-6 col-md-6 col-sm-12 py-3">
+              <label for="confirmPassword" class="form-label"
+                >Confirm Password*</label
+              >
+              <input
+                type="password"
+                class="form-control form-control "
+                placeholder="Confirm Password"
+                id="confirmPassword"
+                name="password1"
+                required
+              />
+                <div id="confirmPassword" class="invalid-feedback">
+                  Please reconfirm your password.
+                </div> 
+            </div>
+            <input type="hidden" name="type" value="REGISTERED">
+            <input type="hidden" name="date_added" value="<%= new Date() %>">
+            <div class="py-3 text-center">
+              <button type="submit" class="btn btn-blue w-50">
+                Create Account
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    </form>
+
+    <script
+    src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+    crossorigin="anonymous"
+  ></script>
+    <script>
+        (function () {
+        'use strict'
+
+        // Fetch all the forms we want to apply custom Bootstrap validation styles to
+        const forms = document.querySelectorAll('.needs-validation')
+
+        // Loop over them and prevent submission
+        Array.from(forms)
+            .forEach(function (form) {
+            form.addEventListener('submit', function (event) {
+                if (!form.checkValidity()) {
+                event.preventDefault()
+                event.stopPropagation()
+                }
+
+                form.classList.add('was-validated')
+            }, false)
+            })
+        })()
+    </script>
+  </body>
+</html>

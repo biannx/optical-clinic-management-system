@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="/css/bootstrap.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="/css/common.css" />
+    <link rel="stylesheet" href="/css/user-products.css" />
+    <link rel="stylesheet" href="/css/client.css" />
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.5.0/css/all.css"
+    />
+    <link
+      href="/css/dataTables.bootstrap5.min.css"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <link href="/css/cart.css" rel="stylesheet" type="text/css" />
+    <title>My Cart</title>
+  </head>
+  <body>
+    <%-include("../../partials/client-navigation-guest.ejs") %>
+
+    <div class="container-fluid container-bg">
+      <div class="container pt-5 pb-3">
+        <a class="fs-4 text-decoration-none black-font" href="/products">
+          <i class="fas fa-arrow-left fs-4"></i>
+          <span class="mx-3">Back to shopping</span>
+        </a>
+      </div>
+    </div>
+
+    <div class="container">
+      <div class="row gx-4 my-4">
+        <div class="col-lg-7 col-md-12 pt-3">
+          <h3 class="font-cart heavy-font mb-3">Shopping Cart</h3>
+          <div>
+            <div class="p-4 container-bg container-radius mb-3">
+              <div class="d-flex align-items-center form-check">
+                <input
+                  form="checkout-form"
+                  class="form-check-input mb-1"
+                  type="checkbox"
+                  id="check-all"
+                  onclick="checkAll()"
+                />
+                <label
+                  class="form-check-label mx-2 font-cart light-font fs-5"
+                  for="selectAll"
+                >
+                  <b>SELECT ALL (1 ITEM(S))</b>
+                </label>
+              </div>
+            </div>
+
+            <% for(let product of cart) { %> 
+                <div class="p-4 container-bg container-radius mb-3">
+                    <div
+                      class="d-flex align-items-center form-check justify-content-around row g-0 py-2"
+                    >
+                      <input
+                        class="col-1 form-check-input me-auto"
+                        type="checkbox"
+                        value="<%=product._id%> "
+                        id="cart-check"
+                        name="cart-check[]"
+                        onclick="updateItemCount()"
+                        
+                      />
+                      <div class="col-11 form-check-label" for="item1">
+                        <div class="cart-card card position-relative border-0">
+                          <form 
+                            method="POST" action="/cart/<%= product._id %>?_method=DELETE"
+                            class="row no-gutters" style="height: 100%">
+                            <div class="col-4">
+                              <img
+                                src="/images/<%= product.image %>"
+                                class="img-fluid h-100"
+                                alt="..."
+                              />
+                            </div>
+                            <div class="col-8">
+                              <div
+                                class="cart-card-body card-body d-flex flex-column container-bg py-0 pe-0"
+                              >
+                                <button
+                                  type="submit"
+                                  href="#"
+                                  class="text-decoration-none black-font align-self-end p-0 m-0 border-0"
+                                  type="button"
+                                  ><i class="fas fa-trash-alt align-self-end"></i
+                                ></button>
+                                <div class="mb-auto">
+                                  <h5 class="font-cart heavy-font">
+                                    <%= product.item_name %>
+                                  </h5>
+                                  <p class="font-cart light-font fs-6">
+                                    COLOR: RHINO
+                                  </p>
+                                </div>
+                                <div class="d-flex">
+                                  <div class="btn-group me-auto">
+                                    <button class="btn btn-sm qty-bg" type="button">
+                                      <b>+</b>
+                                    </button>
+                                    <button
+                                      class="btn disabled btn-sm qty-bg"
+                                      type="button"
+                                    >
+                                      <b><%= product.qty %></b>
+                                    </button>
+                                    <button class="btn btn-sm qty-bg" type="button">
+                                      <b>-</b>
+                                    </button>
+                                  </div>
+                                  <div>
+                                    <p id="price" class="m-0 heavy-font">PHP <%= product.item_price %></p>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </form>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+            <% } %>
+                </div>
+        </div>
+
+        <div class="col-lg-5 col-md-12 pt-3">
+          <div class="container-bg py-4 px-5 container-radius card">
+            <div>
+              <h4 class="font-cart heavy-font mb-3">Order Summary</h4>
+              <div class="p-2 container-radius mb-4 cart-checkout-card-bg">
+                <div class="d-flex">
+                  <label id="item-counter"
+                    class="form-check-label mx-2 font-cart heavy-font fs-5 me-auto" 
+                  >SUBTOTAL(0) ITEM(S)</label>
+                  <label class="form-check-label font-cart heavy-font fs-5" id="subtotal">
+                    PHP 0.00
+                  </label>
+                </div>
+              </div>
+
+              <div class="p-2 container-radius cart-checkout-card-bg sf-mb">
+                <div class="d-flex">
+                  <label
+                    class="form-check-label mx-2 font-cart heavy-font fs-5 me-auto"
+                  >
+                    SHIPPING FEE
+                  </label>
+                  <label class="form-check-label font-cart heavy-font fs-5" id="shippingFee">
+                    PHP 0.00
+                  </label>
+                </div>
+              </div>
+
+              <div class="p-2 container-radius mb-4 cart-checkout-card-bg">
+                <div class="d-flex">
+                  <label
+                    class="form-check-label mx-2 font-cart heavy-font fs-5 me-auto" 
+                  >
+                    TOTAL
+                  </label>
+                  <label class="form-check-label font-cart heavy-font fs-5" id="total">
+                    PHP 0.00
+                  </label>
+                </div>
+              </div>
+              <form 
+              id="checkout-form"
+              method="POST" action="/cart/checkout/<%= session.user_id %>?_method=DELETE">
+                <button type="button" onclick="checkout()" id="checkout-btn"
+                class="btn w-100 font-cart heavy-font fs-5 container-radius py-2"
+                >
+                PROCEED TO CHECKOUT
+                </button>
+              </form>
+                
+              
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- footer -->
+
+    <%- include("../../partials/client-footer.ejs") %>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+      crossorigin="anonymous"
+    ></script>
+    <script src="js/cart.js"></script>
+  </body>
+</html>

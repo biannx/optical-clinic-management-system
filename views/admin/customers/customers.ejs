@@ -1,0 +1,464 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="UTF-8" />
+    <link href="/css/bootstrap.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="/css/adminSidebar.css" />
+    <link rel="stylesheet" href="/css/attendants.css" />
+    <link rel="stylesheet" href="/css/customers.css" />
+    <link rel="stylesheet" href="/css/common.css" />
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.5.0/css/all.css"
+    />
+    <link
+      href="/css/dataTables.bootstrap5.min.css"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Admin | Customers</title>
+  </head>
+
+  <body>
+    <%- include("../../partials/admin-sidebar.ejs") %>
+
+    <section class="home-section">
+      <nav>
+        <div class="container-fluid d-flex">
+          <div class="sidebar-button me-auto">
+            <i class="fas fa-bars sidebarBtn"></i>
+            <span class="dashboard">Customers</span>
+          </div>
+
+          <a href="#" class="view-shop px-3">
+            <i class="fas fa-paper-plane" aria-hidden="true"></i>
+            <span class="view-shop-text px-2">View your shop</span>
+          </a>
+          <div class="profile-details px-2">
+            <span class="admin_name px-2">Admin Name</span>
+            <img src="/images/avatar.png" alt="" />
+          </div>
+        </div>
+      </nav>
+
+      <div class="home-content">
+        <div class="container-fluid">
+          <div class="d-flex justify-content-end mx-2">
+            <!-- Archives Button -->
+            <a
+              href="/api/customers/archives"
+              class="btn archiveBtn text-white fw-bold px-4"
+              id="archive-list-button"
+              title="View Archive List"
+              >Archives</a
+            >
+
+            <!-- Create New Button trigger modal -->
+            <button
+              type="button"
+              class="btn addBtn text-white fw-bold px-3 mx-3"
+              id="create-new-button"
+              data-bs-toggle="modal"
+              data-bs-target="#newCustomer"
+              title="Create New Customer"
+            >
+              <i class="fa fa-plus" aria-hidden="true"></i>
+              Create New
+            </button>
+          </div>
+
+          <!-- Create New Attendant Modal -->
+          <div
+            class="modal fade"
+            id="newCustomer"
+            data-bs-backdrop="static"
+            data-bs-keyboard="false"
+            tabindex="-1"
+            aria-labelledby="newCustomerLabel"
+            aria-modal="true"
+            aria-hidden="true"
+          >
+            <div
+              class="modal-dialog modal-lg modal-dialog-centered modal-dialog-scrollable"
+            >
+              <form 
+                method="POST" action="/api/customer"
+                class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title fw-bold text-uppercase px-2">
+                    New Customer
+                  </h5>
+                  <button
+                    type="button"
+                    class="btn-close btn-close-white px-2"
+                    data-bs-dismiss="modal"
+                    aria-label="Close"
+                  ></button>
+                </div>
+                <div class="modal-body">
+                  <div class="container">
+                    <h6 class="text-muted py-2">
+                      <i
+                        >Note: Please add new
+                        <strong>walk-in</strong> customers only.</i
+                      >
+                    </h6>
+                  </div>
+                  <div class="container-fluid py-2">
+                    <div class="profile-pic-div">
+                      <img
+                        src="/images/avatar.png"
+                        alt="avatar"
+                        id="photo"
+                      />
+                      <input type="file" id="file" />
+                      <label class="form-label" for="file" id="uploadBtn"
+                        >Choose Photo</label
+                      >
+                    </div>
+
+                    <!-- Date Added auto input -->
+                    <div class="row">
+                      <div class="col-lg-6 py-2">
+                        <label class="form-label asterisk">Date Added: </label>
+                        <input
+                          type="date"
+                          name="date_added"
+                          class="form-control"
+                          aria-label="Date Added"
+                          placeholder="Date Added"
+                          required
+                        />
+                      </div>
+                      <div class="col-lg-6 mt-1">
+                        <label class="form-label asterisk" for="type-walkin"
+                          >Type:
+                        </label>
+                        <select
+                          class="form-select"
+                          aria-label="Walk in or Registered"
+                          id="type-walkin"
+                          title="Disabled"
+                          name="type"
+                        >
+                          <option value="WALK IN" selected>Walk In</option>
+                          <option value="REGISTERED">Registered</option>
+                        </select>
+                      </div>
+                    </div>
+
+                    <!-- Name -->
+                    <div class="row mt-2 py-2">
+                      <div class="col-lg-3 col-md-6 py-2">
+                        <label class="form-label asterisk" for="fnameCustomer"
+                          >First Name:
+                        </label>
+                        <input
+                          type="text"
+                          name="first_name"
+                          class="form-control"
+                          id="fnameCustomer"
+                          placeholder="First Name"
+                          required
+                        />
+                      </div>
+                      <div class="col-lg-3 col-md-6 py-2">
+                        <label class="form-label" for="midnNameCustomer"
+                          >Middle Name:
+                        </label>
+                        <input
+                          type="text"
+                          name="middle_name"
+                          class="form-control"
+                          id="midnNameCustomer"
+                          placeholder="Middle Name"
+                        />
+                      </div>
+                      <div class="col-lg-3 col-md-6 py-2">
+                        <label
+                          class="form-label asterisk"
+                          for="surnameCustomer"
+                          >Last Name:
+                        </label>
+                        <input
+                          type="text"
+                          name="last_name"
+                          class="form-control"
+                          id="surnameCustomer"
+                          placeholder="Last Name"
+                          required
+                        />
+                      </div>
+                      <div class="col-lg-3 col-md-6 py-2">
+                        <label class="form-label" for="suffixCustomer"
+                          >Suffix:
+                        </label>
+                        <input
+                          type="text"
+                          name="suffix"
+                          class="form-control"
+                          id="suffixAttendant"
+                          placeholder="Suffix"
+                        />
+                      </div>
+                    </div>
+
+                    <!-- Birthday -->
+                    <div class="row mb-2">
+                      <div class="col-lg-6 py-2">
+                        <label class="form-label asterisk" for="bdayCustomer"
+                          >Birthday:
+                        </label>
+                        <input
+                          type="date"
+                          name="birthday"
+                          class="form-control"
+                          id="bdayCustomer"
+                          placeholder="Birthday"
+                          required
+                        />
+                      </div>
+
+                      <!-- Sex -->
+                      <div class="col-lg-6 col-md-6 py-2">
+                        <label
+                          class="form-label asterisk"
+                          for="midnNameCustomer"
+                          >Sex:
+                        </label>
+                        <div class="row">
+                          <div class="col-lg-6 col-md-12 pt-1">
+                            <div class="form-check-inline">
+                              <input
+                                class="form-check-input"
+                                type="radio"
+                                name="sex"
+                                value="M"
+                                id="male"
+                                required
+                              />
+                              <label class="form-check-label" for="sex">
+                                Male
+                              </label>
+                              <div></div>
+                            </div>
+                            <div class="form-check-inline mb-3">
+                              <input
+                                class="form-check-input"
+                                type="radio"
+                                name="sex"
+                                value="Female"
+                                id="female"
+                                required
+                              />
+                              <label class="form-check-label" for="sex">
+                                Female
+                              </label>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+                    <!-- Address -->
+                    <label
+                      class="form-label pt-2 asterisk mb-2"
+                      for="addressCustomer"
+                      >Address:
+                    </label>
+                    <input
+                      type="text"
+                      name="address"
+                      class="form-control"
+                      id="addressCustomer"
+                      placeholder="Address"
+                      required
+                    />
+
+                    <!-- Email Address & Contact No. -->
+                    <div class="row pt-2 mt-2">
+                      <div class="col-lg-6 py-2">
+                        <label class="form-label asterisk" for="emailCustomer"
+                          >Email Address:
+                        </label>
+                        <input
+                          type="email"
+                          name="email"
+                          class="form-control"
+                          id="emailCustomer"
+                          placeholder="Email Address"
+                          required
+                        />
+                      </div>
+                      <div class="col-lg-6 py-2 asterisk">
+                        <label
+                          class="form-label asterisk"
+                          for="contactCustomer"
+                          >Contact No:
+                        </label>
+                        <input
+                          type="tel"
+                          name="contact"
+                          id="contactCustomer"
+                          minlength="11"
+                          maxlength="11"
+                          class="form-control"
+                          aria-label="Contact Number"
+                          oninput="this.value = this.value.replace(/[^0-9.]/g, '')"
+                          placeholder="Contact Number"
+                          title="Numbers only"
+                          required
+                        />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="modal-footer mx-3">
+                  <button type="submit" class="btn btn-default px-3 mx-2">
+                    Save
+                  </button>
+                  <button
+                    type="button"
+                    class="btn btn-secondary py-2 px-3"
+                    data-bs-dismiss="modal"
+                  >
+                    Close
+                  </button>
+                </div>
+              </form>
+            </div>
+          </div>
+
+          <!-- Customers Table -->
+          <div class="container-fluid p-4">
+            <div class="table-wrapper px-4">
+              <div class="table-title">
+                <h4 class="px-1 pt-4 fw-bold">List of Customers</h4>
+              </div>
+              <hr class="my-4" />
+              <form 
+                method="POST" action="/api/customer/archive?_method=PATCH"
+                class="container-fluid table-responsive pt-2">
+                <table
+                  class="table table-hover align-middle align-items-center table-body"
+                  aria-label="Customers' List"
+                  id="customersTableList"
+                >
+                  <!--Table Body-->
+                  <thead>
+                    <tr>
+                      <th scope="col">
+                        <div class="form-check">
+                          <input
+                            class="form-check-input check-all"
+                            type="checkbox"
+                            value=""
+                            id="check-all"
+                            onClick="checkAll()"
+                          />
+                          <label
+                            class="form-check-label"
+                            for="check-all"
+                          >
+                            All
+                          </label>
+                        </div>
+                      </th>
+                      <th scope="col">ID</th>
+                      <th scope="col">Name</th>
+                      <th scope="col">Contact No.</th>
+                      <th scope="col">Type</th>
+                      <th scope="col">Action</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <% for(let customer of customers) { %> 
+                    <tr>
+                      <td>
+                        <div class="form-check">
+                          <input
+                            class="form-check-input check-list"
+                            type="checkbox"
+                            value="<%= customer._id %>"
+                            name="archive-check"
+                            id="check-one-customer"
+                            onClick="updateArchiveCount()"
+                          />
+                        </div>
+                      </td>
+                      <td><%= customer._id %></td>
+                      <td>
+                        <img
+                          src="/images/avatar.png"
+                          class="img-table-list mx-2"
+                        /><%= customer.first_name + " " + customer.middle_name + " " + customer.last_name %>
+                      </td>
+                      <td><%= customer.contact %></td>
+                      <td class="text-uppercase"><%= customer.type %></td>
+                      <td class="action">
+                        <div class="action-buttons">
+                          <ul>
+                            <li>
+                              <a
+                                href="/api/customer/<%= customer._id %>"
+                                class="btn view-data data button_width"
+                                title="View Details"
+                                aria-label="View more about customer's details"
+                              >
+                                View
+                              </a>
+                            </li>
+                          </ul>
+                        </div>
+                      </td>
+                    </tr>
+                    <% } %>
+                  </tbody>
+                </table>
+                <br />
+                <!-- Batch Archive Button -->
+                <div class="d-flex justify-content-end my-3">
+                  <button
+                    type="submit"
+                    class="btn archive-all-data px-4 py-2 fw-bold text-white text-uppercase"
+                    id="archive-counter"
+                  >
+                    Archive Attendants (0)
+                  </button>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- jQuery DataTables JS CDN -->
+    <script src="/js/archive.js"></script>
+    <script src="/js/jquery-3.5.1.js"></script>
+    <script src="/js/jquery.dataTables.min.js"></script>
+    <script src="/js/dataTables.bootstrap5.min.js"></script>
+    <script>
+      let sidebar = document.querySelector(".sidebar");
+      let sidebarBtn = document.querySelector(".sidebarBtn");
+      sidebarBtn.onclick = function () {
+        sidebar.classList.toggle("active");
+        if (sidebar.classList.contains("active")) {
+          sidebarBtn.classList.replace("bx-menu", "bx-menu-alt-right");
+        } else sidebarBtn.classList.replace("bx-menu-alt-right", "bx-menu");
+      };
+      $(document).ready(function () {
+        $("#customersTableList").DataTable({
+          columnDefs: [{ className: "dt-center", targets: "_all" }],
+          lengthMenu: [
+            [20, 25, 50, -1],
+            [20, 25, 50, "All"],
+          ],
+        });
+        jQuery(".dataTable").wrap('<div class="dataTables_scroll" />');
+      });
+    </script>
+
+    <script src="/js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>

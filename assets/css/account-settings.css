@@ -1,22 +1,40 @@
 .account-settings-btn {
-    color: #FFFFFF;
-    height: 3em;
-    width: 20em;
-}
-
-.blue {
-    color: #50ABF1
-}
-
-.blue-bg {
-    background-color: #50ABF1;
-}
-
-.red-bg {
-    background-color: #F57575;
-}
-
-.settings-container {
-    width: 50vw;
+    color: #fdfdfd;
+    /* width: 15em; */
+    font-size: 1.1rem;
+    text-align: center;
+    margin: auto;
+  }
+  
+  .blue {
+    color: #50abf1;
+  }
+  
+  .blue-bg {
+    background-color: #50abf1;
+  }
+  
+  .red-bg {
+    background-color: #f57575;
+  }
+  
+  .settings-container {
+    width: 40vw;
     min-width: 400px;
-}
+  }
+  
+  label {
+    font-size: 1.1rem;
+  }
+  .settings-container .form-control,
+  .settings-container .form-select:focus::after,
+  .settings-container .container .filter-button:focus {
+    outline: 1px solid lightgrey;
+  }
+  .settings-container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    margin-top: 2.3rem;
+  }

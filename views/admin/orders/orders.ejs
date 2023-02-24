@@ -1,0 +1,522 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="UTF-8" />
+    <link href="/css/bootstrap.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="/css/adminSidebar.css" />
+    <link rel="stylesheet" href="/css/customers.css" />
+    <link rel="stylesheet" href="/css/common.css" />
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.5.0/css/all.css"
+    />
+    <link
+      href="/css/dataTables.bootstrap5.min.css"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Admin | Orders</title>
+  </head>
+
+  <body>
+    <%- include("../../partials/admin-sidebar.ejs") %>
+
+    <section class="home-section">
+      <nav>
+        <div class="container-fluid d-flex">
+          <div class="sidebar-button me-auto">
+            <i class="fas fa-bars sidebarBtn"></i>
+            <span class="dashboard">Orders</span>
+          </div>
+
+          <a href="#" class="view-shop px-3">
+            <i class="fas fa-paper-plane" aria-hidden="true"></i>
+            <span class="view-shop-text px-2">View your shop</span>
+          </a>
+          <div class="profile-details px-2">
+            <span class="admin_name px-2">Admin Name</span>
+            <img src="/images/avatar.png" alt="" />
+          </div>
+        </div>
+      </nav>
+
+        <div class="home-content">
+          
+          <!-- Order Table -->
+          <div class="container-fluid p-4" id="order-table-data">
+            <div class="table-wrapper px-4">
+              <div class="table-title">
+                <!--Table Header-->
+                <h4 class="px-1 pt-4 fw-bold">List of Orders</h4>
+              </div>
+              <hr class="my-4" />
+              <div class="container-fluid table-responsive pt-2">
+                <table
+                  class="table table-hover align-middle align-items-center table-body"
+                  aria-label="Order List"
+                  id="orderTableList"
+                >
+                  <!--Table Body-->
+                  <thead>
+                    <tr>
+                      <!-- <th scope="col">
+                        <div class="form-check">
+                          <input
+                            class="form-check-input check-all"
+                            type="checkbox"
+                            value=""
+                            id="check-all-customer"
+                          />
+                          <label
+                            class="form-check-label"
+                            for="check-all-customer"
+                          >
+                            All
+                          </label>
+                        </div>
+                      </th> -->
+                      <th scope="col" class="center_align">ID</th>
+                      <th scope="col" class="center_align">Price</th>
+                      <th scope="col" class="center_align">Payment</th>
+                      <th scope="col"class="center_align">Status</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <% if(orders) { %>
+                      <% for(let order of orders) { %> 
+                    <tr>
+                      <!-- <td>
+                        <div class="form-check">
+                          <input
+                            class="form-check-input check-list"
+                            type="checkbox"
+                            value=""
+                            id="check-one-customer"
+                          />
+                        </div>
+                      </td> -->
+                      <td class="center_align"><%= order._id %></td>
+                      <td class="center_align"><%= order.price %></td>
+                      <td class="center_align">
+                        <% switch (order.payment_type) {
+                          case 1: %>
+                            Paypal
+                          <% break;
+                          
+                          case 2: %>
+                            Cash
+                          <% break;
+                          
+                          } %>
+                      </td>
+                      <td class="center_align">
+                        <% switch (order.status) {
+                              case 1: %>
+                                <button
+                                  type="button"
+                                  class="btn update-data data button_width"
+                                  data-bs-toggle="modal"
+                                  data-bs-target="#a<%= order._id %>"
+                                  aria-controls="paidOrderStatus"
+                                  title="Order Status"
+                                  >
+                                  Paid
+                                </button>
+                              <% break;
+                              
+                              case 2: %>
+                                <button
+                                  type="button"
+                                  class="btn view-data data button_width"
+                                  data-bs-toggle="modal"
+                                  data-bs-target="#deliveredOrderStatus"
+                                  aria-controls="deliveredOrderStatus"
+                                  title="Order Status"
+                                  >
+                                  Delivered
+                                </button>
+                              <% break;
+                              
+                              case 3: %>
+                                <button
+                                  type="button"
+                                  class="btn cancelled-data data button_width"
+                                  data-bs-toggle="modal"
+                                  data-bs-target="#cancelledOrderStatus"
+                                  aria-controls="cancelledOrderStatus"
+                                  title="Order Status"
+                                  >
+                                  Cancelled
+                                </button>
+                              <% break;
+                        } %>
+                      </td>                        
+                    </tr>
+                    <% }} %>
+                  </tbody>
+                </table>
+                <br />
+              </div>
+            </div>
+          </div>
+        </div>       
+
+        <!-- Modal here -->
+        <!-- Paid Order Status Modal -->
+        <% if(orders) { %>
+          <% for(let order of orders) { %>
+        <div
+          class="modal fade"
+          id="a<%= order._id %>"
+          data-bs-backdrop="static"
+          data-bs-keyboard="false"
+          tabindex="-1"
+          aria-labelledby="paidOrderStatusLabel"
+          aria-modal="true"
+          aria-hidden="true"
+        >
+          <div
+            class="modal-dialog modal-lg modal-dialog-centered modal-dialog-scrollable"
+          >
+          <div class="modal-content">
+            <!-- Header -->
+            <div class="modal-header">
+              <h5 class="modal-title fw-bold text-uppercase px-2">
+               View Order Status
+              </h5>
+              <button
+                type="button"
+                class="btn-close btn-close-white px-2"
+                data-bs-dismiss="modal"
+                aria-label="Close"
+              ></button>
+            </div>
+
+            <!-- Body -->
+            <div class="modal-body">
+              <div class="container-fluid">
+                <p class="tab-header fs-4">Recipient</p>
+                
+                <!-- Name -->
+                <div class="row py-1 order-details">
+                  <div class="col-lg-4 lh-lg">Name:</div>
+                  <div class="col-lg-8 fw-bold"><%= order.name %></div>
+                </div>
+
+                <!-- Contact Number -->
+                <div class="row py-1 order-details">
+                  <div class="col-lg-4 lh-lg">Contact Number:</div>
+                  <div class="col-lg-8 fw-bold"><%= order.contact %></div>
+                </div>
+
+                <!-- Address -->
+                <div class="row py-1 order-details">
+                  <div class="col-lg-4 lh-lg">Address:</div>
+                  <div class="col-lg-8 fw-bold">
+                      <address><%= order.address %></address> 
+                  </div>
+                </div>
+
+                <p class="tab-header fs-4">Orders</p>
+
+                <!-- ID -->
+                <div class="row py-1 order-details">
+                  <div class="col-lg-4 lh-lg">Order ID</div>
+                  <div class="col-lg-8 fw-bold"><%= order._id %></div>
+                </div>
+
+                <!-- Item -->
+                <div class="row py-1 order-details">
+                  <div class="col-lg-4 lh-lg">Item</div>
+                  <div class="col-lg-8 fw-bold"><%= order.name %></div>
+                </div>
+
+                <!-- Number of Item -->
+                <div class="row py-1 order-details">
+                  <div class="col-lg-4 lh-lg">No. of Item</div>
+                  <div class="col-lg-8 fw-bold"><%= order.quantity %></div>
+                </div>
+
+                <!-- Total -->
+                <div class="row py-1 order-details">
+                  <div class="col-lg-4 lh-lg">Total Amount</div>
+                  <div class="col-lg-8 fw-bold"><%= order.price * order.quantity %></div>
+                </div>
+
+                <!-- Payment -->
+                <div class="row py-1 order-details">
+                  <div class="col-lg-4 lh-lg">Payment</div>
+                  <div class="col-lg-8 fw-bold">Paypal</div>
+                </div>
+
+                <!-- Order Status -->
+                <div class="row py-1 order-details">
+                  <div class="col-lg-4 lh-lg">Status</div>
+                  <div class="col-lg-8 fw-bold">
+                    
+                    <% switch (order.status) {
+                              case 1: %>
+                                Paid
+                              <% break;
+                              
+                              case 2: %>
+                                Delivered
+                              <% break;
+                              
+                              case 3: %>
+                                Cancelled
+                              <% break;
+                        } %>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+          </div>
+        </div>
+
+        
+        </div>
+        <% }} %>
+
+        <!-- Cancelled Order Status Modal -->
+        <div
+        class="modal fade"
+        id="cancelledOrderStatus"
+        data-bs-backdrop="static"
+        data-bs-keyboard="false"
+        tabindex="-1"
+        aria-labelledby="cancelledOrderStatusLabel"
+        aria-modal="true"
+        aria-hidden="true"
+      >
+        <div
+          class="modal-dialog modal-lg modal-dialog-centered modal-dialog-scrollable"
+        >
+        <div class="modal-content">
+          <!-- Header -->
+          <div class="modal-header">
+            <h5 class="modal-title fw-bold text-uppercase px-2">
+              View Order Status
+            </h5>
+            <button
+              type="button"
+              class="btn-close btn-close-white px-2"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+
+          <!-- Body -->
+          <div class="modal-body">
+            <div class="container-fluid">
+              <p class="tab-header fs-4">Recipient</p>
+              
+              <!-- Name -->
+              <div class="row py-1 order-details">
+                <div class="col-lg-4 lh-lg">Name:</div>
+                <div class="col-lg-8 fw-bold">JUAN DELA CRUZ</div>
+              </div>
+
+              <!-- Contact Number -->
+              <div class="row py-1 order-details">
+                <div class="col-lg-4 lh-lg">Contact Number:</div>
+                <div class="col-lg-8 fw-bold">09123456789</div>
+              </div>
+
+              <!-- Address -->
+              <div class="row py-1 order-details">
+                <div class="col-lg-4 lh-lg">Address:</div>
+                <div class="col-lg-8 fw-bold">
+                    <address>
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo, ratione? Nihil, perferendis debitis beatae tenetur expedita officiis at sapiente esse nobis sed quo adipisci consequatur dignissimos maiores assumenda non aliquam!
+                    </address> 
+                </div>
+              </div>
+
+              <p class="tab-header fs-4">Orders</p>
+
+              <!-- ID -->
+              <div class="row py-1 order-details">
+                <div class="col-lg-4 lh-lg">Order ID</div>
+                <div class="col-lg-8 fw-bold">ORDER12342</div>
+              </div>
+
+              <!-- Item -->
+              <div class="row py-1 order-details">
+                <div class="col-lg-4 lh-lg">Item</div>
+                <div class="col-lg-8 fw-bold">SAMPLE ITEM NAMEE</div>
+              </div>
+
+              <!-- Number of Item -->
+              <div class="row py-1 order-details">
+                <div class="col-lg-4 lh-lg">No. of Item</div>
+                <div class="col-lg-8 fw-bold">13</div>
+              </div>
+
+              <!-- Total -->
+              <div class="row py-1 order-details">
+                <div class="col-lg-4 lh-lg">Total Amount</div>
+                <div class="col-lg-8 fw-bold">PHP 4,582.20</div>
+              </div>
+
+              <!-- Payment -->
+              <div class="row py-1 order-details">
+                <div class="col-lg-4 lh-lg">Payment</div>
+                <div class="col-lg-8 fw-bold">Paypal</div>
+              </div>
+
+              <!-- Order Status -->
+              <div class="row py-1 order-details">
+                <div class="col-lg-4 lh-lg">Status</div>
+                <div class="col-lg-8 fw-bold">CANCELLED</div>
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+
+      
+        </div>
+
+        <!-- Delivered Order Status Modal -->
+        <div
+          class="modal fade"
+          id="deliveredOrderStatus"
+          data-bs-backdrop="static"
+          data-bs-keyboard="false"
+          tabindex="-1"
+          aria-labelledby="deliveredOrderStatusLabel"
+          aria-modal="true"
+          aria-hidden="true"
+        >
+          <div
+            class="modal-dialog modal-lg modal-dialog-centered modal-dialog-scrollable"
+          >
+          <div class="modal-content">
+            <!-- Header -->
+            <div class="modal-header">
+              <h5 class="modal-title fw-bold text-uppercase px-2">
+                View Order Status
+              </h5>
+              <button
+                type="button"
+                class="btn-close btn-close-white px-2"
+                data-bs-dismiss="modal"
+                aria-label="Close"
+              ></button>
+            </div>
+
+            <!-- Body -->
+            <div class="modal-body">
+              <div class="container-fluid">
+                <p class="tab-header fs-4">Recipient</p>
+                
+                <!-- Name -->
+                <div class="row py-1 order-details">
+                  <div class="col-lg-4 lh-lg">Name:</div>
+                  <div class="col-lg-8 fw-bold">JUAN DELA CRUZ</div>
+                </div>
+
+                <!-- Contact Number -->
+                <div class="row py-1 order-details">
+                  <div class="col-lg-4 lh-lg">Contact Number:</div>
+                  <div class="col-lg-8 fw-bold">09123456789</div>
+                </div>
+
+                <!-- Address -->
+                <div class="row py-1 order-details">
+                  <div class="col-lg-4 lh-lg">Address:</div>
+                  <div class="col-lg-8 fw-bold">
+                      <address>
+                          Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo, ratione? Nihil, perferendis debitis beatae tenetur expedita officiis at sapiente esse nobis sed quo adipisci consequatur dignissimos maiores assumenda non aliquam!
+                      </address> 
+                  </div>
+                </div>
+
+                <p class="tab-header fs-4">Orders</p>
+
+                <!-- ID -->
+                <div class="row py-1 order-details">
+                  <div class="col-lg-4 lh-lg">Order ID</div>
+                  <div class="col-lg-8 fw-bold">ORDER12342</div>
+                </div>
+
+                <!-- Item -->
+                <div class="row py-1 order-details">
+                  <div class="col-lg-4 lh-lg">Item</div>
+                  <div class="col-lg-8 fw-bold">SAMPLE ITEM NAMEE</div>
+                </div>
+
+                <!-- Number of Item -->
+                <div class="row py-1 order-details">
+                  <div class="col-lg-4 lh-lg">No. of Item</div>
+                  <div class="col-lg-8 fw-bold">13</div>
+                </div>
+
+                <!-- Total -->
+                <div class="row py-1 order-details">
+                  <div class="col-lg-4 lh-lg">Total Amount</div>
+                  <div class="col-lg-8 fw-bold">PHP 4,582.20</div>
+                </div>
+
+                <!-- Payment -->
+                <div class="row py-1 order-details">
+                  <div class="col-lg-4 lh-lg">Payment</div>
+                  <div class="col-lg-8 fw-bold">Paypal</div>
+                </div>
+
+                <!-- Order Reference -->
+                <div class="row py-1 order-details">
+                  <div class="col-lg-4 lh-lg">Reference</div>
+                  <div class="col-lg-8 fw-bold">TSH-SMA-POL</div>
+                </div>
+
+                <!-- Order Status -->
+                <div class="row py-1 order-details">
+                  <div class="col-lg-4 lh-lg">Status</div>
+                  <div class="col-lg-8 fw-bold">DELIVERED</div>
+                </div>
+
+              </div>
+            </div>
+          </div>
+        </div>
+
+      
+        </div>
+        
+    </section>
+
+
+    <!-- jQuery DataTables JS CDN -->
+    <script src="/js/jquery-3.5.1.js"></script>
+    <script src="/js/jquery.dataTables.min.js"></script>
+    <script src="/js/dataTables.bootstrap5.min.js"></script>
+    <script>
+      let sidebar = document.querySelector(".sidebar");
+      let sidebarBtn = document.querySelector(".sidebarBtn");
+      sidebarBtn.onclick = function () {
+        sidebar.classList.toggle("active");
+        if (sidebar.classList.contains("active")) {
+          sidebarBtn.classList.replace("bx-menu", "bx-menu-alt-right");
+        } else sidebarBtn.classList.replace("bx-menu-alt-right", "bx-menu");
+      };
+      $(document).ready(function () {
+        $("#orderTableList").DataTable({
+          columnDefs: [{ className: "dt-center", targets: "_all" }],
+          lengthMenu: [
+            [20, 25, 50, -1],
+            [20, 25, 50, "All"],
+          ],
+        });
+        jQuery(".dataTable").wrap('<div class="dataTables_scroll" />');
+      });
+    </script>
+
+    <script src="/js/attendants.js"></script>
+    <script src="/js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>
