@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="UTF-8" />
+    <link href="/css/bootstrap.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="/css/common.css" />
+    <link rel="stylesheet" href="/css/user-products.css" />
+    <link rel="stylesheet" href="/css/client.css" />
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.5.0/css/all.css"
+    />
+    <link
+      href="/css/dataTables.bootstrap5.min.css"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+    <title>Products</title>
+  </head>
+  <body>
+    <%- include("../../partials/client-navigation-guest.ejs") %>
+    
+    <div class="head">
+      <!-- <form action="#" class="search-wrapper" >
+        <div class="d-flex justify-content-center search-box">
+          <input
+            type="search"
+            placeholder="Search.."
+            name="searchProduct"
+            class="search-input js-search-input"
+          />
+          <button type="submit">
+            <i class="fa fa-search search-icon"></i>
+            <title>Search</title>
+          </button>
+        </div>
+      </form> -->
+      <!-- <p class="container text-center">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum ex labore dignissimos dolorem perferendis provident, cumque quaerat tenetur eius doloribus.
+      </p> -->
+    </div>
+      <div class="container">
+        <div class="filter-head d-flex justify-content-between">
+          <button
+            type="button"
+            class="btn btn-secondary filter-button"
+            onclick="submitFilter()"
+          >
+          <i class="fas fa-search"></i>
+            <span class="px-1">Search</span>
+          </button>
+          <button
+            type="reset"
+            class="btn btn-secondary filter-button"
+            id="filter-by-button"
+            data-bs-toggle="tooltip" data-bs-placement="bottom"
+          >
+            <i class="fas fa-filter"></i>
+            <span class="px-1">Filter by</span>
+          </button>
+        </div>
+
+        <form method="GET" action="/products">
+        <div class="grid-container" id="category-filters">
+          <div class="grid-filter-1">
+            <label class="form-label" for="product-width">Lens Type: </label>
+            <select
+              class="form-select"
+              aria-label="ProductLensType"
+              id="product-lens"
+              name="lens"
+            >
+              <option selected readonly disabled>Select Type</option>
+              <% for(let filter of filters) { %>
+                <% if(filter.type == "lens") { %>
+                  <option value="<%= filter.name %>"><%= filter.name %></option>
+                <% } %>
+              <% } %>
+            </select>
+          </div>
+          <div class="grid-filter-2">
+            <label class="form-label" for="product-width">Width:</label>
+            <select
+              class="form-select"
+              aria-label="ProductWidth"
+              id="product-width"
+              name="width"
+            >
+              <option selected readonly disabled>Select Width</option>
+              <% for(let filter of filters) { %>
+                <% if(filter.type == "width") { %>
+                  <option value="<%= filter.name %>"><%= filter.name %></option>
+                <% } %>
+              <% } %>
+            </select>
+          </div>
+          <div class="grid-filter-3">
+            <label class="form-label" for="product-material">Material: </label>
+            <select
+              class="form-select"
+              aria-label="ProductMaterial"
+              id="product-material"
+              name="material"
+            >
+              <option selected readonly disabled>Select Material</option>
+              <% for(let filter of filters) { %>
+                <% if(filter.type == "material") { %>
+                  <option value="<%= filter.name %>"><%= filter.name %></option>
+                <% } %>
+              <% } %>
+            </select>
+          </div>
+          <div class="grid-filter-4">
+            <label class="form-label" for="product-hinge">Hinge: </label>
+            <select
+              class="form-select"
+              aria-label="ProductWidth"
+              id="product-hinge"
+              name="hinge"
+            >
+              <option selected readonly disabled>Select Hinge</option>
+              <% for(let filter of filters) { %>
+                <% if(filter.type == "hinge") { %>
+                  <option value="<%= filter.name %>"><%= filter.name %></option>
+                <% } %>
+              <% } %>
+            </select>
+          </div>
+          <div class="grid-filter-5">
+            <label class="form-label" for="product-finish"> Finish: </label>
+            <select
+              class="form-select"
+              aria-label="Product Material"
+              id="product-finish"
+              name="finish"
+            >
+              <option selected readonly disabled>Select finish</option>
+              <% for(let filter of filters) { %>
+                <% if(filter.type == "finish") { %>
+                  <option value="<%= filter.name %>"><%= filter.name %></option>
+                <% } %>
+              <% } %>
+            </select>
+          </div>
+        </div>
+      </form>
+
+        <!-- Product List -->
+        <div class="wrapper">
+          <!-- 1 -->
+          <div class="row">
+            <% if (products) { %>
+            <% for(let product of products) {%>
+            <div class="col-xl-3 col-lg-4 col-md-6 col-sm-6">
+              <div class="card">
+                <a href="/product/<%= product._id %>">
+                  <img
+                    src="/images/<%= product.image %>"
+                    class="card-img-top"
+                    alt="..."
+                  />
+                  <div class="label-new">
+                    <span>new</span>
+                  </div>
+                </a>
+                <div class="card-body">
+                  <a href="/product/<%= product._id %>">
+                    <h6 class="card-title"><%= product.name %></h6>
+                  </a>
+                  <p class="card-text"><%= product.lens %></p>
+                  <div class="d-flex justify-content-between">
+                    <p class="price">
+                      <i class="fas fa-tag px-1 tag" aria-hidden="true"></i>
+                      <span class="px-1">Php <%= product.price %></span>
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <% }} %>
+          </div>
+          
+        </div>
+        <br />
+        <!-- pagination -->
+        <nav aria-label="Product Page Pagination">
+          <ul class="pagination justify-content-center">
+            <li class="page-item disabled">
+              <a
+                class="page-link unset"
+                href="#"
+                tabindex="-1"
+                aria-disabled="true"
+                >Previous</a
+              >
+            </li>
+            <li class="page-item"><a class="page-link" href="#">1</a></li>
+            <li class="page-item"><a class="page-link" href="#">2</a></li>
+            <li class="page-item"><a class="page-link" href="#">3</a></li>
+            <li class="page-item">
+              <a class="page-link unset" href="#">Next</a>
+            </li>
+          </ul>
+        </nav>
+        <br /><br />
+      </div>
+
+    <%- include("../../partials/client-footer.ejs") %>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="/js/all-products.js"></script>
+    
+    <script>
+      var filterButton = document.getElementById("filter-by-button");
+      var categoryFilters = document.getElementById("category-filters");
+      filterButton.addEventListener("click", function () {
+        if (categoryFilters.style.display === "none") {
+          categoryFilters.style.display = "grid";
+
+        } else {
+          categoryFilters.style.display = "none";
+        }
+      });
+    </script>
+
+  </body>
+</html>

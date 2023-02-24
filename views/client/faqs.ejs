@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="UTF-8" />
+    <link href="\css\bootstrap.min.css" rel="stylesheet" />
+    <link href="\css\client.css" rel="stylesheet" />
+    <link href="\css\common.css" rel="stylesheet" />
+    <link href="\css\home.css" rel="stylesheet" />
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.5.0/css/all.css"
+    />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>New Vision</title>
+  </head>
+  <body>
+    <%- include("../partials/client-navigation-guest.ejs") %>
+
+    <!-- body -->
+    <div class="ctaoniner-fluid faqs pt-4 pb-5">
+      <div class="container pb-3">
+        <div class="wrapper">
+          <h1 class="pt-2 pb-4">Frequently Asked Questions</h1>
+          <ol class="list-group list-group-numbered">
+            <li
+              class="list-group-item d-flex justify-content-between align-items-start"
+            >
+              <div class="ms-2 me-auto">
+                <div class="fw-bold">
+                  What kinds of products and services do we sell?
+                </div>
+                We mainly sell eyeglasses in different styles, which you will
+                see on the Products page. You may schedule an online appointment
+                on the Set Appointment page.
+              </div>
+            </li>
+            <li
+              class="list-group-item d-flex justify-content-between align-items-start"
+            >
+              <div class="ms-2 me-auto">
+                <div class="fw-bold">What eyeglasses styles can I choose?</div>
+                You may select your eyeglass style with the width, material,
+                hinge, and finish in the filtering selection on the Product
+                page. You may choose the lens type with normal or UV Lens of
+                your selected product.
+              </div>
+            </li>
+            <li
+              class="list-group-item d-flex justify-content-between align-items-start"
+            >
+              <div class="ms-2 me-auto">
+                <div class="fw-bold">
+                  Is it possible to order more than one eyeglass each order?
+                </div>
+                You can order as many glasses as you want. After adding a pair
+                of glasses to your Shopping Cart, click the Back to Shopping
+                button at the upper right of the Shopping Cart page. Then order
+                the next eyeglass. Repeat until you have all the glasses you
+                want to order.
+              </div>
+            </li>
+            <li
+              class="list-group-item d-flex justify-content-between align-items-start"
+            >
+              <div class="ms-2 me-auto">
+                <div class="fw-bold">
+                  Do I need an account to schedule an appointment?
+                </div>
+                Yes, you will need an account on our website to be able to
+                schedule an appointment and order products.
+              </div>
+            </li>
+            <li
+              class="list-group-item d-flex justify-content-between align-items-start"
+            >
+              <div class="ms-2 me-auto">
+                <div class="fw-bold">Do you offer Shipping of orders?</div>
+                No. The Shipping of online orders is not yet available in the
+                system.
+              </div>
+            </li>
+            <li
+              class="list-group-item d-flex justify-content-between align-items-start"
+            >
+              <div class="ms-2 me-auto">
+                <div class="fw-bold">Do you accept online payment?</div>
+                Unfortunately, we cannot accept online payment at this time. We
+                are working on changing this as a matter of priority.
+              </div>
+            </li>
+            <li
+              class="list-group-item d-flex justify-content-between align-items-start"
+            >
+              <div class="ms-2 me-auto">
+                <div class="fw-bold">I have a concern, who do I contact?</div>
+                You can find the contact details at the bottom of the website,
+                which includes email and a contact number.
+              </div>
+            </li>
+            <li
+              class="list-group-item d-flex justify-content-between align-items-start"
+            >
+              <div class="ms-2 me-auto">
+                <div class="fw-bold">
+                  I don't know what my eye grade is. What should I do before
+                  buying?
+                </div>
+                We assist customers in knowing their eye grades to provide the
+                proper eyeglasses for you.
+              </div>
+            </li>
+            <li
+              class="list-group-item d-flex justify-content-between align-items-start"
+            >
+              <div class="ms-2 me-auto">
+                <div class="fw-bold">
+                  Is it safe to put my credit card number on this website?
+                </div>
+                Yes. We don't store your credit card information that our
+                payment processor handles. We will never share your personal
+                information with anyone else.
+              </div>
+            </li>
+          </ol>
+        </div>
+      </div>
+    </div>
+
+    <!-- footer -->
+    <section class="footer-body">
+      <div class="container-fluid py-5">
+        <div class="container">
+          <footer>
+            <div class="row g-3">
+              <div class="col-lg-4 col-md-12 col-sm-12">
+                <h4>LEAVE US YOUR MESSAGE</h4>
+                <br />
+                <input
+                  type="text"
+                  class="form-control form-control"
+                  placeholder="Name"
+                  id="footerName"
+                /><br />
+                <input
+                  type="email"
+                  class="form-control form-control"
+                  placeholder="Email Address"
+                  id="footerEmail"
+                /><br />
+                <textarea
+                  class="form-control"
+                  placeholder="Message"
+                  id="footerMessage"
+                  rows="8"
+                ></textarea
+                ><br />
+                <div>
+                  <button type="button" class="btn btn-blue w-100">
+                    SUBMIT
+                  </button>
+                </div>
+              </div>
+              <div class="col-lg-2 col-md-4 col-sm-12">
+                <h4>HELP</h4>
+                <p><a class="footer-link" href="#">FAQs</a></p>
+                <p><a class="footer-link" href="#">About Us</a></p>
+              </div>
+              <div class="col-lg-3 col-md-4 col-sm-12">
+                <h4>COMPANY</h4>
+                <p><a class="footer-link" href="#">Terms and Conditions</a></p>
+                <p><a class="footer-link" href="#">Products</a></p>
+                <p><a class="footer-link" href="#">Services</a></p>
+              </div>
+              <div class="col-lg-3 col-md-4 col-sm-12">
+                <h4>CONTACT</h4>
+                <p>Email: opticeye@gmail.com</p>
+                <p>Phone: +639123456789</p>
+                <br>
+                <div class="d-flex contact-icons">
+                  <i class="fab fa-facebook" aria-hidden="true"></i>
+                  <i class="fab fa-instagram" aria-hidden="true"></i>
+                  <i class="fab fa-youtube" aria-hidden="true"></i>
+                </div>
+              </div>
+            </div>
+            <div class="text-center pt-5 mt-2 mb-1">
+              Copyright © 2022 FRFR Technologies.<br />
+              All Rights Reserved.
+            </div>
+          </footer>
+        </div>
+      </div>
+    </section>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>

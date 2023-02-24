@@ -1,0 +1,1021 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="UTF-8" />
+    <link href="/css/bootstrap.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="/css/adminSidebar.css" />
+    <link rel="stylesheet" href="/css/attendants.css" />
+    <link rel="stylesheet" href="/css/common.css" />
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.5.0/css/all.css"
+    />
+    <link
+      href="/css/dataTables.bootstrap5.min.css"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Admin | Attendants</title>
+  </head>
+
+  <body>
+    <%- include("../../partials/admin-sidebar.ejs") %>
+    <%- include("../../partials/convertDate.ejs") %>
+
+    <section class="home-section">
+      <nav>
+        <div class="container-fluid d-flex">
+          <div class="sidebar-button me-auto">
+            <i class="fas fa-bars sidebarBtn"></i>
+            <span class="dashboard">Attendants</span>
+          </div>
+
+          <a href="#" class="view-shop px-3">
+            <i class="fas fa-paper-plane" aria-hidden="true"></i>
+            <span class="view-shop-text px-2">View your shop</span>
+          </a>
+          <div class="profile-details px-2">
+            <span class="admin_name px-2">Admin Name</span>
+            <img src="/images/avatar.png" alt="" />
+          </div>
+        </div>
+      </nav>
+
+      <div class="home-content">
+        <div class="container-fluid">
+          <div class="d-flex justify-content-end mx-2">
+            <!-- Archives Button -->
+            <a
+              href="/api/attendants/archives"
+              class="btn archiveBtn text-white fw-bold px-4"
+              id="archive-list-button"
+              title="View Archive List"
+              >Archives</a
+            >
+
+            <!-- Create New Button trigger modal -->
+            <button
+              type="button"
+              class="btn addBtn text-white fw-bold px-3 mx-3"
+              id="create-new-button"
+              data-bs-toggle="modal"
+              data-bs-target="#newAttendant"
+              title="Create New Attendant"
+            >
+              <i class="fa fa-plus" aria-hidden="true"></i>
+              Create New
+            </button>
+          </div>
+
+          <!-- Create New Attendant Modal -->
+          <div
+            class="modal fade"
+            id="newAttendant"
+            data-bs-backdrop="static"
+            data-bs-keyboard="false"
+            tabindex="-1"
+            aria-labelledby="newAttendantLabel"
+            aria-modal="true"
+            aria-hidden="true"
+          >
+            <form method="POST" action="attendant"
+              class="modal-dialog modal-lg modal-dialog-centered modal-dialog-scrollable"
+            >
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title fw-bold text-uppercase px-2">
+                    New Attendant
+                  </h5>
+                  <button
+                    type="button"
+                    class="btn-close btn-close-white px-2"
+                    data-bs-dismiss="modal"
+                    aria-label="Close"
+                  ></button>
+                </div>
+                <div class="modal-body">
+                  <form action="">
+                    <div class="container-fluid">
+                      <div class="profile-pic-div">
+                        <img
+                          src="/images/avatar.png"
+                          alt="avatar"
+                          id="photo"
+                        />
+                        <input type="file" id="file" />
+                        <label class="form-label" for="file" id="uploadBtn"
+                          >Choose Photo</label
+                        >
+                      </div>
+
+                      <!-- Date Added auto input -->
+                      <div class="row">
+                        <div class="col-lg-6 py-2">
+                          <label class="form-label" for="date"
+                            >Date Added:
+                          </label>
+                          <input
+                            type="date"
+                            name="date"
+                            minlength="11"
+                            maxlength="11"
+                            class="form-control"
+                            aria-label="Date Added"
+                            placeholder="Date Added"
+                            required
+                          />
+                        </div>
+                      </div>
+
+                      <!-- Name -->
+                      <div class="row mb-2 py-1">
+                        <div class="col-lg-3 col-md-6 py-2">
+                          <label
+                            class="form-label asterisk"
+                            for="fnameAttendant"
+                            >First Name:
+                          </label>
+                          <input
+                            type="text"
+                            name="first_name"
+                            class="form-control"
+                            id="fnameAttendant"
+                            placeholder="First Name"
+                            required
+                          />
+                        </div>
+                        <div class="col-lg-3 col-md-6 py-2">
+                          <label class="form-label" for="midnNameAttendant"
+                            >Middle Name:
+                          </label>
+                          <input
+                            type="text"
+                            name="middle_name"
+                            class="form-control"
+                            id="midnNameAttendant"
+                            placeholder="Middle Name"
+                            required
+                          />
+                        </div>
+                        <div class="col-lg-3 col-md-6 py-2">
+                          <label
+                            class="form-label asterisk"
+                            for="surnameAttendant"
+                            >Last Name:
+                          </label>
+                          <input
+                            type="text"
+                            name="last_name"
+                            class="form-control"
+                            id="surnameAttendant"
+                            placeholder="Last Name"
+                            required
+                          />
+                        </div>
+                        <div class="col-lg-3 col-md-6 py-2">
+                          <label class="form-label" for="suffixAttendant"
+                            >Suffix:
+                          </label>
+                          <input
+                            type="text"
+                            name="suffix"
+                            class="form-control"
+                            id="suffixAttendant"
+                            placeholder="Suffix"
+                          />
+                        </div>
+                      </div>
+                      <div class="row">
+                        <div class="col-lg-6 col-md-6 py-2">
+                          <label class="form-label" for="title">Title: </label>
+                          <input
+                            type="text"
+                            name="title"
+                            class="form-control"
+                            id="title"
+                            placeholder="Title"
+                            required
+                          />
+                        </div>
+                      </div>
+
+                      <!-- Birthday -->
+                      <div class="row">
+                        <div class="col-lg-6 py-2">
+                          <label class="form-label asterisk" for="bdayAttendant"
+                            >Birthday:
+                          </label>
+                          <input
+                            type="date"
+                            name="bday"
+                            class="form-control"
+                            id="bdayAttendant"
+                            placeholder="Birthday"
+                            required
+                          />
+                        </div>
+
+                        <!-- Gender -->
+                        <div class="col-lg-6 col-md-6 py-2">
+                          <label
+                            class="form-label asterisk"
+                            for="sexAttendant"
+                            >Sex:
+                          </label>
+                          <div class="row">
+                            <div class="col-lg-6 col-md-12 pt-1">
+                              <div class="form-check-inline">
+                                <input
+                                  class="form-check-input"
+                                  type="radio"
+                                  name="sex"
+                                  value="M"
+                                  id="male"
+                                  required
+                                />
+                                <label class="form-check-label" for="sex">
+                                  Male
+                                </label>
+                                <div></div>
+                              </div>
+                              <div class="form-check-inline mb-3">
+                                <input
+                                  class="form-check-input"
+                                  type="radio"
+                                  name="sex"
+                                  value="F"
+                                  id="female"
+                                  required
+                                />
+                                <label class="form-check-label" for="sex">
+                                  Female
+                                </label>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+
+                      <!-- Address -->
+                      <label
+                        class="form-label pt-2 asterisk"
+                        for="addressAttendant"
+                        >Address:
+                      </label>
+                      <input
+                        type="text"
+                        name="address"
+                        class="form-control"
+                        id="addressAttendant"
+                        placeholder="Address"
+                        required
+                      />
+
+                      <!-- Email Address & Contact No. -->
+                      <div class="row pt-2">
+                        <div class="col-lg-6 py-2">
+                          <label
+                            class="form-label asterisk"
+                            for="emailAttendant"
+                            >Email Address:
+                          </label>
+                          <input
+                            type="email"
+                            name="email"
+                            class="form-control"
+                            id="emailAttendant"
+                            placeholder="Email Address"
+                            required
+                          />
+                        </div>
+                        <div class="col-lg-6 py-2 asterisk">
+                          <label
+                            class="form-label asterisk"
+                            for="contactAttendant"
+                            >Contact No:
+                          </label>
+                          <input
+                            type="tel"
+                            name="contact"
+                            id="contactAttendant"
+                            minlength="11"
+                            maxlength="11"
+                            class="form-control"
+                            aria-label="Contact Number"
+                            oninput="this.value = this.value.replace(/[^0-9.]/g, '')"
+                            placeholder="Contact Number"
+                            title="Numbers only"
+                            required
+                          />
+                        </div>
+                      </div>
+                    </div>
+                  </form>
+                </div>
+                
+                <div class="modal-footer mx-3">
+                  <button type="submit" class="btn btn-default px-3 mx-2">
+                    Save
+                  </button>
+                  <button
+                    type="button"
+                    class="btn btn-secondary py-2 px-3"
+                    data-bs-dismiss="modal"
+                  >
+                    Close
+                  </button>
+                </div>
+              </div>
+            </form>
+          </div>
+
+          <!-- Attendants Table -->
+          <div class="container-fluid p-4" id="attendants-table-data">
+            <div class="table-wrapper px-4">
+              <div class="table-title">
+                <!--Table Header-->
+                <h4 class="px-1 pt-4 fw-bold">List of Attendants</h4>
+              </div>
+              <hr class="my-4" />
+              <form 
+                method="POST" action="/api/attendant/archive?_method=PATCH"
+                class="container-fluid table-responsive pt-2">
+                <table
+                  class="table table-hover align-middle align-items-center table-body"
+                  aria-label="Customers' List"
+                  id="attendantsTableList"
+                >
+                  <!--Table Body-->
+                  <thead>
+                    <tr>
+                      <th scope="col">
+                        <div class="form-check">
+                          <input
+                            class="form-check-input check-all"
+                            type="checkbox"
+                            value=""
+                            id="check-all"
+                            onclick="checkAll()"
+                          />
+                          <label
+                            class="form-check-label"
+                            for="check-all-customer"
+                          >
+                            All
+                          </label>
+                        </div>
+                      </th>
+                      <th scope="col">ID</th>
+                      <th scope="col">Name</th>
+                      <th scope="col">Contact No.</th>
+                      <th scope="col">Action</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <% for(let attendant of attendants) { %>
+                      <tr>
+                        <td>
+                          <div class="form-check">
+                            <input
+                              class="form-check-input check-list"
+                              type="checkbox"
+                              name="archive-check"
+                              value="<%= attendant._id %>"
+                              onClick="updateArchiveCount()"
+                              id="check-one-attendant"
+                            />
+                          </div>
+                        </td>
+                        <td><%= attendant._id %></td>
+                        <td>
+                          <img
+                            src="/images/avatar.png"
+                            class="img-table-list mx-2"
+                          /><%= attendant.first_name + " " + attendant.middle_name + " " + attendant.last_name %>
+                        </td>
+                        <td><%= attendant.contact %></td>
+                        <td class="action">
+                          <div class="action-buttons">
+                            <ul>
+                              <li>
+                                <button
+                                  type="button"
+                                  id="view"
+                                  class="btn view-data data button_width"
+                                  data-bs-toggle="modal"
+                                  data-bs-target="#a<%= attendant._id %>"
+                                  title="View Details"
+                                >
+                                  View
+                                </button>
+                              </li>
+                              <li>
+                                <button
+                                  type="button"
+                                  id="edit"
+                                  class="btn update-data data button_width"
+                                  data-bs-toggle="modal"
+                                  data-bs-target="#updateAttendant"
+                                  title="Update Details"
+                                >
+                                  Update
+                                </button>
+                              </li>
+                              <li></li>
+                              <!-- <li>
+                                <button
+                                  type="button"
+                                  class="btn archive-data data button_width"
+                                  title="Archive Data"
+                                  aria-hidden="true"
+                                >
+                                  Archive
+                                </button>
+                              </li> -->
+                            </ul>
+                          </div>
+                        </td>
+                      </tr>
+                    <% } %>
+                  </tbody>
+                </table>
+                <br />
+
+                <!-- Batch Archive Button -->
+                <div class="d-flex justify-content-end my-3">
+                  <button
+                    type="submit"
+                    class="btn archive-all-data px-4 py-1 fw-bold text-white text-uppercase"
+                    id="archive-counter"
+                  >
+                    Archive Attendants (0)
+                  </button>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+
+        <!-- View Attendant Details Modal -->
+        <% for(let attendant of attendants) { %>
+        <div
+          class="modal fade"
+          id="a<%= attendant._id %>"
+          data-bs-backdrop="static"
+          data-bs-keyboard="false"
+          tabindex="-1"
+          aria-labelledby="viewAttendantLabel"
+          aria-modal="true"
+          aria-hidden="true"
+        >
+          <div
+            class="modal-dialog modal-lg modal-dialog-centered modal-dialog-scrollable"
+          >
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title fw-bold text-uppercase px-2">
+                  View Attendant Details
+                </h5>
+                <button
+                  type="button"
+                  class="btn-close btn-close-white px-2"
+                  data-bs-dismiss="modal"
+                  aria-label="Close"
+                ></button>
+              </div>
+              <div class="modal-body">
+                <div class="container-fluid">
+                  <div class="profile-pic-div">
+                    <img
+                      src="/images/avatar.png"
+                      alt="avatar"
+                      id="photoView"
+                    />
+                  </div>
+                  <!-- Date Added -->
+                  <div class="row">
+                    <div class="col-lg-6 py-2">
+                      <label class="form-label asterisk" for="dateAttendantView"
+                        >Date Added: 
+                      </label>
+                      <input
+                        type="text"
+                        name="date"
+                        id="dateAttendantView"
+                        minlength="11"
+                        maxlength="11"
+                        class="form-control"
+                        aria-label="Date Added"
+                        value="<%= attendant.date_added %>"
+                        readonly
+                      />
+                    </div>
+                  </div>
+
+                  <!-- View Name -->
+                  <div class="row mb-2 py-1">
+                    <div class="col-lg-3 col-md-6 py-2">
+                      <label
+                        class="form-label asterisk"
+                        for="fnameAttendantView"
+                        >First Name:
+                      </label>
+                      <input
+                        type="text"
+                        name="fname"
+                        class="form-control"
+                        id="fnameAttendantView"
+                        value="<%= attendant.first_name %>"
+                        readonly
+                      />
+                    </div>
+                    <div class="col-lg-3 col-md-6 py-2">
+                      <label class="form-label" for="midnNameAttendantView"
+                        >Middle Name:
+                      </label>
+                      <input
+                        type="text"
+                        name="midname"
+                        class="form-control"
+                        id="midnNameAttendantView"
+                        value="<%= attendant.middle_name %>"
+                        readonly
+                      />
+                    </div>
+                    <div class="col-lg-3 col-md-6 py-2">
+                      <label
+                        class="form-label asterisk"
+                        for="surnameAttendantView"
+                        >Last Name:
+                      </label>
+                      <input
+                        type="text"
+                        name="surname"
+                        class="form-control"
+                        id="surnameAttendantView"
+                        value="<%= attendant.last_name %>"
+                        readonly
+                      />
+                    </div>
+                    <div class="col-lg-3 col-md-6 py-2">
+                      <label class="form-label" for="suffixAttendantView"
+                        >Suffix:
+                      </label>
+                      <input
+                        type="text"
+                        name="suffix"
+                        class="form-control"
+                        id="suffixAttendantView"
+                        value="<%= attendant.suffix %>"
+                        readonly
+                      />
+                    </div>
+                  </div>
+
+                  <!-- View Title -->
+                  <div class="row">
+                    <div class="col-lg-6 col-md-6 py-2">
+                      <label class="form-label" for="titleView">Title:</label>
+                      <input
+                        type="text"
+                        name="title"
+                        class="form-control"
+                        id="titleView"
+                        value="Attendant"
+                        readonly
+                      />
+                    </div>
+                  </div>
+
+                  <!--View Birthday & Gender -->
+                  <div class="row">
+                    <div class="col-lg-6 py-2">
+                      <label class="form-label asterisk" for="bdayAttendantView"
+                        >Birthday:
+                      </label>
+                      <input
+                        type="text"
+                        name="bday"
+                        class="form-control"
+                        id="bdayAttendantView"
+                        value="<%= attendant.birthday %>"
+                        readonly
+                      />
+                    </div>
+                    <div class="col-lg-6 col-md-6 py-2">
+                      <label
+                        class="form-label asterisk"
+                        for="gender"
+                        >Sex:
+                      </label>
+                      <div class="row">
+                        <div class="col-lg-6 col-md-12 pt-1">
+                          <div class="form-check-inline">
+                            <label class="form-check-label" for="maleView" active>
+                              <input
+                                class="form-check-input"
+                                type="checkbox"
+                                name="gender"
+                                value="Male"
+                                id="maleView"
+                                <%= (attendant.sex == "M")? "checked": "" %>
+                                disabled
+                              />
+                                Male
+                            </label>
+                            <div></div>
+                          </div>
+                          <div class="form-check-inline mb-3">
+                            <label class="form-check-label" for="femaleView">
+                            <input
+                              class="form-check-input"
+                              type="checkbox"
+                              name="gender"
+                              value="Female"
+                              id="femaleView"
+                              <%= (attendant.sex == "F")? "checked": "" %>
+                              disabled
+                            />
+                              Female
+                            </label>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- View Address -->
+                  <label
+                    class="form-label pt-2 asterisk"
+                    for="addressAttendantView"
+                    >Address:
+                  </label>
+                  <input
+                    type="text"
+                    name="address"
+                    class="form-control"
+                    id="addressAttendantView"
+                    value="<%= attendant.address %>"
+                    readonly
+                  />
+
+                  <!-- View Email Address & Contact No. -->
+                  <div class="row pt-2">
+                    <div class="col-lg-6 py-2">
+                      <label
+                        class="form-label asterisk"
+                        for="emailAttendantView"
+                        >Email Address:
+                      </label>
+                      <input
+                        type="email"
+                        name="email"
+                        class="form-control"
+                        id="emailAttendantView"
+                        value="<%= attendant.email %>"
+                        readonly
+                      />
+                    </div>
+                    <div class="col-lg-6 py-2 asterisk">
+                      <label
+                        class="form-label asterisk"
+                        for="contactAttendantView"
+                        >Contact No:
+                      </label>
+                      <input
+                        type="tel"
+                        name="contactnum"
+                        id="contactAttendantView"
+                        minlength="11"
+                        maxlength="11"
+                        class="form-control"
+                        aria-label="Contact Number"
+                        oninput="this.value = this.value.replace(/[^0-9.]/g, '')"
+                        title="Numbers only"
+                        value="<%= attendant.contact %>"
+                        readonly
+                      />
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="modal-footer mx-2">
+                <button
+                  type="button"
+                  class="btn btn-secondary"
+                  data-bs-dismiss="modal"
+                >
+                  Close
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <% } %>
+        <!-- Update Attendant Details Modal -->
+
+        <% for(let attendant of attendants) { %>
+        <div
+          class="modal fade"
+          id="updateAttendant"
+          data-bs-backdrop="static"
+          data-bs-keyboard="false"
+          tabindex="-1"
+          aria-labelledby="updateAttendantLabel"
+          aria-modal="true"
+          aria-hidden="true"
+        >
+          <form method="POST" action="attendant/<%= attendant._id %>?_method=PATCH"
+            class="modal-dialog modal-lg modal-dialog-centered modal-dialog-scrollable"
+          >
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5
+                  class="modal-title fw-bold text-uppercase px-2"
+                  id="updateAttendantLabel"
+                >
+                  Update Attendant Details
+                </h5>
+                <button
+                  type="button"
+                  class="btn-close btn-close-white px-2"
+                  data-bs-dismiss="modal"
+                  aria-label="Close"
+                ></button>
+              </div>
+              <div class="modal-body">
+                <div class="container-fluid">
+                  <form action="">
+                    <!-- Update Photo -->
+                    <div class="profile-pic-div">
+                      <img
+                        src="/images/avatar.png"
+                        alt="avatar"
+                        id="photoUpdate"
+                      />
+                      <input type="file" id="fileUpdate" />
+                      <label class="form-label" for="file" id="uploadBtnUpdate"
+                        >Choose Photo</label
+                      >
+                    </div>
+
+                    <!-- Date Added auto input -->
+                    <div class="row">
+                      <div class="col-lg-6 py-2">
+                        <label class="form-label asterisk" for="dateAttendantUpdate"
+                          >Date Added:
+                        </label>
+                        <input
+                          type="date"
+                          name="date_added"
+                          id="dateAttendantUpdate"
+                          minlength="11"
+                          maxlength="11"
+                          class="form-control"
+                          aria-label="Date Added"
+                          value="<%= formatDate(attendant.date_added) %>"
+                          required
+                        />
+                      </div>
+                    </div>
+
+                    <!-- Update Name -->
+                    <div class="row mb-2 py-1">
+                      <div class="col-lg-3 col-md-6 py-2">
+                        <label
+                          class="form-label asterisk"
+                          for="fnameAttendantUpdate"
+                          >First Name:
+                        </label>
+                        <input
+                          type="text"
+                          name="first_name"
+                          class="form-control"
+                          id="fnameAttendantUpdate"
+                          value="<%= attendant.first_name %>"
+                          required
+                        />
+                      </div>
+                      <div class="col-lg-3 col-md-6 py-2">
+                        <label class="form-label" for="midnNameAttendantUpdate"
+                          >Middle Name:
+                        </label>
+                        <input
+                          type="text"
+                          name="middle_name"
+                          class="form-control"
+                          id="midnNameAttendantUpdate"
+                          value="<%= attendant.middle_name %>"
+                        />
+                      </div>
+                      <div class="col-lg-3 col-md-6 py-2">
+                        <label
+                          class="form-label asterisk"
+                          for="surnameAttendantUpdate"
+                          >Last Name:
+                        </label>
+                        <input
+                          type="text"
+                          name="last_name"
+                          class="form-control"
+                          id="surnameAttendantUpdate"
+                          value="<%= attendant.last_name %>"
+                          required
+                        />
+                      </div>
+                      <div class="col-lg-3 col-md-6 py-2">
+                        <label class="form-label" for="suffixAttendantUpdate"
+                          >Suffix:
+                        </label>
+                        <input
+                          type="text"
+                          name="suffix"
+                          class="form-control"
+                          id="suffixAttendantUpdate"
+                          value="<%= attendant.suffix %>"
+                        />
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="col-lg-6 col-md-6 py-2">
+                        <label class="form-label" for="titleUpdate"
+                          >Title:
+                        </label>
+                        <input
+                          type="text"
+                          name="title"
+                          class="form-control"
+                          id="titleUpdate"
+                          value="<%= attendant.title %>"
+                        />
+                      </div>
+                    </div>
+
+                    <!-- Update Birthday -->
+                    <div class="row">
+                      <div class="col-lg-6 py-2">
+                        <label
+                          class="form-label asterisk"
+                          for="bdayAttendantUpdate"
+                          >Birthday:
+                        </label>
+                        <input
+                          type="date"
+                          name="birthday"
+                          class="form-control"
+                          id="bdayAttendantUpdate"
+                          value="<%= formatDate(attendant.birthday) %>"
+                          required
+                        />
+                      </div>
+
+                      <!-- Update Gender -->
+                      <div class="col-lg-6 col-md-6 py-2">
+                        <label
+                          class="form-label asterisk"
+                          for="midnNameAttendantUpdate"
+                          >Sex:
+                        </label>
+                        <div class="row">
+                          <div class="col-lg-6 col-md-12 pt-1">
+                            <div class="form-check-inline">
+                              <label class="form-check-label" for="sex" <%= (attendant.sex == "M")? "active": "" %>>
+                              <input
+                                class="form-check-input"
+                                type="radio"
+                                name="sex"
+                                value="M"
+                                id="maleUpdate"
+                                checked
+                                required
+                              />
+                                Male
+                              </label>
+                              <div></div>
+                            </div>
+                            <div class="form-check-inline mb-3">
+                              <label class="form-check-label" for="sex" <%= (attendant.sex == "F")? "active": "" %>>
+                              <input
+                                class="form-check-input"
+                                type="radio"
+                                name="sex"
+                                value="F"
+                                id="femaleUpdate"
+                                required
+                              />
+                                Female
+                              </label>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+                    <!-- Update Address -->
+                    <label
+                      class="form-label pt-2 asterisk"
+                      for="addressAttendantUpdate"
+                      >Address:
+                    </label>
+                    <input
+                      type="text"
+                      name="address"
+                      class="form-control"
+                      id="addressAttendantUpdate"
+                      value="<%= attendant.address %>"
+                      required
+                    />
+
+                    <!-- Update Email Address & Contact No. -->
+                    <div class="row pt-2">
+                      <div class="col-lg-6 py-2">
+                        <label
+                          class="form-label asterisk"
+                          for="emailAttendantUpdate"
+                          >Email Address:
+                        </label>
+                        <input
+                          type="email"
+                          name="email"
+                          class="form-control"
+                          id="emailAttendantUpdate"
+                          value="<%= attendant.email %>"
+                          required
+                        />
+                      </div>
+                      <div class="col-lg-6 py-2 asterisk">
+                        <label
+                          class="form-label asterisk"
+                          for="contactAttendantUpdate"
+                          >Contact No:
+                        </label>
+                        <input
+                          type="tel"
+                          name="contact"
+                          id="contactAttendantUpdate"
+                          minlength="11"
+                          maxlength="11"
+                          class="form-control"
+                          aria-label="Contact Number"
+                          oninput="this.value = this.value.replace(/[^0-9.]/g, '')"
+                          value="<%= attendant.contact %>"
+                          title="Numbers only"
+                          required
+                        />
+                      </div>
+                    </div>
+                  </form>
+                </div>
+              </div>
+              <div class="modal-footer mx-2">
+                <button type="submit" class="btn btn-default" >
+                  Save Changes
+                </button>
+                <button
+                  type="button"
+                  class="btn btn-secondary"
+                  data-bs-dismiss="modal"
+                >
+                  Close
+                </button>
+              </div>
+            </div>
+          </form>
+        </div>
+        <% } %>
+      </div>
+    </section>
+
+    <!-- jQuery DataTables JS CDN -->
+    <script src="/js/jquery-3.5.1.js"></script>
+    <script src="/js/archive.js"></script>
+    <script src="/js/jquery.dataTables.min.js"></script>
+    <script src="/js/dataTables.bootstrap5.min.js"></script>
+
+    <script>
+      let sidebar = document.querySelector(".sidebar");
+      let sidebarBtn = document.querySelector(".sidebarBtn");
+      sidebarBtn.onclick = function () {
+        sidebar.classList.toggle("active");
+        if (sidebar.classList.contains("active")) {
+          sidebarBtn.classList.replace("bx-menu", "bx-menu-alt-right");
+        } else sidebarBtn.classList.replace("bx-menu-alt-right", "bx-menu");
+      };
+      $(document).ready(function () {
+        $("#attendantsTableList").DataTable({
+          columnDefs: [{ className: "dt-center", targets: "_all" }],
+          lengthMenu: [
+            [20, 25, 50, -1],
+            [20, 25, 50, "All"],
+          ],
+        });
+        jQuery(".dataTable").wrap('<div class="dataTables_scroll" />');
+      });
+    </script>
+
+    <script src="/js/attendants.js"></script>
+    <script src="/js/bootstrap.bundle.min.js"></script>
+    
+  </body>
+</html>

@@ -1,0 +1,122 @@
+    <nav
+      class="navbar container-fluid sticky-top navbar-expand-lg navbar-light bg-light navbar-custom"
+    >
+      <div class="container">
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+          <!-- <i class="fas fa-bars"></i> -->
+        </button>
+        <div class="navbar-brand me-auto">
+          <img
+            src="\images\logo.png"
+            alt="Brand Logo"
+            class="mx-2"
+            width="50px"
+          />
+          <span class="d-sm-none d-md-inline d-none d-sm-inline"
+            >New Vision</span
+          >
+        </div>
+        <div class="collapse navbar-collapse navs" id="navbarSupportedContent">
+          <!-- <div class="navbar-brand">New Vision</div> -->
+          <ul class="navbar-nav mx-4">
+            <li class="nav-item px-4 ms-lg-5 ms-md-0 ms-sm-0">
+              <a class="nav-link navbar-link" href="/home"
+                >HOME</a
+              >
+            </li>
+            <li class="nav-item px-4">
+              <a
+                class="nav-link"
+                href="/products"
+                >PRODUCTS</a
+              >
+            </li>
+            <li class="nav-item px-4">
+              <a class="nav-link" href="/set-appointment"
+                >SET APPOINTMENT</a
+              >
+            </li>
+            <li class="nav-item px-4">
+              <a class="nav-link" href="/faqs">FAQs</a>
+            </li>
+          </ul>
+        </div>
+        <% if(typeof(session) !== "undefined") { %>
+        <% if(!session.loggedin) { %> 
+        <div class="btn-group account-dropdown">
+          <a
+            class="nav-link navbar-link text-dark sign-in-div mx-4 px-4"
+            href="/signin"
+            ><span class="sign-in-text">Sign In</span></a
+          >
+          <div class="cart">
+            <a class="nav-link text-dark" href="#"
+              ><i class="fas fa-cart-arrow-down"></i>
+              <span class="badge bg-primary rounded-pill">14</span>
+            </a>
+          </div>
+        </div>
+        <% } else { %>
+          <div class="btn-group account-dropdown">
+            <div class="cart-customer">
+              <a class="nav-link text-dark" href="/cart"
+                ><i class="fas fa-cart-arrow-down"></i>
+                <span class="badge bg-primary rounded-pill"><%= session.cartqty %></span>
+              </a>
+            </div>
+  
+            <button
+              type="button"
+              class="btn dropdown-toggle"
+              data-bs-toggle="dropdown"
+              data-bs-display="static"
+              aria-expanded="false"
+            >
+              <img
+                src="\images\avatar.png"
+                alt=""
+                width="30px"
+                class="d-inline-block"
+              />
+            </button>
+            <ul class="dropdown-menu dropdown-menu-end dropdown-menu-lg-end dropdown">
+              <li>
+                <a class="dropdown-item" style="z-index: 10" href="/profile">Profile</a>
+              </li>
+              <li>
+                <a class="dropdown-item" style="z-index: 10" href="/account-settings">Settings</a>
+              </li>
+              <li>
+                <a class="dropdown-item" style="z-index: 10" href="/account-history">History</a>
+              </li>
+              <li>
+                <a class="dropdown-item" style="z-index: 10" href="/signout">Sign Out</a>
+              </li>
+            </ul>
+          </div>
+        <% }} else { %>
+          <div class="btn-group account-dropdown">
+            <a
+              class="nav-link navbar-link text-dark sign-in-div mx-4 px-4"
+              href="/signin"
+              ><span class="sign-in-text">Sign In</span></a
+            >
+            <div class="cart">
+              <a class="nav-link text-dark" href="#"
+                ><i class="fas fa-cart-arrow-down"></i>
+                <span class="badge bg-primary rounded-pill">14</span>
+              </a>
+            </div>
+          </div>
+        <% } %>
+      </div>
+    </nav>

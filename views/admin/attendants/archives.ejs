@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="UTF-8" />
+    <link href="/css/bootstrap.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="/css/adminSidebar.css" />
+    <link rel="stylesheet" href="/css/attendants.css" />
+    <link rel="stylesheet" href="/css/common.css" />
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.5.0/css/all.css"
+    />
+    <link
+      href="/css/dataTables.bootstrap5.min.css"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Admin | Attendants</title>
+  </head>
+
+  <body>
+    <%- include("../../partials/admin-sidebar.ejs") %>
+
+    <section class="home-section">
+      <nav>
+        <div class="container-fluid d-flex">
+          <div class="sidebar-button me-auto">
+            <i class="fas fa-bars sidebarBtn"></i>
+            <span class="dashboard">Attendants</span>
+          </div>
+
+          <a href="#" class="view-shop px-3">
+            <i class="fas fa-paper-plane" aria-hidden="true"></i>
+            <span class="view-shop-text px-2">View your shop</span>
+          </a>
+          <div class="profile-details px-2">
+            <span class="admin_name px-2">Admin Name</span>
+            <img src="/images/avatar.png" alt="" />
+          </div>
+        </div>
+      </nav>
+
+      <div class="home-content pb-3">
+        <div class="container-fluid px-4">
+          <div class="d-flex mb-4 px-1">
+            <!-- Archives Button -->
+            <a href="/api/attendants" class="back-page">
+              <i
+                class="fa fa-arrow-left to-back-link"
+                aria-hidden="true"
+                title="Go back"
+              ></i>
+            </a>
+            <span class="page-title px-3">Archives</span>
+          </div>
+
+          <div class="table-wrapper p-4">
+            <div class="table-title">
+              <!--Table Header-->
+              <h4 class="px-3 pt-2 fw-bold">Archived Attendants</h4>
+            </div>
+            <hr class="my-4 mx-3" />
+            <form 
+              method="POST" action="/api/attendant/restore?_method=PATCH"
+              class="container-fluid table-responsive px-4">
+              <table
+                class="table table-hover align-middle align-items-center table-body"
+                aria-label="Attendants Archive List"
+                id="attendantArchiveList"
+              >
+                <!--Table Body-->
+                <thead>
+                  <tr>
+                    <th scope="col">
+                      <div class="form-check">
+                        <input
+                          class="form-check-input check-all"
+                          type="checkbox"
+                          id="check-all"
+                          onClick="checkAll()"
+                        />
+                        <label
+                          class="form-check-label"
+                          for="check-all-attendant-archive"
+                        >
+                          All
+                        </label>
+                      </div>
+                    </th>
+                    <th scope="col">ID</th>
+                    <th scope="col">Name</th>
+                    <th scope="col">Contact No.</th>
+                    <th scope="col">Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <% for(let attendant of attendants) { %>
+                    <tr>
+                      <td>
+                        <div class="form-check">
+                          <input
+                            class="form-check-input check-list"
+                            type="checkbox"
+                            value="<%= attendant._id %>"
+                            id="check-one-attendant"
+                            name="archive-check"
+                            onClick="updateArchiveCount()"
+                          />
+                        </div>
+                      </td>
+                      <td><%= attendant._id %></td>
+                      <td>
+                        <img
+                          src="/images/avatar.png"
+                          class="img-table-list mx-2"
+                        /><%= attendant.first_name + " " + attendant.middle_name + " " + attendant.last_name %>
+                      </td>
+                      <td><%= attendant.contact %></td>
+                      <td>
+                        <button
+                          type="button"
+                          class="btn update-data data"
+                          title="Restore Data"
+                        >
+                          Restore
+                        </button>
+                      </td>
+                    </tr>
+                  <% } %>
+                </tbody>
+              </table>
+              <br />
+
+              <!--Batch Button -->
+              <div class="d-flex justify-content-end my-3 pb-3">
+                <button
+                  type="submit"
+                  class="btn btn-default text-uppercase"
+                  title="Restore Attendant Data"
+                  id="archive-counter"
+                >
+                  Restore Attendant (0)
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
+
+        <!-- Permanently Delete Attendant Pop up Dialog-->
+        <div
+          class="modal fade"
+          id="permanentlyDeleteAttendant"
+          data-bs-backdrop="static"
+          data-bs-keyboard="false"
+          tabindex="-1"
+          aria-modal="true"
+          aria-labelledby="cancelApplicationLabel"
+          aria-hidden="true"
+        >
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h6 class="modal-title text-white">Permanently Delete</h6>
+                <button
+                  type="button"
+                  class="btn-close btn-close-white"
+                  data-bs-dismiss="modal"
+                  aria-label="Close"
+                ></button>
+              </div>
+              <div class="modal-body">
+                <h6>
+                  Once you permanently delete the attendant data, it can't be
+                  undone.
+                </h6>
+              </div>
+              <div class="modal-footer">
+                <button type="submit" class="btn btn-default px-3">
+                  Delete
+                </button>
+                <button
+                  type="button"
+                  class="btn btn-secondary"
+                  data-bs-dismiss="modal"
+                >
+                  Cancel
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- jQuery DataTables JS CDN -->
+    <script src="/js/jquery-3.5.1.js"></script>
+    <script src="/js/attendants.js"></script>
+    <script src="/js/archive.js"></script>
+    <script src="/js/jquery.dataTables.min.js"></script>
+    <script src="/js/dataTables.bootstrap5.min.js"></script>
+    <script>
+      let sidebar = document.querySelector(".sidebar");
+      let sidebarBtn = document.querySelector(".sidebarBtn");
+      sidebarBtn.onclick = function () {
+        sidebar.classList.toggle("active");
+        if (sidebar.classList.contains("active")) {
+          sidebarBtn.classList.replace("bx-menu", "bx-menu-alt-right");
+        } else sidebarBtn.classList.replace("bx-menu-alt-right", "bx-menu");
+      };
+      $(document).ready(function () {
+        $("#attendantArchiveList").DataTable({
+          columnDefs: [{ className: "dt-center", targets: "_all" }],
+          lengthMenu: [
+            [20, 25, 50, -1],
+            [20, 25, 50, "All"],
+          ],
+        });
+
+        jQuery(".dataTable").wrap('<div class="dataTables_scroll" />');
+      });
+    </script>
+
+    <script src="/js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>

@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="UTF-8" />
+    <link href="/css/bootstrap.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="/css/adminSidebar.css" />
+    <link rel="stylesheet" href="/css/common.css" />
+    <link rel="stylesheet" href="/css/products.css" />
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.5.0/css/all.css"
+    />
+    <link
+      href="/css/dataTables.bootstrap5.min.css"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Admin | Update Product</title>
+  </head>
+
+  <body>
+    <%- include("../../partials/admin-sidebar.ejs") %>
+    <%- include("../../partials/convertDate.ejs") %>
+
+    <section class="home-section pb-3 px-3">
+      <nav>
+        <div class="container-fluid d-flex">
+          <div class="sidebar-button me-auto">
+            <i class="fas fa-bars sidebarBtn"></i>
+            <span class="dashboard">Products</span>
+          </div>
+
+          <a href="#" class="view-shop px-3">
+            <i class="fas fa-paper-plane" aria-hidden="true"></i>
+            <span class="view-shop-text px-2">View your shop</span>
+          </a>
+          <div class="profile-details px-2">
+            <span class="admin_name px-2">Admin Name</span>
+            <img src="/images/avatar.png" alt="" />
+          </div>
+        </div>
+      </nav>
+
+      <div class="home-content pb-3">
+        <div class="container-fluid">
+          <div class="d-flex mb-4 px-1">
+            <!-- Archives Button -->
+            <a href="/api/products" class="back-page">
+              <i
+                class="fa fa-arrow-left to-back-link"
+                aria-hidden="true"
+                title="Go back"
+              ></i>
+            </a>
+            <span class="page-title px-3">Update Product Details</span>
+          </div>
+          <form method="POST" action="/api/product/<%= product._id %>?_method=PATCH" id="product-div">
+            <div class="container">
+              <div class="row my-3">
+                <div class="col-lg-3 p-0">
+                  <label class="form-label">Date Added: </label>
+                </div>
+                <div class="col-lg-9 fw-bold">
+                  <input
+                    type="date"
+                    name="date_added"
+                    class="form-control fw-bold"
+                    aria-label="Date Added"
+                    placeholder="Date Added"
+                    value="<%= formatDate(product.date_added) %>"
+                    required
+                  />
+                </div>
+              </div>
+              <div class="row">
+                <label class="form-label col-lg-3" for="product-id">
+                  Product Id:
+                </label>
+                <div class="col-lg-9 fw-bold">
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="product-id"
+                    placeholder="Product ID AUTO GENERATED"
+                    value="<%= product._id %>"
+                    readonly
+                  />
+                </div>
+              </div>
+
+              <!-- Prodduct Image -->
+              <div class="row my-3">
+                <label
+                  class="form-label col-lg-3 align-middle asterisk"
+                  for="file-product"
+                >
+                  Product Image:
+                </label>
+                <div class="col-lg-9 fw-bold">
+                  <input
+                    class="form-control px-3"
+                    type="file"
+                    id="file-product"
+                    value="images/<%= product.image %>"
+                    name="image"
+                    required
+                  />
+                </div>
+              </div>
+
+              <div class="product-img-div">
+                <img
+                  src="/images/<%= product.image %>"
+                  alt="Product Image"
+                  id="product-img"
+                />
+              </div>
+
+              <!-- Product Name -->
+              <label class="form-label pt-2 asterisk" for="product-name">
+                Product Name:
+              </label>
+              <input
+                type="text"
+                name="name"
+                class="form-control"
+                id="product-name"
+                placeholder="Input Product Name"
+                value="<%= product.name %>"
+                required
+              />
+
+              <!-- Product Description -->
+              <label class="form-label mt-3 asterisk" for="product-description">
+                Product Description:
+              </label>
+              <textarea
+                class="form-control"
+                name="description"
+                id="product-description"
+                placeholder="Type product description...."
+                rows="5"
+                cols="100"
+                required
+              ><%= product.description %></textarea>
+
+              <!-- Filters -->
+              <!-- Lens Type & Width -->
+              <div class="row pt-2">
+                <div class="col-lg-6 py-2">
+                  <label class="form-label asterisk" for="product-lens"
+                    >Lens Type:
+                  </label>
+                  <select
+                    class="form-select"
+                    aria-label="Product Lens Type"
+                    id="product-lens"
+                    name="lens"
+                    required
+                  >
+                  <% for(let filter of filters) { %>
+                    <% if(filter.type == "Lens") { %>
+                    <option value="<%= filter.name %>" <%= (product.lens == filter.name)? "selected": "" %>><%= filter.name %></option>
+                    <% } %>
+                  <% } %>
+                  </select>
+                </div>
+                <div class="col-lg-6 py-2">
+                  <label class="form-label asterisk" for="product-width"
+                    >Width:
+                  </label>
+                  <select
+                    class="form-select"
+                    aria-label="Product Width"
+                    id="product-width"
+                    required 
+                    name="width"
+                  >
+                  <% for(let filter of filters) { %>
+                    <% if(filter.type == "Width") { %>
+                    <option value="<%= filter.name %>" <%= (product.lens == filter.name)? "selected": "" %>><%= filter.name %></option>
+                    <% } %>
+                  <% } %>
+                  </select>
+                </div>
+              </div>
+
+              <!-- Material & Hinge -->
+              <div class="row pt-2">
+                <div class="col-lg-6 py-2">
+                  <label class="form-label asterisk" for="product-material"
+                    >Material:
+                  </label>
+                  <select
+                    class="form-select"
+                    aria-label="Product Material"
+                    id="product-material"
+                    required
+                    name="material"
+                  >
+                  <% for(let filter of filters) { %>
+                    <% if(filter.type == "Material") { %>
+                    <option value="<%= filter.name %>" <%= (product.lens == filter.name)? "selected": "" %>><%= filter.name %></option>
+                    <% } %>
+                  <% } %>
+                  </select>
+                </div>
+                <div class="col-lg-6 py-2">
+                  <label class="form-label asterisk" for="product-hinge"
+                    >Hinge:
+                  </label>
+                  <select
+                    class="form-select"
+                    aria-label="Product Width"
+                    id="product-hinge"
+                    required
+                    name="hinge"
+                  >
+                  <% for(let filter of filters) { %>
+                    <% if(filter.type == "Hinge") { %>
+                    <option value="<%= filter.name %>" <%= (product.lens == filter.name)? "selected": "" %>><%= filter.name %></option>
+                    <% } %>
+                  <% } %>
+                  </select>
+                </div>
+              </div>
+
+              <!-- Finish & Product Price -->
+              <div class="row pt-2">
+                <div class="col-lg-6 py-2">
+                  <label class="form-label asterisk" for="product-finish">
+                    Finish:
+                  </label>
+                  <select
+                    class="form-select"
+                    aria-label="Product Material"
+                    id="product-finish"
+                    required
+                    name="finish"
+                  >
+                  <% for(let filter of filters) { %>
+                    <% if(filter.type == "Finish") { %>
+                    <option value="<%= filter.name %>" <%= (product.lens == filter.name)? "selected": "" %>><%= filter.name %></option>
+                    <% } %>
+                  <% } %>
+                  </select>
+                </div>
+              </div>
+
+              <!-- Stock -->
+              <div class="row pt-2">
+                <div class="col-lg-6 py-2">
+                  <label class="form-label asterisk" for="product-stock"
+                    >Stock:
+                  </label>
+                  <input
+                    type="number"
+                    class="form-control"
+                    id="product-stock"
+                    placeholder="Input product stock"
+                    required
+                    value="<%= product.stock %>"
+                    name="stock"
+                  />
+                </div>
+              </div>
+
+              <!-- Product Price -->
+              <div class="row pt-2">
+                <div class="col-lg-6 py-2">
+                  <label class="form-label asterisk" for="product-price"
+                    >Product Price:
+                  </label>
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="product-price"
+                    placeholder="Input product price"
+                    required
+                    value="<%= product.price %>"
+                    name="price"
+                  />
+                </div>
+              </div>
+            </div>
+
+            <!-- buttons -->
+            <div class="container">
+              <div class="d-flex justify-content-end pb-2 pt-5">
+                <button type="submit" class="btn btn-default mx-3 px-4">Save</button>
+                <a
+                  href="/api/product/<%= product._id %>"
+                  class="btn btn-danger px-3"
+                  >Cancel</a
+                >
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </section>
+    <!-- jQuery DataTables JS CDN -->
+    <script src="/js/jquery-3.5.1.js"></script>
+    <script src="/js/jquery.dataTables.min.js"></script>
+    <script src="/js/dataTables.bootstrap5.min.js"></script>
+    <script>
+      let sidebar = document.querySelector(".sidebar");
+      let sidebarBtn = document.querySelector(".sidebarBtn");
+      sidebarBtn.onclick = function () {
+        sidebar.classList.toggle("active");
+        if (sidebar.classList.contains("active")) {
+          sidebarBtn.classList.replace("bx-menu", "bx-menu-alt-right");
+        } else sidebarBtn.classList.replace("bx-menu-alt-right", "bx-menu");
+      };
+    </script>
+
+    <script src="/js/product.js"></script>
+    <script src="/js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>

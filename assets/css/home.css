@@ -1,7 +1,7 @@
 header {
   min-height: 100vh;
   background: linear-gradient(rgba(5, 5, 5, 0.075), rgba(2, 2, 2, 0)),
-    url(/assets/images/banner.png) center/cover no-repeat fixed;
+    url(/images/banner.png) center/cover no-repeat fixed;
   display: flex;
   /* flex-direction: column; */
   justify-content: stretch;
@@ -236,7 +236,7 @@ body {
 .about-us-wrapper {
   padding-top: 5rem;
   padding-bottom: 3.3rem;
-  background: #fefefe;
+  background: #fdfdfd;
 }
 .about-us-wrapper h2 {
   text-transform: uppercase;

@@ -1,0 +1,942 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="UTF-8" />
+    <link href="/css/bootstrap.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="/css/adminSidebar.css" />
+    <link rel="stylesheet" href="/css/common.css" />
+    <link rel="stylesheet" href="/css/customers.css" />
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.5.0/css/all.css"
+    />
+    <link
+      href="/css/dataTables.bootstrap5.min.css"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Admin | Customer</title>
+  </head>
+
+  <body>
+    
+    <%- include("../../partials/admin-sidebar.ejs") %>
+    <%- include("../../partials/convertDate.ejs") %>
+
+    <section class="home-section">
+      <nav>
+        <div class="container-fluid d-flex">
+          <div class="sidebar-button me-auto">
+            <i class="fas fa-bars sidebarBtn"></i>
+            <span class="dashboard">Customers</span>
+          </div>
+
+          <a href="#" class="view-shop px-3">
+            <i class="fas fa-paper-plane" aria-hidden="true"></i>
+            <span class="view-shop-text px-2">View your shop</span>
+          </a>
+          <div class="profile-details px-2">
+            <span class="admin_name px-2">Admin Name</span>
+            <img src="/images/avatar.png" alt="" />
+          </div>
+        </div>
+      </nav>
+
+      <div class="home-content pb-3">
+        <div class="container-fluid px-4">
+          <div class="d-flex mb-4 px-1">
+            <a
+              href="/api/customers"
+              class="back-page"
+              aria-label="Go Back to Customer's page"
+            >
+              <i
+                class="fa fa-arrow-left to-back-link"
+                aria-hidden="true"
+                title="Go back"
+              ></i>
+            </a>
+            <span class="page-title px-3">Customer Details</span>
+          </div>
+          <div class="row">
+            <div class="col-lg-3 col-md-3 text-center">
+              <img
+                src="/images/plain-avatar.png"
+                alt="avatar"
+                id="customer-img"
+              />
+            </div>
+            <div class="col-lg-8 col-md-8 mt-2">
+              <div class="table-responsive">
+                <table class="mx-2">
+                  <tr class="d-flex align-items-start">
+                    <td class="py-3">
+                      <p>Customer ID:</p>
+                      <p>Name:</p>
+                      <p>Email:</p>
+                      <p>Contact No:</p>
+                    </td>
+                    <td class="py-3 px-5">
+                      <p><strong><%= customer._id %></strong></p>
+                      <p class="text-capitalize">
+                        <strong><%= customer.first_name + " " + customer.middle_name + " " + customer.last_name %></strong>
+                      </p>
+                      <p><strong><%= customer.email %></strong></p>
+                      <p><strong><%= customer.contact %></strong></p>
+                    </td>
+                  </tr>
+                </table>
+              </div>
+            </div>
+
+            <div class="container-fluid align-self-center my-3"> <!-- start here --> 
+              <ul class="nav nav-tabs nav-fill" id="myTab" role="tablist">
+                <li class="nav-item" role="presentation">
+                  <button
+                    class="nav-link active"
+                    id="profile-tab"
+                    data-bs-toggle="tab"
+                    data-bs-target="#profile"
+                    type="button"
+                    role="tab"
+                    aria-controls="profile"
+                    aria-selected="true"
+                  >
+                    Profile
+                  </button>
+                </li>
+                <li class="nav-item" role="presentation">
+                  <button
+                    class="nav-link"
+                    id="purchase-tab"
+                    data-bs-toggle="tab"
+                    data-bs-target="#purchase"
+                    type="button"
+                    role="tab"
+                    aria-controls="purchase"
+                    aria-selected="false"
+                  >
+                    Purchase History
+                  </button>
+                </li>
+                <li class="nav-item" role="presentation">
+                  <button
+                    class="nav-link"
+                    id="eye-history-tab"
+                    data-bs-toggle="tab"
+                    data-bs-target="#eye"
+                    type="button"
+                    role="tab"
+                    aria-controls="contact"
+                    aria-selected="false"
+                  >
+                    Eye History
+                  </button>
+                </li>
+              </ul>
+
+              <div class="tab-content" id="viewCustomerContent">
+                <div
+                  class="tab-pane fade show active"
+                  id="profile"
+                  role="tabpanel"
+                  aria-labelledby="profile-tab"
+                >
+                  <form method="POST" action="/api/customer/<%= customer._id %>?_method=PATCH">
+                    <!-- Profile Tab -->
+                    <div class="wrapper container-fluid my-2 px-5 pt-5 pb-4">
+                      <p class="tab-header">Profile Information</p>
+
+                      <!-- Date Added -->
+                      <div class="row">
+                        <div class="col-lg-6 py-2">
+                          <label class="form-label"> Date Added: </label>
+                          <input
+                            type="date"
+                            name="date_added"
+                            class="form-control"
+                            aria-label="Date Added"
+                            value="<%= formatDate(customer.date_added) %>"
+                            readonly
+                          />
+                        </div>
+
+                        <!-- walk in or registered -->
+                        <div class="col-lg-6 mt-1">
+                          <label class="form-label" for="view-type-walkin"
+                            >Type:
+                          </label>
+                          <input
+                            class="form-control"
+                            aria-label="Walk in or Registered"
+                            id="view-type-walkin"
+                            value="<%= customer.type %>"
+                            name="type"
+                            readonly
+                          />
+                        </div>
+                      </div>
+
+                      <!-- update customer's photo -->
+                      <div class="row mt-1 py-1">
+                        <div class="col-lg-3 py-1">
+                          <label
+                            class="form-label my-3"
+                            for="update-customer-photo"
+                            id="update-customer-photo-label"
+                            >Customer Photo:
+                          </label>
+                        </div>
+                        <div class="col-lg-9 mt-1">
+                          <input
+                            type="file"
+                            name="customerPhoto"
+                            id="update-customer-photo"
+                            class="form-control my-3"
+                            aria-label="Customer Photo"
+                            disabled="true"
+                          />
+                        </div>
+                      </div>
+
+                      <!-- Name -->
+                      <div class="row">
+                        <div class="col-lg-3 col-md-6 py-2">
+                          <label class="form-label" for="view-fnameCustomer"
+                            >First Name:
+                          </label>
+                          <input
+                            type="text"
+                            name="first_name"
+                            class="form-control"
+                            id="view-fnameCustomer"
+                            disabled="true"
+                            value="<%= customer.first_name %>"
+                          />
+                        </div>
+                        <div class="col-lg-3 col-md-6 py-2">
+                          <label class="form-label" for="view-midnNameCustomer"
+                            >Middle Name:
+                          </label>
+                          <input
+                            type="text"
+                            name="middle_name"
+                            class="form-control"
+                            id="view-midnNameCustomer"
+                            disabled="true"
+                            value="<%= customer.middle_name %>"
+                          />
+                        </div>
+                        <div class="col-lg-3 col-md-6 py-2">
+                          <label class="form-label" for="view-surnameCustomer"
+                            >Last Name:
+                          </label>
+                          <input
+                            type="text"
+                            name="last_name"
+                            class="form-control"
+                            id="view-surnameCustomer"
+                            disabled="true"
+                            value="<%= customer.last_name %>"
+                          />
+                        </div>
+                        <div class="col-lg-3 col-md-6 py-2">
+                          <label class="form-label" for="view-suffixCustomer"
+                            >Suffix:
+                          </label>
+                          <input
+                            type="text"
+                            name="suffix"
+                            class="form-control"
+                            id="view-suffixCustomer"
+                            disabled="true"
+                            value="<%= customer.suffix %>"
+                          />
+                        </div>
+                      </div>
+
+                      <!-- Birthday -->
+                      <div class="row">
+                        <div class="col-lg-6 py-2">
+                          <label class="form-label" for="view-bdayCustomer"
+                            >Birthday:
+                          </label>
+                          <input
+                            type="date"
+                            name="birthday"
+                            class="form-control"
+                            id="view-bdayCustomer"
+                            disabled="true"
+                            value="<%= formatDate(customer.birthday) %>"
+                          />
+                        </div>
+
+                        <!-- Sex -->
+                        <div class="col-lg-6 col-md-6 py-2">
+                          <label class="form-label">Sex: </label>
+                          <div class="row">
+                            <div class="col-lg-6 col-md-12 pt-1">
+                              <div class="form-check-inline">
+                                <label class="form-check-label" for="sex" active>
+                                  <input
+                                    class="form-check-input"
+                                    type="radio"
+                                    name="sex"
+                                    value="M"
+                                    id="view-male"
+                                    <%= (customer.sex == "M")? "checked": "" %>
+                                    disabled
+                                  />
+                                  Male
+                                </label>
+                                <div></div>
+                              </div>
+                              <div class="form-check-inline mb-3">
+                                <label class="form-check-label" for="sex" active>
+                                <input
+                                  class="form-check-input"
+                                  type="radio"
+                                  name="sex"
+                                  value="F"
+                                  id="view-female"
+                                  <%= (customer.sex == "F")? "checked": "" %>
+                                  disabled
+                                />
+                                  Female
+                                </label>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+
+                      <!-- Address -->
+                      <label class="form-label pt-3" for="view-addressCustomer"
+                        >Address:
+                      </label>
+                      <input
+                        type="text"
+                        name="address"
+                        class="form-control"
+                        id="view-addressCustomer"
+                        disabled="true"
+                        value="<%= customer.address %>"
+                      />
+
+                      <!-- Email Address & Contact No. -->
+                      <div class="row pt-2">
+                        <div class="col-lg-6 py-2">
+                          <label class="form-label" for="view-emailCustomer"
+                            >Email Address:
+                          </label>
+                          <input
+                            type="email"
+                            name="email"
+                            class="form-control"
+                            id="view-emailCustomer"
+                            disabled="true"
+                            value="<%= customer.email %>"
+                          />
+                        </div>
+                        <div class="col-lg-6 py-2">
+                          <label class="form-label" for="view-contactCustomer"
+                            >Contact No:
+                          </label>
+                          <input
+                            type="tel"
+                            name="contact"
+                            id="view-contactCustomer"
+                            minlength="11"
+                            maxlength="11"
+                            class="form-control"
+                            aria-label="Contact Number"
+                            oninput="this.value = this.value.replace(/[^0-9.]/g, '')"
+                            title="Numbers only"
+                            disabled="true"
+                            value="<%= customer.contact %>"
+                          />
+                        </div>
+                      </div>
+                      <div class="d-flex justify-content-end mt-4">
+                        <button
+                          type="button"
+                          class="btn btn-default data"
+                          title="Update Customer Details"
+                          id="update-button"
+                        >
+                          Update
+                        </button>
+
+                        <!-- after masubmit redirect dito sa page -->
+                        <button
+                          type="submit"
+                          class="btn btn-default data mx-3"
+                          title="Update Customer Details"
+                          id="save-update-button"
+                        >
+                          Save
+                        </button>
+                        <a
+                          href="/api/customers/<%= customer._id %>"
+                          class="btn btn-danger data"
+                          title="Update Customer Details"
+                          id="cancel-update-button"
+                        >
+                          Cancel
+                        </a>
+                      </div>
+                    </div>
+                  </form>
+                </div>
+
+                <!--Purchase History Tab-->
+                <div
+                  class="tab-pane fade"
+                  id="purchase"
+                  role="tabpanel"
+                  aria-labelledby="purchase-tab"
+                >
+                  <div class="table-wrapper container-fluid my-2 p-5">
+                    <p class="tab-header pb-4">Purchase History</p>
+                    <div class="container-fluid table-responsive">
+                      <table
+                        class="table table-hover align-middle align-items-center table-body"
+                        aria-label="Purchase History"
+                        id="purchase-history"
+                      >
+                        <!--Table Body-->
+                        <thead>
+                          <tr>
+                            <th scope="col">#</th>
+                            <th scope="col">Date</th>
+                            <th scope="col">Item</th>
+                            <th scope="col">Product Name</th>
+                            <th scope="col">Payment</th>
+                            <th scope="col">Status</th>
+                            <th scope="col">Action</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <% if(purchaseHistories) { %>
+                          <% for(let purchaseHistory of purchaseHistories) { %>
+                            <tr>
+                            <td><%= purchaseHistory.quantity %></td>
+                            <td><%= formatDate(purchaseHistory.date_added) %></td>
+                            <td>
+                              <img
+                                src="/images/product-img.png"
+                                class="purchase-img-table-list mx-2"
+                                alt="Product Image"
+                              />
+                            </td>
+                            <td>
+                              <span class="text-capitalize text-break"><%= purchaseHistory.name %></span>
+                            </td>
+                            <td>
+                              <% switch (purchaseHistory.payment_type) {
+                                case 1: %>
+                                  Paypal
+                                <% break;
+                                
+                                case 2: %>
+                                  Cash
+                                <% break;
+                              
+                              } %>
+                              </td>
+                            <td>
+                              <% switch (purchaseHistory.status) {
+                              case 1: %>
+                                <button
+                                  type="button"
+                                  class="btn update-data data button_width"
+                                  aria-controls="paidOrderStatus"
+                                  title="Order Status"
+                                  >
+                                  Paid
+                                </button>
+                              <% break;
+                              
+                              case 2: %>
+                                <button
+                                  type="button"
+                                  class="btn view-data data button_width"
+                                  data-bs-toggle="modal"
+                                  title="Order Status"
+                                  >
+                                  Delivered
+                                </button>
+                              <% break;
+                              
+                              case 3: %>
+                                <button
+                                  type="button"
+                                  class="btn cancelled-data data button_width"
+                                  data-bs-toggle="modal"
+                                  title="Order Status"
+                                  >
+                                  Cancelled
+                                </button>
+                              <% break;
+                            } %>
+                            </td>
+                            <td>
+                              <button
+                                type="button"
+                                class="btn btn-warning data"
+                                title="View Purchase Details"
+                                data-bs-toggle="offcanvas"
+                                data-bs-target="#a<%= purchaseHistory._id %>"
+                                aria-controls="purchaseDetails"
+                              >
+                                View Details
+                              </button>
+                            </td>
+                          </tr>
+                          <% }} %>
+                        </tbody>
+                      </table>
+                      <br />
+                    </div>
+                  </div>
+                </div>
+
+                <!-- View Purchase Details Offcanvas -->
+                <% if(purchaseHistories) { %>
+                  <% for(let purchaseHistory of purchaseHistories) { %>
+                <div
+                  class="offcanvas offcanvas-end"
+                  tabindex="-1"
+                  id="a<%= purchaseHistory._id %>"
+                  aria-labelledby="purchaseDetailsLabel"
+                >
+                  <div class="offcanvas-header">
+                    <h5 id="purchaseDetailsLabel">View Purchase Details</h5>
+                    <button
+                      type="button"
+                      class="btn-close text-reset"
+                      data-bs-dismiss="offcanvas"
+                      aria-label="Close"
+                    ></button>
+                  </div>
+                  <div class="offcanvas-body">
+                    <p class="tab-header">Recipient</p>
+
+                    <!-- Name -->
+                    <div class="row">
+                      <div class="col-lg-4">name:</div>
+                      <div class="col-lg-8 fw-bold"><%= purchaseHistory.name %></div>
+                    </div>
+
+                    <!-- Contact No. -->
+                    <div class="row">
+                      <div class="col-lg-4">contact No:</div>
+                      <div class="col-lg-8 fw-bold"><%= purchaseHistory.contact %></div>
+                    </div>
+
+                    <!-- Address -->
+                    <div class="row">
+                      <div class="col-lg-4">address:</div>
+                      <div class="col-lg-8 fw-bold">
+                        <address>
+                          <%= purchaseHistory.address %>
+                        </address>
+                      </div>
+                    </div>
+
+                    <p class="tab-header">Purchased item</p>
+                    <!-- Purchased Date -->
+                    <div class="row">
+                      <div class="col-lg-4">date:</div>
+                      <div class="col-lg-8 fw-bold"><%= formatDate(purchaseHistory.date) %></div>
+                    </div>
+
+                    <!-- Purchase ID -->
+                    <div class="row">
+                      <div class="col-lg-4">ID:</div>
+                      <div class="col-lg-8 fw-bold"><%= purchaseHistory._id %></div>
+                    </div>
+
+                    <!-- Purchase Photo -->
+                    <div class="row">
+                      <div class="col-lg-4">Product Photo:</div>
+                      <div
+                        class="col-lg-8 text-center py-3"
+                        id="purchase-img-history"
+                      >
+                        <img
+                          src="/images/<%= purchaseHistory.item_img %>"
+                          alt="Product Image"
+                        />
+                      </div>
+                    </div>
+
+                    <!-- Purchased Product Name -->
+                    <div class="row mt-2">
+                      <div class="col-lg-4">Product Name:</div>
+                      <div class="col-lg-8 fw-bold"><%= purchaseHistory.product_name %></div>
+                    </div>
+
+                    <!-- Purchased Category -->
+                    <div class="row">
+                      <div class="col-lg-4">category:</div>
+                      <div class="col-lg-8 fw-bold">
+                        <%= purchaseHistory.lens + ", " + purchaseHistory.width + ", " + purchaseHistory.material + ", " + purchaseHistory.finish + ", " + purchaseHistory.hinge %>
+                      </div>
+                    </div>
+
+                    <!-- Purchased Number of Items -->
+                    <div class="row">
+                      <div class="col-lg-4">no. of item:</div>
+                      <div class="col-lg-8 fw-bold"><%= purchaseHistory.quantity %></div>
+                    </div>
+
+                    <!-- Purchased Total  -->
+                    <div class="row">
+                      <div class="col-lg-4">total:</div>
+                      <div class="col-lg-8 fw-bold">PHP <%= purchaseHistory.price * purchaseHistory.quantity %></div>
+                    </div>
+
+                    <!-- Purchased Payment  -->
+                    <div class="row">
+                      <div class="col-lg-4">Payment:</div>
+                      <div class="col-lg-8 fw-bold">
+                        <% switch (purchaseHistory.payment_type) {
+                          case 1: %>
+                            Paypal
+                          <% break;
+                          
+                          case 2: %>
+                            Cash
+                          <% break;
+                          
+                        } %>
+                      </div>
+                    </div>
+
+                    <!-- Purchased Status  -->
+                    <div class="row py-2 mb-2">
+                      <div class="col-lg-4">Status:</div>
+                      <div class="col-lg-8 fw-bold">
+                        <% switch (purchaseHistory.status) {
+                              case 1: %>
+                                Paid
+                              <% break;
+                              
+                              case 2: %>
+                                Delivered
+                              <% break;
+                              
+                              case 3: %>
+                                Cancelled
+                              <% break;
+                            } %>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <% }} %>
+
+                <!-- Eye History Tab -->
+                <div
+                  class="tab-pane fade"
+                  id="eye"
+                  role="tabpanel"
+                  aria-labelledby="eye-history-tab"
+                >
+                  <div class="table-wrapper container-fluid my-2 p-5">
+                    <div class="d-flex justify-content-between">
+                      <p class="tab-header">Eye History</p>
+                      <button
+                        type="button"
+                        class="btn new-record-button btn-sm text-white fw-bold px-3 mx-3"
+                        id="create-new-button"
+                        data-bs-toggle="modal"
+                        data-bs-target="#newRecord"
+                        title="Create New Record"
+                      >
+                        <i class="fa fa-plus" aria-hidden="true"></i>
+                        <span class="px-1"> New Record</span>
+                      </button>
+                    </div>
+                    <div class="container-fluid table-responsive mt-4">
+                      <table
+                        class="table table-hover align-middle align-items-center table-body"
+                        aria-label="Purchase History"
+                        id="eye-history"
+                      >
+                        <!--Table Body-->
+                        <thead>
+                          <tr>
+                            <th scope="col">#</th>
+                            <th scope="col">Date</th>
+                            <th scope="col">Previous Grade</th>
+                            <th scope="col">Current Grade</th>
+                            <th scope="col">Attendant</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <% let index = 1; %>
+                          <% for(let history of eyeHistory) { %>
+                          <tr>
+                            <td><%= index %></td>
+                            <td><%= formatDate(history.date_added) %></td>
+                            <td><%= history.previous_grade %></td>
+                            <td><%= history.current_grade %></td>
+                            <td><%= history.attendant_name %></td>
+                          </tr>
+                          <% index += 1 } %>
+                        </tbody>
+                      </table>
+                      <br />
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- New Eye Record -->
+            <div
+              class="modal fade"
+              id="newRecord"
+              data-bs-backdrop="static"
+              data-bs-keyboard="false"
+              tabindex="-1"
+              aria-labelledby="newRecordLabel"
+              aria-hidden="true"
+              aria-modal="true"
+            >
+              <div
+                class="modal-dialog modal-dialog-centered modal-dialog-scrollable"
+              >
+                <form 
+                  method="POST" action="/api/eye_history/<%= customer._id %>"
+                  class="modal-content">
+                  <div class="modal-header">
+                    <h5 class="modal-title" id="newRecordLabel">
+                      Add New Record
+                    </h5>
+                    <button
+                      type="button"
+                      class="btn-close btn-close-white"
+                      data-bs-dismiss="modal"
+                      aria-label="Close"
+                    ></button>
+                  </div>
+                  <div class="modal-body">
+                    <!-- Date -->
+                    <label class="form-label asterisk" for="date"
+                      >Date Added:
+                    </label>
+                    <input
+                      type="date"
+                      name="date_added"
+                      id="date-eye-record"
+                      class="form-control"
+                      aria-label="Date Added"
+                      placeholder="Date Added"
+                      required
+                    />
+
+                    <!-- Previous Grade -->
+                    <label class="form-label asterisk mt-2" for="prevGrade"
+                      >Previous Grade:
+                    </label>
+                    <input
+                      type="text"
+                      name="previous_grade"
+                      class="form-control"
+                      id="prevGrade"
+                      placeholder="Input previous grade"
+                      required
+                    />
+
+                    <!-- Current Grade -->
+                    <label class="form-label asterisk mt-2" for="currGrade"
+                      >Current Grade:
+                    </label>
+                    <input
+                      type="text"
+                      name="current_grade"
+                      class="form-control"
+                      id="currGrade"
+                      placeholder="Input current grade"
+                      required
+                    />
+
+                    <!-- Select Attendant -->
+                    <label class="form-label asterisk mt-2" for="attendant"
+                      >Attendant:
+                    </label>
+                    <select
+                      class="form-select"
+                      aria-label="Walk in or Registered"
+                      id="attendant"
+                      name="attendant_name"
+                      required
+                    >
+                      <% for(let attendant of attendants) { %>
+                        <option value="<%= attendant.first_name + " " + attendant.middle_name + " " + attendant.last_name%>"><%= attendant.first_name + " " + attendant.middle_name + " " + attendant.last_name%></option>
+                      <% } %>
+                    </select>
+                    <input type="hidden" name="user_id" value="<%= customer._id %>"/>
+                  </div>
+                  <div class="modal-footer">
+                    <button type="submit" class="btn btn-default px-4 mx-2">
+                      Save
+                    </button>
+                    <button
+                      type="button"
+                      class="btn btn-secondary py-2 px-3"
+                      data-bs-dismiss="modal"
+                    >
+                      Cancel
+                    </button>
+                  </div>
+                </form>
+              </div>
+            </div>
+
+            <!-- Update Eye Record -->
+            <div
+              class="modal fade"
+              id="updateEyeRecord"
+              data-bs-backdrop="static"
+              data-bs-keyboard="false"
+              tabindex="-1"
+              aria-labelledby="updateEyeRecorddLabel"
+              aria-hidden="true"
+              aria-modal="true"
+            >
+              <div
+                class="modal-dialog modal-dialog-centered modal-dialog-scrollable"
+              >
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h5 class="modal-title" id="updateEyeRecordLabel">
+                      Update Record
+                    </h5>
+                    <button
+                      type="button"
+                      class="btn-close btn-close-white"
+                      data-bs-dismiss="modal"
+                      aria-label="Close"
+                    ></button>
+                  </div>
+                  <div class="modal-body">
+                    <!-- Date -->
+                    <label class="form-label" for="date">Date Added: </label>
+                    <input
+                      type="date"
+                      name="date"
+                      value=""
+                      id="update-date-eye-record"
+                      class="form-control"
+                      aria-label="Date Added"
+                      required
+                    />
+
+                    <!-- Previous Grade -->
+                    <label
+                      class="form-label asterisk mt-2"
+                      for="prevGradeUpdate"
+                      >Previous Grade:
+                    </label>
+                    <input
+                      type="text"
+                      name="previousGrade"
+                      value=""
+                      class="form-control"
+                      id="prevGradeUpdate"
+                      required
+                    />
+
+                    <!-- Current Grade -->
+                    <label
+                      class="form-label asterisk mt-2"
+                      for="updateCurrGradeUpdate"
+                      >Current Grade:
+                    </label>
+                    <input
+                      type="text"
+                      name="currentGradeUpdate"
+                      value=""
+                      class="form-control"
+                      id="updateCurrGradeUpdate"
+                      required
+                    />
+
+                    <!-- Select Attendant -->
+                    <label
+                      class="form-label asterisk mt-2"
+                      for="update-attendant"
+                      >Attendant:
+                    </label>
+                    <select
+                      class="form-select"
+                      aria-label="Walk in or Registered"
+                      id="update-attendant"
+                      name="select-attendant"
+                      required
+                    >
+                      <option selected>.</option>
+                      <option>...</option>
+                    </select>
+                  </div>
+                  <div class="modal-footer">
+                    <button type="submit" class="btn btn-default px-4 mx-2">
+                      Save
+                    </button>
+                    <button
+                      type="button"
+                      class="btn btn-secondary py-2 px-3"
+                      data-bs-dismiss="modal"
+                    >
+                      Cancel
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- jQuery DataTables JS CDN -->
+    <script src="/js/jquery-3.5.1.js"></script>
+    <script src="/js/jquery.dataTables.min.js"></script>
+    <script src="/js/dataTables.bootstrap5.min.js"></script>
+    <script>
+      let sidebar = document.querySelector(".sidebar");
+      let sidebarBtn = document.querySelector(".sidebarBtn");
+      sidebarBtn.onclick = function () {
+        sidebar.classList.toggle("active");
+        if (sidebar.classList.contains("active")) {
+          sidebarBtn.classList.replace("bx-menu", "bx-menu-alt-right");
+        } else sidebarBtn.classList.replace("bx-menu-alt-right", "bx-menu");
+      };
+      $(document).ready(function () {
+        $("#purchase-history").DataTable({
+          columnDefs: [{ className: "dt-center", targets: "_all" }],
+          lengthMenu: [
+            [5, 10, 20, -1],
+            [5, 10, 20, "All"],
+          ],
+        });
+        $("#eye-history").DataTable({
+          columnDefs: [{ className: "dt-center", targets: "_all" }],
+          lengthMenu: [
+            [5, 10, 20, -1],
+            [5, 10, 20, "All"],
+          ],
+        });
+
+        jQuery(".dataTable").wrap('<div class="dataTables_scroll" />');
+      });
+    </script>
+
+    <script src="/js/customers.js"></script>
+    <script src="/js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>

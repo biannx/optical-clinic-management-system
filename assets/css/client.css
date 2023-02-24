@@ -12,6 +12,10 @@
   font-weight: 700;
 }
 
+.navbar-custom img#brand-logo{
+  width:55px !important;
+}
+
 /* change the link color */
 .navbar-custom .navbar-nav .nav-link {
   color: #333;
@@ -20,7 +24,7 @@
   font-weight: 600;
 }
 .navbar-custom .navbar-nav .nav-link:first-child{
-  margin-left:2.1rem;
+  margin-left:2rem;
 }
 /* change the color of active or hovered links */
 .navbar-custom .nav-item.active .nav-link,
@@ -28,12 +32,11 @@
 .navbar-custom .nav-item:hover .nav-link {
   color:  #50ABF1;
 }
-.navbar-custom .dropdown-menu {
-  margin: 45% -35%;
-}
+
 .navbar-custom .dropdown-menu{
   border: 1px solid rgba(0,0,0,.15);
   min-width: 11rem;
+  /* margin: 45% -35%; */
 }
 @media (min-width: 1900px) {
   .account-dropdown{
@@ -142,10 +145,59 @@ body{
 .account-dropdown{
   position: fixed;
   top: 0;
-  right: 7.5% ;
+  right: 7.8% ;
   padding-top: 0.3rem;
 }
 .fa-cart-arrow-down{
   font-size: 1.3rem;
   padding-top: 0.3rem;
+}
+.account-dropdown span.sign-in-text{
+  font-weight: 600;
+  border: 1px solid grey;
+  padding:0.5rem 1.3rem;
+  border-radius: 0.3rem;
+}
+.account-dropdown a.sign-in-div{
+  margin-top: 0.6rem;
+}
+.account-dropdown span.sign-in-text:hover{
+  font-weight: 600;
+  background: #50ABF1;
+  color: white;
+  border: 1px solid lightblue;
+}
+.account-dropdown .cart, .account-dropdown .cart-customer{
+  position:relative;
+  opacity:0.75;
+  margin: 0 0.8rem;
+}
+.account-dropdown .cart{
+  margin: 0 1.1rem;
+}
+.account-dropdown .cart:hover, .account-dropdown .cart-customer:hover{
+  opacity:1;
+}
+.account-dropdown .cart a{
+  position: absolute;
+  top: 5%;
+  right: 135%;
+  margin: 0 0.5rem;
+}
+.account-dropdown .cart i.fas{
+  margin: 0.25rem 0.5rem;
+}
+.account-dropdown .cart-customer i.fas{
+  margin: 0.5rem 0 0.5rem 0.5rem;
+}
+.account-dropdown .cart-customer span{
+  position: absolute;
+  top: 25%;
+  right: -21%;
+}
+.account-dropdown .cart span{
+  position: absolute;
+  top: 25%;
+  right: -7%;
+
 }

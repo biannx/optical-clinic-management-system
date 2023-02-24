@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="UTF-8" />
+    <link href="/css/bootstrap.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="/css/adminSidebar.css" />
+    <link rel="stylesheet" href="/css/common.css" />
+    <link rel="stylesheet" href="/css/products.css" />
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.5.0/css/all.css"
+    />
+    <link
+      href="/css/dataTables.bootstrap5.min.css"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Admin | Products</title>
+  </head>
+
+  <body>
+    <%- include("../../partials/admin-sidebar.ejs") %>
+
+    <section class="home-section">
+      <nav>
+        <div class="container-fluid d-flex">
+          <div class="sidebar-button me-auto">
+            <i class="fas fa-bars sidebarBtn"></i>
+            <span class="dashboard">Products</span>
+          </div>
+
+          <a href="#" class="view-shop px-3">
+            <i class="fas fa-paper-plane" aria-hidden="true"></i>
+            <span class="view-shop-text px-2">View your shop</span>
+          </a>
+          <div class="profile-details px-2">
+            <span class="admin_name px-2">Admin Name</span>
+            <img src="/images/avatar.png" alt="" />
+          </div>
+        </div>
+      </nav>
+
+      <div class="home-content">
+        <div class="container-fluid">
+          <div class="d-flex justify-content-end mx-2">
+            <!-- Archives Button -->
+            <a
+              href="/api/products/archives"
+              class="btn archiveBtn text-white fw-bold px-4"
+              id="archive-list-button"
+              title="View Archive List"
+            >
+              Archives
+            </a>
+
+            <!-- Create New Product -->
+            <a
+              href="/api/add-product"
+              class="btn addBtn text-white fw-bold px-3 mx-3"
+              id="create-new-button"
+            >
+              <i class="fa fa-plus px-1" aria-hidden="true"></i>
+              Create New
+            </a>
+          </div>
+
+          <!-- Product List Table -->
+          <div class="container-fluid p-4">
+            <div class="table-wrapper px-4">
+              <div class="table-title">
+                <!--Table Header-->
+                <h4 class="px-1 pt-4 fw-bold">List of Products</h4>
+              </div>
+              <hr class="my-4" />
+              <form 
+                method="POST" action="/api/product/archive?_method=PATCH"
+                class="container-fluid table-responsive pt-2">
+                <table
+                  class="table table-hover align-middle align-items-center table-body py-2"
+                  aria-label="Customers' List"
+                  id="products-table-data"
+                >
+                  <!--Table Body-->
+                  <thead>
+                    <tr>
+                      <th scope="col">
+                        <div class="form-check">
+                          <input
+                            class="form-check-input check-all"
+                            type="checkbox"
+                            value=""
+                            id="check-all"
+                            onClick="checkAll()"
+                          />
+                          <label
+                            class="form-check-label"
+                            for="check-all"
+                          >
+                            All
+                          </label>
+                        </div>
+                      </th>
+                      <th scope="col">ID</th>
+                      <th scope="col">Item</th>
+                      <th scope="col">Product Name</th>
+                      <th scope="col">Stock</th>
+                      <th scope="col">Action</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <% for(let product of products) { %>
+                    <tr>
+                      <td>
+                        <div class="form-check">
+                          <input
+                            class="form-check-input check-list"
+                            type="checkbox"
+                            id="check-one-product"
+                            name="archive-check"
+                            value="<%= product._id %>"
+                            onClick="updateArchiveCount()"
+                          />
+                        </div>
+                      </td>
+                      <td><%= product._id %></td>
+                      <td>
+                        <img
+                          src="/images/<%= product.image %>" 
+                          class="prodimg-table-list mx-2"
+                        />
+                      </td>
+                      <td><%= product.name %></td>
+                      <td><%= product.stock %></td>
+                      <td class="action">
+                        <div class="action-buttons mt-3">
+                          <ul>
+                            <li>
+                              <a
+                                href="/api/product/<%= product._id %>"
+                                id="view"
+                                class="btn view-data data button_width"
+                                title="View Details"
+                              >
+                                View
+                              </a>
+                            </li>
+                            <li>
+                              <a
+                                href="/api/update-product/<%= product._id %>"
+                                id="edit"
+                                class="btn update-data data button_width"
+                                title="Update Details"
+                              >
+                                Update
+                              </a>
+                            </li>
+                          </ul>
+                        </div>
+                      </td>
+                    </tr>
+                    <% } %>
+                  </tbody>
+                </table>
+                <br /><br />
+
+                <!-- Batch Archive Button -->
+                <div class="d-flex justify-content-end mb-4">
+                  <button
+                    type="submit"
+                    class="btn archive-all-data text-white text-uppercase mb-3"
+                    id="archive-counter"
+                  >
+                    Archive Products (0)
+                  </button>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- jQuery DataTables JS CDN -->
+    <script src="/js/jquery-3.5.1.js"></script>
+    <script src="/js/archive.js"></script>
+    <script src="/js/jquery.dataTables.min.js"></script>
+    <script src="/js/dataTables.bootstrap5.min.js"></script>
+    <script>
+      let sidebar = document.querySelector(".sidebar");
+      let sidebarBtn = document.querySelector(".sidebarBtn");
+      sidebarBtn.onclick = function () {
+        sidebar.classList.toggle("active");
+        if (sidebar.classList.contains("active")) {
+          sidebarBtn.classList.replace("bx-menu", "bx-menu-alt-right");
+        } else sidebarBtn.classList.replace("bx-menu-alt-right", "bx-menu");
+      };
+      $(document).ready(function () {
+        $("#products-table-data").DataTable({
+          columnDefs: [{ className: "dt-center", targets: "_all" }],
+          lengthMenu: [
+            [20, 25, 50, -1],
+            [20, 25, 50, "All"],
+          ],
+        });
+        jQuery(".dataTable").wrap('<div class="dataTables_scroll" />');
+      });
+    </script>
+
+    <script src="/js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>

@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="/css/bootstrap.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="/css/common.css" />
+    <link rel="stylesheet" href="/css/user-products.css" />
+    <link rel="stylesheet" href="/css/client.css" />
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.5.0/css/all.css"
+    />
+    <link
+      href="/css/dataTables.bootstrap5.min.css"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <link
+      href="/css/account-settings.css"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <title>Profile Account Settings</title>
+  </head>
+  <body>
+    <%- include("../../partials/client-navigation-guest.ejs") %>
+
+    <div class="container settings-container card py-5 px-4">
+      <h3 class="text-center helvetica heavy-font blue mb-5">
+        Change Password
+      </h3>
+      <form class="container">
+        <div class="form-group mb-4 mx-lg-5">
+          <label class="mb-3 open-sans heavy-font" for="oldPassword"
+            ><b>Old Password</b></label
+          >
+          <input
+            type="password"
+            class="form-control"
+            id="oldPassword"
+            placeholder="************"
+          />
+        </div>
+
+        <div class="form-group mb-4 mx-lg-5">
+          <label class="mb-3 open-sans heavy-font" for="newPassword"
+            ><b>New Password</b></label
+          >
+          <input
+            type="password"
+            class="form-control"
+            id="newPassword"
+            placeholder="************"
+          />
+        </div>
+
+        <div class="form-group mb-4 mx-lg-5">
+          <label class="mb-3 open-sans heavy-font" for="confirmPassword"
+            ><bold>Confirm Password</bold></label
+          >
+          <input
+            type="password"
+            class="form-control"
+            id="confirmPassword"
+            placeholder="************"
+          />
+        </div>
+
+        <div class="d-grid gap-2 px-5 mt-5">
+          <button
+            class="btn blue-bg account-settings-btn py-2 fw-bold mb-1 w-75"
+            type="button"
+          >
+            Save Changes
+          </button>
+          <button
+            class="btn red-bg account-settings-btn py-2 fw-bold w-75"
+            type="button"
+          >
+            Discard
+          </button>
+        </div>
+      </form>
+    </div>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>
