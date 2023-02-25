@@ -1,6 +1,6 @@
 # Optical Clinic Management System
 
-***Disclaimer:** Some functionality are not available. **Clone at your own risk!***
+***Disclaimer:** Some functionalities are not available. **Clone at your own risk!***
 
 This is our final project on Software Engineering 2 subject.
 
