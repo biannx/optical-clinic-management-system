@@ -9,7 +9,7 @@ This is our final project on Software Engineering 2 subject.
 # © Copyright
 **Frontend Developers**
 
-- **Lyah Bianca Aquino** , Technological Univeristy of the Philippines Manila (lyahbianca.aquino04@gmail.com)
+- **Lyah Bianca Aquino** , Technological Univeristy of the Philippines Manila (lyahbianca.aquino@gmail.com)
 
 - **Clint Ashley Pimping**, Technological Univeristy of the Philippines Manila (clintashley.pimping@tup.edu.ph)
 
